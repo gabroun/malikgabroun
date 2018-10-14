@@ -1,6 +1,6 @@
-var React = require('react');
+import React from 'react';
 import { Link } from 'gatsby';
-var Header = require('../components/Header');
+import Header from '../components/Header';
 
 class Index extends React.Component {
   render() {
