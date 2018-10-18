@@ -19,7 +19,8 @@
     "react": "^16.5.1",
     "react-burger-menu": "^2.5.4",
     "react-dom": "^16.5.1",
-    "react-hamburger-menu": "^1.1.1"
+    "react-hamburger-menu": "^1.1.1",
+    "react-responsive": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",

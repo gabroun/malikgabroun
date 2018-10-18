@@ -1,59 +1,76 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import { slide as Menu } from 'react-burger-menu';
+import PropTypes from 'prop-types';
 
 require('./index.css');
-// class Navigation extends React.Component {
-//   render() {
-//     return (
-//       <div className="nav-container">
-//         <nav className="nav-wrapper">
-//           <div className="logo">Malik Elgabroun</div>
-//           <ul className="nav">
-//             <li className="active">
-//               <Link to="/">Home</Link>
-//             </li>
-//             <li className="active">
-//               <Link to="/about">About</Link>
-//             </li>
-//             <li className="">
-//               <Link to="/resume">Resume</Link>
-//             </li>
-//             <li className="">
-//               <Link to="/blog">Blog</Link>
-//             </li>
-//           </ul>
-//         </nav>
-//       </div>
-//     );
-//   }
-// }
 
-// export default Navigation;
+function Navigation(props) {
+  const width = `${props.width || 36}px`,
+    height = `${props.height || 30}px`,
+    halfHeight = `${parseInt(height.replace('px', '')) / 2}px`,
+    isOpen = props.isOpen || false,
+    strokeWidth = props.strokeWidth || 2,
+    halfStrokeWidth = `-${strokeWidth / 2}px`,
+    animationDuration = props.animationDuration || '0.4';
 
-class Navigation extends React.Component {
-  showSettings(event) {
-    event.preventDefault();
-  }
+  const getTransformValue = (isOpen, defaultPos, rotateVal) =>
+    `translate3d(0,${isOpen ? halfHeight : defaultPos},0) rotate(${
+      isOpen ? `${rotateVal}deg` : '0'
+    })`;
 
-  render() {
-    return (
-      <Menu>
-        <a id="home" className="menu-item" href="/">
-          Home
-        </a>
-        <a id="about" className="menu-item" href="/about">
-          About
-        </a>
-        <a id="contact" className="menu-item" href="/contact">
-          Contact
-        </a>
-        <a onClick={this.showSettings} className="menu-item--small" href="">
-          Settings
-        </a>
-      </Menu>
-    );
-  }
+  const styles = {
+    container: {
+      width,
+      height,
+      position: 'relative',
+      transform: `rotate(${props.rotate || 0}deg)`,
+    },
+    lineBase: {
+      display: 'block',
+      height: `${strokeWidth}px`,
+      width: '100%',
+      background: props.color || '#000',
+      transitionTimingFunction: 'ease',
+      transitionDuration: `${animationDuration}s`,
+      borderRadius: `${props.borderRadius || 0}px`,
+      transformOrigin: 'center',
+      position: 'absolute',
+    },
+    firstLine: {
+      transform: getTransformValue(isOpen, 0, 45),
+      marginTop: halfStrokeWidth,
+    },
+    secondLine: {
+      transitionTimingFunction: 'ease-out',
+      transitionDuration: `${animationDuration / 4}s`,
+      opacity: isOpen ? '0' : '1',
+      top: halfHeight,
+      marginTop: halfStrokeWidth,
+    },
+    thirdLine: {
+      transform: getTransformValue(isOpen, height, -45),
+      marginTop: halfStrokeWidth,
+    },
+  };
+
+  return (
+    <div style={styles.container} onClick={props.menuClicked}>
+      <span style={Object.assign({}, styles.lineBase, styles.firstLine)} />
+      <span style={Object.assign({}, styles.lineBase, styles.secondLine)} />
+      <span style={Object.assign({}, styles.lineBase, styles.thirdLine)} />
+    </div>
+  );
 }
+
+Navigation.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  menuClicked: PropTypes.func.isRequired,
+  width: PropTypes.number,
+  height: PropTypes.number,
+  strokeWidth: PropTypes.number,
+  rotate: PropTypes.number,
+  color: PropTypes.string,
+  borderRadius: PropTypes.number,
+  animationDuration: PropTypes.number,
+};
 
 export default Navigation;
