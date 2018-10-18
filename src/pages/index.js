@@ -7,9 +7,11 @@ class Index extends React.Component {
     return (
       <div style={{ color: `purple` }}>
         <Header />
-        <Link to="/about">About</Link>
-        <h1>Hello Gatsby!!!</h1>
-        <p>What a world.</p>
+        <div id="page-wrap">
+          <Link to="/about">About</Link>
+          <h1>Hello Gatsby!!!</h1>
+          <p>What a world.</p>
+        </div>
       </div>
     );
   }
