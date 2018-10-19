@@ -13,12 +13,21 @@
     "url": "git@github-gabroun:gabroun/gatsby-site.git"
   },
   "dependencies": {
+    "emotion": "^9.2.12",
+    "emotion-server": "^9.2.12",
     "gatsby": "^2.0.0",
+    "gatsby-plugin-emotion": "^2.0.5",
     "gatsby-plugin-manifest": "^2.0.5",
     "gatsby-plugin-offline": "^2.0.6",
+    "gatsby-plugin-typography": "^2.2.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
-    "react-responsive": "^5.0.0"
+    "react-emotion": "^9.2.12",
+    "react-responsive": "^5.0.0",
+    "react-typography": "^0.16.13",
+    "typography": "^0.16.17",
+    "typography-theme-fairy-gates": "^0.15.11",
+    "typography-theme-kirkham": "^0.16.3"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
