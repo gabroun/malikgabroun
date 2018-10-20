@@ -8,7 +8,6 @@ class Header extends React.Component {
     super();
     this.state = {
       open: false,
-      width: window.innerWidth,
       active: false,
     };
   }

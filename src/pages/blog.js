@@ -1,9 +1,15 @@
 import React from 'react';
 import Header from '../components/Header';
 import Layout from '../components/Layout/index';
+import { Link, graphql } from 'gatsby';
+import { func } from 'prop-types';
 
 class Blog extends React.Component {
   render() {
+    const { data } = this.props;
+    const { allMarkdownRemark } = data;
+
+    console.log(allMarkdownRemark);
     return (
       <div>
         <Header />
@@ -14,6 +20,20 @@ class Blog extends React.Component {
             What do I like to do? Lots of course but definitely enjoy building
             websites.
           </p>
+          <ul>
+            {allMarkdownRemark.edges.map(function(item) {
+              return (
+                <li key={item.node.frontmatter.path}>
+                  <h2>
+                    <Link to={item.node.frontmatter.path}>
+                      {item.node.frontmatter.title}
+                    </Link>
+                  </h2>
+                  <p>{item.node.frontmatter.excerpt}</p>
+                </li>
+              );
+            })}
+          </ul>
         </Layout>
       </div>
     );
@@ -21,3 +41,20 @@ class Blog extends React.Component {
 }
 
 export default Blog;
+export const query = graphql`
+  query {
+    allMarkdownRemark {
+      edges {
+        node {
+          frontmatter {
+            title
+            path
+            date
+            excerpt
+          }
+          rawMarkdownBody
+        }
+      }
+    }
+  }
+`;
