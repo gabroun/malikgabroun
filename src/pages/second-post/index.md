@@ -3,7 +3,8 @@ path: '/second-post'
 date: '2018/10/20'
 title: 'My second post'
 tags: ['js', 'test', 'this']
-excerpt: 'a preview of my second post'
+summary: 'a preview of my second post'
+images: ['images/reactjs.jpg']
 ---
 
 hello world, this is a second post

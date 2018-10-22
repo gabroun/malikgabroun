@@ -3,7 +3,8 @@ path: '/hello-world'
 date: '2018/10/20'
 title: 'My first post'
 tags: ['js', 'test']
-excerpt: 'a preview of my first post'
+summary: 'a preview of my first post'
+images: ['images/reactjs.jpg']
 ---
 
 hello world,
