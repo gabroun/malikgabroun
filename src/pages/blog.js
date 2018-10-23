@@ -27,6 +27,7 @@ class Blog extends React.Component {
                 date,
                 tags,
               } = edge.node.frontmatter;
+              const { timeToRead } = edge.node;
 
               const url = require(`../resources/${images}`);
 
@@ -60,6 +61,9 @@ class Blog extends React.Component {
                       <h2>{title}</h2>
                       <p className="blogpost__summary">{summary}</p>
                       <p className="blogpost__date">{date}</p>
+                      <p className="blogpost__timeToRead">
+                        {timeToRead} min read
+                      </p>
                     </div>
                   </Link>
                 </div>
@@ -78,6 +82,7 @@ export const query = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
+          timeToRead
           frontmatter {
             title
             path
