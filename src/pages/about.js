@@ -13,7 +13,7 @@ class About extends React.Component {
           <Fragment>
             <Timeline>
               <Event
-                interval={'2016 – 2018'}
+                dates={'2016 – 2018'}
                 title={'Lorem'}
                 subtitle={'Ipsum'}
                 position="right"
@@ -27,7 +27,7 @@ class About extends React.Component {
                 sunt in culpa qui officia deserunt mollit anim id est laborum.
               </Event>
               <Event
-                interval={'2015 – 2016'}
+                dates={'2015 – 2016'}
                 title={'Lorem'}
                 subtitle={'Ipsum'}
                 position="left"
