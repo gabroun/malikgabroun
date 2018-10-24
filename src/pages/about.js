@@ -1,15 +1,48 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Link } from 'gatsby';
 import Header from '../components/Header';
+
+import { Timeline, Event } from '../components/Timeline/index';
 
 class About extends React.Component {
   render() {
     return (
-      <div style={{ color: `red` }}>
+      <div>
         <Header />
-        <h1>About Gatsby</h1>
-        <p>Such wow. Very React.</p>
-        <Link to="/">Home</Link>
+        <div className="main-content">
+          <Fragment>
+            <Timeline>
+              <Event
+                dates={'2016 – 2018'}
+                title={'Lorem'}
+                subtitle={'Ipsum'}
+                position="right"
+              >
+                dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in
+                reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </Event>
+              <Event
+                dates={'2015 – 2016'}
+                title={'Lorem'}
+                subtitle={'Ipsum'}
+                position="left"
+              >
+                dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in
+                reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </Event>
+            </Timeline>
+          </Fragment>
+        </div>
       </div>
     );
   }
