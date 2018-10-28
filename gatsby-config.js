@@ -41,6 +41,18 @@ module.exports = {
         background_color: config.manifestBackgroundColor,
         theme_color: config.manifestThemeColor,
         display: config.manifestDisplay,
+        icons: [
+          {
+            src: '/icons/favicon-16x16.png',
+            sizes: '48x48',
+            type: 'image/png',
+          },
+          {
+            src: '/icons/favicon-32x32.png',
+            sizes: '48x48',
+            type: 'image/png',
+          },
+        ],
       },
     },
     `gatsby-plugin-offline`,

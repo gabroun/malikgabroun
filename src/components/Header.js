@@ -1,7 +1,10 @@
 import React from 'react';
 import Links from './Navigation/Links';
 import Navigation from './Navigation/index';
+import { css } from 'react-emotion';
 import MediaQuery from 'react-responsive';
+import logo from '../resources/images/logo.png';
+import logoIcon from '../resources/images/logo-icon.png';
 
 class Header extends React.Component {
   constructor() {
@@ -23,13 +26,28 @@ class Header extends React.Component {
   render() {
     return (
       <div className="menu-row">
-        <div className="menu">
-          <MediaQuery minDeviceWidth={1025}>
-            <div className="logo">Malik Elgabroun</div>
+        <MediaQuery minDeviceWidth={1024}>
+          <div
+            className={css`
+              display: flex;
+              padding: 25px;
+              max-width: 1280px;
+              margin: 0 auto;
+              justify-content: space-between;
+              align-items: center;
+            `}
+          >
+            <div className="logo">
+              <img src={logo} />
+            </div>
             <Links />
-          </MediaQuery>
-          <MediaQuery maxWidth={1024}>
-            <div className="logo">Malik Elgabroun</div>
+          </div>
+        </MediaQuery>
+        <MediaQuery maxWidth={1023}>
+          <div className="menu">
+            <div className="logo">
+              <img src={logoIcon} />
+            </div>
             <Navigation
               isOpen={this.state.open}
               menuClicked={() => this.handleClick(0)}
@@ -50,8 +68,8 @@ class Header extends React.Component {
             >
               <Links />
             </div>
-          </MediaQuery>
-        </div>
+          </div>
+        </MediaQuery>
       </div>
     );
   }

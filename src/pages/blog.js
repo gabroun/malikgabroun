@@ -15,7 +15,7 @@ class Blog extends React.Component {
     console.log(edges);
     return (
       <div>
-        <Header />
+        {/* <Header /> */}
         <Layout>
           <div className="blogpost__list">
             {edges.map(function(edge) {

@@ -24,7 +24,7 @@ class Footer extends React.Component {
               }}
             />
           </a>
-          <a className="" href="https://www.linkedin.com/in/malik-elgabroun/">
+          <a className="" href="https://github.com/gabroun">
             {' '}
             <FontAwesomeIcon
               icon={faGithub}
@@ -35,7 +35,7 @@ class Footer extends React.Component {
               }}
             />
           </a>
-          <a className="" href="https://github.com/gabroun">
+          <a className="" href="https://www.linkedin.com/in/malik-elgabroun/">
             {' '}
             <FontAwesomeIcon
               icon={faLinkedin}

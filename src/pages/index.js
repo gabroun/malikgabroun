@@ -23,14 +23,14 @@ class Index extends React.Component {
           }
         }
       >
-        <Header />
+        {/* <Header /> */}
         <Layout>
           <div className="main-content">
             <h1>Hello My name is Malik</h1>
             <p> and I'm a London-based Front end Developer</p>
           </div>
         </Layout>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     );
   }

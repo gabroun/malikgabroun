@@ -8,7 +8,6 @@ class Resume extends React.Component {
     const { data } = this.props;
     return (
       <div>
-        <Header />
         <Layout>
           <h1>resume component</h1>
           <h1>About {data.site.siteMetadata.title}</h1>

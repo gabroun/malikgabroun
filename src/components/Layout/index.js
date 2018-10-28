@@ -1,22 +1,18 @@
 import React from 'react';
 import { css } from 'react-emotion';
 import { Link } from 'gatsby';
-
+import Header from '../Header';
+import Footer from '../Footer';
 import { rhythm } from '../../utils/typography';
 
 class Layout extends React.Component {
   render() {
     const { children } = this.props;
     return (
-      <div
-        className={css`
-          margin: 0 auto;
-          max-width: 1280px;
-          padding: 25px;
-          padding-top: ${rhythm(1.5)};
-        `}
-      >
+      <div>
+        <Header />
         {children}
+        <Footer />
       </div>
     );
   }
