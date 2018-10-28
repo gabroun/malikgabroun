@@ -14,7 +14,7 @@ class Footer extends React.Component {
     return (
       <footer>
         <div>
-          <a className="" href="https://twitter.com/malroun1">
+          <a className="" href="https://twitter.com/malroun1" target="blank">
             <FontAwesomeIcon
               icon={faTwitter}
               style={{
@@ -24,8 +24,7 @@ class Footer extends React.Component {
               }}
             />
           </a>
-          <a className="" href="https://github.com/gabroun">
-            {' '}
+          <a className="" href="https://github.com/gabroun" target="blank">
             <FontAwesomeIcon
               icon={faGithub}
               style={{
@@ -35,8 +34,11 @@ class Footer extends React.Component {
               }}
             />
           </a>
-          <a className="" href="https://www.linkedin.com/in/malik-elgabroun/">
-            {' '}
+          <a
+            className=""
+            href="https://www.linkedin.com/in/malik-elgabroun/"
+            target="blank"
+          >
             <FontAwesomeIcon
               icon={faLinkedin}
               style={{

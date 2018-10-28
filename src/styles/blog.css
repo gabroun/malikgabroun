@@ -18,7 +18,7 @@
 
 .blogpost__item:hover {
   background: rgb(239, 239, 239);
-  margin-top: -8px;
+  transform: translateY(-5%);
   transition: all 0.4s ease 0.1s;
 }
 

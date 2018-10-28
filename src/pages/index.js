@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 import Header from '../components/Header';
 import Layout from '../components/Layout/index';
 import Footer from '../components/Footer';
@@ -7,6 +7,7 @@ import bg from '../resources/images/bg.jpg';
 import '../styles/styles.css';
 class Index extends React.Component {
   render() {
+    const { data } = this.props;
     return (
       <div
         style={
@@ -24,10 +25,18 @@ class Index extends React.Component {
         }
       >
         {/* <Header /> */}
-        <Layout>
+        <Layout data={data}>
           <div className="main-content">
             <h1>Hello My name is Malik</h1>
             <p> and I'm a London-based Front end Developer</p>
+            <div className="buttons-container">
+              <div className="btn">
+                <Link to="/about">About me</Link>
+              </div>
+              <div className="btn">
+                <Link to="/resume">Resume</Link>
+              </div>
+            </div>
           </div>
         </Layout>
         {/* <Footer /> */}
@@ -37,3 +46,12 @@ class Index extends React.Component {
 }
 
 export default Index;
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;

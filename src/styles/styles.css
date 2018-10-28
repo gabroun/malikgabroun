@@ -4,6 +4,10 @@ body {
     position: relative;
 }
 
+.main-column {
+    min-height: 100%;
+}
+
 .main-content {
     display: flex;
     justify-content: center;
@@ -11,11 +15,45 @@ body {
     text-align: center;
 }
 
+.buttons-container {
+    display: flex;
+    justify-content: space-evenly;
+    top: 25px;
+    position: relative;
+}
+
+.btn a {
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.btn {
+    border: solid 1px #F47C48;
+    border-radius: 3px;
+
+    padding: 15px;
+    cursor: pointer;
+    width: 150px;
+    box-sizing: border-box;
+}
+
+.btn:hover {
+    background-color: #F47C48;
+    transition: all 0.4s ease 0.1s;
+}
+
+.btn:hover a {
+    color: white;
+    transition: all 0.4s ease 0.1s;
+}
+
 footer {
     /* height: 60px; */
-    position: fixed;
+    /* position: fixed; */
+    position: absolute;
     width: 100%;
-    bottom: 0;
+    /* bottom: 0; */
     max-width: 1280px;
     margin: 0 auto;
     padding: 25px;

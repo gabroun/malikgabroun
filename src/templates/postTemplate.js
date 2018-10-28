@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Header from '../components/Header';
+import Layout from '../components/Layout/index';
 
 const Post = ({ data }) => {
   const { markdownRemark } = data;
@@ -8,10 +9,11 @@ const Post = ({ data }) => {
   const { html } = markdownRemark;
   return (
     <div>
-      <Header />
-      <h1>Blog Post Template</h1>
-      <h2>{title}</h2>
-      <div className="blogpost" dangerouslySetInnerHTML={{ __html: html }} />
+      <Layout>
+        <h1>Blog Post Template</h1>
+        <h2>{title}</h2>
+        <div className="blogpost" dangerouslySetInnerHTML={{ __html: html }} />
+      </Layout>
     </div>
   );
 };

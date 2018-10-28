@@ -81,6 +81,19 @@
   margin-bottom: 1.2em;
 }
 
+.event__subtitle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.event__subtitle-container img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 0;
+  margin-right: 10px;
+}
+
 .timeline__event.col-right {
   left: 50%;
   width: 50%;
@@ -96,4 +109,36 @@
 
 .timeline__event.col-left .event__icon {
   left: 100%;
+}
+
+/*
+    Mobile
+    ==================================
+*/
+@media only screen and (max-width: 767px) {
+  .timeline__list:before {
+    left: 0;
+  }
+
+  .timeline__event.col-right {
+    left: 0;
+    width: 100%;
+  }
+
+  .timeline__event.col-left {
+    width: 100%;
+  }
+
+  .timeline__event.col-left .event__icon {
+    left: 0;
+  }
+
+  .event__content {
+    left: 0;
+  }
+
+  .event__subtitle {
+    font-size: 1em;
+
+  }
 }

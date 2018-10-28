@@ -94,5 +94,12 @@ export const query = graphql`
         }
       }
     }
+    allSitePage {
+      edges {
+        node {
+          id
+        }
+      }
+    }
   }
 `;
