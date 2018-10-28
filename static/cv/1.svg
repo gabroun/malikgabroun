@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+
+<!-- Page 1 -->
+<svg x="0" y="0" width="909" height="1286" viewBox="0 0 909 1286" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+style="display: block;margin-left: auto;margin-right: auto;">
+<defs>
+
+<style type="text/css"><![CDATA[
+text { white-space: pre; }
+path, image { pointer-events: none; }
+
+.s1_1{
+font-size: 19.86px;
+font-family: CMUSerif-BoldItalic_8;
+fill: #000000;
+}
+.s2_1{
+font-size: 18.33px;
+font-family: CMUSerif-Roman_9;
+fill: #000000;
+}
+.s3_1{
+font-size: 15.28px;
+font-family: CMUSerif-BoldItalic_8;
+fill: #000000;
+}
+.s4_1{
+font-size: 15.28px;
+font-family: CMUSerif-Roman_9;
+fill: #000000;
+}
+.s5_1{
+font-size: 15.28px;
+font-family: CMUSerif-Roman_b;
+fill: #000000;
+}
+.s6_1{
+font-size: 21.39px;
+font-family: CMUSerif-Roman_9;
+fill: #000000;
+}
+
+.g0_1{
+fill: #FFFFFF;
+}
+.g1_1{
+fill: none;
+stroke: #000000;
+stroke-width: 3.0555556;
+stroke-linecap: butt;
+stroke-linejoin: miter;
+stroke-miterlimit: 4;
+}
+.g2_1{
+fill: none;
+stroke: #000000;
+stroke-width: 1.5277778;
+stroke-linecap: butt;
+stroke-linejoin: miter;
+stroke-miterlimit: 4;
+}
+
+]]></style>
+
+</defs>
+<path d="M0,0
+L0,1286
+L909,1286
+L909,0 Z " 
+fill="#FFFFFF" stroke="none" />
+<path d="M0,0H909V1286.4H0Z" class="g0_1" />
+<text x="372" y="128" dx="0,0,0,0,0,0,0,0,0,0,0,0,-1.2,0,0,0" class="s1_1">Malik Elgabroun </text>
+<text x="291" y="152" dx="0,0,0,0,-0.5,0,0,0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" class="s2_1">52 Aerodrome Road, London, NW9 5ZP </text>
+<text x="253" y="175" class="s2_1">+44 (0) 7473544005 </text>
+<text x="437" y="175" dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.5,0,0,0.5,0,0,0,0,0,0,0" class="s2_1">malikgabroun@yahoo.co.uk </text>
+<text x="348" y="198" dx="0,-0.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" class="s2_1">https://malikgabroun.com </text>
+<text x="110" y="256" dx="0,0,0,0,0,-1.5,0,0,0,0" class="s2_1">EDUCATION </text>
+<text x="110" y="307" dx="0,0,0,0,0,-0.9,0,0,0,0,0,0,0,0,0,0,0,-0.9,0,0,0,0,0,0,0,-0.9,0,0,0,0,0,0,-1.3,-0.9,0,0,0,0,0,0,0" class="s3_1">MSc Agile Software Engineering Techniques</text>
+<text x="703" y="307" class="s3_1">2015 – 2016</text>
+<text x="110" y="328" dx="0,0,0,0,-0.4,0,0,0,0,-0.4,0,0,0,0,0,0,0,0,0,0,0,0,0,0" class="s4_1">University of Leicester </text>
+<text x="110" y="368" dx="0,0,0,0,3.5,0,0,0,0,0" class="s3_1">Key units:</text>
+<text x="202" y="368" dx="0,0,0,0,3.5,0,0,0,0,0,0,0,0,0,0,0,0,3.5,0,-0.4,0,0,0,0,0,0,3.5,0,0,0,3.5,0,0,0,0,0,3.5,0,0,0,0,0,0,0,0,0,0,3.5,0,0,0,0,0,0,3.5,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3.5,0,0,0,0,0,0" class="s4_1">C++ programming, Internet and Cloud Computing, System Re-engineering, Domain </text>
+<text x="110" y="388" dx="0,0,0.4,0,0" class="s4_1">Speci</text>
+<text x="145" y="388" class="s5_1">ﬁ</text>
+<text x="153" y="388" dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.4,0,0,0,0,0,0,-0.4,0,0,0,0,0,0,0,0,0,0" class="s4_1">c Language and Service Oriented Architecture. </text>
+<text x="110" y="427" class="s3_1">MSc International Business Management</text>
+<text x="700" y="427" class="s3_1">2014 – 2015</text>
+<text x="110" y="449" dx="0,0,0,0,-0.4,0,0,0,0,-0.4,0,0,0,0,0,0,0,0,0,0,0" class="s4_1">University of Surrey </text>
+<text x="110" y="488" dx="0,0,0,0,7.4,0,0,0,0,0" class="s3_1">Key units:</text>
+<text x="210" y="488" dx="0,0,0,0,0,0,0,-0.4,0,7.4,0,0,0,0,0.4,0,0,0,7.4,0,-0.4,0,0,0,0,0,0,0,0,0,0,0,7.4,0,0,0,0,0,0,0,0,7.4,0,0,0,0,0,0,0,0,-0.4,0,0,7.4,0,0,0,0,0,0,0,0,-0.4,0,7.4,0,0,7.4,0,0,0,0,0" class="s4_1">Research Methods, International Business Management, Management of Human </text>
+<text x="110" y="508" dx="0,0,0,0,0,0,0,0,0,0,0.8,0,0,0,-0.4,0,0,0,0,0,0,0.8,-0.4,0,0,0,0,-0.4,0,0,0,0,0.8,0,0.8,0,0,0,0,0,0,0,0.8,0,0,0,0.8,0,0,0,0,0,0,0,0,0,0.8,0,-0.4,0,0,0,0,0,0,0,0,0,0,0,0.8,-1.3,0,0,0,0,0,0.8,0,0,0,0,0,0,0,0,0.8,0,0.8,0,0,0,-0.4,-0.4,0,0,0,0,0" class="s4_1">Resource, Marketing, Accounting &amp; Finance for Business, International Trade, Strategy &amp; Innovation </text>
+<text x="110" y="528" dx="0,0,0,0,0,0,0,0,0,-0.4,0,0" class="s4_1">Management. </text>
+<text x="110" y="568" dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-1.3,-0.9,0,0,0,0,0,-0.9,0,0" class="s3_1">BSc Information Technology </text>
+<text x="704" y="568" class="s3_1">2010 – 2013</text>
+<text x="110" y="588" dx="0,0,0,0,-0.4,0,0,0,0,-0.4,0,0,-1.3,0,0,0,0,0.4,0,0,0,0,0,0,0,0,0" class="s4_1">University Tun Abdul Razak </text>
+<text x="110" y="627" dx="0,0,0,0,0.6,0,0,0,0,0" class="s3_1">Key units:</text>
+<text x="196" y="627" dx="0,0,0,0,-0.4,-0.4,0,0,0,0.6,0,0,0.9,0,0,0,0,0.6,0,0,0,0,0,0,0,0,-0.4,0,0,0.6,-0.4,0,-0.4,0,0,0,0,0,0.6,0,0,0,0,0,0,0,0,0.6,0,0,-0.4,-0.4,0,0,0,0,0,0,0,0.6,0,-0.4,0,0,0,0,0,0,0.6,0,0,0,0,0,0,0,0.6,0,0.9,0,0,0,0" class="s4_1">Software Project Management, Advanced Computer Networking, Internet Design, Object </text>
+<text x="110" y="649" dx="0,0,0,0,0,-0.4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.4,-0.4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.4,-0.4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" class="s4_1">Oriented Programming, Distributed System, Network Programming, Software Engineering. </text>
+<text x="110" y="696" class="s6_1">EXPERIENCE</text>
+<text x="110" y="753" dx="0,0,0,0,0,0,0,0,0,0,0,0,-0.4,0,0,0,-1.3,0,0,-0.4,0,0,0,0,0,0,0,0,-0.4,0,0,0,0.4,0,0" class="s4_1">Junior Magento Front End Developer </text>
+<text x="645" y="753" dx="0,0,0,0,0,0,0,0,0,0,0,0,0,-0.9,0,0,0,0" class="s3_1">May 2018 - Present</text>
+<text x="110" y="773" dx="0,-0.9,-0.9,0,-0.9,0,0,0,0,0,0,0,0,0,0,0,0" class="s3_1">Redbox Digital - </text>
+<text x="240" y="773" class="s4_1">London, UK </text>
+<text x="131" y="794" dx="0,0,0,0,0,-0.4,0,0,0,0,0,0,0,0,3.6,0,0,3.6,-0.4,0,0,0,0,0,0,0,3.6,0,0,0,0,-0.4,0,0,3.6,0,0,0.9,0,0,0,0,0,0,3.6,0,0,0,0,3.6,0,0,3.6,0,0,0,0,0,0,0,0,3.6,0,0,3.6,0,0,0,-0.4,0,3.6,0,0,0,3.6,0,0,0,0,0,0,0,0,0,3.6,0,0,-0.4,0,0,0,0" class="s4_1">• Contributed to multiple Magento projects, with an emphasis on front end features, browser </text>
+<text x="131" y="814" dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.4,-1.3,0" class="s4_1">manipulation, and cross-browser compatibility. </text>
+<text x="131" y="834" dx="0,0,1.7,0,-0.4,-0.4,0,0,-0.4,0,0,1.7,0,0,1.7,0,1.7,0,0,0,0,1.7,0,0,0,0,0,1.7,0,0,0.9,0,0,0,0,1.7,0,0,0,1.7,-0.4,0,0,-0.4,0,0,1.7,0,0,0,0,1.7,0,0,0,1.7,0,0,0,0,0,1.7,0,0,0,0,1.7,0,0,-0.4,0.4,0,0,0,1.7,0,0,0,0,0,0,1.7,0,0,0,1.7" class="s4_1">• Involved in a full build project and worked with the other team members across our offices to</text>
+<text x="131" y="854" dx="0,0,0,0,0,-0.4,0,0,0,0,0,0,0,0,0,0,0,-0.4,0,0,0,0,0,0.9,0,0,0,0,0" class="s4_1">deliver the Magento project. </text>
+<text x="131" y="873" dx="0,0,0,0,-0.4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.4,0,0,0,0.4,0,0,0,0,0,0,0,0,0,0,0,0.9,0,0,0,0,0,0,0,0,0,0.4,0,0,0,0,0,0,0,0,0,0,0,0,-0.4,0,0,0" class="s4_1">• Integrated and Extended Third party modules to projects as per requirements. </text>
+<text x="131" y="893" dx="0,0,0,-0.4,0,0,0,0,0,0,0,0,0,0,0,5.2,0,0,5.2,0,0,0,0,0,0,0,5.2,-0.4,0,0,0,0,0,0,0,5.2,0,0,0.9,0,0,0,0,0,5.2,0,0,0,0,5.2,-0.4,0,0,0,0,0,5.2,0,0,0,0,0,0,0,0,5.2,0,0,5.2,0,0,-0.4,0,0,0,0,5.2,0,0,0,0.4,0,0,0,0,5.2,0,0,0,0,0,0" class="s4_1">• Participated in closing multiple projects from change requests to provide supports during </text>
+<text x="131" y="913" dx="0,-0.4,0,0,0,0,-0.4,-0.4,0,0,0.4,0,0,0,0.4,0,0" class="s4_1">warranty period. </text>
+<text x="131" y="933" dx="0,0,0,0,0,0,0,0,0,0,-0.4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.4,0,0,0,0,0,0.9,0,0,0,0,0" class="s4_1">• Implemented a feature for translation custom theme in multi store Magento project. </text>
+<text x="110" y="993" dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.4,0,0,0,-1.3,0,0,-0.4,0,0,0,0,0,0,0,0,-0.4,0,0,0,0.4,0,0" class="s4_1">Graduate Magento Front End Developer </text>
+<text x="594" y="993" dx="0,0,0,0,0,-0.9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0" class="s3_1">October 2016 - April 2018 </text>
+<text x="110" y="1012" dx="0,-0.9,-0.9,0,-0.9,0,0,0,0,0,0,0,0,0,0,0,0" class="s3_1">Redbox Digital - </text>
+<text x="240" y="1012" class="s4_1">London, UK </text>
+<text x="131" y="1032" dx="0,0,0,0,0,-0.4,0,0,0,0,0,0,0,0,3.1,0,0,3.1,0,0,0,0,0,0,0,0,-0.4,0,3.1,0,0,0,0,-0.4,0,0,3.1,0,0,0.9,0,0,0,0,0,0,3.1,0,0,0,0,3.1,0,0,3.1,0,0,0,0,0,0,0,0,3.1,0,0,3.1,0,0,0,-0.4,0,3.1,0,0,0,3.1,0,0,0,0,0,0,0,0,0,3.1,0,0,-0.4,0,0,0,0" class="s4_1">• Contributed to full-stack Magento projects, with an emphasis on front end features, browser </text>
+<text x="131" y="1052" dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.4,-1.3,0" class="s4_1">manipulation, and cross-browser compatibility. </text>
+<text x="131" y="1072" dx="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.4,0,0,0,0,0,0,-0.4,0,0,0,0,0,0,0,-0.4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.4,0,0,0,0,0,0,0,0,0,0,0" class="s4_1">• Assisted in development of back end features in both admin and front end site. </text>
+<text x="131" y="1092" dx="0,0,0,0,0,-0.4,0,0,0,0.4,0,0,3.9,0,0,0,3.9,0,0,0,0,0,0,0,0,3.9,0,0,0,0,0,3.9,0,0,3.9,0,0,0,0,0,0,0,0,0,-0.4,0,0,3.9,0,0,0,3.9,0,0,0,0,0,0,3.9,0,0,0,3.9,0,0.4,0,0,3.9,0,0,3.9,0,0,0,0,0,0,3.9,0,0,0,0,0,0,0,0,-0.4,0,0,0,0" class="s4_1">• Developed new features based on requirements and tested the code to ensure cross-browser </text>
+<text x="131" y="1112" dx="0,0,0,0,0,0,0,0,0,0,0,0,-0.4,-1.3,0" class="s4_1">compatibility. </text>
+<text x="131" y="1132" dx="0,0,0,0,0,-0.4,0,0,0,0.4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.4,0,0,0,0,0,0,0,0,0,0,0,0,0,0.4,0,0,0,0,0,0,0,-0.4,0,0,0,0,0,0,0,0,0,0,0,0,0,-0.4,0,0,0" class="s4_1">• Developed templates for ERP systems and maintained it as per client’s requirements. </text>
+<path d="M110,215.4H799" class="g1_1" />
+<path d="M110,272.7H799M110,715H799" class="g2_1" />
+
+
+<!-- Any embedded fonts defined here -->
+<style type="text/css" ><![CDATA[
+
+@font-face {
+	font-family: CMUSerif-Roman_9;
+	src: url("fonts/CMUSerif-Roman_9.woff") format("woff");
+}
+
+@font-face {
+	font-family: CMUSerif-BoldItalic_8;
+	src: url("fonts/CMUSerif-BoldItalic_8.woff") format("woff");
+}
+
+@font-face {
+	font-family: CMUSerif-Roman_b;
+	src: url("fonts/CMUSerif-Roman_b.woff") format("woff");
+}
+
+]]></style>
+
+</svg>

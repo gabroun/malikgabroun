@@ -29,7 +29,7 @@ body {
 }
 
 .nav a:hover {
-    color: #3b9cff;
+    color: #F47C48;
     text-decoration: underline;
 }
 
@@ -51,7 +51,7 @@ body {
     Mobile
     ==================================
 */
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1023px) {
     .menu-row {
         display: flex;
         flex-direction: column;
@@ -82,6 +82,11 @@ body {
 
     .burger-menu.active .nav-container {
         transform: translateX(14rem);
+        z-index: 1;
+    }
+
+    .nav-wrapper {
+        padding: 25px 25px 0 10px;
     }
 
     .burger-menu.active::after {
