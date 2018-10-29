@@ -10,7 +10,6 @@ const Post = ({ data }) => {
   return (
     <div>
       <Layout>
-        <h1>Blog Post Template</h1>
         <h2>{title}</h2>
         <div className="blogpost" dangerouslySetInnerHTML={{ __html: html }} />
       </Layout>
