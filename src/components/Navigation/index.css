@@ -90,7 +90,7 @@ body {
     }
 
     .burger-menu.active::after {
-        position: absolute;
+        position: fixed;
         width: calc(100% - 14rem);
         height: 100%;
         color: #FFF;

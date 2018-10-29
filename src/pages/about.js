@@ -7,12 +7,24 @@ import ur from '../../static/about/unirazak1.png';
 import su from '../../static/about/surrey.png';
 import Layout from '../components/Layout/index';
 import { Timeline, Event } from '../components/Timeline/index';
+import Helmet from 'react-helmet';
 
 class About extends React.Component {
   render() {
     return (
       <Layout>
-        {' '}
+        <Helmet
+          meta={[
+            {
+              name: 'description',
+              content: 'About',
+            },
+            {
+              name: 'keywords',
+              content: 'frontend, developer',
+            },
+          ]}
+        />
         <div>
           <div className="main-content">
             <Fragment>

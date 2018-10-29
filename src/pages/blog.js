@@ -6,17 +6,29 @@ import { css } from 'react-emotion';
 
 import { func } from 'prop-types';
 require('../styles/blog.css');
+import Helmet from 'react-helmet';
 
 class Blog extends React.Component {
   render() {
     const { data } = this.props;
     const { edges } = data.allMarkdownRemark;
 
-    console.log(edges);
     return (
       <div>
         {/* <Header /> */}
         <Layout>
+          <Helmet
+            meta={[
+              {
+                name: 'description',
+                content: 'Malik Elgabroun - Blog',
+              },
+              {
+                name: 'keywords',
+                content: 'frontend, developer',
+              },
+            ]}
+          />
           <div className="blogpost__list">
             {edges.map(function(edge) {
               const {
