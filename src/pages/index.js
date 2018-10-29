@@ -6,13 +6,27 @@ import Footer from '../components/Footer';
 import bg from '../resources/images/bg.jpg';
 import { css } from 'react-emotion';
 import '../styles/styles.css';
+import Helmet from 'react-helmet';
 class Index extends React.Component {
   render() {
     const { data } = this.props;
     const { edges } = data.allMarkdownRemark;
+    const { site } = data;
     return (
       <div>
-        <Layout data={data}>
+        <Layout data={site.siteMetadata.title}>
+          <Helmet
+            meta={[
+              {
+                name: 'description',
+                content: 'Malik Elgabroun - Front-End Developer',
+              },
+              {
+                name: 'keywords',
+                content: 'frontend, developer',
+              },
+            ]}
+          />
           <div className="main-content">
             <h1>Hello My name is Malik</h1>
             <p> and I'm a London-based Front end Developer</p>
@@ -112,6 +126,11 @@ export const query = graphql`
             tags
           }
         }
+      }
+    }
+    site {
+      siteMetadata {
+        title
       }
     }
   }
