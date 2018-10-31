@@ -15,7 +15,6 @@ class Blog extends React.Component {
 
     return (
       <div>
-        {/* <Header /> */}
         <Layout>
           <Helmet
             meta={[
