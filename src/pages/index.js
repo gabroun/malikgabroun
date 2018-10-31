@@ -25,7 +25,7 @@ class Index extends React.Component {
               },
               {
                 name: 'google-site-verification',
-                content: 'j__qQOdGMQXcSLv3bn8IE10Syfbyw5_3AkHGlFnJgWs',
+                content: 'rdHghgE19nXaz19_OXvkv_MuEOSHl8lQPesWUmp21oU',
               },
             ]}
           />
