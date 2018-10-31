@@ -29,6 +29,7 @@ class Index extends React.Component {
               },
             ]}
           />
+
           <div className="main-content">
             <h1>Hello My name is Malik</h1>
             <p> and I'm a London-based Front end Developer</p>
