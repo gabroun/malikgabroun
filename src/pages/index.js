@@ -16,17 +16,20 @@ class Index extends React.Component {
       <div>
         <Layout data={site.siteMetadata.title}>
           <Helmet
+            title="Malik Elgabroun - Front-End Developer"
             meta={[
-              {
-                name: 'description',
-                content: 'Malik Elgabroun - Front-End Developer',
-              },
+              { name: 'description', content: 'frontend developer' },
               {
                 name: 'keywords',
-                content: 'frontend, developer',
+                content: 'frontend, js, developer, portfolio',
+              },
+              {
+                name: 'google-site-verification',
+                content: 'j__qQOdGMQXcSLv3bn8IE10Syfbyw5_3AkHGlFnJgWs',
               },
             ]}
           />
+
           <div className="main-content">
             <h1>Hello My name is Malik</h1>
             <p> and I'm a London-based Front end Developer</p>
