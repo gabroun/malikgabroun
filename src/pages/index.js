@@ -20,8 +20,9 @@ class Index extends React.Component {
 
             <meta
               name="google-site-verification"
-              content="j__qQOdGMQXcSLv3bn8IE10Syfbyw5_3AkHGlFnJgWs"
+              content="rdHghgE19nXaz19_OXvkv_MuEOSHl8lQPesWUmp21oU"
             />
+            <html lang="en" />
           </Helmet>
           <div className="main-content">
             <h1>Hello My name is Malik</h1>

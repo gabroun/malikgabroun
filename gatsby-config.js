@@ -11,6 +11,7 @@ module.exports = {
     main config file for a Gatsby site where you can specify info about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include
     */
   plugins: [
+    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-typography`,
       options: {
