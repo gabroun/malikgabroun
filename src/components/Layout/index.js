@@ -7,7 +7,7 @@ import { rhythm } from '../../utils/typography';
 import Helmet from 'react-helmet';
 import icon32 from '../../../static/icons/favicon-32x32.png';
 import icon16 from '../../../static/icons/favicon-16x16.png';
-
+// import 'prismjs/themes/prism-okaidia.css';
 class Layout extends React.Component {
   render() {
     const { children, data } = this.props;

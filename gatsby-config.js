@@ -11,6 +11,7 @@ module.exports = {
     main config file for a Gatsby site where you can specify info about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include
     */
   plugins: [
+    'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -32,6 +33,7 @@ module.exports = {
         name: 'resources',
       },
     },
+
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -67,5 +69,35 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: 'language-',
+            },
+          },
+        ],
+      },
+    },
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              // It's important to specify the maxWidth (in pixels) of
+              // the content container as this plugin uses this as the
+              // base for generating different widths of each image.
+              maxWidth: 590,
+            },
+          },
+        ],
+      },
+    },
   ],
 };

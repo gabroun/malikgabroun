@@ -12,24 +12,19 @@ class Index extends React.Component {
     const { data } = this.props;
     const { edges } = data.allMarkdownRemark;
     const { site } = data;
+
     return (
       <div>
         <Layout data={site.siteMetadata.title}>
-          <Helmet
-            title="Malik Elgabroun - Front-End Developer"
-            meta={[
-              { name: 'description', content: 'frontend developer' },
-              {
-                name: 'keywords',
-                content: 'frontend, js, developer, portfolio',
-              },
-              {
-                name: 'google-site-verification',
-                content: 'rdHghgE19nXaz19_OXvkv_MuEOSHl8lQPesWUmp21oU',
-              },
-            ]}
-          />
+          <Helmet>
+            <title>Malik Elgabroun - Front-End Developer</title>
 
+            <meta
+              name="google-site-verification"
+              content="rdHghgE19nXaz19_OXvkv_MuEOSHl8lQPesWUmp21oU"
+            />
+            <html lang="en" />
+          </Helmet>
           <div className="main-content">
             <h1>Hello My name is Malik</h1>
             <p> and I'm a London-based Front end Developer</p>
