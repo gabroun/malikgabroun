@@ -12,10 +12,12 @@ class Header extends React.Component {
     this.state = {
       open: false,
       active: false,
-      width: 1024,
+      width: '',
+      device: 'desktop',
     };
 
     this.handleResize = this.handleResize.bind(this);
+    this.checkWidth = this.checkWidth.bind(this);
   }
   handleClick(id) {
     let { open, active } = this.state;
@@ -38,11 +40,28 @@ class Header extends React.Component {
     window.removeEventListener('resize', this.handleResize);
   }
   handleResize() {
+    if (window.innerWidth >= 1024) {
+      this.setState(() => {
+        return {
+          width: window.innerWidth,
+          device: 'desktop',
+        };
+      });
+    } else {
+      this.setState(() => {
+        return {
+          width: window.innerWidth,
+          device: 'mobile',
+        };
+      });
+    }
     this.setState(() => {
-      return {
-        width: window.innerWidth,
-      };
+      return {};
     });
+  }
+
+  checkWidth() {
+    let window = window || {};
   }
 
   render() {
@@ -50,6 +69,7 @@ class Header extends React.Component {
       <div className="menu-row">
         <Media
           query="(min-width: 1024px)"
+          defaultMatches={this.state.device === 'desktop'}
           render={() => {
             return (
               <div
@@ -72,6 +92,7 @@ class Header extends React.Component {
         />
         <Media
           query="(max-width: 1023px)"
+          defaultMatches={this.state.device === 'mobile'}
           render={() => {
             return (
               <div className="menu">
