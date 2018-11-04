@@ -10,32 +10,22 @@ class Layout extends React.Component {
     const { children, data } = this.props;
     return (
       <div className="page-wrapper">
-        <Helmet
-          meta={[
-            {
-              name: 'description',
-              content: 'Malik Elgabroun - Front-End Developer',
-            },
-            {
-              name: 'keywords',
-              content: 'frontend, developer',
-            },
-          ]}
-          link={[
-            {
-              rel: 'icon',
-              type: 'image/png',
-              sizes: '16x16',
-              href: `${icon16}`,
-            },
-            {
-              rel: 'icon',
-              type: 'image/png',
-              sizes: '32x32',
-              href: `${icon32}`,
-            },
-          ]}
-        />
+        <Helmet>
+          <html lang="en" />
+          <title>{this.props.title}</title>
+          <meta
+            name="google-site-verification"
+            content="rdHghgE19nXaz19_OXvkv_MuEOSHl8lQPesWUmp21oU"
+          />
+          <meta
+            name="Malik Elgabroun - Front End Developer"
+            content="Personal Website - Portfolio"
+          />
+          <meta name="keywords" content="frontend, developer" />
+          <link rel="icon" type="image/png" sizes="16x16" href={icon16} />
+          <link rel="icon" type="image/png" sizes="32x32" href={icon32} />
+        </Helmet>
+
         <Header />
         <div
           className={css`

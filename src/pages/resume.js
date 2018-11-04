@@ -12,7 +12,7 @@ class Resume extends React.Component {
     const { data } = this.props;
     return (
       <div>
-        <Layout data={data}>
+        <Layout title="Resume - Malik Elgabroun">
           <Helmet
             meta={[
               {

@@ -12,19 +12,7 @@ class Blog extends React.Component {
 
     return (
       <div>
-        <Layout>
-          <Helmet
-            meta={[
-              {
-                name: 'description',
-                content: 'Malik Elgabroun - Blog',
-              },
-              {
-                name: 'keywords',
-                content: 'frontend, developer',
-              },
-            ]}
-          />
+        <Layout title="Blog - Malik Elgabroun">
           <div className="blogpost__list">
             {edges.map(function(edge) {
               const {

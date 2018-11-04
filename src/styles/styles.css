@@ -177,7 +177,7 @@ footer a:nth-of-type(3):hover {
 }
 
 
-pre {
+.blogpost pre {
     padding: 1em;
     margin: .5em 0;
     overflow: auto;
