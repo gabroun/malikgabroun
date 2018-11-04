@@ -2,7 +2,6 @@ import React from 'react';
 import Links from './Navigation/Links';
 import Navigation from './Navigation/index';
 import { css } from 'react-emotion';
-import MediaQuery from 'react-responsive';
 import logo from '../resources/images/logo.png';
 import logoIcon from '../resources/images/logo-icon.png';
 
@@ -91,10 +90,6 @@ class Header extends React.Component {
             </div>
           </div>
         )}
-        {/* <MediaQuery minDeviceWidth={1024}>
-          
-        </MediaQuery> */}
-        <MediaQuery maxWidth={1023} />
       </div>
     );
   }

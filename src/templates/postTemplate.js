@@ -1,11 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Header from '../components/Header';
 import Layout from '../components/Layout/index';
 
 const Post = ({ data }) => {
   const { markdownRemark } = data;
-  console.log(data);
   const { title } = markdownRemark.frontmatter;
   const { html } = markdownRemark;
   return (
