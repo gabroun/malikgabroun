@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Header from '../components/Header';
 import Layout from '../components/Layout/index';
 
 const Post = ({ data }) => {

@@ -2,17 +2,19 @@ import React from 'react';
 import Links from './Navigation/Links';
 import Navigation from './Navigation/index';
 import { css } from 'react-emotion';
-import MediaQuery from 'react-responsive';
 import logo from '../resources/images/logo.png';
 import logoIcon from '../resources/images/logo-icon.png';
 
 class Header extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       open: false,
       active: false,
+      width: window.innerWidth,
     };
+
+    this.handleResize = this.handleResize.bind(this);
   }
   handleClick(id) {
     let { open, active } = this.state;
@@ -23,10 +25,29 @@ class Header extends React.Component {
       };
     });
   }
+
+  //subscription to browser width
+  componentDidMount() {
+    //listen to changes
+    window.addEventListener('resize', this.handleResize);
+  }
+
+  //to unsubscribe from the event and avoid memory leak
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleResize);
+  }
+  handleResize() {
+    this.setState(() => {
+      return {
+        width: window.innerWidth,
+      };
+    });
+  }
+
   render() {
     return (
       <div className="menu-row">
-        <MediaQuery minDeviceWidth={1024}>
+        {this.state.width >= 1024 ? (
           <div
             className={css`
               display: flex;
@@ -42,8 +63,7 @@ class Header extends React.Component {
             </div>
             <Links />
           </div>
-        </MediaQuery>
-        <MediaQuery maxWidth={1023}>
+        ) : (
           <div className="menu">
             <div className="logo">
               <img src={logoIcon} />
@@ -69,7 +89,7 @@ class Header extends React.Component {
               <Links />
             </div>
           </div>
-        </MediaQuery>
+        )}
       </div>
     );
   }

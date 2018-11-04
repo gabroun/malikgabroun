@@ -1,9 +1,6 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
-import Header from '../components/Header';
 import Layout from '../components/Layout/index';
-import Footer from '../components/Footer';
-import bg from '../resources/images/bg.jpg';
 import { css } from 'react-emotion';
 import '../styles/styles.css';
 import Helmet from 'react-helmet';
@@ -12,6 +9,7 @@ class Index extends React.Component {
     const { data } = this.props;
     const { edges } = data.allMarkdownRemark;
     const { site } = data;
+
     return (
       <div>
         <Layout data={site.siteMetadata.title}>
