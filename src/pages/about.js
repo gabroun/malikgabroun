@@ -12,19 +12,7 @@ import Helmet from 'react-helmet';
 class About extends React.Component {
   render() {
     return (
-      <Layout>
-        <Helmet
-          meta={[
-            {
-              name: 'description',
-              content: 'About',
-            },
-            {
-              name: 'keywords',
-              content: 'frontend, developer',
-            },
-          ]}
-        />
+      <Layout title="About - Malik Elgabroun">
         <div>
           <div className="main-content">
             <Fragment>

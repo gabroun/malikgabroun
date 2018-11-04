@@ -176,6 +176,15 @@ footer a:nth-of-type(3):hover {
     float: right;
 }
 
+
+.blogpost pre {
+    padding: 1em;
+    margin: .5em 0;
+    overflow: auto;
+    border-radius: 0.3em;
+    background-color: rgb(40, 44, 52);
+}
+
 /*
       Tablet
       ==================================
@@ -199,12 +208,4 @@ footer a:nth-of-type(3):hover {
     .blogpost__list {
         flex-direction: column;
     }
-}
-
-pre {
-    padding: 1em;
-    margin: .5em 0;
-    overflow: auto;
-    border-radius: 0.3em;
-    background-color: rgb(40, 44, 52);
 }
