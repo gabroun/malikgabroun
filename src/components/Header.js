@@ -34,8 +34,8 @@ class Header extends React.Component {
     window.addEventListener('resize', this.handleResize);
   }
 
-  //to unsubscribe from the event and avoid memory leak
   componentWillUnmount() {
+    //to unsubscribe from the event and avoid memory leak
     window.removeEventListener('resize', this.handleResize);
   }
   handleResize() {
