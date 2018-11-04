@@ -13,11 +13,10 @@ class Header extends React.Component {
       open: false,
       active: false,
       width: '',
-      device: 'desktop',
+      device: '',
     };
 
     this.handleResize = this.handleResize.bind(this);
-    this.checkWidth = this.checkWidth.bind(this);
   }
   handleClick(id) {
     let { open, active } = this.state;
@@ -55,13 +54,6 @@ class Header extends React.Component {
         };
       });
     }
-    this.setState(() => {
-      return {};
-    });
-  }
-
-  checkWidth() {
-    let window = window || {};
   }
 
   render() {
