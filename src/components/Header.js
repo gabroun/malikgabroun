@@ -11,7 +11,7 @@ class Header extends React.Component {
     this.state = {
       open: false,
       active: false,
-      width: window.innerWidth,
+      width: 1024,
     };
 
     this.handleResize = this.handleResize.bind(this);
