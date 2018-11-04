@@ -1,10 +1,7 @@
 import React from 'react';
-import Header from '../components/Header';
 import Layout from '../components/Layout/index';
 import { Link, graphql } from 'gatsby';
 import { css } from 'react-emotion';
-
-import { func } from 'prop-types';
 require('../styles/blog.css');
 import Helmet from 'react-helmet';
 
