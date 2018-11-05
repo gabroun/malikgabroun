@@ -13,11 +13,10 @@ class Header extends React.Component {
       open: false,
       active: false,
       width: '',
-      device: 'desktop',
+      device: '',
     };
 
     this.handleResize = this.handleResize.bind(this);
-    this.checkWidth = this.checkWidth.bind(this);
   }
   handleClick(id) {
     let { open, active } = this.state;
@@ -29,14 +28,14 @@ class Header extends React.Component {
     });
   }
 
-  //subscription to browser width
   componentDidMount() {
+    //subscription to browser width
     //listen to changes
     window.addEventListener('resize', this.handleResize);
   }
 
-  //to unsubscribe from the event and avoid memory leak
   componentWillUnmount() {
+    //to unsubscribe from the event and avoid memory leak
     window.removeEventListener('resize', this.handleResize);
   }
   handleResize() {
@@ -55,13 +54,6 @@ class Header extends React.Component {
         };
       });
     }
-    this.setState(() => {
-      return {};
-    });
-  }
-
-  checkWidth() {
-    let window = window || {};
   }
 
   render() {
