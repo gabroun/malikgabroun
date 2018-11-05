@@ -28,8 +28,8 @@ class Header extends React.Component {
     });
   }
 
-  //subscription to browser width
   componentDidMount() {
+    //subscription to browser width
     //listen to changes
     window.addEventListener('resize', this.handleResize);
   }
