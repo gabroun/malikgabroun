@@ -3,13 +3,12 @@ import Layout from '../components/Layout/index';
 import { Link, graphql } from 'gatsby';
 import { css } from 'react-emotion';
 require('../styles/blog.css');
-import Helmet from 'react-helmet';
 
 class Blog extends React.Component {
   render() {
     const { data } = this.props;
     const { edges } = data.allMarkdownRemark;
-
+    console.log(data);
     return (
       <div>
         <Layout title="Blog - Malik Elgabroun">
@@ -75,7 +74,10 @@ class Blog extends React.Component {
 export default Blog;
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { type: { ne: "portfolio" } } }
+    ) {
       edges {
         node {
           timeToRead

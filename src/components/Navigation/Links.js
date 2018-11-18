@@ -13,6 +13,9 @@ function Links() {
             <Link to="/about">About</Link>
           </li>
           <li className="">
+            <Link to="/portfolio">Portfolio</Link>
+          </li>
+          <li className="">
             <Link to="/resume">Resume</Link>
           </li>
           <li className="">

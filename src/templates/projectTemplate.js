@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout/index';
 
-const Post = ({ data }) => {
+const Project = ({ data }) => {
   const { markdownRemark } = data;
   console.log(data);
   const { title } = markdownRemark.frontmatter;
@@ -10,7 +10,7 @@ const Post = ({ data }) => {
   return (
     <div>
       <Layout>
-        <h2>{title}</h2>
+        {/* <h2>{title}</h2> */}
         <div className="blogpost" dangerouslySetInnerHTML={{ __html: html }} />
       </Layout>
     </div>
@@ -27,16 +27,4 @@ export const query = graphql`
     }
   }
 `;
-
-// export const query = graphql`
-//   query($slug: String!) {
-//     markdownRemark(fields: { slug: { eq: $slug } }) {
-//       html
-//       frontmatter {
-//         title
-//       }
-//     }
-//   }
-// `;
-
-export default Post;
+export default Project;
