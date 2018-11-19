@@ -3,14 +3,14 @@ type: 'portfolio'
 title: 'Github Battle'
 date: '2018-10-14'
 path: '/portfolio/github-battle/'
-image: 'images/thumbnails/portfolio/github-battle.png'
+images: ['images/thumbnails/portfolio/github-battle.png']
 ---
 
 # Github Battle
 
 ## What I did
 
-- Develop a react based application that pull data from github api to display the popular repositories in multiple programming languages and it also include a fun battle game between github users based on number of repos stars and followers
+- Develop a react based application that pull data from github api to display the popular repositories in multiple programming languages and it also includes a battle game between two github users that you need to enter in order to get the winner
 
 ## Libraries / Tools
 

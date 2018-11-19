@@ -4,7 +4,7 @@ import Layout from '../components/Layout/index';
 
 const Post = ({ data }) => {
   const { markdownRemark } = data;
-  console.log(data);
+
   const { title } = markdownRemark.frontmatter;
   const { html } = markdownRemark;
   return (

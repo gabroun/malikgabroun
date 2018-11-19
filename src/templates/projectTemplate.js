@@ -4,7 +4,7 @@ import Layout from '../components/Layout/index';
 
 const Project = ({ data }) => {
   const { markdownRemark } = data;
-  console.log(data);
+
   const { title } = markdownRemark.frontmatter;
   const { html } = markdownRemark;
   return (
