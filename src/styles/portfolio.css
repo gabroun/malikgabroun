@@ -1,0 +1,115 @@
+.portfolio__item:hover img {
+    transform: scale(1.1);
+}
+
+/*
+ * ProjectPost Template
+ *=================
+ */
+
+ .project__post {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+ }
+
+.project__post ul {
+    list-style: none;
+    margin-bottom: 50px;
+}
+
+.project__post h2 {
+    margin: 40px 0 25px;
+    display: inline-block;
+}
+
+.project__post p {
+    margin: 10px 0;
+}
+
+.project__post .react:before {
+    background-image: url('../resources/images/icons/react.svg');
+    display: inline-block;
+    content: ' ';
+    height: 30px;
+    width: 30px;
+    margin: 8px;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.project__post .react-router:before {
+    background-image: url('../resources/images/icons/react-router.svg');
+    display: inline-block;
+    content: ' ';
+    height: 30px;
+    width: 30px;
+    margin: 8px;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.project__post .webpack:before {
+    background-image: url('../resources/images/icons/webpack.svg');
+    display: inline-block;
+    content: ' ';
+    height: 30px;
+    width: 30px;
+    margin: 8px;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.project__post .graphql:before {
+    background-image: url('../resources/images/icons/graphql.svg');
+    display: inline-block;
+    content: ' ';
+    height: 30px;
+    width: 30px;
+    margin: 8px;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.project__post .gatsby:before {
+    background-image: url('../resources/images/icons/gatsby.svg');
+    display: inline-block;
+    content: ' ';
+    height: 30px;
+    width: 30px;
+    margin: 8px;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+.project__post .content {
+    order: -1;
+}
+
+/*
+    Mobile
+    ==================================
+*/
+@media only screen and (max-width: 767px) {
+    .portfolio__list ul {
+        grid-template-columns: 1fr !important;
+        margin: 0
+    }
+
+}
+
+/*
+    Mobile
+    ==================================
+*/
+@media only screen and (max-width: 1023px) {
+
+    .project__post {
+        grid-template-columns: 1fr;
+    }
+
+    .project__post .content {
+        order: 1;
+        margin-top: 50px;
+    }
+}
+

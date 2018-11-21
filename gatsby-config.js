@@ -7,9 +7,6 @@ module.exports = {
     siteUrl: config.siteUrl,
     pathPrefix: config.pathPrefix,
   },
-  /*
-    main config file for a Gatsby site where you can specify info about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include
-    */
   plugins: [
     'gatsby-plugin-react-helmet',
     {
@@ -29,11 +26,17 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/resources`,
-        name: 'resources',
+        name: `posts`,
+        path: `${__dirname}/content/posts`,
       },
     },
-
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `portfolio`,
+        path: `${__dirname}/content/portfolio`,
+      },
+    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

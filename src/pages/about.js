@@ -1,13 +1,10 @@
 import React, { Fragment } from 'react';
-import { Link } from 'gatsby';
-import Header from '../components/Header';
 import rb from '../../static/about/redbox.jpg';
 import le from '../../static/about/leicester.jpg';
 import ur from '../../static/about/unirazak1.png';
 import su from '../../static/about/surrey.png';
 import Layout from '../components/Layout/index';
 import { Timeline, Event } from '../components/Timeline/index';
-import Helmet from 'react-helmet';
 
 class About extends React.Component {
   render() {

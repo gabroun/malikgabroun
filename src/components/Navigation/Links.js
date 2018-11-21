@@ -12,6 +12,7 @@ function Links() {
           <li className="active">
             <Link to="/about">About</Link>
           </li>
+
           <li className="">
             <Link to="/resume">Resume</Link>
           </li>

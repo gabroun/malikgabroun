@@ -1,7 +1,7 @@
 const colors = require('../../src/styles/colors');
 
 module.exports = {
-  siteTitle: 'Malik Elgabroun - Front-End Developer', // <title>
+  siteTitle: 'Malik Elgabroun - Front End Developer', // <title>
   shortSiteTitle: 'gatsby site', // <title> ending for posts and pages
   siteDescription: 'gatsby site',
   siteUrl: '',
@@ -15,8 +15,8 @@ module.exports = {
   infoTitle: 'Malik Elgabroun',
   infoTitleNote: 'personal site',
   // manifest.json
-  manifestName: 'Malik Elgabroun - Front-End Developer',
-  manifestShortName: 'personalSite', // max 12 characters
+  manifestName: 'Malik Elgabroun - Front End Developer',
+  manifestShortName: 'MalikGabroun', // max 12 characters
   manifestStartUrl: '/',
   manifestBackgroundColor: colors.background,
   manifestThemeColor: colors.background,
@@ -25,8 +25,8 @@ module.exports = {
   contactEmail: 'malikgabroun@yahoo.co.uk',
   // social
   authorSocialLinks: [
-    { name: 'github', url: '' },
-    { name: 'twitter', url: '' },
-    { name: 'facebook', url: '' },
+    { name: 'github', url: 'https://github.com/gabroun' },
+    { name: 'twitter', url: 'https://twitter.com/malroun1' },
+    { name: 'linkedin', url: 'https://www.linkedin.com/in/malik-elgabroun/' },
   ],
 };
