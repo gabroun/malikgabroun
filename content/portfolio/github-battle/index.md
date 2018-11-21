@@ -6,18 +6,26 @@ path: '/portfolio/github-battle/'
 images: ['images/thumbnails/portfolio/github-battle.png']
 ---
 
-# Github Battle
+![](./github-battle.png)
+<div class="content">
+<h1> Github Battle </h1>
+
 
 ## What I did
 
-- Develop a react based application that pull data from github api to display the popular repositories in multiple programming languages and it also includes a battle game between two github users that you need to enter in order to get the winner
+<div class="description">
+<li> Develop a react based application that pull data from github api to display the popular repositories in multiple languages </li>
+<li> Develop a battle game feature that need two github usernames to be entered in order to get a winner</li> </div>
 
 ## Libraries / Tools
 
-- ReactJS
-- Webpack
-- React Router
+- <div class="react">ReactJS</div>
+- <div class="webpack">Webpack</div>
+- <div class="react-router">React Router</div>
 
 [Go to Web Site →](https://github-battle-c63f9.firebaseapp.com/)
 
 [Go to Web Site Repo →](https://github.com/gabroun/github-battle)
+
+
+</div>
