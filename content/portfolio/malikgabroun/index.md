@@ -3,12 +3,13 @@ type: 'portfolio'
 title: 'MalikGabroun.com'
 date: '2018-10-14'
 path: '/portfolio/malikgabroun/'
-images: ['images/thumbnails/portfolio/personal-website.png']
+images: ['images/thumbnails/portfolio/personal-website.webp']
 ---
-![](./personal-website.png)
+
+![](./personal-website.webp)
+
 <div class="content">
 <h1> MalikGabroun.com</h1>
-
 
 ## What I did
 

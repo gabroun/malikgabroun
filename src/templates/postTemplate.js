@@ -4,13 +4,21 @@ import Layout from '../components/Layout/index';
 
 const Post = ({ data }) => {
   const { markdownRemark } = data;
-
-  const { title } = markdownRemark.frontmatter;
-  const { html } = markdownRemark;
+  console.log(data);
+  const { title, date, images } = markdownRemark.frontmatter;
+  const { html, timeToRead } = markdownRemark;
+  const url = require(`../resources/${images}`);
   return (
     <div>
       <Layout>
         <h2>{title}</h2>
+        <div style={{ display: 'flex', font: 'bold', margin: '15px 0' }}>
+          <p>{date}.</p>
+          <p style={{ marginLeft: '10px' }}>{timeToRead} min read.</p>
+        </div>
+        <figure>
+          <img src={url} />
+        </figure>
         <div className="blogpost" dangerouslySetInnerHTML={{ __html: html }} />
       </Layout>
     </div>
@@ -23,20 +31,12 @@ export const query = graphql`
       html
       frontmatter {
         title
+        date
+        images
       }
+      timeToRead
     }
   }
 `;
-
-// export const query = graphql`
-//   query($slug: String!) {
-//     markdownRemark(fields: { slug: { eq: $slug } }) {
-//       html
-//       frontmatter {
-//         title
-//       }
-//     }
-//   }
-// `;
 
 export default Post;
