@@ -3,7 +3,7 @@ type: 'portfolio'
 title: 'MalikGabroun.com'
 date: '2018-10-14'
 path: '/portfolio/malikgabroun/'
-images: ['images/thumbnails/portfolio/personal-website.webp']
+images: 'images/thumbnails/portfolio/personal-website.png'
 ---
 
 ![](./personal-website.webp)

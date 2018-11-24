@@ -3,7 +3,7 @@ type: 'portfolio'
 title: 'Github Battle'
 date: '2018-10-14'
 path: '/portfolio/github-battle/'
-images: ['images/thumbnails/portfolio/github-battle.webp']
+images: 'images/thumbnails/portfolio/github-battle.png'
 ---
 
 ![](./github-battle.webp)

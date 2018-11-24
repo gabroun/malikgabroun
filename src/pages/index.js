@@ -10,6 +10,7 @@ class Index extends React.Component {
   render() {
     const { data } = this.props;
     const { edges } = data.allMarkdownRemark;
+    console.log(data);
 
     return (
       <div>

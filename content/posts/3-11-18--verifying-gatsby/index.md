@@ -1,10 +1,10 @@
 ---
 path: '/verifying-gatsby-in-search-console'
-date: '2018/11/3'
+date: '3rd November 2018'
 title: 'How to verify a gatsby site in search console'
 tags: ['js']
 summary: 'In this post, I will be talking about how to verify your gatsby site in the search console'
-images: ['images/thumbnails/gatsby.webp']
+images: 'images/thumbnails/gatsby.jpeg'
 ---
 
 In order to verify you gatsby site, first you would need to use one of the verification method that the search console suggests. Below you can see the options you can select for verifying the site.
