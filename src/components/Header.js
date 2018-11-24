@@ -6,6 +6,7 @@ import logo from '../resources/images/logo.png';
 import logoIcon from '../resources/images/logo-icon.png';
 
 import Media from 'react-media';
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
