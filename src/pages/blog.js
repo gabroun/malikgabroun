@@ -1,9 +1,8 @@
 import React from 'react';
-import Layout from '../components/Layout/index';
-import { graphql } from 'gatsby';
-import Post from '../components/Blog/index';
-
 import styled from 'styled-components';
+import { graphql } from 'gatsby';
+import Layout from '../components/Layout/index';
+import Post from '../components/Blog/index';
 
 const BlogList = styled.div`
   display: flex;
