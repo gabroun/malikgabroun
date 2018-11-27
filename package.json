@@ -43,6 +43,7 @@
     "react-media": "^1.8.0",
     "react-responsive": "^5.0.0",
     "react-typography": "^0.16.13",
+    "styled-components": "^4.1.1",
     "typography": "^0.16.17",
     "typography-theme-fairy-gates": "^0.15.11",
     "typography-theme-kirkham": "^0.16.3"

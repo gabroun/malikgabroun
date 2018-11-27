@@ -5,6 +5,14 @@ import Footer from '../Footer';
 import Helmet from 'react-helmet';
 import icon32 from '../../../static/icons/favicon-32x32.png';
 import icon16 from '../../../static/icons/favicon-16x16.png';
+import styled from 'styled-components';
+
+const PageWrapper = styled.div`
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 25px;
+`;
+
 class Layout extends React.Component {
   render() {
     const { children, data } = this.props;
@@ -27,15 +35,9 @@ class Layout extends React.Component {
         </Helmet>
 
         <Header />
-        <div
-          className={css`
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 25px;
-          `}
-        >
+        <PageWrapper>
           <div className="main-column"> {children}</div>
-        </div>
+        </PageWrapper>
         <Footer />
       </div>
     );

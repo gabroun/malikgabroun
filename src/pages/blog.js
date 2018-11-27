@@ -1,7 +1,20 @@
 import React from 'react';
 import Layout from '../components/Layout/index';
 import { graphql } from 'gatsby';
-import Post from '../components/Blog';
+import Post from '../components/Blog/index';
+
+import styled from 'styled-components';
+
+const BlogList = styled.div`
+  display: flex;
+  justify-content: space-around;
+  max-width: 1280px;
+  margin: 0 auto;
+
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+  }
+`;
 
 class Blog extends React.Component {
   render() {
@@ -11,7 +24,7 @@ class Blog extends React.Component {
     return (
       <div>
         <Layout title="Blog - Malik Elgabroun">
-          <div className="blogpost__list">
+          <BlogList className="blogpost__list">
             {edges.map(function(edge) {
               const {
                 path,
@@ -36,7 +49,7 @@ class Blog extends React.Component {
                 />
               );
             })}
-          </div>
+          </BlogList>
         </Layout>
       </div>
     );

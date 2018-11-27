@@ -2,6 +2,12 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout/index';
 import Img from 'gatsby-image';
+import styled from 'styled-components';
+
+const Title = styled.h2`
+  font-family: 'Playfair Display', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+`;
 
 const Post = ({ data }) => {
   const { markdownRemark } = data;
@@ -18,7 +24,7 @@ const Post = ({ data }) => {
             margin: '0 auto',
           }}
         >
-          <h2>{title}</h2>
+          <Title>{title}</Title>
           <div style={{ display: 'flex', font: 'bold', margin: '15px 0' }}>
             <p>{date}.</p>
             <p style={{ marginLeft: '10px' }}>{timeToRead} min read.</p>
