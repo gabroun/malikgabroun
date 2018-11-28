@@ -1,5 +1,4 @@
 import React from 'react';
-import { css } from 'react-emotion';
 import Header from '../Header';
 import Footer from '../Footer';
 import Helmet from 'react-helmet';
@@ -11,6 +10,10 @@ const PageWrapper = styled.div`
   max-width: 1280px;
   margin: 0 auto;
   padding: 25px;
+`;
+
+const MainColumn = styled.div`
+  min-height: 100%;
 `;
 
 class Layout extends React.Component {
@@ -36,7 +39,7 @@ class Layout extends React.Component {
 
         <Header />
         <PageWrapper>
-          <div className="main-column"> {children}</div>
+          <MainColumn className="main-column"> {children}</MainColumn>
         </PageWrapper>
         <Footer />
       </div>
