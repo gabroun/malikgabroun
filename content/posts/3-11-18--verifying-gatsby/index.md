@@ -9,7 +9,7 @@ images: 'images/thumbnails/gatsby.jpeg'
 
 In order to verify you gatsby site, first you would need to use one of the verification method that the search console suggests. Below you can see the options you can select for verifying the site.
 
-![](./search-console.webp)
+![](./search-console.jpg)
 
 In this post I will be showing how you can verify the site using the HTML meta tag. To do so, we would need to install a couple of modules so that you can insert the meta tag in the head with the help of these modules.
 
