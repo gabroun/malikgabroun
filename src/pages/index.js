@@ -73,8 +73,8 @@ const PortfolioList = styled.ul`
   display: grid;
   list-style: none;
   grid-template-columns: 1fr 1fr;
-  justify-content: 'center';
-  column-gap: '10px';
+  justify-content: center;
+  column-gap: 10px;
 `;
 
 const LatestPosts = styled.div`

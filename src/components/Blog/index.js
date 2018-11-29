@@ -25,6 +25,7 @@ const PostItem = styled.div`
 
   img {
     margin-bottom: 0;
+    padding: 0 1px;
   }
 
   @media only screen and (min-device-width: 768px) and (max-width: 1023px) {

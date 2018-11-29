@@ -2,15 +2,20 @@
     transform: scale(1.1);
 }
 
+.portfolio__item img {
+    margin-bottom: 0;
+    padding: 30px;
+}
+
 /*
  * ProjectPost Template
  *=================
  */
 
- .project__post {
-     display: grid;
-     grid-template-columns: 1fr 1fr;
- }
+.project__post {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 
 .project__post ul {
     list-style: none;
@@ -112,4 +117,3 @@
         margin-top: 50px;
     }
 }
-
