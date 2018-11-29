@@ -6,7 +6,7 @@ path: '/portfolio/malikgabroun/'
 images: 'images/thumbnails/portfolio/personal-website.png'
 ---
 
-![](./personal-website.webp)
+![](./personal-website.png)
 
 <div class="content">
 <h1> MalikGabroun.com</h1>

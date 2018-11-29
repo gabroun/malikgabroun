@@ -6,7 +6,7 @@ path: '/portfolio/github-battle/'
 images: 'images/thumbnails/portfolio/github-battle.png'
 ---
 
-![](./github-battle.webp)
+![](./github-battle.png)
 
 <div class="content">
 <h1> Github Battle </h1>
