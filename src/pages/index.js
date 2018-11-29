@@ -4,6 +4,7 @@ import Layout from '../components/Layout/index';
 import { css } from 'react-emotion';
 import styled from 'styled-components';
 import '../styles/styles.css';
+
 import Post from '../components/Blog/index';
 import Portfolio from '../components/Portfolio';
 
