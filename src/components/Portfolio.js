@@ -9,7 +9,6 @@ const Portfolio = ({ title, path, image }) => {
       className="portfolio__item"
       key={path}
       style={{
-        margin: '5px',
         position: 'relative',
         border: '1px solid #e5e5e5',
         overflow: 'hidden',

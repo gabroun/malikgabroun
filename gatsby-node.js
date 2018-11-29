@@ -1,5 +1,5 @@
 const path = require('path');
-// const { createFilePath } = require(`gatsby-source-filesystem`);
+
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
   //create  page will return new promise dur to the async nature of file creation
@@ -19,6 +19,7 @@ exports.createPages = ({ graphql, actions }) => {
                   frontmatter {
                     path
                     type
+                    images
                   }
                 }
               }
@@ -32,14 +33,15 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-          // console.log('node is : ', node.frontmatter.type);
           const path = node.frontmatter.path;
+          const image = node.frontmatter.images;
           if (node.frontmatter.type === 'portfolio') {
             createPage({
               path,
               component: projectTemplate,
               context: {
                 pathSlug: path,
+                image: `resources/${image}`,
               },
             });
             resolve();
@@ -49,6 +51,7 @@ exports.createPages = ({ graphql, actions }) => {
               component: postTemplate,
               context: {
                 pathSlug: path,
+                image: `resources/${image}`,
               },
             });
             resolve();
@@ -58,16 +61,3 @@ exports.createPages = ({ graphql, actions }) => {
     );
   });
 };
-
-// exports.onCreateNode = ({ node, getNode, actions }) => {
-//   const { createNodeField } = actions;
-//   if (node.internal.type === 'MarkdownRemark') {
-//     const slug = createFilePath({ node, getNode, basePath: `pages` });
-//     createNodeField({
-//       node,
-//       name: `slug`,
-//       value: slug,
-//     });
-//     // console.log(createFilePath({ node, getNode, basePath: `pages` }));
-//   }
-// };

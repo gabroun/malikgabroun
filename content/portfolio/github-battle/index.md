@@ -3,13 +3,13 @@ type: 'portfolio'
 title: 'Github Battle'
 date: '2018-10-14'
 path: '/portfolio/github-battle/'
-images: ['images/thumbnails/portfolio/github-battle.png']
+images: 'images/thumbnails/portfolio/github-battle.png'
 ---
 
-![](./github-battle.png)
+![](./github-battle.webp)
+
 <div class="content">
 <h1> Github Battle </h1>
-
 
 ## What I did
 
@@ -26,6 +26,5 @@ images: ['images/thumbnails/portfolio/github-battle.png']
 [Go to Web Site →](https://github-battle-c63f9.firebaseapp.com/)
 
 [Go to Web Site Repo →](https://github.com/gabroun/github-battle)
-
 
 </div>

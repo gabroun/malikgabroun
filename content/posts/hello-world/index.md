@@ -1,10 +1,10 @@
 ---
 path: '/hello-world'
-date: '2018/10/29'
+date: '29th October 2018'
 title: 'Hello World'
 tags: ['js']
 summary: 'description about the first post'
-images: ['images/reactjs.jpg']
+images: 'images/reactjs.jpg'
 ---
 
 hello world,

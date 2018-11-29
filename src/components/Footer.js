@@ -1,5 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styled from 'styled-components';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
   faGithub,
@@ -9,10 +10,51 @@ import {
 
 library.add(faGithub, faTwitter, faLinkedin);
 
+const FooterSection = styled.footer`
+  /* height: 60px; */
+  /* position: fixed; */
+  position: absolute;
+  width: 100%;
+  /* bottom: 0; */
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 25px;
+  left: 0;
+  right: 0;
+
+  a {
+    border: none;
+    width: 50px;
+    min-width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    cursor: pointer;
+    display: inline-flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    background: #000;
+    flex-direction: row;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+
+    &:nth-of-type(1):hover {
+      background: #25a8e0;
+    }
+    &:nth-of-type(1):hover {
+      background: #a9d9ed;
+    }
+    &:nth-of-type(1):hover {
+      background: #0d7bb7;
+    }
+  }
+`;
 class Footer extends React.Component {
   render() {
     return (
-      <footer>
+      <FooterSection>
         <div>
           <a className="" href="https://twitter.com/malroun1" target="blank">
             <FontAwesomeIcon
@@ -49,7 +91,7 @@ class Footer extends React.Component {
             />
           </a>
         </div>
-      </footer>
+      </FooterSection>
     );
   }
 }
