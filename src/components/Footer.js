@@ -40,13 +40,13 @@ const FooterSection = styled.footer`
     text-decoration: none;
     transition: all 0.3s;
 
-    &:nth-of-type(1):hover {
+    &[aria-label*='Twitter']:hover {
       background: #25a8e0;
     }
-    &:nth-of-type(1):hover {
+    &[aria-label*='Github']:hover {
       background: #a9d9ed;
     }
-    &:nth-of-type(1):hover {
+    &[aria-label*='Linkedin']:hover {
       background: #0d7bb7;
     }
   }
@@ -56,7 +56,12 @@ class Footer extends React.Component {
     return (
       <FooterSection>
         <div>
-          <a className="" href="https://twitter.com/malroun1" target="blank">
+          <a
+            className=""
+            href="https://twitter.com/malroun1"
+            target="blank"
+            aria-label="Twitter"
+          >
             <FontAwesomeIcon
               icon={faTwitter}
               style={{
@@ -66,7 +71,12 @@ class Footer extends React.Component {
               }}
             />
           </a>
-          <a className="" href="https://github.com/gabroun" target="blank">
+          <a
+            className=""
+            href="https://github.com/gabroun"
+            target="blank"
+            aria-label="Github"
+          >
             <FontAwesomeIcon
               icon={faGithub}
               style={{
@@ -80,6 +90,7 @@ class Footer extends React.Component {
             className=""
             href="https://www.linkedin.com/in/malik-elgabroun/"
             target="blank"
+            aria-label="Linkedin"
           >
             <FontAwesomeIcon
               icon={faLinkedin}
