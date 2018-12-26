@@ -1,12 +1,12 @@
 ---
 type: 'portfolio'
 title: 'MalikGabroun.com'
-date: '2018-10-14'
+date: '14/10/2018'
 path: '/portfolio/malikgabroun/'
 images: 'images/thumbnails/portfolio/personal-website.png'
 ---
 
-![](./personal-website.png)
+![malikgabroun.com](./personal-website.png)
 
 <div class="content">
 <h1> MalikGabroun.com</h1>

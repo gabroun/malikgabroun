@@ -8,31 +8,6 @@ body {
     margin: 0;
 }
 
-.nav {
-    list-style: none;
-    padding: 0;
-}
-
-.nav li {
-    margin: 0 5px;
-    padding-left: 20px;
-}
-
-.nav a {
-    text-decoration: none;
-    font-size: 16px;
-    line-height: 26px;
-    border-bottom: 0;
-    font-weight: 400;
-    color: rgba(0, 0, 0, .8);
-    margin-bottom: 0;
-}
-
-.nav a:hover {
-    color: #F47C48;
-    text-decoration: underline;
-}
-
 .menu {
     display: flex;
     padding: 25px;
@@ -100,16 +75,5 @@ body {
         top: 0;
         transition: transform 0.3s ease-out;
         z-index: 1;
-    }
-}
-
-/*
-    Desktop
-    ==================================
-*/
-@media only screen and (min-width: 1024px) {
-    .nav {
-        display: flex;
-        flex-wrap: wrap;
     }
 }

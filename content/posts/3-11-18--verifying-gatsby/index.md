@@ -1,15 +1,15 @@
 ---
 path: '/verifying-gatsby-in-search-console'
-date: '3rd November 2018'
+date: '2018-11-03'
 title: 'How to verify a gatsby site in search console'
-tags: ['js']
-summary: 'In this post, I will be talking about how to verify your gatsby site in the search console'
+tags: ['js, gatsby']
+summary: 'In this post, I will be talking about verifying gatsby site in search console'
 images: 'images/thumbnails/gatsby.jpeg'
 ---
 
 In order to verify you gatsby site, first you would need to use one of the verification method that the search console suggests. Below you can see the options you can select for verifying the site.
 
-![](./search-console.jpg)
+![alternative-methods-to-verify-ownership](./search-console.jpg)
 
 In this post I will be showing how you can verify the site using the HTML meta tag. To do so, we would need to install a couple of modules so that you can insert the meta tag in the head with the help of these modules.
 

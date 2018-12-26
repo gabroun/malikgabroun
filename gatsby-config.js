@@ -15,7 +15,6 @@ module.exports = {
         pathToConfigModule: `src/utils/typography.js`,
       },
     },
-    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -84,32 +83,26 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: `gatsby-remark-images`,
             options: {
-              classPrefix: 'language-',
+              maxWidth: 590,
             },
           },
+          `gatsby-remark-prismjs`,
         ],
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-styled-components`,
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-nprogress`,
       options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 590,
-            },
-          },
-        ],
+        // Setting a color is optional.
+        color: `red`,
+        // Disable the loading spinner.
+        showSpinner: false,
       },
     },
-    `gatsby-plugin-styled-components`,
   ],
 };
