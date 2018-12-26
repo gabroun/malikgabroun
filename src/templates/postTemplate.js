@@ -16,7 +16,7 @@ const Post = ({ data }) => {
 
   return (
     <div>
-      <Layout>
+      <Layout title={title}>
         <div
           className="post-wrapper"
           style={{
@@ -50,7 +50,7 @@ export const query = graphql`
       html
       frontmatter {
         title
-        date
+        date(formatString: "DD MMMM YYYY")
       }
       timeToRead
     }

@@ -180,7 +180,7 @@ export const query = graphql`
           frontmatter {
             title
             path
-            date
+            date(formatString: "DD MMMM YYYY")
             summary
             images
             tags
