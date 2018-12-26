@@ -1,13 +1,14 @@
 ---
 path: '/hello-world'
-date: '29th October 2018'
+date: '2018-10-29'
 title: 'Hello World'
 tags: ['js']
-summary: 'description about the first post'
+summary: "A description about my site, and what's coming in this website"
 images: 'images/reactjs.jpg'
 ---
 
-hello world,
-this is a test post when setting up this website.
+Recently, I have decided to rebuild my website to use ReactJS as I got interested in it. As a result, this is the first release of my website and going to improve it and add more features as I go along in improving my knowledge of React.
 
-the website is built with react, gatsby and graphql, so more posts will be coming soon and most probably this one going to be deleted once I have wrote a couple of posts.
+So, in this blog I will be writing posts that talk about topics such as ReactJS, GatsbyJs, GraphQL and any Frontend related topics that I take interest in.
+
+In addition, I will be writing about some tips and perhaps tutorials that I find it useful to me in development which may and may not be useful to someone else.
