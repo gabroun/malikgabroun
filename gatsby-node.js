@@ -31,7 +31,6 @@ exports.createPages = ({ graphql, actions }) => {
           console.log(result.errors);
           reject(result.errors);
         }
-
         result.data.allMarkdownRemark.edges.forEach(({ node }) => {
           const path = node.frontmatter.path;
           const image = node.frontmatter.images;
