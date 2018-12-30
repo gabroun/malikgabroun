@@ -1,3 +1,4 @@
+// colors for meta config manifest
 module.exports = {
   background: '#ffffff',
   white: '#ffffff',

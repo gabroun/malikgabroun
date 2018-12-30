@@ -1,36 +1,71 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import '../styles/portfolio.css';
 
-const Portfolio = ({ title, path, image }) => {
+import styled from 'styled-components';
+
+const Portfolios = styled.ul`
+  display: grid;
+  list-style: none;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  column-gap: 10px;
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
+`;
+
+const PortfolioItem = styled.li`
+  position: relative;
+  border: solid 1px ${props => props.theme.lightGrey};
+  overflow: hidden;
+  &:hover {
+    img {
+      transform: scale(1.1);
+    }
+  }
+`;
+
+const PortfolioImg = styled.img`
+  transition: 'all 0.3s';
+  margin-bottom: 0;
+  padding: 30px;
+`;
+
+const PortfolioTitle = styled.p`
+  position: absolute;
+  top: 95%;
+  left: 5%;
+  color: black;
+  text-decoration: underline;
+  transform: translate(-5%, -95%);
+`;
+export const Portfolio = ({ title, path, image }) => {
   const imgUrl = require(`../resources/${image}`);
   return (
-    <li
-      className="portfolio__item"
-      key={path}
-      style={{
-        position: 'relative',
-        border: '1px solid #e5e5e5',
-        overflow: 'hidden',
-      }}
-    >
+    <PortfolioItem key={path}>
       <Link to={path}>
-        <img src={imgUrl} style={{ transition: 'all 0.3s' }} />
-        <p
-          style={{
-            position: 'absolute',
-            top: '95%',
-            left: '5%',
-            color: 'black',
-            textDecoration: 'underline',
-            transform: 'translate(-5%, -95%)',
-          }}
-        >
-          {title}
-        </p>
+        <PortfolioImg src={imgUrl} />
+        <PortfolioTitle>{title}</PortfolioTitle>
       </Link>
-    </li>
+    </PortfolioItem>
   );
 };
 
-export default Portfolio;
+export const PortfolioList = ({ edges }) => {
+  return (
+    <Portfolios>
+      {edges
+        .filter(function(edge) {
+          return edge.node.frontmatter.type === 'portfolio';
+        })
+        .map(edge => {
+          const { title, path, images } = edge.node.frontmatter;
+
+          return (
+            <Portfolio title={title} path={path} image={images} key={path} />
+          );
+        })}
+    </Portfolios>
+  );
+};
