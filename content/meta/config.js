@@ -2,9 +2,9 @@ const colors = require('../../src/styles/colors');
 
 module.exports = {
   siteTitle: 'Malik Elgabroun - Front End Developer', // <title>
-  shortSiteTitle: 'gatsby site', // <title> ending for posts and pages
-  siteDescription: 'gatsby site',
-  siteUrl: '',
+  shortSiteTitle: 'MalikGabroun', // <title> ending for posts and pages
+  siteDescription: 'personal website',
+  siteUrl: 'https://malikgabroun.com',
   pathPrefix: '',
   siteImage: '',
   siteLanguage: 'en',

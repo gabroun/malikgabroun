@@ -46,7 +46,7 @@ To do so we need to add the following config to gatsby-config.js after installin
 
 In the following example, you can see a simplified example of the post template I am using for the blog posts. Note (you can create as many templates as you want)
 
-```javascript
+```jsx
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout/index';

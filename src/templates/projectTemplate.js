@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout/index';
+import Layout from '../components/Layout';
 import '../styles/portfolio.css';
 
 const Project = ({ data }) => {
