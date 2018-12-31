@@ -14,7 +14,7 @@ const Post = ({ data }) => {
   const { markdownRemark, site } = data;
   const { title, date, path, summary } = markdownRemark.frontmatter;
   const { html, timeToRead } = markdownRemark;
-  console.log(data);
+
   return (
     <div>
       <Layout title={title}>
