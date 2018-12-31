@@ -12,8 +12,6 @@ import theme from '../components/styles/theme';
 injectGlobal`
     html {
         box-sizing: border-box;
-        font-size: 10px;
-
     }
     *, *:before, *:after {
         box-sizing: inherit;
@@ -21,7 +19,6 @@ injectGlobal`
     body {
         padding: 0;
         margin: 0;
-        font-size: 1rem;
     }
      a {
         text-decoration: none;
