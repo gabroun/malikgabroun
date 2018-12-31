@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import icon32 from '../../static/icons/favicon-32x32.png';
 import icon16 from '../../static/icons/favicon-16x16.png';
 import styled from 'styled-components';
-
+import Seo from './Seo';
 const PageWrapper = styled.div`
   max-width: 1280px;
   margin: 0 auto;
@@ -18,10 +18,11 @@ const MainColumn = styled.div`
 
 class Layout extends React.Component {
   render() {
-    const { children, data } = this.props;
+    const { children, data, title } = this.props;
     return (
-      <div className="page-wrapper">
-        <Helmet>
+      <div>
+        <Seo title={title} />
+        {/* <Helmet>
           <html lang="en" />
           <title>{this.props.title}</title>
           <meta
@@ -35,7 +36,7 @@ class Layout extends React.Component {
           <meta name="keywords" content="frontend, developer" />
           <link rel="icon" type="image/png" sizes="16x16" href={icon16} />
           <link rel="icon" type="image/png" sizes="32x32" href={icon32} />
-        </Helmet>
+        </Helmet> */}
 
         <Header />
         <PageWrapper>

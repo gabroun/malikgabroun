@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
+import Seo from '../components/Seo';
 
 const Title = styled.h2`
   font-family: 'Playfair Display', -apple-system, BlinkMacSystemFont, 'Segoe UI',
@@ -10,13 +11,14 @@ const Title = styled.h2`
 `;
 
 const Post = ({ data }) => {
-  const { markdownRemark } = data;
-  const { title, date } = markdownRemark.frontmatter;
+  const { markdownRemark, site } = data;
+  const { title, date, path, summary } = markdownRemark.frontmatter;
   const { html, timeToRead } = markdownRemark;
-
+  console.log(data);
   return (
     <div>
       <Layout title={title}>
+        <Seo title={title} pathSlug={path} description={summary} />
         <div
           className="post-wrapper"
           style={{
@@ -46,11 +48,21 @@ const Post = ({ data }) => {
 
 export const query = graphql`
   query($pathSlug: String!, $image: String!) {
+    site {
+      siteMetadata {
+        title
+        author
+        twitter
+        siteUrl
+      }
+    }
     markdownRemark(frontmatter: { path: { eq: $pathSlug } }) {
       html
       frontmatter {
         title
         date(formatString: "DD MMMM YYYY")
+        path
+        summary
       }
       timeToRead
     }

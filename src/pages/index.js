@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import styled, { ThemeProvider, injectGlobal } from 'styled-components';
+import Seo from '../components/Seo';
 
 import { Blog } from '../components/Blog';
 import { PortfolioList } from '../components/Portfolio';
@@ -110,9 +111,8 @@ class Index extends React.Component {
               </LatestBlock>
               <LatestBlock>
                 <Header>Latest Projects</Header>
-                <div>
-                  <PortfolioList edges={edges} />
-                </div>
+
+                <PortfolioList edges={edges} />
               </LatestBlock>
             </MainContent>
           </Layout>

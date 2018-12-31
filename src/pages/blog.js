@@ -11,7 +11,7 @@ class Blog extends React.Component {
 
     return (
       <div>
-        <Layout title="Blog - Malik Elgabroun">
+        <Layout title="Blog">
           <BlogList>
             {edges.map(function(edge) {
               const {

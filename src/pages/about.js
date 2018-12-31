@@ -12,7 +12,7 @@ class About extends React.Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <Layout title="About - Malik Elgabroun">
+        <Layout title="About">
           <div>
             <div className="main-content">
               <Fragment>
