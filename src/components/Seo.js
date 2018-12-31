@@ -25,7 +25,6 @@ const Seo = ({ meta, image, title, description, pathSlug }) => {
     <StaticQuery
       query={query}
       render={data => {
-        console.log('meta is ', meta);
         const { siteMetadata } = data.site;
         const metaDescription = description || siteMetadata.description;
         const url = pathSlug
