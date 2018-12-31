@@ -23,29 +23,31 @@ const Menu = styled.ul`
     background: none;
     border: 0;
     cursor: pointer;
-    &:after {
-      height: 3px;
-      background: #f47c48;
-      content: '';
-      width: 0;
-      position: absolute;
-      transform: translateX(-50%);
-      transition: width 0.4s;
-      transition-timing-function: cubic-bezier(1, -0.65, 0, 2.31);
-      left: 50%;
-      margin-top: 2rem;
-    }
-    &:hover,
-    &:focus {
-      outline: none;
-      &:after {
-        width: calc(100% - 60px);
-      }
-    }
   }
   @media (min-width: 1024px) {
     display: flex;
     flex-wrap: wrap;
+    a {
+      &:after {
+        height: 3px;
+        background: #f47c48;
+        content: '';
+        width: 0;
+        position: absolute;
+        transform: translateX(-50%);
+        transition: width 0.4s;
+        transition-timing-function: cubic-bezier(1, -0.65, 0, 2.31);
+        left: 50%;
+        margin-top: 2rem;
+      }
+      &:hover,
+      &:focus {
+        outline: none;
+        &:after {
+          width: calc(100% - 60px);
+        }
+      }
+    }
   }
 `;
 

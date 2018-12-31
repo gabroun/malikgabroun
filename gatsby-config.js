@@ -2,10 +2,12 @@ const config = require('./content/meta/config');
 
 module.exports = {
   siteMetadata: {
+    author: config.authorName,
     title: config.siteTitle,
     description: config.siteDescription,
     siteUrl: config.siteUrl,
     pathPrefix: config.pathPrefix,
+    twitter: config.authorTwitterAccount,
   },
   plugins: [
     'gatsby-plugin-react-helmet',

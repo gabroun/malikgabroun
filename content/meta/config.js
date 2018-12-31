@@ -1,19 +1,19 @@
-const colors = require('../../src/styles/colors');
+const colors = require('../../src/components/styles/colors');
 
 module.exports = {
-  siteTitle: 'Malik Elgabroun - Front End Developer', // <title>
-  shortSiteTitle: 'gatsby site', // <title> ending for posts and pages
-  siteDescription: 'gatsby site',
-  siteUrl: '',
+  siteTitle: 'MalikGabroun',
+  shortSiteTitle: 'MalikGabroun',
+  siteDescription: 'Personal Website for Malik Elgabroun - Front End Developer',
+  siteUrl: 'https://malikgabroun.com',
   pathPrefix: '',
   siteImage: '',
   siteLanguage: 'en',
   // author
   authorName: 'Malik Elgabroun',
-  authorTwitterAccount: 'malroun1',
+  authorTwitterAccount: '@malroun1',
   // info
   infoTitle: 'Malik Elgabroun',
-  infoTitleNote: 'personal site',
+  infoTitleNote: 'Personal Website',
   // manifest.json
   manifestName: 'Malik Elgabroun - Front End Developer',
   manifestShortName: 'MalikGabroun', // max 12 characters
