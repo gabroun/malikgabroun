@@ -23,10 +23,15 @@ const PostItem = styled.div`
     text-decoration: none;
     color: black;
   }
-
-  img {
-    margin-bottom: 0;
-    padding: 0 1px;
+  .imgs {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 175px;
+    img {
+      margin-bottom: 0;
+      padding: 0 1px;
+    }
   }
 
   @media only screen and (min-width: 768px) and (max-width: 1023px) {
@@ -90,7 +95,7 @@ export const BlogPost = ({
   return (
     <PostItem>
       <Link to={path}>
-        <img key={image} src={url} />
+        <div className="imgs" style={{ backgroundImage: `url(${url})` }} />
         <PostPreview>
           <Tags>
             <svg
@@ -122,34 +127,30 @@ export const BlogPost = ({
 export const Blog = ({ edges }) => {
   return (
     <BlogList>
-      {edges
-        .filter(function(edge) {
-          return edge.node.frontmatter.type !== 'portfolio';
-        })
-        .map(function(edge) {
-          const {
-            path,
-            title,
-            summary,
-            images,
-            date,
-            tags,
-          } = edge.node.frontmatter;
-          const { timeToRead } = edge.node;
+      {edges.map(function(edge) {
+        const {
+          path,
+          title,
+          summary,
+          images,
+          date,
+          tags,
+        } = edge.node.frontmatter;
+        const { timeToRead } = edge.node;
 
-          return (
-            <BlogPost
-              path={path}
-              title={title}
-              summary={summary}
-              image={images}
-              timeToRead={timeToRead}
-              date={date}
-              tags={tags}
-              key={path}
-            />
-          );
-        })}
+        return (
+          <BlogPost
+            path={path}
+            title={title}
+            summary={summary}
+            image={images}
+            timeToRead={timeToRead}
+            date={date}
+            tags={tags}
+            key={path}
+          />
+        );
+      })}
     </BlogList>
   );
 };

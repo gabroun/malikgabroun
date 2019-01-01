@@ -10,6 +10,13 @@ const Title = styled.h2`
     Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 `;
 
+const PostTemplate = styled.div`
+  a {
+    color: #f47c48;
+    text-decoration: underline;
+  }
+`;
+
 const Post = ({ data }) => {
   const { markdownRemark, site } = data;
   const { title, date, path, summary } = markdownRemark.frontmatter;
@@ -36,7 +43,7 @@ const Post = ({ data }) => {
             style={{ maxHeight: '400px', marginBottom: '50px' }}
           />
 
-          <div
+          <PostTemplate
             className="blogpost"
             dangerouslySetInnerHTML={{ __html: html }}
           />
