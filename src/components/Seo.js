@@ -28,7 +28,7 @@ const Seo = ({ meta, image, title, description, pathSlug }) => {
         const { siteMetadata } = data.site;
         const metaDescription = description || siteMetadata.description;
         const url = pathSlug
-          ? `${siteMetadata.siteUrl}${pathSlug}`
+          ? `${siteMetadata.siteUrl}${pathSlug}/`
           : `${siteMetadata.siteUrl}`;
         const metaImage = image ? `${siteMetadata.siteUrl}/${image}` : null;
         const metadata = meta || {};

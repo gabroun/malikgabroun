@@ -1,0 +1,39 @@
+---
+path: '/things-i-want-to-know-more-about-by-end-of-2019'
+date: '2019-01-01'
+title: 'Things I Would Like to know more about by end of 2019'
+tags: ['general']
+summary: 'Some of the programming topics I would like to know more about by the end of the year'
+images: 'images/thumbnails/code-file.jpg'
+---
+
+This post was inspired by Dan Abramov's [post](https://overreacted.io/things-i-dont-know-as-of-2018/) that he wrote few days ago (I recommend checking the post and all of his other brilliantly written posts at [overreacted.io](https://overreacted.io) ) which talk about his knowledge gab and often the assumption people make about what he knows or that he should know them because he is a senior engineer at facebook.
+
+In this post, I will be talking about list of programming topics that I would like to learn or improve my knowledge of (get more comfortable with the topic basically) by the end of 2019. I suppose it's more like a new year resolution for goals that I am aiming to achieve before the year end.
+
+In order to be realistic, I will try to list the topics that I either have a general basic knowledge of or the ones that I would like to know more about which is relative to what I do in my job.
+
+Here is few of the topics that I would like to learn more about this year:
+
+- **React** Over the last year, I have started learning how to build web applications in ReactJS and re-wrote my website and couple of other projects in React. So in this year, I would like to build more stuff to improve my knowledge of the library and how it can solve different use cases problems.
+
+- **GraphQL** I would like to learn more about it, I know how to write queries to pull the data needed, mutations to push and modify data and write resolvers for those in a small scale. So I would like to try it on a large scale application and how that will affect it.
+
+* **PWA** I understand the concept of PWA and wrote small PWA apps but nothing complex, so I would like to learn more about how it works, what and what not should be cached, how service worker update the cached files, etc. Also to apply PWA to large complex application (i.e e-commerce apps) where it can help improve the user experience offline or in a slow internet.
+
+* **Containers:**
+  I know how to spin up a docker container for something specific that I would need (i.e using mariaDB for mySQL setup locally) and that's about it. So I would like to learn how to setup a full container and configure it depending on my local development needs.
+
+* **Microservices**
+  I have a basic idea of what is it about where many different endpoints talk to each other, but have never worked with it so I don't know what is the benefit of using this approach and in what use cases using microservices would be the better option to use.
+
+* **TypeScript** I understand the concept of types and all but never tried it or written any simple application with it, so I would like to learn more about it and try it this year.
+
+* **Testing** I tried Jest framework where I wrote tests for checking mathematics equation results and checking strings value but nothing beyond that, which I would like to change this year and try to apply to more complex projects.
+
+* **CSS Animation** I can do the basic transition on elements and that's about it. but looking at a lot of pens in codepen site where people wrote some amazing stuff that you would expect to have some element of javaScript which end up being not the case at all and that's impressive. so I would like to try it and learn more about animation.
+
+* **D3.js** I have been interested in data visualisation since back in uni when I studied statistic, but never got the time around to try any data visualisation and when I heard about the D3 library I wanted to try it out so I am aiming to build simple data visualisation this year using this library.
+
+##In Conclusion
+I would like to improve my knowledge of these topics this year which will help me to grow as a developer.

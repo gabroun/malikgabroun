@@ -22,22 +22,6 @@ class Layout extends React.Component {
     return (
       <div>
         <Seo title={title} />
-        {/* <Helmet>
-          <html lang="en" />
-          <title>{this.props.title}</title>
-          <meta
-            name="google-site-verification"
-            content="rdHghgE19nXaz19_OXvkv_MuEOSHl8lQPesWUmp21oU"
-          />
-          <meta
-            name="Malik Elgabroun - Front End Developer"
-            content="Personal Website - Portfolio"
-          />
-          <meta name="keywords" content="frontend, developer" />
-          <link rel="icon" type="image/png" sizes="16x16" href={icon16} />
-          <link rel="icon" type="image/png" sizes="32x32" href={icon32} />
-        </Helmet> */}
-
         <Header />
         <PageWrapper>
           <MainColumn className="main-column"> {children}</MainColumn>

@@ -55,17 +55,13 @@ export const Portfolio = ({ title, path, image }) => {
 export const PortfolioList = ({ edges }) => {
   return (
     <Portfolios>
-      {edges
-        .filter(function(edge) {
-          return edge.node.frontmatter.type === 'portfolio';
-        })
-        .map(edge => {
-          const { title, path, images } = edge.node.frontmatter;
+      {edges.map(edge => {
+        const { title, path, images } = edge.node.frontmatter;
 
-          return (
-            <Portfolio title={title} path={path} image={images} key={path} />
-          );
-        })}
+        return (
+          <Portfolio title={title} path={path} image={images} key={path} />
+        );
+      })}
     </Portfolios>
   );
 };

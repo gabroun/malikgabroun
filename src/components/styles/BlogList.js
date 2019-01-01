@@ -1,14 +1,20 @@
 import styled from 'styled-components';
 
 const BlogList = styled.div`
-  display: flex;
   justify-content: space-around;
   max-width: 1280px;
   margin: 0 auto;
   text-align: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 
-  @media only screen and (max-width: 767px) {
+  @media (max-width: 767px) {
+    display: flex;
     flex-direction: column;
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    grid-template-columns: 1fr 1fr;
   }
 `;
 

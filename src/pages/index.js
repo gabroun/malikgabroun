@@ -84,7 +84,9 @@ const LatestBlock = styled.div`
 class Index extends React.Component {
   render() {
     const { data } = this.props;
-    const { edges } = data.allMarkdownRemark;
+
+    const post = data.post.edges;
+    const portfolio = data.portfolio.edges;
 
     return (
       <ThemeProvider theme={theme}>
@@ -104,12 +106,12 @@ class Index extends React.Component {
               <LatestBlock>
                 <Header>Latest Posts</Header>
 
-                <Blog edges={edges} />
+                <Blog edges={post} />
               </LatestBlock>
               <LatestBlock>
                 <Header>Latest Projects</Header>
 
-                <PortfolioList edges={edges} />
+                <PortfolioList edges={portfolio} />
               </LatestBlock>
             </MainContent>
           </Layout>
@@ -122,7 +124,11 @@ class Index extends React.Component {
 export default Index;
 export const query = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+    post: allMarkdownRemark(
+      limit: 3
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { type: { ne: "portfolio" } } }
+    ) {
       edges {
         node {
           timeToRead
@@ -138,7 +144,23 @@ export const query = graphql`
         }
       }
     }
-    site {
+    portfolio: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { type: { eq: "portfolio" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            path
+            images
+            tags
+            type
+          }
+        }
+      }
+    }
+    siteMetaData: site {
       siteMetadata {
         title
       }
