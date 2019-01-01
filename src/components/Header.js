@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import Links from './Navigation/Links';
 import Navigation from './Navigation/index';
 import { css } from 'react-emotion';
@@ -76,7 +77,9 @@ class Header extends React.Component {
                 `}
               >
                 <div className="logo">
-                  <img src={logo} />
+                  <Link to={'/'}>
+                    <img src={logo} />
+                  </Link>
                 </div>
                 <Links />
               </div>
