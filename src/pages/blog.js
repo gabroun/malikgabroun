@@ -1,8 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { ThemeProvider } from 'styled-components';
 import Layout from '../components/Layout';
 import { BlogPost } from '../components/Blog';
 import BlogList from '../components/styles/BlogList';
+import theme from '../components/styles/theme';
 
 class Blog extends React.Component {
   render() {
@@ -10,7 +12,7 @@ class Blog extends React.Component {
     const { edges } = data.allMarkdownRemark;
 
     return (
-      <div>
+      <ThemeProvider theme={theme}>
         <Layout title="Blog">
           <BlogList>
             {edges.map(function(edge) {
@@ -39,14 +41,14 @@ class Blog extends React.Component {
             })}
           </BlogList>
         </Layout>
-      </div>
+      </ThemeProvider>
     );
   }
 }
 
 export default Blog;
 export const query = graphql`
-  query {
+  query getBlogData {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { frontmatter: { type: { ne: "portfolio" } } }
@@ -62,13 +64,6 @@ export const query = graphql`
             images
             tags
           }
-        }
-      }
-    }
-    allSitePage {
-      edges {
-        node {
-          id
         }
       }
     }

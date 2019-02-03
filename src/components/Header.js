@@ -1,12 +1,67 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import Media from 'react-media';
+import styled from 'styled-components';
+
 import Links from './Navigation/Links';
 import Navigation from './Navigation/index';
-import { css } from 'react-emotion';
 import logo from '../resources/images/logo.png';
 import logoIcon from '../resources/images/logo-icon.png';
 
-import Media from 'react-media';
+const NavBar = styled.div`
+  display: flex;
+  padding: 25px;
+  max-width: 1280px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width: 1023px) {
+    justify-content: flex-end;
+    width: 100%;
+    box-sizing: border-box;
+  }
+`;
+
+const Logo = styled.div`
+  display: flex;
+  align-items: center;
+  @media (max-width: 1023px) {
+    width: 100%;
+  }
+`;
+
+const MobileMenu = styled.div`
+  @media (max-width: 1023px) {
+    &.active {
+      .nav-menu {
+        transform: translateX(14rem);
+        z-index: 1;
+      }
+      &:after {
+        position: fixed;
+        width: calc(100% - 14rem);
+        height: 100%;
+        color: #fff;
+        content: '';
+        background: rgba(0, 0, 0, 0.45);
+        right: 0;
+        top: 0;
+        transition: transform 0.3s ease-out;
+        z-index: 1;
+      }
+    }
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: -14rem;
+      width: 14rem;
+      background-color: white;
+      transition: transform 0.3s ease-out;
+      border: solid 1px;
+    }
+  }
+`;
 
 class Header extends React.Component {
   constructor(props) {
@@ -60,29 +115,20 @@ class Header extends React.Component {
 
   render() {
     return (
-      <div className="menu-row">
+      <React.Fragment>
         <Media
           query="(min-width: 1024px)"
           defaultMatches={this.state.device === 'desktop'}
           render={() => {
             return (
-              <div
-                className={css`
-                  display: flex;
-                  padding: 25px;
-                  max-width: 1280px;
-                  margin: 0 auto;
-                  justify-content: space-between;
-                  align-items: center;
-                `}
-              >
-                <div className="logo">
+              <NavBar>
+                <Logo>
                   <Link to={'/'}>
-                    <img src={logo} />
+                    <img src={logo} alt="malikgabroun.com" />
                   </Link>
-                </div>
+                </Logo>
                 <Links />
-              </div>
+              </NavBar>
             );
           }}
         />
@@ -91,10 +137,10 @@ class Header extends React.Component {
           defaultMatches={this.state.device === 'mobile'}
           render={() => {
             return (
-              <div className="menu">
-                <div className="logo">
-                  <img src={logoIcon} />
-                </div>
+              <NavBar>
+                <Logo>
+                  <img src={logoIcon} alt="malikgabroun.com" />
+                </Logo>
                 <Navigation
                   isOpen={this.state.open}
                   menuClicked={() => this.handleClick(0)}
@@ -107,19 +153,22 @@ class Header extends React.Component {
                   animationDuration={0.3}
                 />
 
-                <div
+                <MobileMenu
                   className={
                     this.state.active ? 'burger-menu active' : 'burger-menu'
                   }
                   onClick={this.handleClick.bind(this)}
+                  onKeyDown={this.handleClick.bind(this)}
+                  role="button"
+                  tabIndex={0}
                 >
                   <Links />
-                </div>
-              </div>
+                </MobileMenu>
+              </NavBar>
             );
           }}
         />
-      </div>
+      </React.Fragment>
     );
   }
 }

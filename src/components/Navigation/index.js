@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-require('./index.css');
-
 function Navigation(props) {
   const width = `${props.width || 36}px`,
     height = `${props.height || 30}px`,
@@ -53,7 +51,12 @@ function Navigation(props) {
   };
 
   return (
-    <div style={styles.container} onClick={props.menuClicked}>
+    <div
+      style={styles.container}
+      onClick={props.menuClicked}
+      onKeyDown={props.menuClicked}
+      aria-hidden="true"
+    >
       <span style={Object.assign({}, styles.lineBase, styles.firstLine)} />
       <span style={Object.assign({}, styles.lineBase, styles.secondLine)} />
       <span style={Object.assign({}, styles.lineBase, styles.thirdLine)} />

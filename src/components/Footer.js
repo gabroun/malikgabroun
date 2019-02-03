@@ -11,11 +11,8 @@ import {
 library.add(faGithub, faTwitter, faLinkedin);
 
 const FooterSection = styled.footer`
-  /* height: 60px; */
-  /* position: fixed; */
   position: absolute;
   width: 100%;
-  /* bottom: 0; */
   max-width: 1280px;
   margin: 0 auto;
   padding: 25px;
