@@ -33,7 +33,7 @@ const Logo = styled.div`
 const MobileMenu = styled.div`
   @media (max-width: 1023px) {
     &.active {
-      .offCanvas-menu {
+      .nav-menu {
         transform: translateX(14rem);
         z-index: 1;
       }
@@ -50,7 +50,7 @@ const MobileMenu = styled.div`
         z-index: 1;
       }
     }
-    .offCanvas-menu {
+    .nav-menu {
       position: fixed;
       top: 0;
       bottom: 0;

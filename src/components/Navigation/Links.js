@@ -54,7 +54,7 @@ const MenuItems = styled.ul`
 
 function Links() {
   return (
-    <div className="offCanvas-menu">
+    <div className="nav-menu">
       <MenuItems>
         <li>
           <Link to="/">Home</Link>
