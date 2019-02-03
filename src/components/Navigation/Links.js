@@ -2,9 +2,10 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-const Menu = styled.ul`
+const MenuItems = styled.ul`
   list-style: none;
-  padding: 0;
+  padding: 25px 25px 0 10px;
+  margin: 0;
   li {
     margin: 0 5px;
     padding-left: 20px;
@@ -53,24 +54,22 @@ const Menu = styled.ul`
 
 function Links() {
   return (
-    <div className="nav-container">
-      <nav className="nav-wrapper">
-        <Menu>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
+    <div className="offCanvas-menu">
+      <MenuItems>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
 
-          <li>
-            <Link to="/resume">Resume</Link>
-          </li>
-          <li>
-            <Link to="/blog">Blog</Link>
-          </li>
-        </Menu>
-      </nav>
+        <li>
+          <Link to="/resume">Resume</Link>
+        </li>
+        <li>
+          <Link to="/blog">Blog</Link>
+        </li>
+      </MenuItems>
     </div>
   );
 }

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import styled, { ThemeProvider, injectGlobal } from 'styled-components';
-import Seo from '../components/Seo';
 
 import { Blog } from '../components/Blog';
 import { PortfolioList } from '../components/Portfolio';

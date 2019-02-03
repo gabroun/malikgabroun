@@ -8,13 +8,13 @@ const PostItem = styled.div`
   flex-basis: 33%;
   margin: 15px;
   top: 0px;
-  background-color: rgb(255, 255, 255);
+  background-color: ${props => props.theme.white};
   border-radius: 6px;
   transition: all 0.4s ease 0.1s;
-  border: 1px solid #e5e5e5;
+  border: 1px solid ${props => props.theme.lightGrey};
 
   &:hover {
-    background: rgb(239, 239, 239);
+    background: ${props => props.theme.whiteSmoke};
     transform: translateY(-5%);
     transition: all 0.4s ease 0.1s;
   }
@@ -48,7 +48,7 @@ const PostPreview = styled.div`
     margin: 14px 0;
 
     a {
-      color: black;
+      color: ${props => props.theme.black};
       text-decoration: none;
     }
   }
