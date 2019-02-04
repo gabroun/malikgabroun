@@ -2,12 +2,11 @@
 
 exports[`snapshot 1`] = `
 <footer
-  className="sc-bdVaJa egAAFj"
+  className="sc-bdVaJa fqUvBD"
 >
   <div>
     <a
       aria-label="Twitter"
-      className=""
       href="https://twitter.com/malroun1"
       target="blank"
     >
@@ -36,7 +35,6 @@ exports[`snapshot 1`] = `
     </a>
     <a
       aria-label="Github"
-      className=""
       href="https://github.com/gabroun"
       target="blank"
     >
@@ -65,7 +63,6 @@ exports[`snapshot 1`] = `
     </a>
     <a
       aria-label="Linkedin"
-      className=""
       href="https://www.linkedin.com/in/malik-elgabroun/"
       target="blank"
     >
