@@ -13,7 +13,7 @@ class About extends React.Component {
     return (
       <ThemeProvider theme={theme}>
         <Layout title="About">
-          <div>
+
             <div className="main-content">
               <Fragment>
                 <Timeline>
@@ -51,7 +51,7 @@ class About extends React.Component {
                 </Timeline>
               </Fragment>
             </div>
-          </div>
+
         </Layout>
       </ThemeProvider>
     );

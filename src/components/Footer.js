@@ -54,7 +54,6 @@ class Footer extends React.Component {
       <FooterSection>
         <div>
           <a
-            className=""
             href="https://twitter.com/malroun1"
             target="blank"
             aria-label="Twitter"
@@ -69,7 +68,6 @@ class Footer extends React.Component {
             />
           </a>
           <a
-            className=""
             href="https://github.com/gabroun"
             target="blank"
             aria-label="Github"
@@ -84,7 +82,6 @@ class Footer extends React.Component {
             />
           </a>
           <a
-            className=""
             href="https://www.linkedin.com/in/malik-elgabroun/"
             target="blank"
             aria-label="Linkedin"

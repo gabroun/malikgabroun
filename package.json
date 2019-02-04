@@ -6,8 +6,9 @@
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "serve": "gatsby serve",
-    "test": "jest --silent"
+    "serve:prod": "gatsby build && gatsby serve",
+    "test": "jest --silent",
+    "test:update": "jest --silent -u"
   },
   "repository": {
     "type": "git",
