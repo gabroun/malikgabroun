@@ -7,6 +7,7 @@ import Links from './Navigation/Links';
 import Navigation from './Navigation/index';
 import logo from '../resources/images/logo.png';
 import logoIcon from '../resources/images/logo-icon.png';
+import Logo from './Logo';
 
 const NavBar = styled.div`
   display: flex;
@@ -15,18 +16,14 @@ const NavBar = styled.div`
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
-  @media (max-width: 1023px) {
-    justify-content: flex-end;
-    width: 100%;
-    box-sizing: border-box;
-  }
 `;
 
-const Logo = styled.div`
+const LogoContainer = styled.div`
   display: flex;
   align-items: center;
   @media (max-width: 1023px) {
     width: 100%;
+    flex-basis: 80%;
   }
 `;
 
@@ -122,11 +119,11 @@ class Header extends React.Component {
           render={() => {
             return (
               <NavBar>
-                <Logo>
+                <LogoContainer>
                   <Link to={'/'}>
-                    <img src={logo} alt="malikgabroun.com" />
+                    <Logo height="109px" width="279px" viewBox='0 0 573 286' />
                   </Link>
-                </Logo>
+                </LogoContainer>
                 <Links />
               </NavBar>
             );
@@ -138,9 +135,9 @@ class Header extends React.Component {
           render={() => {
             return (
               <NavBar>
-                <Logo>
-                  <img src={logoIcon} alt="malikgabroun.com" />
-                </Logo>
+                <LogoContainer>
+                  <Logo device='mobile' height="69px" width="200px" viewBox='180 10 673 186'/>
+                </LogoContainer>
                 <Navigation
                   isOpen={this.state.open}
                   menuClicked={() => this.handleClick(0)}
