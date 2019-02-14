@@ -136,7 +136,9 @@ class Header extends React.Component {
             return (
               <NavBar>
                 <LogoContainer>
+                <Link to={'/'}>
                   <Logo device='mobile' height="69px" width="200px" viewBox='180 10 673 186'/>
+                  </Link>
                 </LogoContainer>
                 <Navigation
                   isOpen={this.state.open}
