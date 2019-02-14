@@ -17,7 +17,7 @@ In other words, context is the universal data for react application (or by redux
 ##When should you use Context?
 The idea of Context is to solve the issue of props drilling where you avoid passing props through many components in the component tree just because the lowest child component need some data that the middle components are not using.
 
-In my opinion, Context should be used if you feel annoyed from having to pass props to more than 3 levels in the component tree and ending up having too many props that are not used by the component in between, so this is where Context works best by having state available in the consumer. however this can have some implication when it comes to debugging your application, as unlike props where you know where the data is coming from and how it has been changed, you wouldn't know that from a glance with Context as you are taking the explicitness from the component.
+In my opinion, Context should be used if you feel annoyed from having to pass props to more than 3 levels in the component tree and end up with too many props that are not used by the component in between, so this is where Context works best by having state available in the consumer. however this can have some implication when it comes to debugging your application, as unlike props where you know where the data is coming from and how it has been changed, you wouldn't know that from a glance with Context as you are taking the explicitness from the component.
 
 Let's go through an example to see how context works.
 
