@@ -1,0 +1,162 @@
+---
+path: '/react-context'
+date: '2019-02-14'
+title: 'React Context'
+tags: ['js, react']
+summary: 'In this post, we will be looking into React Context API'
+images: 'images/reactjs.jpg'
+---
+
+In this post we will be talking about `Context` API which was introduced in React 16, and how you can use them.
+
+##So what is Context?
+Looking at the definition from [react docs](https://reactjs.org/docs/context.html#reactcreatecontext) it describes it as a way to pass data through the component tree without having to pass props down manually at every level.
+
+In other words, context is the universal data for react application (or by redux definition the centralised store of your react app). The state that you set in context will be accessible anywhere inside the react tree.
+
+##When should you use Context?
+The idea of Context is to solve the issue of props drilling where you avoid passing props through many components in the component tree just because the lowest child component need some data that the middle components are not using.
+
+In my opinion, Context should be used if you feel annoyed from having to pass props to more than 3 levels in the component tree and ending up having too many props that are not used by the component in between, so this is where Context works best by having state available in the consumer. however this can have some implication when it comes to debugging your application, as unlike props where you know where the data is coming from and how it has been changed, you wouldn't know that from a glance with Context as you are taking the explicitness from the component.
+
+Let's go through an example to see how context works.
+
+##API
+
+###React.createContext
+First we create a new context object that describe how data will look like (we can store functions as well in our state).
+whatever we put in the context object is what we want to use in the consumer component
+
+```javascript
+//NameContext.js
+import React from 'react';
+
+const NameContext = React.createContext({
+  name: '',
+  handleNameChange() {},
+});
+
+export const Provider = NameContext.Provider;
+export const Consumer = NameContext.Consumer;
+```
+
+`createContext` will provide us 2 components `Provider` and `Consumer` that we can use across our application.
+
+###Context.Provider
+After we have created our context, then we can use the provider, but before that let's go through what is the Provider and Consumer component and how they work with context.
+
+Imagine how you commute from point A to point B using the train, you go to the station entrance and provide a ticket (Context) when going through the gate (Provider) in order to board the train. Once you reach the destination you give your ticket (context) to the exit gate (Consumer) to consume it.
+
+In other words, we wrap the Provider component and pass the context as a value prop around the area where we want to consume the context with Consumer component
+
+```javascript
+//App.js
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from './NameContext';
+import Child from './Child';
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleNamechange = this.handleNamechange.bind(this);
+    this.state = {
+      name: 'Malik',
+      handleNameChange: this.handleNamechange,
+    };
+  }
+  handleNamechange(event) {
+    let nameValue = event.target.value;
+    this.setState(function() {
+      return {
+        name: nameValue,
+      };
+    });
+  }
+  render() {
+    return (
+      <Provider value={this.state}>
+        <h1>Hello</h1>
+        <Child />
+      </Provider>
+    );
+  }
+}
+```
+
+Notice how did we wrap the `Provider component` that we have imported from NameContext around the `Child component` and passed it `value prop` with the app state as its value, So anything inside Provider can access the context using `Consumer component`.
+
+###Context.Consumer
+After we wrapped the Provider component around the section of the app where we want to consume the context. The consumer component will subscribe to the context change with a function component. In other words, in order to use the context the component will require a function as a child which will get the current context value as an argument. This function will return a React node that will be rendered based on the context value.
+
+```javascript
+//Child.js
+import React from 'react';
+import { Consumer } from './NameContext';
+import GrandChild from './GrandChild';
+
+class Child extends React.Component {
+  render() {
+    return (
+      <Consumer>
+        {function(context) {
+          return (
+            <div>
+              <h2>{context.name}</h2>
+              <input
+                onChange={context.handleNameChange}
+                value={context.name}
+                placeholder="Name"
+              />
+              <GrandChild />
+            </div>
+          );
+        }}
+      </Consumer>
+    );
+  }
+}
+
+export default Child;
+```
+
+So we have went through how you can use the context in the render function, what about if you would want to use it in other functions other than render to perform your logic. We could do that by wrapping the exported component with consumer component and passing the context to the component as a props in order for it to be accessible by other functions
+
+```javascript
+//GrandChild.js
+import React from 'react';
+import { Consumer } from './NameContext';
+
+class GrandChild extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+  handleClick() {
+    console.log(this.props);
+  }
+  render() {
+    return (
+      <div>
+        <h3>Gabroun</h3>
+        <button onClick={this.handleClick}>Submit</button>
+      </div>
+    );
+  }
+}
+
+export default function GrandChildWithContext() {
+  return (
+    <Consumer>
+      {function(context) {
+        return <GrandChild data={context} />;
+      }}
+    </Consumer>
+  );
+}
+```
+
+You can have multiple kinds of context, by wrapping provider around another provider in order to access the context.
+
+##In Conclusion
+Context API is a great way to share your app state between components in the tree when props drilling is getting annoying to deal with, which is a great tool that help with the issue.
