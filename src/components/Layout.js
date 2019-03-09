@@ -20,9 +20,8 @@ class Layout extends React.Component {
     return (
       <React.Fragment>
         <Seo title={title} />
-
+        <Header />
         <PageWrapper>
-          <Header />
           <MainColumn> {children}</MainColumn>
         </PageWrapper>
         <Footer />
