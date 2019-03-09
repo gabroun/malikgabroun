@@ -54,7 +54,7 @@ const MenuItems = styled.ul`
 
 function Links() {
   return (
-    <div className="nav-menu">
+    <React.Fragment>
       <MenuItems>
         <li>
           <Link to="/">Home</Link>
@@ -70,7 +70,7 @@ function Links() {
           <Link to="/blog">Blog</Link>
         </li>
       </MenuItems>
-    </div>
+    </React.Fragment>
   );
 }
 

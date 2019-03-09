@@ -11,6 +11,7 @@ import theme from '../components/styles/theme';
 injectGlobal`
     html {
         box-sizing: border-box;
+        font-family: 'Rambla';
     }
     *, *:before, *:after {
         box-sizing: inherit;
@@ -18,6 +19,7 @@ injectGlobal`
     body {
         padding: 0;
         margin: 0;
+        font-family: 'Rambla';
     }
      a {
         text-decoration: none;
@@ -38,6 +40,12 @@ const MainContent = styled.div`
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  .intro-title {
+    font-size: 40px;
+  }
+  .intro-subtitle {
+    font-size: 20px;
+  }
 `;
 
 const ButtonContainer = styled.div`
@@ -92,8 +100,10 @@ class Index extends React.Component {
         <div>
           <Layout title="Malik Elgabroun - Front End Developer">
             <MainContent className="main-content">
-              <h1>Hello My name is Malik</h1>
-              <p> and I'm a London-based Front end Developer</p>
+              <h1 className="intro-title">Hello My name is Malik</h1>
+              <p className="intro-subtitle">
+                and I'm a London-based Front end Developer
+              </p>
               <ButtonContainer>
                 <Button>
                   <Link to="/about">About me</Link>

@@ -22,7 +22,7 @@ class Layout extends React.Component {
         <Seo title={title} />
         <Header />
         <PageWrapper>
-          <MainColumn className="main-column"> {children}</MainColumn>
+          <MainColumn> {children}</MainColumn>
         </PageWrapper>
         <Footer />
       </React.Fragment>
