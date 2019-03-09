@@ -119,20 +119,20 @@ class Header extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <NavBar>
         <Media
           query="(min-width: 1024px)"
           defaultMatches={this.state.device === 'desktop'}
           render={() => {
             return (
-              <NavBar>
+              <React.Fragment>
                 <LogoContainer>
                   <Link to={'/'}>
                     <Logo height="109px" width="279px" viewBox="0 0 573 286" />
                   </Link>
                 </LogoContainer>
                 <Links />
-              </NavBar>
+              </React.Fragment>
             );
           }}
         />
@@ -141,7 +141,7 @@ class Header extends React.Component {
           defaultMatches={this.state.device === 'mobile'}
           render={() => {
             return (
-              <NavBar>
+              <React.Fragment>
                 <LogoContainer>
                   <Link to={'/'}>
                     <Logo
@@ -175,11 +175,11 @@ class Header extends React.Component {
                 >
                   <Links />
                 </MobileMenu>
-              </NavBar>
+              </React.Fragment>
             );
           }}
         />
-      </React.Fragment>
+      </NavBar>
     );
   }
 }
