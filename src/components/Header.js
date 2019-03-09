@@ -12,8 +12,9 @@ import Logo from './Logo';
 const NavBar = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
-  padding: 25px;
-  max-width: 1280px;
+  /* padding: 25px;
+  max-width: 1280px; */
+  margin-bottom: 25px;
   .nav-menu {
     justify-self: end;
   }
