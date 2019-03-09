@@ -11,6 +11,7 @@ import theme from '../components/styles/theme';
 injectGlobal`
     html {
         box-sizing: border-box;
+        font-family: 'Rambla';
     }
     *, *:before, *:after {
         box-sizing: inherit;
@@ -18,6 +19,7 @@ injectGlobal`
     body {
         padding: 0;
         margin: 0;
+        font-family: 'Rambla';
     }
      a {
         text-decoration: none;

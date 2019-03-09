@@ -6,8 +6,7 @@ import styled from 'styled-components';
 import Seo from '../components/Seo';
 
 const Title = styled.h2`
-  font-family: 'Playfair Display', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Rambla';
 `;
 
 const PostTemplate = styled.div`
