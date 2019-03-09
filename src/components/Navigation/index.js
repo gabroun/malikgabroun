@@ -56,6 +56,7 @@ function Navigation(props) {
       onClick={props.menuClicked}
       onKeyDown={props.menuClicked}
       aria-hidden="true"
+      className="menu-icon"
     >
       <span style={Object.assign({}, styles.lineBase, styles.firstLine)} />
       <span style={Object.assign({}, styles.lineBase, styles.secondLine)} />

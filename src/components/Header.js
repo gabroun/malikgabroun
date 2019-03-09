@@ -10,12 +10,19 @@ import logoIcon from '../resources/images/logo-icon.png';
 import Logo from './Logo';
 
 const NavBar = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
   padding: 25px;
   max-width: 1280px;
-  margin: 0 auto;
-  justify-content: space-between;
-  align-items: center;
+  .nav-menu {
+    justify-self: end;
+  }
+  @media (max-width: 1023px) {
+    .menu-icon {
+      justify-self: end;
+      align-self: center;
+    }
+  }
 `;
 
 const LogoContainer = styled.div`
@@ -112,20 +119,20 @@ class Header extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+      <NavBar>
         <Media
           query="(min-width: 1024px)"
           defaultMatches={this.state.device === 'desktop'}
           render={() => {
             return (
-              <NavBar>
+              <React.Fragment>
                 <LogoContainer>
                   <Link to={'/'}>
-                    <Logo height="109px" width="279px" viewBox='0 0 573 286' />
+                    <Logo height="109px" width="279px" viewBox="0 0 573 286" />
                   </Link>
                 </LogoContainer>
                 <Links />
-              </NavBar>
+              </React.Fragment>
             );
           }}
         />
@@ -134,10 +141,15 @@ class Header extends React.Component {
           defaultMatches={this.state.device === 'mobile'}
           render={() => {
             return (
-              <NavBar>
+              <React.Fragment>
                 <LogoContainer>
-                <Link to={'/'}>
-                  <Logo device='mobile' height="69px" width="200px" viewBox='180 10 673 186'/>
+                  <Link to={'/'}>
+                    <Logo
+                      device="mobile"
+                      height="69px"
+                      width="200px"
+                      viewBox="180 10 673 186"
+                    />
                   </Link>
                 </LogoContainer>
                 <Navigation
@@ -163,11 +175,11 @@ class Header extends React.Component {
                 >
                   <Links />
                 </MobileMenu>
-              </NavBar>
+              </React.Fragment>
             );
           }}
         />
-      </React.Fragment>
+      </NavBar>
     );
   }
 }
