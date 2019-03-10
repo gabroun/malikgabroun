@@ -8,19 +8,42 @@ import Navigation from './Navigation/index';
 import logo from '../resources/images/logo.png';
 import logoIcon from '../resources/images/logo-icon.png';
 import Logo from './Logo';
+import Footer from './Footer';
 
 const NavBar = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr;
   padding: 25px;
-  max-width: 1280px;
+  /* max-width: 1280px; */
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  background-color: #fefefe;
+  box-shadow: 0 0 3px 0px rgba(54, 54, 54, 0.15);
   .nav-menu {
     justify-self: end;
+  }
+  @media (min-width: 1024px) {
+    max-width: calc(100% - 85px);
+    width: calc(100vw - 85px);
+    margin-left: 85px;
   }
   @media (max-width: 1023px) {
     .menu-icon {
       justify-self: end;
       align-self: center;
+    }
+    .burger-menu.active {
+      footer {
+        display: block;
+        left: 25px;
+        position: fixed;
+        z-index: 1;
+        top: 85%;
+        transition-delay: 6.4s;
+        transition: transform 0.3s ease-out;
+      }
     }
   }
 `;
@@ -50,7 +73,7 @@ const MobileMenu = styled.div`
         background: rgba(0, 0, 0, 0.45);
         right: 0;
         top: 0;
-        transition: transform 0.3s ease-out;
+        transition: transform 0.3s ease-in;
         z-index: 1;
       }
     }
@@ -174,6 +197,7 @@ class Header extends React.Component {
                   tabIndex={0}
                 >
                   <Links />
+                  <Footer />
                 </MobileMenu>
               </React.Fragment>
             );

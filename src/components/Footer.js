@@ -2,13 +2,31 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterSection = styled.footer`
-  position: absolute;
-  width: 100%;
-  max-width: 1280px;
+  /* position: absolute;
+   width: 100%; */
+
+  /* max-width: 1280px;
   margin: 0 auto;
   padding: 25px;
   left: 0;
-  right: 0;
+  right: 0; */
+  @media (min-width: 1024px) {
+    position: fixed;
+    z-index: 2;
+    box-shadow: 0 0 1px 1px rgba(54, 54, 54, 0.15);
+
+    width: 85px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (max-width: 1023px) {
+    display: none;
+  }
 
   a {
     border: none;
@@ -21,7 +39,7 @@ const FooterSection = styled.footer`
     -webkit-box-pack: center;
     justify-content: center;
     align-items: center;
-    margin: 5px;
+    margin: 20px 5px;
     background: #000;
     flex-direction: row;
     color: white;
