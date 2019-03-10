@@ -6,8 +6,13 @@ import Seo from './Seo';
 
 const PageWrapper = styled.div`
   max-width: 1280px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding: 25px;
+  margin-top: 195px;
+  @media (min-width: 1024px) {
+    max-width: calc(100% - 85px);
+    margin-left: auto;
+  }
 `;
 
 const MainColumn = styled.div`
