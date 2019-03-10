@@ -3,10 +3,10 @@ type: 'portfolio'
 title: 'Github Battle'
 date: '14/10/2018'
 path: '/portfolio/github-battle/'
-images: 'images/thumbnails/portfolio/github-battle.png'
+images: 'images/thumbnails/portfolio/github-battle.jpg'
 ---
 
-![github-battle](./github-battle.png)
+![github-battle](./github-battle.jpg)
 
 <div class="content">
 <h1> Github Battle </h1>

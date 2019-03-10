@@ -45,7 +45,7 @@ export const Portfolio = ({ title, path, image }) => {
   return (
     <PortfolioItem key={path}>
       <Link to={path}>
-        <PortfolioImg src={imgUrl} />
+        <PortfolioImg src={imgUrl} alt={title} />
         <PortfolioTitle>{title}</PortfolioTitle>
       </Link>
     </PortfolioItem>

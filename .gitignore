@@ -2,4 +2,6 @@
 public
 node_modules
 src/_tests_/
- .vscode
+.vscode/
+notes.txt
+.vscode/launch.json

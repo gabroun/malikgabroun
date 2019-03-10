@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import icon32 from '../../static/icons/favicon-32x32.png';
 import icon16 from '../../static/icons/favicon-16x16.png';
 import icon192 from '../../static/icons/favicon-192x192.png';
+import icon512 from '../../static/icons/favicon-512x512.png';
 
 const query = graphql`
   query {
@@ -113,6 +114,12 @@ const Seo = ({ meta, image, title, description, pathSlug }) => {
                 type: 'image/png',
                 href: icon192,
                 sizes: '192x192',
+              },
+              {
+                rel: 'icon',
+                type: 'image/png',
+                href: icon512,
+                sizes: '512x512',
               },
             ]}
           />

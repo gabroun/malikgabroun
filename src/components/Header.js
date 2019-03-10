@@ -5,8 +5,6 @@ import styled from 'styled-components';
 
 import Links from './Navigation/Links';
 import Navigation from './Navigation/index';
-import logo from '../resources/images/logo.png';
-import logoIcon from '../resources/images/logo-icon.png';
 import Logo from './Logo';
 import Footer from './Footer';
 
@@ -150,7 +148,7 @@ class Header extends React.Component {
             return (
               <React.Fragment>
                 <LogoContainer>
-                  <Link to={'/'}>
+                  <Link to={'/'} aria-label="homepage">
                     <Logo height="109px" width="279px" viewBox="0 0 573 286" />
                   </Link>
                 </LogoContainer>
@@ -166,7 +164,7 @@ class Header extends React.Component {
             return (
               <React.Fragment>
                 <LogoContainer>
-                  <Link to={'/'}>
+                  <Link to={'/'} aria-label="homepage">
                     <Logo
                       device="mobile"
                       height="69px"
