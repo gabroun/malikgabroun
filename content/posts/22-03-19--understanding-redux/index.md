@@ -1,0 +1,200 @@
+---
+path: '/understanding-redux'
+date: '2019-03-22'
+title: 'Understanding Redux by doing a basic implementation of the store'
+tags: ['redux, js']
+summary: 'reimplemention of redux library store to learn how it works'
+images: 'images/thumbnails/reduxjs.png'
+---
+
+In this post we will be re-writing a simplified version of Redux store to understand how it works.
+
+##Store
+Store is the central repository that holds the state of your application.
+
+##CreateStore
+First we create the function `createStore()` that is going to return the store which contains 4 parts
+```text
+1. The store state
+2. getState
+3. subscribe (listening to changes on the state)
+4. dispatch (updating the state)
+```
+
+Whenever you invoke createStore() you going to get back an object that represent the store which contains:
+```text
+1. a way to getting state.
+2. listening to changes on the state.
+3. updating the state
+```
+As for the state, its not going to be publicily available but you can interact with it by using the public methods that we mentioned above.
+
+So first we need some container that holds the state internally which the store can modify or access it using the 3 methods.
+```javascript
+function createStore() {
+    let state
+}
+```
+
+##getState()
+Now that this state is locally available to the function `createStore()`, we need to create a way to interact with this state.
+```javascript
+function createStore() {
+    let state;
+
+    function getState() {
+        return state;
+    }
+
+    return {
+        getState
+    }
+}
+```
+This way when a user create a store and want to get an access to the state they can do that by invoking `getState()`.
+
+
+##subscribe()
+The next step is to make the user listen to the changes on the state.
+
+We do that by making a variable called `listeners` that is going to be an empty array initially. And whenever `subscribe()` is called its going to receive the listener callback function. And inside it we call `listeners` which is the array we have created and push the listener callback function that was received when subscribe was invoked to that array.
+```javascript
+function createStore() {
+    let state;
+    let listeners = [];
+    function getState() {
+        return state;
+    }
+
+    function subscribe(listener) {
+        listeners.push(listener)
+    }
+      
+    return {
+        getState,
+        subscribe
+        }
+    }
+```
+So inside `createStore()` we need to keep track of anytime the user calls `store.subscribe()` and keep track of these functions passed in so that whenever the state changes we go through the list of functions and invoke each of them.
+```javascript
+function createStore() {
+  let state;
+  let listeners = [];
+   function getState() {
+    return state;
+  }
+   function subscribe(listener) {
+    listeners.push(listener)
+
+    return function () {
+      listeners = listeners.filter(function(listenerItem) {
+        return listenerItem !== listener;
+      })
+    }
+  }
+
+   return {
+    getState,
+    subscribe
+  }
+}
+```
+when the user call `.subscribe` it will return a function (unsubscribe function) and when this function is invoked we want to go ahead and remove the listener that was passed in to subscribe from our listeners array.
+
+In other words, when the user call `.subscribe()` and pass a listener function it will be pushed to the listeners array and they will get back a function as a result of invoking `.subscribe()`. If they invoke the returned function it will filter the listeners array and remove the listener function.
+
+##dispatch()
+Next will be updating the store state, as we want to increase predictability, we would want to specify the sort of events that could update the state, these events are called `actions`. An `action` is just an object that represent an event that is going to change the state of our store. Action must have a `type` property to specifiy the type of action occuring, other than that the structure is up to you.
+```javascript
+// action example
+{
+  type: 'ADD_TODO',
+  payload: {
+    todo: {
+        id: 0,
+        name: 'Write a post about Redux'
+    } 
+  }
+}
+```
+
+when action occurs inside of our application we want to take the payload from the incoming action and add it to our application state.
+
+This would be done inside the `reducer` function which is a pure function that takes in the current state and action and based on the action type it will specifiy how the state gets changed.
+
+So now whenever we invoke `dispatch()`, it will take in the action and inside it we call the reducer function that is taking the current state and the action and is going to get us the new state which then we can update internally.
+
+Whenever we update the state we need loop through the listeners and invoke them so that they know that the state has been updated.
+```javascript
+function dispatch(action) {
+    state = reducer(state, action);
+    listeners.forEach(function(listener) {
+      return listener();
+    })
+  }
+```
+
+and here is the whole store put together
+```javascript
+function createStore(reducer) {
+  let state;
+  let listeners = [];
+
+  function getState() {
+    return state;
+  }
+
+  function subscribe(listener) {
+    listeners.push(listener)
+
+    return function () {
+      listeners = listeners.filter(function(listenerItem) {
+        return listenerItem !== listener;
+      })
+    }
+  }
+
+  function dispatch(action) {
+    state = reducer(state, action);
+    listeners.forEach(function(listener) {
+      return listener();
+    })
+  }
+
+  return {
+    getState,
+    subscribe,
+    dispatch
+  }
+}
+```
+and the following is an example usage of store methods
+```javascript
+// reducer function - example
+function todos(state = [], action) {
+  if(action.type === 'ADD_TODO') {
+    return state.concat([action.payload])
+  }
+  return state
+}
+
+// create new store
+const store = createStore(todos);
+
+// to listen to the changes - something like a logger
+const unsubscribe = store.subscribe(() => {
+    console.log('state: ', store.getState())
+})
+
+// to update the state
+store.dispatch({
+  type: 'ADD_TODO',
+  payload: {
+    todo: {
+        id: 0,
+        name: 'Write a post about Redux'
+    } 
+  }
+})
+```

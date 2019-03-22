@@ -27,7 +27,7 @@ const PortfolioItem = styled.li`
 `;
 
 const PortfolioImg = styled.img`
-  transition: 'all 0.3s';
+  transition: all 0.3s;
   margin-bottom: 0;
   padding: 30px;
 `;
