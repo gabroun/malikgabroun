@@ -13,14 +13,16 @@ In order to verify you gatsby site, first you would need to use one of the verif
 
 In this post I will be showing how you can verify the site using the HTML meta tag. To do so, we would need to install a couple of modules so that you can insert the meta tag in the head with the help of these modules.
 
-##Install
+## Install
+
 In order to add the meta tag to the document head, you need to install React helmet component which allow us to modify the document head using it and to install gatsby-react-helmet-plugin which provide supports for server rendering data added with React Helmet.
 
 ```javascript
 npm install --save gatsby-plugin-react-helmet react-helmet
 ```
 
-##How to use
+## How to use
+
 Once you have these modules installed, then we need to add the gatsby plugin to the config file as follow
 
 ```javascript
