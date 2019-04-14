@@ -1,0 +1,64 @@
+---
+path: '/gatsby-tip-on-running-multiple-graphql-queries'
+date: '2019-04-14'
+title: 'Gatsby tip on running multiple queries (GraphQL alias)'
+tags: ['graphql, js, gatsby']
+summary: 'A quick tip on how to run multiple queries in one component/page using graphql aliases'
+images: 'images/thumbnails/gatsby.jpeg'
+---
+
+Say you want to fetch specific data in one page based on an argument or a condition which can't be run using one query as you can't query the same field with different condition or argument. One way of doing that by using [GraphQL aliases](https://graphql.org/learn/queries/#aliases) which you can use to rename the returned dataset to anything you want.
+
+## Example
+
+```javascript
+export const query = graphql`
+  query {
+    post: allMarkdownRemark(
+      limit: 3
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { type: { ne: "portfolio" } } }
+    ) {
+      edges {
+        node {
+          timeToRead
+          frontmatter {
+            title
+            path
+            date(formatString: "DD MMMM YYYY")
+            summary
+            images
+            tags
+            type
+          }
+        }
+      }
+    }
+    portfolio: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { type: { eq: "portfolio" } } }
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            path
+            images
+            tags
+            type
+          }
+        }
+      }
+    }
+    siteMetaData: site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;
+```
+
+Looking at the above example, we can see the query I made will return multiple datasets by giving it an alias which allowed me to run multiple queries with different arguments and conditions to get the specific data object I needed as you can see in the screenshot.
+
+![graphql alias](./graphql-alias.jpg)
