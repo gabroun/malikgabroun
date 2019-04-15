@@ -91,6 +91,7 @@ const LatestBlock = styled.div`
 class Index extends React.Component {
   render() {
     const { data } = this.props;
+    console.log(data);
 
     const post = data.post.edges;
     const portfolio = data.portfolio.edges;
