@@ -54,17 +54,13 @@ const MenuItems = styled.ul`
 
 function Links() {
   return (
-    <div className='nav-menu'>
+    <div className="nav-menu">
       <MenuItems>
         <li>
           <Link to="/">Home</Link>
         </li>
         <li>
           <Link to="/about">About</Link>
-        </li>
-
-        <li>
-          <Link to="/resume">Resume</Link>
         </li>
         <li>
           <Link to="/blog">Blog</Link>
