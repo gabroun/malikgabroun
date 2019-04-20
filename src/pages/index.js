@@ -5,6 +5,7 @@ import styled, { ThemeProvider, injectGlobal } from 'styled-components';
 
 import { Blog } from '../components/Blog';
 import { PortfolioList } from '../components/Portfolio';
+import cv from '../../static/Malik-Elgabroun_CV.pdf';
 
 import theme from '../components/styles/theme';
 
@@ -91,7 +92,6 @@ const LatestBlock = styled.div`
 class Index extends React.Component {
   render() {
     const { data } = this.props;
-    console.log(data);
 
     const post = data.post.edges;
     const portfolio = data.portfolio.edges;
@@ -110,7 +110,7 @@ class Index extends React.Component {
                   <Link to="/about">About me</Link>
                 </Button>
                 <Button>
-                  <Link to="/resume">Resume</Link>
+                  <a href={cv}>Resume</a>
                 </Button>
               </ButtonContainer>
               <LatestBlock>

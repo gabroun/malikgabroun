@@ -116,7 +116,7 @@ const Seo = ({ meta, image, title, description, pathSlug }) => {
                 sizes: '192x192',
               },
               {
-                rel: 'icon',
+                rel: 'apple-touch-startup-image',
                 type: 'image/png',
                 href: icon512,
                 sizes: '512x512',
