@@ -3,7 +3,7 @@ path: '/gatsby-create-pages'
 date: '2018-12-26'
 title: 'How to create pages dynamically in Gatsby'
 tags: ['js, gatsby']
-summary: 'In this post, we will be looking into how to create pages using createPages'
+summary: 'In this post, we will be looking into how to create pages using Gatsby API createPages'
 images: 'images/thumbnails/gatsby.jpeg'
 ---
 
@@ -163,7 +163,7 @@ exports.createPages = ({ graphql, actions }) => {
 };
 ```
 
-You can see the result of the graphl query in the above snippet when ran in GraphiQl below
+You can see the result of the graphql query in the above snippet when ran in GraphiQl below
 
 ![createPages-graphql-query](./graphql-query.png)
 
