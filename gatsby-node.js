@@ -2,7 +2,7 @@ const path = require('path');
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
-  //create  page will return new promise dur to the async nature of file creation
+  //create  page will return new promise due to the async nature of file creation
   return new Promise((resolve, reject) => {
     //to create the page we need access to the blog post template
     const postTemplate = path.resolve('src/templates/postTemplate.js');
