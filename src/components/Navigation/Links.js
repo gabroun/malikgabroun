@@ -24,6 +24,9 @@ const MenuItems = styled.ul`
     background: none;
     border: 0;
     cursor: pointer;
+    &.active {
+      color: #f47c48;
+    }
   }
   @media (min-width: 1024px) {
     display: flex;
@@ -57,13 +60,19 @@ function Links() {
     <div className="nav-menu">
       <MenuItems>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" activeClassName="active">
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/about" activeClassName="active">
+            About
+          </Link>
         </li>
         <li>
-          <Link to="/blog">Blog</Link>
+          <Link to="/blog" activeClassName="active">
+            Blog
+          </Link>
         </li>
       </MenuItems>
     </div>
