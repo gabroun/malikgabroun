@@ -1,14 +1,10 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const TimelineContainer = styled.div`
-  font-size: 1em;
-  font-weight: 300;
-  line-height: 1.5;
+export const TimelineContainer = styled.section`
   letter-spacing: 0.05em;
 `;
 
-const TimelineColumn = styled.ul`
+export const TimelineColumn = styled.ul`
   position: relative;
   max-width: 95%;
   list-style: none;
@@ -29,7 +25,7 @@ const TimelineColumn = styled.ul`
   }
 `;
 
-const EventItem = styled.li`
+export const EventItem = styled.li`
   position: relative;
   &.col-right {
     left: 50%;
@@ -59,7 +55,7 @@ const EventItem = styled.li`
   }
 `;
 
-const EventIcon = styled.label`
+export const EventIcon = styled.label`
   transform: rotate(45deg);
   background-color: ${props => props.theme.black};
   outline: 10px solid ${props => props.theme.white};
@@ -72,27 +68,7 @@ const EventIcon = styled.label`
   height: 1em;
 `;
 
-const Title = styled.h3`
-  font-size: 1.75em;
-`;
-const SubTitle = styled.h4`
-  font-size: 1.2em;
-  margin-bottom: 1.2em;
-  @media (max-width: 767px) {
-    font-size: 1em;
-  }
-`;
-
-const EventDate = styled.p`
-  color: ${props => props.theme.white};
-  background-color: ${props => props.theme.black};
-  box-shadow: inset 0 0 0 0em #ef795a;
-  display: inline-block;
-  margin-bottom: 1.2em;
-  padding: 0.25em 1em 0.2em 1em;
-`;
-
-const EventContent = styled.div`
+export const EventContent = styled.div`
   padding: 2em 2em 0 2em;
   position: relative;
   top: -1.875em;
@@ -103,9 +79,18 @@ const EventContent = styled.div`
   }
 `;
 
-const EventLogo = styled.div`
+export const EventDate = styled.p`
+  color: ${props => props.theme.white};
+  background-color: ${props => props.theme.black};
+  box-shadow: inset 0 0 0 0em #ef795a;
+  display: inline-block;
+  margin-bottom: 1.2em;
+  padding: 0.25em 1em 0.2em 1em;
+`;
+
+export const EventLogo = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   img {
     width: 80px;
@@ -115,23 +100,14 @@ const EventLogo = styled.div`
   }
 `;
 
-export const Event = ({ title, subtitle, dates, children, position, logo }) => (
-  <EventItem className={position === 'left' ? ' col-left' : ' col-right'}>
-    <EventIcon className="event__icon" />
-    <EventContent>
-      <EventDate>{dates}</EventDate>
-      <Title>{subtitle}</Title>
-      <EventLogo>
-        <img src={logo} alt={title} />
-        {subtitle && <SubTitle>{subtitle}</SubTitle>}
-      </EventLogo>
-      <div>{children}</div>
-    </EventContent>
-  </EventItem>
-);
+export const Title = styled.h3`
+  font-size: 1.75em;
+`;
 
-export const Timeline = ({ children }) => (
-  <TimelineContainer>
-    <TimelineColumn>{children}</TimelineColumn>
-  </TimelineContainer>
-);
+export const SubTitle = styled.h4`
+  font-size: 1.2em;
+  margin-bottom: 1.2em;
+  @media (max-width: 767px) {
+    font-size: 1em;
+  }
+`;
