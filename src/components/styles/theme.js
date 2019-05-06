@@ -5,5 +5,4 @@ const theme = {
   whiteSmoke: '#efefef',
   white: '#fff',
 };
-
 export default theme;

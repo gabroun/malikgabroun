@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, graphql } from 'gatsby';
 import Layout from '../components/Layout';
-import styled, { ThemeProvider, injectGlobal } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 
 import { Blog } from '../components/Blog';
 import { PortfolioList } from '../components/Portfolio';
@@ -9,86 +9,8 @@ import cv from '../../static/Malik-Elgabroun_CV.pdf';
 
 import theme from '../components/styles/theme';
 
-injectGlobal`
-    html {
-        box-sizing: border-box;
-        font-family: 'Rambla';
-    }
-    *, *:before, *:after {
-        box-sizing: inherit;
-    }
-    body {
-        padding: 0;
-        margin: 0;
-        font-family: 'Rambla';
-    }
-     a {
-        text-decoration: none;
-        color: ${theme.black};
-    }
+import * as S from '../components/styles/index';
 
-    pre[class*="language-"] {
-    padding: 1em;
-    margin: .5em 0;
-    overflow: auto;
-    border-radius: 0.3em;
-    background-color: rgb(40, 44, 52);
-  }
-`;
-
-const MainContent = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  .intro-title {
-    font-size: 40px;
-  }
-  .intro-subtitle {
-    font-size: 20px;
-  }
-`;
-
-const ButtonContainer = styled.div`
-  display: flex;
-  justify-content: space-evenly;
-  top: 25px;
-  position: relative;
-`;
-
-const Button = styled.div`
-  border: solid 1px ${theme.orange};
-  border-radius: 3px;
-
-  padding: 15px;
-  cursor: pointer;
-  width: 150px;
-  box-sizing: border-box;
-
-  &:hover {
-    background-color: ${theme.orange};
-    transition: all 0.4s ease 0.1s;
-
-    a {
-      color: ${theme.white};
-      transition: all 0.4s ease 0.1s;
-    }
-  }
-
-  a {
-    color: ${theme.black};
-    text-decoration: none;
-    text-transform: uppercase;
-  }
-`;
-
-const Header = styled.h2`
-  text-align: center;
-`;
-
-const LatestBlock = styled.div`
-  margin-top: 200px;
-`;
 class Index extends React.Component {
   render() {
     const { data } = this.props;
@@ -100,30 +22,30 @@ class Index extends React.Component {
       <ThemeProvider theme={theme}>
         <div>
           <Layout title="Malik Elgabroun - Front End Developer">
-            <MainContent className="main-content">
+            <S.MainContent className="main-content">
               <h1 className="intro-title">Hello My name is Malik</h1>
               <p className="intro-subtitle">
                 and I'm a London-based Front end Developer
               </p>
-              <ButtonContainer>
-                <Button>
+              <S.ButtonContainer>
+                <S.Button>
                   <Link to="/about">About me</Link>
-                </Button>
-                <Button>
+                </S.Button>
+                <S.Button>
                   <a href={cv}>Resume</a>
-                </Button>
-              </ButtonContainer>
-              <LatestBlock>
-                <Header>Latest Posts</Header>
+                </S.Button>
+              </S.ButtonContainer>
+              <S.LatestSection>
+                <S.Header>Latest Posts</S.Header>
 
                 <Blog edges={post} />
-              </LatestBlock>
-              <LatestBlock>
-                <Header>Latest Projects</Header>
+              </S.LatestSection>
+              <S.LatestSection>
+                <S.Header>Latest Projects</S.Header>
 
                 <PortfolioList edges={portfolio} />
-              </LatestBlock>
-            </MainContent>
+              </S.LatestSection>
+            </S.MainContent>
           </Layout>
         </div>
       </ThemeProvider>

@@ -3,8 +3,9 @@ import { graphql } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
 import Layout from '../components/Layout';
 import { BlogPost } from '../components/Blog';
-import BlogList from '../components/styles/BlogList';
 import theme from '../components/styles/theme';
+
+import * as S from '../components/styles/blog';
 
 class Blog extends React.Component {
   render() {
@@ -14,7 +15,7 @@ class Blog extends React.Component {
     return (
       <ThemeProvider theme={theme}>
         <Layout title="Blog">
-          <BlogList>
+          <S.BlogList>
             {edges.map(function(edge) {
               const {
                 path,
@@ -39,7 +40,7 @@ class Blog extends React.Component {
                 />
               );
             })}
-          </BlogList>
+          </S.BlogList>
         </Layout>
       </ThemeProvider>
     );

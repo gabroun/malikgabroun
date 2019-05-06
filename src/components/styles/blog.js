@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const BlogList = styled.div`
+export const BlogList = styled.div`
   justify-content: space-around;
   max-width: 1280px;
   margin: 0 auto;
@@ -17,5 +17,3 @@ const BlogList = styled.div`
     grid-template-columns: 1fr 1fr;
   }
 `;
-
-export default BlogList;
