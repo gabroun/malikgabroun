@@ -1,92 +1,13 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import Media from 'react-media';
-import styled from 'styled-components';
 
-import Links from './Navigation/Links';
-import Navigation from './Navigation/index';
-import Logo from './Logo';
-import Footer from './Footer';
+import Links from '../Navigation/Links';
+import Navigation from '../Navigation/index';
+import Logo from '../Logo';
+import Footer from '../Footer';
 
-const NavBar = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  padding: 25px;
-  /* max-width: 1280px; */
-  width: 100%;
-  position: fixed;
-  z-index: 2;
-  top: 0;
-  background-color: #fefefe;
-  box-shadow: 0 0 3px 0px rgba(54, 54, 54, 0.15);
-  .nav-menu {
-    justify-self: end;
-  }
-  @media (min-width: 1024px) {
-    max-width: calc(100% - 85px);
-    width: calc(100vw - 85px);
-    margin-left: 85px;
-  }
-  @media (max-width: 1023px) {
-    .menu-icon {
-      justify-self: end;
-      align-self: center;
-    }
-    .burger-menu.active {
-      footer {
-        display: block;
-        left: 25px;
-        position: fixed;
-        z-index: 1;
-        top: 85%;
-        transition-delay: 6.4s;
-        transition: transform 0.3s ease-out;
-      }
-    }
-  }
-`;
-
-const LogoContainer = styled.div`
-  display: flex;
-  align-items: center;
-  @media (max-width: 1023px) {
-    width: 100%;
-    flex-basis: 80%;
-  }
-`;
-
-const MobileMenu = styled.div`
-  @media (max-width: 1023px) {
-    &.active {
-      .nav-menu {
-        transform: translateX(14rem);
-        z-index: 1;
-      }
-      &:after {
-        position: fixed;
-        width: calc(100% - 14rem);
-        height: 100%;
-        color: #fff;
-        content: '';
-        background: rgba(0, 0, 0, 0.45);
-        right: 0;
-        top: 0;
-        transition: transform 0.3s ease-in;
-        z-index: 1;
-      }
-    }
-    .nav-menu {
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: -14rem;
-      width: 14rem;
-      background-color: white;
-      transition: transform 0.3s ease-out;
-      border: solid 1px;
-    }
-  }
-`;
+import * as S from './styles';
 
 class Header extends React.Component {
   constructor(props) {
@@ -140,18 +61,18 @@ class Header extends React.Component {
 
   render() {
     return (
-      <NavBar>
+      <S.Header>
         <Media
           query="(min-width: 1024px)"
           defaultMatches={this.state.device === 'desktop'}
           render={() => {
             return (
               <React.Fragment>
-                <LogoContainer>
+                <S.LogoContainer>
                   <Link to={'/'} aria-label="homepage">
                     <Logo height="109px" width="279px" viewBox="0 0 573 286" />
                   </Link>
-                </LogoContainer>
+                </S.LogoContainer>
                 <Links />
               </React.Fragment>
             );
@@ -163,7 +84,7 @@ class Header extends React.Component {
           render={() => {
             return (
               <React.Fragment>
-                <LogoContainer>
+                <S.LogoContainer>
                   <Link to={'/'} aria-label="homepage">
                     <Logo
                       device="mobile"
@@ -172,7 +93,7 @@ class Header extends React.Component {
                       viewBox="180 10 673 186"
                     />
                   </Link>
-                </LogoContainer>
+                </S.LogoContainer>
                 <Navigation
                   isOpen={this.state.open}
                   menuClicked={() => this.handleClick(0)}
@@ -185,7 +106,7 @@ class Header extends React.Component {
                   animationDuration={0.3}
                 />
 
-                <MobileMenu
+                <S.MobileMenu
                   className={
                     this.state.active ? 'burger-menu active' : 'burger-menu'
                   }
@@ -196,12 +117,12 @@ class Header extends React.Component {
                 >
                   <Links />
                   <Footer />
-                </MobileMenu>
+                </S.MobileMenu>
               </React.Fragment>
             );
           }}
         />
-      </NavBar>
+      </S.Header>
     );
   }
 }

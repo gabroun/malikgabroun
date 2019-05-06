@@ -31,6 +31,7 @@ const MenuItems = styled.ul`
   @media (min-width: 1024px) {
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-end;
     a {
       &:after {
         height: 3px;
@@ -57,7 +58,7 @@ const MenuItems = styled.ul`
 
 function Links() {
   return (
-    <div className="nav-menu">
+    <nav className="nav-menu">
       <MenuItems>
         <li>
           <Link to="/" activeClassName="active">
@@ -75,7 +76,7 @@ function Links() {
           </Link>
         </li>
       </MenuItems>
-    </div>
+    </nav>
   );
 }
 
