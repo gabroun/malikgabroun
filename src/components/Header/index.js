@@ -116,7 +116,7 @@ class Header extends React.Component {
                   tabIndex={0}
                 >
                   <Links />
-                  <Footer />
+                  {/* <Footer /> */}
                 </S.MobileMenu>
               </React.Fragment>
             );

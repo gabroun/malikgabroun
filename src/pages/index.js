@@ -23,6 +23,7 @@ class Index extends React.Component {
         <div>
           <Layout title="Malik Elgabroun - Front End Developer">
             <S.MainContent className="main-content">
+              <div className="main-content__background" />
               <h1 className="intro-title">Hello My name is Malik</h1>
               <p className="intro-subtitle">
                 and I'm a London-based Front end Developer
