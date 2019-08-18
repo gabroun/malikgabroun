@@ -3,21 +3,21 @@ import styled from 'styled-components';
 export const Header = styled.header`
   display: grid;
   grid-template-columns: 1fr 2fr;
-  padding: 25px;
+  padding: 0 25px;
   /* max-width: 1280px; */
   width: 100%;
   position: fixed;
   z-index: 2;
-  top: 0;
+  /* top: 0; */
   background-color: #fefefe;
   box-shadow: 0 0 3px 0px rgba(54, 54, 54, 0.15);
   .nav-menu {
-    justify-self: end;
+    /* justify-self: end; */
   }
   @media (min-width: 1024px) {
-    max-width: calc(100% - 85px);
+    /* max-width: calc(100% - 85px);
     width: calc(100vw - 85px);
-    margin-left: 85px;
+    margin-left: 85px; */
   }
   @media (max-width: 1023px) {
     .menu-icon {

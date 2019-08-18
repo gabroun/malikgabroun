@@ -9,22 +9,23 @@ export const Footer = styled.footer`
   padding: 25px;
   left: 0;
   right: 0; */
-  @media (min-width: 1024px) {
-    position: fixed;
-    z-index: 2;
-    box-shadow: 0 0 1px 1px rgba(54, 54, 54, 0.15);
+  /* @media (min-width: 1024px) { */
+  /* position: fixed; */
+  z-index: 2;
+  box-shadow: 0 0 1px 1px rgba(54, 54, 54, 0.15);
 
-    width: 85px;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-  }
+  /* width: 85px;
+    height: 100%; */
+  align-items: center;
+  justify-content: center;
+  top: 160px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  /* } */
 
   @media (max-width: 1023px) {
-    display: none;
+    /* display: none; */
   }
 
   a {
@@ -38,7 +39,7 @@ export const Footer = styled.footer`
     -webkit-box-pack: center;
     justify-content: center;
     align-items: center;
-    margin: 20px 5px;
+    margin: 20px;
     background: #000;
     flex-direction: row;
     color: white;
