@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import formatDate from '../../utils/formatDate';
 
 import * as S from './styles';
 
@@ -37,7 +38,7 @@ export const BlogPost = ({
 
           <h2>{title}</h2>
           <p>{summary}</p>
-          <S.PostDate>{date}</S.PostDate>
+          <S.PostDate>{formatDate(date)}</S.PostDate>
           <S.TimeToRead>{timeToRead} min read</S.TimeToRead>
         </S.PostPreview>
       </Link>
@@ -66,7 +67,7 @@ export const Blog = ({ edges }) => {
             summary={summary}
             image={images}
             timeToRead={timeToRead}
-            date={date}
+            date={formatDate(date)}
             tags={tags}
             key={path}
           />

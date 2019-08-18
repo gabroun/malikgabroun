@@ -1,6 +1,6 @@
 ---
 path: '/react-context'
-date: '14 February 2019'
+date: '2019/02/14'
 title: 'React Context'
 tags: ['js, react']
 summary: 'In this post, we will be looking into React Context API'

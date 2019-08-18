@@ -1,6 +1,6 @@
 ---
 path: '/gatsby-create-pages'
-date: '26 December 2018'
+date: '2018/12/26'
 title: 'How to create pages dynamically in Gatsby'
 tags: ['js, gatsby']
 summary: 'In this post, we will be looking into how to create pages using Gatsby API createPages'
