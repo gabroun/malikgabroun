@@ -4,7 +4,7 @@ import Layout from '../components/Layout';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Seo from '../components/Seo';
-import formateDate from '../utils/formatDate';
+import formatDate from '../utils/formatDate';
 
 const Title = styled.h2`
   font-family: 'Rambla';
@@ -35,7 +35,7 @@ const Post = ({ data }) => {
         >
           <Title>{title}</Title>
           <div style={{ display: 'flex', font: 'bold', margin: '15px 0' }}>
-            <p>{formateDate(date)}.</p>
+            <p>{formatDate(date)}.</p>
             <p style={{ marginLeft: '10px' }}>{timeToRead} min read.</p>
           </div>
           <Img
