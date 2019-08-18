@@ -1,7 +1,7 @@
 ---
 type: 'portfolio'
 title: 'MalikGabroun.com'
-date: '14/10/2018'
+date: 14/10/2018
 path: '/portfolio/malikgabroun/'
 images: 'images/thumbnails/portfolio/personal-website.jpg'
 ---

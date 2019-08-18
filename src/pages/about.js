@@ -13,45 +13,40 @@ class About extends React.Component {
     return (
       <ThemeProvider theme={theme}>
         <Layout title="About">
-
-            <div className="main-content">
-              <Fragment>
-                <Timeline>
-                  <Event
-                    dates={'2016 – preset'}
-                    title={'Front End Developer'}
-                    subtitle={'Redbox Digital'}
-                    logo={rb}
-                    position="right"
-                  >
-                    HTML, CSS (Less/SASS), Javascript (jQuery, Knockout) PHP
-                    (Magento), XML, MySQL, Docker
-                  </Event>
-                  <Event
-                    dates={'2015 – 2016'}
-                    title={'MSc Software Engineering'}
-                    subtitle={'University of Leicester'}
-                    position="left"
-                    logo={le}
-                  />
-                  <Event
-                    dates={'2014 – 2015'}
-                    title={'MSc International Business Management'}
-                    subtitle={'University of Surrey'}
-                    position="right"
-                    logo={su}
-                  />
-                  <Event
-                    dates={'2010 – 2013'}
-                    title={'BSc Information Technology'}
-                    subtitle={'University Tun Abdul Razak'}
-                    position="left"
-                    logo={ur}
-                  />
-                </Timeline>
-              </Fragment>
-            </div>
-
+          <div className="main-content">
+            <Fragment>
+              <Timeline>
+                <Event
+                  dates={'2016 – preset'}
+                  title={'Front End Developer'}
+                  subtitle={'Redbox Digital'}
+                  logo={rb}
+                  position="right"
+                />
+                <Event
+                  dates={'2015 – 2016'}
+                  title={'MSc Software Engineering'}
+                  subtitle={'University of Leicester'}
+                  position="left"
+                  logo={le}
+                />
+                <Event
+                  dates={'2014 – 2015'}
+                  title={'MSc International Business Management'}
+                  subtitle={'University of Surrey'}
+                  position="right"
+                  logo={su}
+                />
+                <Event
+                  dates={'2010 – 2013'}
+                  title={'BSc Information Technology'}
+                  subtitle={'University Tun Abdul Razak'}
+                  position="left"
+                  logo={ur}
+                />
+              </Timeline>
+            </Fragment>
+          </div>
         </Layout>
       </ThemeProvider>
     );

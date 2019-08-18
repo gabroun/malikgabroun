@@ -1,6 +1,6 @@
 ---
 path: '/things-i-want-to-know-more-about-by-end-of-2019'
-date: '2019-01-01'
+date: '01 January 2019'
 title: 'Things I Would Like to know more about by end of 2019'
 tags: ['general']
 summary: 'Some of the programming topics I would like to know more about by the end of the year'

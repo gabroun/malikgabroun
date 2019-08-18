@@ -1,6 +1,6 @@
 ---
 path: '/hello-world'
-date: '2018-10-29'
+date: '29 October 2018'
 title: 'Hello World'
 tags: ['js']
 summary: "A description about my site, and what's coming in this website"

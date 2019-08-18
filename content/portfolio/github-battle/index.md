@@ -1,7 +1,7 @@
 ---
 type: 'portfolio'
 title: 'Github Battle'
-date: '14/10/2018'
+date: 14/10/2018
 path: '/portfolio/github-battle/'
 images: 'images/thumbnails/portfolio/github-battle.jpg'
 ---

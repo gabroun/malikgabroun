@@ -51,11 +51,14 @@ export const ButtonContainer = styled.div`
 export const Button = styled.button`
   border: solid 1px ${theme.orange};
   border-radius: 3px;
-
   padding: 15px;
   cursor: pointer;
   width: 150px;
   box-sizing: border-box;
+
+  @media (max-width: 1023px) {
+    background-color: #fff;
+  }
 
   &:hover {
     background-color: ${theme.orange};
