@@ -1,6 +1,6 @@
 ---
 path: '/verifying-gatsby-in-search-console'
-date: '03 November 2018'
+date: '2018/11/03'
 title: 'How to verify a gatsby site in search console'
 tags: ['js, gatsby']
 summary: 'In this post, I will be talking about verifying gatsby site in search console'

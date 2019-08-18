@@ -1,6 +1,6 @@
 ---
 path: '/gatsby-tip-on-running-multiple-graphql-queries'
-date: '15 April 2019'
+date: '2019/04/15'
 title: 'Gatsby tip on running multiple queries (GraphQL aliases)'
 tags: ['graphql, js, gatsby']
 summary: 'A quick tip on how to run multiple queries in one component/page using graphql aliases'

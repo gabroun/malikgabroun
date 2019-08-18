@@ -1,6 +1,6 @@
 ---
 path: '/understanding-redux'
-date: '22 March 2019'
+date: '2019/03/22'
 title: 'Understanding Redux by doing a basic implementation of the store'
 tags: ['redux, js']
 summary: 'reimplemention of redux library store to learn how it works'
