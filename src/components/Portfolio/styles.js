@@ -17,6 +17,8 @@ export const PortfolioItem = styled.li`
   position: relative;
   border: solid 1px ${props => props.theme.lightGrey};
   overflow: hidden;
+  box-shadow: 0 8px 16px 0 rgba(34, 50, 84, 0.06),
+    inset 0 0 0 1px rgba(112, 123, 140, 0.15);
   &:hover {
     img {
       transform: scale(1.1);

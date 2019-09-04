@@ -8,6 +8,8 @@ export const PostItem = styled.div`
   border-radius: 6px;
   transition: all 0.4s ease 0.1s;
   border: 1px solid ${props => props.theme.lightGrey};
+  box-shadow: 0 8px 16px 0 rgba(34, 50, 84, 0.06),
+    inset 0 0 0 1px rgba(112, 123, 140, 0.15);
 
   &:hover {
     background: ${props => props.theme.whiteSmoke};
