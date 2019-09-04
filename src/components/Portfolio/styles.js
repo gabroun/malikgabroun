@@ -3,9 +3,10 @@ import styled from 'styled-components';
 export const Portfolios = styled.ul`
   display: grid;
   list-style: none;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   justify-content: center;
   column-gap: 10px;
+  margin: 0;
   @media (max-width: 767px) {
     grid-template-columns: 1fr;
     margin: 0;

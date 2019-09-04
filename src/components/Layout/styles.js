@@ -6,6 +6,7 @@ export const PageWrapper = styled.main`
   /* margin-top: 195px; */
   top: 160px;
   position: relative;
+  padding: 2rem;
   @media (min-width: 1024px) {
     /* max-width: calc(100% - 85px);
     margin-left: auto; */
