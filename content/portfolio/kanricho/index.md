@@ -1,0 +1,43 @@
+---
+type: 'portfolio'
+title: 'Kanricho'
+date: '04/09/2019'
+path: '/portfolio/kanricho/'
+images: 'images/thumbnails/portfolio/kanricho.jpg'
+---
+
+![kanricho.com](./kanricho.jpg)
+
+<div class="content">
+<h1> Kanricho.com</h1>
+
+Kanricho is a task management app.
+<br>
+<br>
+
+## What I did
+
+<div class="description">
+This app was created to experiement with the tech stack and as a tool that I can use with specific features based on my requirements.
+<br>
+<br>
+<li>Create, update, delete boards, lists and cards per user.</li>
+<li> Account creation and permission for user to update/delete/create their boards  </li></div>
+<br>
+
+## Libraries / Tools
+
+![tech stack](https://imgur.com/ousyQaC.png)
+
+<li> React using Next.js for server side rendering, routing and tooling.</li>
+<li> Styled Compontents for styling.</li>
+<li> React Apollo to iterface with Apollo Client.</li>
+<li>Apollo Client to perform GraphQL Mutations and fetching Queries, Caching data and using error/loading UI states.</li>
+<li> GraphQL Yoga to implement Query/Mutation resolvers, sending emails and performing JWT authenication.</li>
+<li> Prisma to use CRUD APIs for MySQL database, schema definition, data relationships, queried data from Yoga server.</li>
+
+[Go to Web Site →](https://kanricho.com/)
+
+[Go to Web Site Repo →](https://github.com/gabroun/kanricho)
+
+</div>
