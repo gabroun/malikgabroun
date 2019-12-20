@@ -63,7 +63,7 @@ class Header extends React.Component {
     return (
       <S.Header>
         <Media
-          query="(min-width: 1024px)"
+          query="(min-width: 768px)"
           defaultMatches={this.state.device === 'desktop'}
           render={() => {
             return (
@@ -79,7 +79,7 @@ class Header extends React.Component {
           }}
         />
         <Media
-          query="(max-width: 1023px)"
+          query="(max-width: 767px)"
           defaultMatches={this.state.device === 'mobile'}
           render={() => {
             return (

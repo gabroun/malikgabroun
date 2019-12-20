@@ -28,7 +28,7 @@ const MenuItems = styled.ul`
       color: #f47c48;
     }
   }
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;

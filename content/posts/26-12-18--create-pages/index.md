@@ -4,7 +4,9 @@ date: '2018/12/26'
 title: 'How to create pages dynamically in Gatsby'
 tags: ['js, gatsby']
 summary: 'In this post, we will be looking into how to create pages using Gatsby API createPages'
-images: 'images/thumbnails/gatsby.jpeg'
+images: 'images/thumbnails/whiteOpenBook.jpeg'
+imageAuthorID: '@kadh'
+imageAuthor: 'Kira auf der Heide'
 ---
 
 ### Updated: 24th of April

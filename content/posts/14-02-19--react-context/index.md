@@ -4,7 +4,9 @@ date: '2019/02/14'
 title: 'React Context'
 tags: ['js, react']
 summary: 'In this post, we will be looking into React Context API'
-images: 'images/reactjs.jpg'
+images: 'images/thumbnails/containers.jpeg'
+imageAuthorID: '@federize'
+imageAuthor: 'Federico Beccari'
 ---
 
 In this post we will be talking about `Context` API which was introduced in React 16, and how you can use them.

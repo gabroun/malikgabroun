@@ -36,11 +36,18 @@ export const MainContent = styled.section`
   position: relative;
   .intro-title {
     font-size: 40px;
-    color: #fff;
+    /* color: #fff; */
   }
   .intro-subtitle {
     font-size: 20px;
-    color: #fff;
+    /* color: #fff; */
+  }
+
+  .main-content__banner {
+    img {
+      max-width: 600px;
+      width: 100%;
+    }
   }
 
   .main-content__background {
@@ -75,10 +82,10 @@ export const ButtonContainer = styled.div`
   margin: 0 auto;
   top: 25px;
   position: relative;
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     width: 650px;
   }
-  @media (max-width: 1023px) {
+  @media (max-width: 767px) {
     grid-gap: 10px;
     grid-template-columns: 1fr;
   }
@@ -86,21 +93,19 @@ export const ButtonContainer = styled.div`
 
 export const Button = styled.button`
   border: solid 1px ${theme.orange};
-  border-radius: 3px;
   padding: 15px;
   cursor: pointer;
   width: 150px;
   box-sizing: border-box;
   background-color: #fff;
   border-radius: 40px;
-  border-color: grey;
 
   &:hover {
-    /* background-color: ${theme.orange}; */
+    background-color: ${theme.orange};
     transition: all 0.4s ease 0.1s;
 
     a {
-      color: ${theme.orange};
+      color: ${theme.white};
       transition: all 0.4s ease 0.1s;
     }
   }

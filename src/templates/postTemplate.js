@@ -17,9 +17,26 @@ const PostTemplate = styled.div`
   }
 `;
 
+const ImgCredit = styled.p`
+  margin-bottom: 0;
+  position: relative;
+  top: -45px;
+  text-align: center;
+  a {
+    color: #f47c48;
+  }
+`;
+
 const Post = ({ data }) => {
   const { markdownRemark, site } = data;
-  const { title, date, path, summary } = markdownRemark.frontmatter;
+  const {
+    title,
+    date,
+    path,
+    summary,
+    imageAuthor,
+    imageAuthorID,
+  } = markdownRemark.frontmatter;
   const { html, timeToRead } = markdownRemark;
 
   return (
@@ -28,10 +45,7 @@ const Post = ({ data }) => {
         <Seo title={title} pathSlug={path} description={summary} />
         <div
           className="post-wrapper"
-          style={{
-            maxWidth: '960px',
-            margin: '0 auto',
-          }}
+          style={{ maxWidth: '960px', margin: '0 auto' }}
         >
           <Title>{title}</Title>
           <div style={{ display: 'flex', font: 'bold', margin: '15px 0' }}>
@@ -42,6 +56,15 @@ const Post = ({ data }) => {
             fluid={data.file.childImageSharp.fluid}
             style={{ maxHeight: '400px', marginBottom: '50px' }}
           />
+          {imageAuthor && (
+            <ImgCredit>
+              Photo by
+              <a href={`https://unsplash.com/${imageAuthorID}`} target="blank">
+                {' '}
+                {imageAuthor}
+              </a>
+            </ImgCredit>
+          )}
 
           <PostTemplate
             className="blogpost"
@@ -70,6 +93,8 @@ export const query = graphql`
         date
         path
         summary
+        imageAuthor
+        imageAuthorID
       }
       timeToRead
     }
