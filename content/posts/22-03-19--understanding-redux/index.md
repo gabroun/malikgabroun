@@ -4,7 +4,9 @@ date: '2019/03/22'
 title: 'Understanding Redux by doing a basic implementation of the store'
 tags: ['redux, js']
 summary: 'reimplemention of redux library store to learn how it works'
-images: 'images/thumbnails/reduxjs.png'
+images: 'images/thumbnails/wearingGlasses.jpeg'
+imageAuthorID: '@nate_dumlao'
+imageAuthor: 'Nathan Dumlao'
 ---
 
 In this post we will be re-writing a simplified version of Redux store to understand how it works.
@@ -123,7 +125,7 @@ Next will be updating the store state, as we want to increase predictability, we
     todo: {
         id: 0,
         name: 'Write a post about Redux'
-    } 
+    }
   }
 }
 ```
