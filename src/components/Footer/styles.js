@@ -1,31 +1,18 @@
 import styled from 'styled-components';
 
 export const Footer = styled.footer`
-  /* position: absolute;
-   width: 100%; */
-
-  /* max-width: 1280px;
-  margin: 0 auto;
-  padding: 25px;
-  left: 0;
-  right: 0; */
-  /* @media (min-width: 1024px) { */
-  /* position: fixed; */
   z-index: 2;
   box-shadow: 0 0 1px 1px rgba(54, 54, 54, 0.15);
-
-  /* width: 85px;
-    height: 100%; */
   align-items: center;
   justify-content: center;
-  top: 160px;
   display: flex;
   flex-direction: row;
   position: relative;
-  /* } */
+  margin-left: -2rem;
+  margin-right: -2rem;
 
-  @media (max-width: 1023px) {
-    /* display: none; */
+  @media (max-width: 767px) {
+    margin-bottom: 72px;
   }
 
   a {
