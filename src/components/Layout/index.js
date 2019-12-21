@@ -1,14 +1,16 @@
 import React from 'react';
-
-import * as S from './styles';
-import Footer from '../Footer';
 import Header from '../Header';
-import MobileHeader from '../Header/MobileHeader';
+import Footer from '../Footer';
 import Seo from '../Seo';
+import MobileHeader from '../Header/MobileHeader';
+import * as S from './styles';
 
 class Layout extends React.Component {
   render() {
     const { children, title } = this.props;
+    const hasWindow = typeof window !== undefined;
+    const width = hasWindow ? window.innerWidth : null;
+    console.log(width);
     return (
       <React.Fragment>
         <Seo title={title} />
@@ -17,7 +19,7 @@ class Layout extends React.Component {
           <S.Container> {children}</S.Container>
           <Footer />
         </S.PageWrapper>
-        <MobileHeader />
+        <MobileHeader width={width} />
       </React.Fragment>
     );
   }

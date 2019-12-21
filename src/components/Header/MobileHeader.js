@@ -39,9 +39,10 @@ const MobileMenu = styled.div`
   }
 `;
 
-const MobileHeader = () => (
+const MobileHeader = props => (
   <Media
     query="(max-width: 767px)"
+    defaultMatches={props.window <= 767}
     render={() => {
       return (
         <MobileMenu>
