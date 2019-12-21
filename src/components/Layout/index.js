@@ -8,9 +8,6 @@ import * as S from './styles';
 class Layout extends React.Component {
   render() {
     const { children, title } = this.props;
-    const hasWindow = typeof window !== undefined;
-    const width = hasWindow ? window.innerWidth : null;
-    console.log(width);
     return (
       <React.Fragment>
         <Seo title={title} />
@@ -19,7 +16,7 @@ class Layout extends React.Component {
           <S.Container> {children}</S.Container>
           <Footer />
         </S.PageWrapper>
-        <MobileHeader width={width} />
+        <MobileHeader />
       </React.Fragment>
     );
   }

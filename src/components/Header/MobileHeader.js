@@ -12,9 +12,12 @@ const MobileMenu = styled.div`
   justify-content: space-around;
   left: 0rem;
   right: 0rem;
-  display: flex;
+  display: none;
   background-color: #fefefe;
   box-shadow: 0 0 3px 0px rgba(54, 54, 54, 0.15);
+  @media (max-width: 767px) {
+    display: flex;
+  }
   a {
     -webkit-box-align: center;
     align-items: center;
@@ -39,10 +42,9 @@ const MobileMenu = styled.div`
   }
 `;
 
-const MobileHeader = props => (
+const MobileHeader = () => (
   <Media
     query="(max-width: 767px)"
-    defaultMatches={props.window <= 767}
     render={() => {
       return (
         <MobileMenu>
