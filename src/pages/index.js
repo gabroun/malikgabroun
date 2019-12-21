@@ -18,19 +18,21 @@ class Index extends React.Component {
     const post = data.post.edges;
     const portfolio = data.portfolio.edges;
 
-
     return (
       <ThemeProvider theme={theme}>
         <div>
           <Layout title="Malik Elgabroun - Front End Developer">
             <S.MainContent className="main-content">
               <div className="main-content__banner">
-                <img src={require('../resources/programming.svg')} alt="Man coding" />
+                <img
+                  src={require('../resources/programming.svg')}
+                  alt="Man coding"
+                />
                 <div>
                   <h1 className="intro-title">Hello My name is Malik</h1>
                   <p className="intro-subtitle">
-                    and I'm a London-based Front end Developer
-              </p>
+                    and I&apos;m a London-based Front end Developer
+                  </p>
                   <S.ButtonContainer>
                     <S.Button>
                       <Link to="/about">About me</Link>
@@ -40,7 +42,6 @@ class Index extends React.Component {
                     </S.Button>
                   </S.ButtonContainer>
                 </div>
-
               </div>
 
               <S.LatestSection>

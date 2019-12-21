@@ -94,7 +94,7 @@ class Header extends React.Component {
                     />
                   </Link>
                 </S.LogoContainer>
-                <Navigation
+                {/* <Navigation
                   isOpen={this.state.open}
                   menuClicked={() => this.handleClick(0)}
                   width={36}
@@ -116,8 +116,8 @@ class Header extends React.Component {
                   tabIndex={0}
                 >
                   <Links />
-                  {/* <Footer /> */}
-                </S.MobileMenu>
+
+                </S.MobileMenu> */}
               </React.Fragment>
             );
           }}

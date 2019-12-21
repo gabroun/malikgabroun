@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../Header';
 import Footer from '../Footer';
 import Seo from '../Seo';
-
+import MobileHeader from '../Header/MobileHeader';
 import * as S from './styles';
 
 class Layout extends React.Component {
@@ -14,8 +14,9 @@ class Layout extends React.Component {
         <Header />
         <S.PageWrapper>
           <S.Container> {children}</S.Container>
+          <Footer />
         </S.PageWrapper>
-        <Footer />
+        <MobileHeader />
       </React.Fragment>
     );
   }
