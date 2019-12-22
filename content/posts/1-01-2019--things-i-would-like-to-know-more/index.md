@@ -5,6 +5,7 @@ title: 'Things I Would Like to know more about by end of 2019'
 tags: ['general']
 summary: 'Some of the programming topics I would like to know more about by the end of the year'
 images: 'images/thumbnails/code-file.jpg'
+keywords: ['personal goals', 'tech']
 ---
 
 This post was inspired by Dan Abramov's [post](https://overreacted.io/things-i-dont-know-as-of-2018/) that he wrote few days ago (I recommend checking the post and all of his other brilliantly written posts at [overreacted.io](https://overreacted.io) ) which talk about his knowledge gab and often the assumption people make about what he knows or that he should know them because he is a senior engineer at facebook.

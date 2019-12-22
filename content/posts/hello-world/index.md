@@ -7,6 +7,7 @@ summary: "A description about my site, and what's coming in this website"
 images: 'images/thumbnails/helloWorld.jpeg'
 imageAuthorID: '@johnnyabroad'
 imageAuthor: 'Jean-Pierre Brungs'
+keywords: ['hello world, intro, description']
 ---
 
 Recently, I have decided to rebuild my website to use ReactJS as I got interested in it. As a result, this is the first release of my website and going to improve it and add more features as I go along in improving my knowledge of React.
