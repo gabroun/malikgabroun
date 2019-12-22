@@ -36,6 +36,7 @@ const Post = ({ data }) => {
     summary,
     imageAuthor,
     imageAuthorID,
+    keywords,
   } = markdownRemark.frontmatter;
   const { html, timeToRead } = markdownRemark;
   return (
@@ -46,6 +47,7 @@ const Post = ({ data }) => {
           pathSlug={path}
           description={summary}
           image={data.file.childImageSharp.fluid}
+          keywords={keywords}
         />
         <div
           className="post-wrapper"
@@ -99,6 +101,7 @@ export const query = graphql`
         summary
         imageAuthor
         imageAuthorID
+        keywords
       }
       timeToRead
     }

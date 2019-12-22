@@ -21,7 +21,7 @@ const query = graphql`
   }
 `;
 
-const Seo = ({ meta, image, title, description, pathSlug }) => {
+const Seo = ({ meta, image, title, description, pathSlug, keywords }) => {
   return (
     <StaticQuery
       query={query}
@@ -57,7 +57,7 @@ const Seo = ({ meta, image, title, description, pathSlug }) => {
               },
               {
                 name: 'keywords',
-                content: 'metaDescription',
+                content: keywords ? keywords.join() : 'metaDescription',
               },
               {
                 property: 'og:url',

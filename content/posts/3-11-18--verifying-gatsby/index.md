@@ -7,6 +7,7 @@ summary: 'In this post, I will be talking about verifying gatsby site in search 
 images: 'images/thumbnails/checklist.jpeg'
 imageAuthorID: '@glenncarstenspeters'
 imageAuthor: 'Glenn Carstens-Peters'
+keywords: ['gatsby', 'google', 'search console']
 ---
 
 In order to verify you gatsby site, first you would need to use one of the verification method that the search console suggests. Below you can see the options you can select for verifying the site.

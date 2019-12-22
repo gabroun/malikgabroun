@@ -7,6 +7,7 @@ summary: 'reimplemention of redux library store to learn how it works'
 images: 'images/thumbnails/wearingGlasses.jpeg'
 imageAuthorID: '@nate_dumlao'
 imageAuthor: 'Nathan Dumlao'
+keywords: ['redux', 'js']
 ---
 
 In this post we will be re-writing a simplified version of Redux store to understand how it works.

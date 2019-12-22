@@ -7,6 +7,7 @@ summary: 'In this post, we will be looking into how to create pages using Gatsby
 images: 'images/thumbnails/whiteOpenBook.jpeg'
 imageAuthorID: '@kadh'
 imageAuthor: 'Kira auf der Heide'
+keywords: ['gatsby', 'createpage', 'dynamic pages', 'create pages']
 ---
 
 ### Updated: 24th of April

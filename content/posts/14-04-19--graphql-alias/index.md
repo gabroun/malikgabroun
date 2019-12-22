@@ -7,6 +7,13 @@ summary: 'A quick tip on how to run multiple queries in one component/page using
 images: 'images/thumbnails/pairProgramming.jpeg'
 imageAuthorID: '@alvaroreyes'
 imageAuthor: 'Alvaro Reyes'
+keywords:
+  [
+    'gatsby',
+    'multiple queries',
+    'graphql multiple queries',
+    'multiple graphql queries',
+  ]
 ---
 
 Say you want to fetch specific data in one page based on an argument or a condition which can't be run using one query as you can't query the same field with different condition or argument. One way of doing that by using [GraphQL aliases](https://graphql.org/learn/queries/#aliases) which you can use to rename the returned dataset to anything you want.
