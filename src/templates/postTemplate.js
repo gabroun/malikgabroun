@@ -28,7 +28,7 @@ const ImgCredit = styled.p`
 `;
 
 const Post = ({ data }) => {
-  const { markdownRemark, site } = data;
+  const { markdownRemark } = data;
   const {
     title,
     date,
@@ -38,11 +38,15 @@ const Post = ({ data }) => {
     imageAuthorID,
   } = markdownRemark.frontmatter;
   const { html, timeToRead } = markdownRemark;
-
   return (
     <div>
       <Layout title={title}>
-        <Seo title={title} pathSlug={path} description={summary} />
+        <Seo
+          title={title}
+          pathSlug={path}
+          description={summary}
+          image={data.file.childImageSharp.fluid}
+        />
         <div
           className="post-wrapper"
           style={{ maxWidth: '960px', margin: '0 auto' }}

@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
-
+import PropTypes from 'prop-types';
 import icon32 from '../../static/icons/favicon-32x32.png';
 import icon16 from '../../static/icons/favicon-16x16.png';
 import icon192 from '../../static/icons/favicon-192x192.png';
@@ -31,7 +31,8 @@ const Seo = ({ meta, image, title, description, pathSlug }) => {
         const url = pathSlug
           ? `${siteMetadata.siteUrl}${pathSlug}/`
           : `${siteMetadata.siteUrl}`;
-        const metaImage = image ? `${siteMetadata.siteUrl}/${image}` : null;
+        const metaImage = image ? `${siteMetadata.siteUrl}/${image.src}` : null;
+
         const metadata = meta || {};
 
         return (
@@ -121,12 +122,20 @@ const Seo = ({ meta, image, title, description, pathSlug }) => {
                 href: icon512,
                 sizes: '512x512',
               },
+              {
+                rel: 'canonical',
+                href: url,
+              },
             ]}
           />
         );
       }}
     />
   );
+};
+
+Seo.proptypes = {
+  title: PropTypes.string,
 };
 
 export default Seo;
