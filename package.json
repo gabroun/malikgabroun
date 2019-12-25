@@ -4,7 +4,7 @@
   "author": "Malik Elgabroun",
   "license": "ISC",
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
     "build": "gatsby build",
     "serve:prod": "gatsby build && gatsby serve",
     "test": "jest --silent",
@@ -15,12 +15,9 @@
     "url": "git@github-gabroun:gabroun/malikgabroun.git"
   },
   "dependencies": {
-    "emotion": "^9.2.12",
-    "emotion-server": "^9.2.12",
     "gatsby": "^2.18.15",
     "gatsby-cli": "^2.7.31",
     "gatsby-image": "^2.2.8",
-    "gatsby-plugin-emotion": "^2.0.7",
     "gatsby-plugin-google-analytics": "^2.1.7",
     "gatsby-plugin-manifest": "^2.2.5",
     "gatsby-plugin-nprogress": "^2.1.2",
@@ -38,7 +35,6 @@
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-emotion": "^9.2.12",
     "react-helmet": "^5.2.1",
     "react-media": "^1.9.2",
     "react-test-renderer": "^16.9.0",

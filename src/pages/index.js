@@ -21,7 +21,10 @@ class Index extends React.Component {
     return (
       <ThemeProvider theme={theme}>
         <div>
-          <Layout title="Malik Elgabroun - Front End Developer">
+          <Layout
+            title="Malik Elgabroun - Front End Developer"
+            keywords={['frontend dev', 'javascript', 'react']}
+          >
             <S.MainContent className="main-content">
               <div className="main-content__banner">
                 <img
