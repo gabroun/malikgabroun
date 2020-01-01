@@ -1,22 +1,20 @@
-import React from 'react';
 import { Link, graphql } from 'gatsby';
-import Layout from '../components/Layout';
 import { ThemeProvider } from 'styled-components';
+import React from 'react';
 
 import { Blog } from '../components/Blog';
 import { PortfolioList } from '../components/Portfolio';
-import cv from '../../static/Malik-Elgabroun_CV.pdf';
-
+import * as S from '../components/styles/index';
+import Layout from '../components/Layout';
 import theme from '../components/styles/theme';
 
-import * as S from '../components/styles/index';
+import cv from '../../static/Malik-Elgabroun_CV.pdf';
 
 class Index extends React.Component {
   render() {
-    const { data } = this.props;
-
-    const post = data.post.edges;
-    const portfolio = data.portfolio.edges;
+    const {
+      data: { post, portfolio },
+    } = this.props;
 
     return (
       <ThemeProvider theme={theme}>
@@ -50,12 +48,12 @@ class Index extends React.Component {
               <S.LatestSection>
                 <S.Header>Latest Posts</S.Header>
 
-                <Blog edges={post} />
+                <Blog nodes={post.nodes} />
               </S.LatestSection>
               <S.LatestSection>
                 <S.Header>Latest Projects</S.Header>
 
-                <PortfolioList edges={portfolio} />
+                <PortfolioList nodes={portfolio.nodes} />
               </S.LatestSection>
             </S.MainContent>
           </Layout>
@@ -68,40 +66,37 @@ class Index extends React.Component {
 export default Index;
 export const query = graphql`
   query {
-    post: allMarkdownRemark(
+    post: allMdx(
       limit: 3
-      sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { type: { ne: "portfolio" } } }
+      sort: { order: DESC, fields: frontmatter___date }
+      filter: { frontmatter: { type: { eq: "post" } } }
     ) {
-      edges {
-        node {
-          timeToRead
-          frontmatter {
-            title
-            path
-            date
-            summary
-            images
-            tags
-            type
-          }
+      nodes {
+        frontmatter {
+          title
+          path
+          date
+          summary
+          images
+          tags
         }
+        timeToRead
       }
     }
-    portfolio: allMarkdownRemark(
+    portfolio: allMdx(
       sort: { order: DESC, fields: [frontmatter___date] }
       filter: { frontmatter: { type: { eq: "portfolio" } } }
     ) {
-      edges {
-        node {
-          frontmatter {
-            title
-            path
-            images
-            tags
-            type
-          }
+      nodes {
+        frontmatter {
+          title
+          path
+          date
+          summary
+          images
+          tags
         }
+        timeToRead
       }
     }
     siteMetaData: site {

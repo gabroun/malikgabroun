@@ -15,11 +15,11 @@ export const Portfolio = ({ title, path, image }) => {
   );
 };
 
-export const PortfolioList = ({ edges }) => {
+export const PortfolioList = ({ nodes }) => {
   return (
     <S.Portfolios>
-      {edges.map(edge => {
-        const { title, path, images } = edge.node.frontmatter;
+      {nodes.map(node => {
+        const { title, path, images } = node.frontmatter;
 
         return (
           <Portfolio title={title} path={path} image={images} key={path} />
