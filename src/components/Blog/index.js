@@ -46,19 +46,12 @@ export const BlogPost = ({
   );
 };
 
-export const Blog = ({ edges }) => {
+export const Blog = ({ nodes }) => {
   return (
     <S.BlogList>
-      {edges.map(function(edge) {
-        const {
-          path,
-          title,
-          summary,
-          images,
-          date,
-          tags,
-        } = edge.node.frontmatter;
-        const { timeToRead } = edge.node;
+      {nodes.map(function(node) {
+        const { path, title, summary, images, date, tags } = node.frontmatter;
+        const { timeToRead } = node;
 
         return (
           <BlogPost

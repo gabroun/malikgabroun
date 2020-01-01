@@ -13,7 +13,7 @@ class Layout extends React.Component {
         <Seo title={title} />
         <Header />
         <S.PageWrapper>
-          <S.Container> {children}</S.Container>
+          <S.Container>{children}</S.Container>
           <Footer />
         </S.PageWrapper>
         <MobileHeader />

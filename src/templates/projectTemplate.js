@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
 import styled from 'styled-components';
-
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import reactIcon from '../resources/images/icons/react.svg';
 import reactRouterIcon from '../resources/images/icons/react-router.svg';
 import gatsbyIcon from '../resources/images/icons/gatsby.svg';
@@ -68,17 +68,16 @@ const ProjectPost = styled.div`
   }
 `;
 
-const Project = ({ data }) => {
-  const { markdownRemark } = data;
-  const { title } = markdownRemark.frontmatter;
-  const { html } = markdownRemark;
+const Project = ({ data: { mdx: project } }) => {
+  const {
+    frontmatter: { title },
+    body,
+  } = project;
+
   return (
     <div>
       <Layout title={title}>
-        <ProjectPost
-          className="project__post"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
+        <MDXRenderer>{body}</MDXRenderer>
       </Layout>
     </div>
   );
@@ -86,11 +85,11 @@ const Project = ({ data }) => {
 
 export const query = graphql`
   query($pathSlug: String!) {
-    markdownRemark(frontmatter: { path: { eq: $pathSlug } }) {
-      html
+    mdx(frontmatter: { path: { eq: $pathSlug } }) {
       frontmatter {
         title
       }
+      body
     }
   }
 `;
