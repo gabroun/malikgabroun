@@ -1,10 +1,12 @@
-import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Img from 'gatsby-image';
+import React from 'react';
 import styled from 'styled-components';
-import Seo from '../components/Seo';
+
 import formatDate from '../utils/formatDate';
+import Layout from '../components/Layout';
+import Seo from '../components/Seo';
 
 const Title = styled.h2`
   font-family: 'Rambla';
@@ -27,8 +29,33 @@ const ImgCredit = styled.p`
   }
 `;
 
-const Post = ({ data }) => {
-  const { markdownRemark } = data;
+export const query = graphql`
+  query($pathSlug: String!, $image: String!) {
+    mdx(frontmatter: { path: { eq: $pathSlug } }) {
+      frontmatter {
+        title
+        path
+        date
+        summary
+        images
+        imageAuthor
+        imageAuthorID
+        keywords
+      }
+      timeToRead
+      body
+    }
+    file(relativePath: { eq: $image }) {
+      childImageSharp {
+        fluid(maxWidth: 600) {
+          ...GatsbyImageSharpFluid_tracedSVG
+        }
+      }
+    }
+  }
+`;
+
+const Post = ({ data: { mdx: post, file: imgFile } }) => {
   const {
     title,
     date,
@@ -37,8 +64,8 @@ const Post = ({ data }) => {
     imageAuthor,
     imageAuthorID,
     keywords,
-  } = markdownRemark.frontmatter;
-  const { html, timeToRead } = markdownRemark;
+  } = post.frontmatter;
+  const { timeToRead } = post;
   return (
     <div>
       <Layout title={title}>
@@ -46,7 +73,7 @@ const Post = ({ data }) => {
           title={title}
           pathSlug={path}
           description={summary}
-          image={data.file.childImageSharp.fluid}
+          image={imgFile.childImageSharp.fluid}
           keywords={keywords}
         />
         <div
@@ -58,8 +85,9 @@ const Post = ({ data }) => {
             <p>{formatDate(date)}.</p>
             <p style={{ marginLeft: '10px' }}>{timeToRead} min read.</p>
           </div>
+
           <Img
-            fluid={data.file.childImageSharp.fluid}
+            fluid={imgFile.childImageSharp.fluid}
             style={{ maxHeight: '400px', marginBottom: '50px' }}
           />
           {imageAuthor && (
@@ -71,54 +99,11 @@ const Post = ({ data }) => {
               </a>
             </ImgCredit>
           )}
-
-          <PostTemplate
-            className="blogpost"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
+          <MDXRenderer>{post.body}</MDXRenderer>
         </div>
       </Layout>
     </div>
   );
 };
-
-export const query = graphql`
-  query($pathSlug: String!, $image: String!) {
-    site {
-      siteMetadata {
-        title
-        author
-        twitter
-        siteUrl
-      }
-    }
-    markdownRemark(frontmatter: { path: { eq: $pathSlug } }) {
-      html
-      frontmatter {
-        title
-        date
-        path
-        summary
-        imageAuthor
-        imageAuthorID
-        keywords
-      }
-      timeToRead
-    }
-    file(relativePath: { eq: $image }) {
-      childImageSharp {
-        # Specify the image processing specifications right in the query.
-        # Makes it trivial to update as your page's design changes.
-        #fixed(width: 864) {
-        #  ...GatsbyImageSharpFixed
-        #}
-        fluid(maxWidth: 600) {
-          # Choose either the fragment including a small base64ed image, a traced placeholder SVG, or one without.
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
-    }
-  }
-`;
 
 export default Post;
