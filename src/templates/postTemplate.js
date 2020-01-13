@@ -19,6 +19,54 @@ const PostTemplate = styled.div`
   }
 `;
 
+const PostWrapper = styled.div`
+  max-width: 960px;
+  margin: 0 auto;
+  pre[class*='language-'] {
+    position: relative;
+    &::before {
+      color: #232129;
+      font-size: 0.75rem;
+      letter-spacing: 0.075em;
+      position: absolute;
+      right: 1.5rem;
+      text-transform: uppercase;
+      top: 0px;
+      border-radius: 0px 0px 4px 4px;
+      padding: 0.25rem 0.5rem;
+    }
+  }
+
+  pre[class$='language-shell'] {
+    &::before {
+      content: 'shell';
+      background-color: #d9d7e0;
+    }
+  }
+  pre[class$='language-jsx'] {
+    &::before {
+      content: 'jsx';
+      background-color: #61dafb;
+    }
+  }
+
+  pre[class$='language-graphql'] {
+    &::before {
+      content: 'GraphQL';
+      color: #ffffff;
+      background: rgb(225, 0, 152);
+    }
+  }
+
+  pre[class$='language-js'],
+  pre[class$='language-javascript'] {
+    &::before {
+      content: 'js';
+      background-color: #f7df1e;
+    }
+  }
+`;
+
 const ImgCredit = styled.p`
   margin-bottom: 0;
   position: relative;
@@ -76,7 +124,7 @@ const Post = ({ data: { mdx: post, file: imgFile } }) => {
           image={imgFile.childImageSharp.fluid}
           keywords={keywords}
         />
-        <div
+        <PostWrapper
           className="post-wrapper"
           style={{ maxWidth: '960px', margin: '0 auto' }}
         >
@@ -100,7 +148,7 @@ const Post = ({ data: { mdx: post, file: imgFile } }) => {
             </ImgCredit>
           )}
           <MDXRenderer>{post.body}</MDXRenderer>
-        </div>
+        </PostWrapper>
       </Layout>
     </div>
   );
