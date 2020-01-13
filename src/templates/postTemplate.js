@@ -22,8 +22,10 @@ const PostTemplate = styled.div`
 const PostWrapper = styled.div`
   max-width: 960px;
   margin: 0 auto;
-  pre[class*='language-'] {
+  .gatsby-highlight {
     position: relative;
+  }
+  pre[class*='language-'] {
     &::before {
       color: #232129;
       font-size: 0.75rem;

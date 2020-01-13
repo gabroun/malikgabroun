@@ -71,7 +71,7 @@ function Links() {
           </Link>
         </li>
         <li>
-          <Link to="/blog" activeClassName="active">
+          <Link to="/blog/" activeClassName="active">
             Blog
           </Link>
         </li>
