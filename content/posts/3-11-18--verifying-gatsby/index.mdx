@@ -1,6 +1,6 @@
 ---
 type: 'post'
-path: '/verifying-gatsby-in-search-console'
+path: '/blog/verifying-gatsby-in-search-console'
 date: '2018/11/03'
 title: 'How to verify a gatsby site in search console'
 tags: ['js, gatsby']
@@ -21,7 +21,7 @@ In this post I will be showing how you can verify the site using the HTML meta t
 
 In order to add the meta tag to the document head, you need to install React helmet component which allow us to modify the document head using it and to install gatsby-react-helmet-plugin which provide supports for server rendering data added with React Helmet.
 
-```javascript
+```shell
 npm install --save gatsby-plugin-react-helmet react-helmet
 ```
 
@@ -38,7 +38,7 @@ Now we insert the meta tag data in head with the help of React Helmet component 
 
 Below you can see an example of how we can insert the HTML meta tag so that search console can verify the site
 
-```javascript
+```jsx
 //index.js
 import Helmet from 'react-helmet';
 <Helmet>

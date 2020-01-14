@@ -1,6 +1,6 @@
 ---
 type: 'post'
-path: '/react-context'
+path: '/blog/react-context'
 date: '2019/02/14'
 title: 'React Context'
 tags: ['js, react']
@@ -57,7 +57,7 @@ Imagine how you commute from point A to point B using the train, you go to the s
 
 In other words, we wrap the Provider component and pass the context as a value prop around the area where we want to consume the context with Consumer component
 
-```javascript
+```jsx
 //App.js
 import React from 'react';
 import { render } from 'react-dom';
@@ -98,7 +98,7 @@ Notice how did we wrap the `Provider component` that we have imported from NameC
 
 After we wrapped the Provider component around the section of the app where we want to consume the context. The consumer component will subscribe to the context change with a function component. In other words, in order to use the context the component will require a function as a child which will get the current context value as an argument. This function will return a React node that will be rendered based on the context value.
 
-```javascript
+```jsx
 //Child.js
 import React from 'react';
 import { Consumer } from './NameContext';
@@ -131,7 +131,7 @@ export default Child;
 
 So we have went through how you can use the context in the render function, what about if you would want to use it in other functions other than render to perform your logic. We could do that by wrapping the exported component with consumer component and passing the context to the component as a props in order for it to be accessible by other functions
 
-```javascript
+```jsx
 //GrandChild.js
 import React from 'react';
 import { Consumer } from './NameContext';
