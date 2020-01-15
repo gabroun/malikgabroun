@@ -67,6 +67,23 @@ const PostWrapper = styled.div`
       background-color: #f7df1e;
     }
   }
+
+  p {
+    a:not(.img-credit) {
+      box-shadow: inset 0 -0.5rem 0 0 #f47c48;
+      transition: box-shadow 0.2s;
+      &:hover {
+        box-shadow: inset 0 -2.5rem 0 0 #f47c48;
+      }
+    }
+    > code {
+      border-radius: 0.3em;
+      background: #ffe56433;
+      color: #1a1a1a;
+      padding: 0.15em 0.2em 0.05em;
+      white-space: normal;
+    }
+  }
 `;
 
 const ImgCredit = styled.p`
@@ -143,7 +160,11 @@ const Post = ({ data: { mdx: post, file: imgFile } }) => {
           {imageAuthor && (
             <ImgCredit>
               Photo by
-              <a href={`https://unsplash.com/${imageAuthorID}`} target="blank">
+              <a
+                href={`https://unsplash.com/${imageAuthorID}`}
+                target="blank"
+                className="img-credit"
+              >
                 {' '}
                 {imageAuthor}
               </a>
