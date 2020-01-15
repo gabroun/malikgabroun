@@ -13,10 +13,12 @@ keywords: ['redux', 'js']
 
 In this post we will be re-writing a simplified version of Redux store to understand how it works.
 
-##Store
+## Store
+
 Store is the central repository that holds the state of your application.
 
-##CreateStore
+## CreateStore
+
 First we create the function `createStore()` that is going to return the store which contains 4 parts
 
 ```text
@@ -44,7 +46,8 @@ function createStore() {
 }
 ```
 
-##getState()
+## getState()
+
 Now that this state is locally available to the function `createStore()`, we need to create a way to interact with this state.
 
 ```javascript
@@ -63,7 +66,8 @@ function createStore() {
 
 This way when a user create a store and want to get an access to the state they can do that by invoking `getState()`.
 
-##subscribe()
+## subscribe()
+
 The next step is to make the user listen to the changes on the state.
 
 We do that by making a variable called `listeners` that is going to be an empty array initially. And whenever `subscribe()` is called its going to receive the listener callback function. And inside it we call `listeners` which is the array we have created and push the listener callback function that was received when subscribe was invoked to that array.
