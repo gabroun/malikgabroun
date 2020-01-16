@@ -68,6 +68,13 @@ const PostWrapper = styled.div`
     }
   }
 
+  pre[class$='language-mdx'] {
+    &::before {
+      content: 'mdx';
+      background-color: #f9ac00;
+    }
+  }
+
   p {
     a:not(.img-credit):not(.gatsby-resp-image-link) {
       box-shadow: inset 0 -0.5rem 0 0 #f47c48;
