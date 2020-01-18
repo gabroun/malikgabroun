@@ -1,4 +1,5 @@
 const config = require('./content/meta/config');
+require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
@@ -67,7 +68,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: `UA-128194304-1`,
+        trackingId: process.env.GA_TRACKINGID,
       },
     },
     {
@@ -130,5 +131,6 @@ module.exports = {
         showSpinner: false,
       },
     },
+    'gatsby-plugin-sitemap',
   ],
 };
