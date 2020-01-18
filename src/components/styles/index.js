@@ -1,7 +1,7 @@
-import styled, { injectGlobal } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import theme from './theme';
 
-injectGlobal`
+export const GlobalStyle = createGlobalStyle`
     html {
         box-sizing: border-box;
         font-family: 'Rambla';
