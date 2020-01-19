@@ -1,6 +1,36 @@
 const config = require('./content/meta/config');
 require('dotenv').config();
 
+const blogQuery = `
+  {
+    allMdx(filter: {
+        frontmatter: {
+        type: {ne: "portfolio"}
+        }
+      }) {
+        edges {
+            node {
+              frontmatter {
+              path
+              title
+              images
+              summary
+              date
+            }
+            rawBody
+            }
+          }
+        }
+  }
+`;
+
+const queries = [
+  {
+    query: blogQuery,
+    transformer: ({ data }) => data.allMdx.edges,
+  },
+];
+
 module.exports = {
   siteMetadata: {
     author: config.authorName,
@@ -12,6 +42,16 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: process.env.ALGOLIA_APP_ID,
+        apiKey: process.env.ALGOLIA_API_KEY,
+        indexName: process.env.ALGOLIA_INDEX_NAME, // for all queries
+        queries,
+        chunkSize: 10000, // default: 1000
+      },
+    },
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
