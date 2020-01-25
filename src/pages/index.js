@@ -6,8 +6,7 @@ import { Blog } from '../components/Blog';
 import { PortfolioList } from '../components/Portfolio';
 import * as S from '../components/styles/index';
 import Layout from '../components/Layout';
-import theme from '../components/styles/theme';
-
+import { theme } from '../components/styles/theme';
 import cv from '../../static/Malik-Elgabroun_CV.pdf';
 
 class Index extends React.Component {

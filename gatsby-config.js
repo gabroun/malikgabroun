@@ -3,31 +3,37 @@ require('dotenv').config();
 
 const blogQuery = `
   {
-    allMdx(filter: {
-        frontmatter: {
-        type: {ne: "portfolio"}
+   posts: allMdx(
+    filter: { fileAbsolutePath: { regex: "/posts/" } }
+  ) {
+    edges {
+      node {
+        objectID: id
+        frontmatter {
+          title
+          date
+          path
+          tags
         }
-      }) {
-        edges {
-            node {
-              frontmatter {
-              path
-              title
-              images
-              summary
-              date
-            }
-            rawBody
-            }
-          }
-        }
+        excerpt(pruneLength: 5000)
+      }
+    }
+  }
   }
 `;
 
+const flatten = arr =>
+  arr.map(({ node: { frontmatter, ...rest } }) => ({
+    ...frontmatter,
+    ...rest,
+  }));
+const settings = { attributesToSnippet: [`excerpt:20`] };
 const queries = [
   {
     query: blogQuery,
-    transformer: ({ data }) => data.allMdx.edges,
+    transformer: ({ data }) => flatten(data.posts.edges),
+    indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME,
+    settings,
   },
 ];
 
@@ -45,9 +51,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-algolia`,
       options: {
-        appId: process.env.ALGOLIA_APP_ID,
+        appId: process.env.GATSBY_ALGOLIA_APP_ID,
         apiKey: process.env.ALGOLIA_API_KEY,
-        indexName: process.env.ALGOLIA_INDEX_NAME, // for all queries
+        indexName: process.env.GATSBY_ALGOLIA_INDEX_NAME, // for all queries
         queries,
         chunkSize: 10000, // default: 1000
       },

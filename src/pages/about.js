@@ -6,7 +6,7 @@ import su from '../../static/about/surrey.png';
 import Layout from '../components/Layout';
 import { Timeline, Event } from '../components/Timeline';
 import { ThemeProvider } from 'styled-components';
-import theme from '../components/styles/theme';
+import { theme } from '../components/styles/theme';
 
 class About extends React.Component {
   render() {
