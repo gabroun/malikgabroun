@@ -75,7 +75,8 @@ const PostWrapper = styled.div`
     }
   }
 
-  p {
+  p,
+  ul {
     a:not(.img-credit):not(.gatsby-resp-image-link) {
       box-shadow: inset 0 -0.5rem 0 0 #f47c48;
       transition: box-shadow 0.2s;
