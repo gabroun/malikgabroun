@@ -1,6 +1,6 @@
 # malikgabroun.com
 
-My personal website.
+My personal website
 
 To install and run locally
 
