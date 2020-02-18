@@ -152,7 +152,7 @@ export default Search;
 As you can see in the above snippet, we first added `InstantSearch` component which as defined by algolia in the [docs](https://www.algolia.com/doc/guides/building-search-ui/what-is-instantsearch/react/) as a component that interact with Algolia’s API, to easily build instant-search applications.
 `InstantSearch` takes two properties, `searchClient` that contains your app id and search key which was defined in env earlier and indexName that you defined in algolia's account. The component has two children components, `SearchBox` component as the name implies and input field with search and delete icon and a `Hits` component (Hits are the return result from your query).
 The result of the search component will look something like this
-![Search Component](./searchComponent.png)
+![Search Component](./SearchComponent.png)
 
 We can replace the HTML you see in the screenshot from the list of posts with the actual hits which is a good spot to do highlighting for the searched keywords etc.
 To do so, we can add an attribute `hitComponent` which going to pass the data that it receives from `Hits` to the component you pass to it for example postPreview.
