@@ -1,6 +1,6 @@
 const config = require('./content/meta/config');
 require('dotenv').config();
-
+console.log(config.siteUrl);
 module.exports = {
   siteMetadata: {
     author: config.authorName,
@@ -131,32 +131,41 @@ module.exports = {
         showSpinner: false,
       },
     },
+    // {
+    //   resolve: 'gatsby-plugin-sitemap',
+    //   query: `
+    //   {
+    //     site {
+    //       siteMetadata {
+    //           siteUrl
+    //       }
+    //     }
+    //     allSitePage {
+    //       edges {
+    //         node {
+    //           path
+    //         }
+    //       }
+    //     }
+    //   }
+    //   `,
+    //   serialize: ({ site, allSitePage }) => {
+    //     allSitePage.edges.map(edge => {
+    //       return {
+    //         url: site.siteMetadata.siteUrl + edge.node.path,
+    //         changefreq: `daily`,
+    //         priority: 0.7,
+    //       };
+    //     });
+    //   },
+    // },
+    'gatsby-plugin-sitemap',
     {
-      resolve: 'gatsby-plugin-sitemap',
-      query: `
-      {
-        site {
-          siteMetadata {
-              siteUrl
-          }
-        }
-        allSitePage {
-          edges {
-            node {
-              path
-            }
-          }
-        }
-      }
-      `,
-      serialize: ({ site, allSitePage }) => {
-        allSitePage.edges.map(edge => {
-          return {
-            url: site.siteMetadata.siteUrl + edge.node.path,
-            changefreq: `daily`,
-            priority: 0.7,
-          };
-        });
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: config.siteUrl,
+        sitemap: `${config.siteUrl}/sitemap.xml`,
+        policy: [{ userAgent: '*', allow: '/' }],
       },
     },
   ],
