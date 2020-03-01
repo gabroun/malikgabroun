@@ -1,6 +1,6 @@
 const config = require('./content/meta/config');
 require('dotenv').config();
-console.log(config.siteUrl);
+
 module.exports = {
   siteMetadata: {
     author: config.authorName,
