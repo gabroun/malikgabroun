@@ -114,6 +114,7 @@ export const Button = styled.button`
     color: ${theme.black};
     text-decoration: none;
     text-transform: uppercase;
+    display: block;
   }
 `;
 
