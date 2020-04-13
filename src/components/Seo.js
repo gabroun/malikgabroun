@@ -104,10 +104,6 @@ const Seo = ({ meta, image, title, description, pathSlug, keywords }) => {
           href: icon512,
           sizes: '512x512',
         },
-        {
-          rel: 'canonical',
-          href: url,
-        },
       ]}
     />
   );
