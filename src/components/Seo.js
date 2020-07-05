@@ -81,6 +81,10 @@ const Seo = ({ meta, image, title, description, pathSlug, keywords }) => {
         .concat(metadata)}
       link={[
         {
+          rel: 'canonical',
+          href: url,
+        },
+        {
           rel: 'icon',
           type: 'image/png',
           href: icon16,

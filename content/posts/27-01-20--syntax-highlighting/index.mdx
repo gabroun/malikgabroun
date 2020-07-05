@@ -1,6 +1,6 @@
 ---
 type: 'post'
-path: '/syntax-highlighting-in-gatsby-mdx'
+path: '/blog/syntax-highlighting-in-gatsby-mdx'
 date: '2020/01/27'
 title: 'Syntax Highlighting in Gatsby MDX'
 tags: ['js, gatsby']
@@ -23,7 +23,7 @@ Then, we create the component which we will use in the `<MDXProvider/>` that is 
 
 ```javascript
 const component = {
-  pre: props => {
+  pre: (props) => {
     const className = props.children.props.className || '';
     const matches = className.match(/language-(?<lang>.*)/);
     return (
@@ -83,7 +83,7 @@ import Highlight, { defaultProps } from 'prism-react-renderer';
 
 /* eslint-disable */
 const component = {
-  pre: props => {
+  pre: (props) => {
     const className = props.children.props.className || '';
     const matches = className.match(/language-(?<lang>.*)/);
     return (

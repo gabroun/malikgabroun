@@ -1,6 +1,6 @@
 ---
 type: 'post'
-path: '/understanding-redux'
+path: '/blog/understanding-redux'
 date: '2019/03/22'
 title: 'Understanding Redux by doing a basic implementation of the store'
 tags: ['redux, js']
@@ -102,8 +102,8 @@ function createStore() {
   function subscribe(listener) {
     listeners.push(listener);
 
-    return function() {
-      listeners = listeners.filter(function(listenerItem) {
+    return function () {
+      listeners = listeners.filter(function (listenerItem) {
         return listenerItem !== listener;
       });
     };
@@ -147,7 +147,7 @@ Whenever we update the state we need loop through the listeners and invoke them 
 ```javascript
 function dispatch(action) {
   state = reducer(state, action);
-  listeners.forEach(function(listener) {
+  listeners.forEach(function (listener) {
     return listener();
   });
 }
@@ -167,8 +167,8 @@ function createStore(reducer) {
   function subscribe(listener) {
     listeners.push(listener);
 
-    return function() {
-      listeners = listeners.filter(function(listenerItem) {
+    return function () {
+      listeners = listeners.filter(function (listenerItem) {
         return listenerItem !== listener;
       });
     };
@@ -176,7 +176,7 @@ function createStore(reducer) {
 
   function dispatch(action) {
     state = reducer(state, action);
-    listeners.forEach(function(listener) {
+    listeners.forEach(function (listener) {
       return listener();
     });
   }
