@@ -1,6 +1,6 @@
 ---
 type: 'post'
-path: '/react-context'
+path: '/blog/react-context'
 date: '2019/02/14'
 title: 'React Context'
 tags: ['js, react']
@@ -75,7 +75,7 @@ class App extends React.Component {
   }
   handleNamechange(event) {
     let nameValue = event.target.value;
-    this.setState(function() {
+    this.setState(function () {
       return {
         name: nameValue,
       };
@@ -108,7 +108,7 @@ class Child extends React.Component {
   render() {
     return (
       <Consumer>
-        {function(context) {
+        {function (context) {
           return (
             <div>
               <h2>{context.name}</h2>
@@ -157,7 +157,7 @@ class GrandChild extends React.Component {
 export default function GrandChildWithContext() {
   return (
     <Consumer>
-      {function(context) {
+      {function (context) {
         return <GrandChild data={context} />;
       }}
     </Consumer>

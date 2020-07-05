@@ -1,13 +1,6 @@
 import styled from 'styled-components';
 
 export const Header = styled.header`
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  padding: 0 25px;
-  width: 100%;
-  z-index: 2;
-  background-color: #fefefe;
-  box-shadow: 0 0 3px 0px rgba(54, 54, 54, 0.15);
   @media (max-width: 1023px) {
     .menu-icon {
       justify-self: end;
@@ -23,6 +16,31 @@ export const Header = styled.header`
         transition-delay: 6.4s;
         transition: transform 0.3s ease-out;
       }
+    }
+  }
+  .desktop-header {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    padding: 0 25px;
+    width: 100%;
+    z-index: 2;
+    background-color: #fefefe;
+    box-shadow: 0 0 3px 0px rgba(54, 54, 54, 0.15);
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+
+  .mobile-header {
+    display: none;
+    @media (max-width: 767px) {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      width: 100%;
+      z-index: 2;
+      background-color: rgb(254, 254, 254);
+      box-shadow: rgba(54, 54, 54, 0.15) 0px 0px 3px 0px;
+      padding: 0px 25px;
     }
   }
 `;
