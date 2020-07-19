@@ -1,4 +1,5 @@
 exports.createPages = async ({ actions, graphql, reporter }) => {
+  const { createRedirect } = actions;
   const result = await graphql(`
     query {
       allMdx {
@@ -7,6 +8,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             path
             images
             type
+            redirects
           }
         }
       }
@@ -19,7 +21,16 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 
   const pages = result.data.allMdx.nodes;
 
-  pages.forEach(page => {
+  pages.forEach((page) => {
+    const { redirects } = page.frontmatter;
+    if (redirects) {
+      createRedirect({
+        fromPath: redirects[0],
+        toPath: redirects[1],
+        redirectInBrowser: true,
+        isPermanent: true,
+      });
+    }
     if (page.frontmatter.type === 'portfolio') {
       actions.createPage({
         path: page.frontmatter.path,
