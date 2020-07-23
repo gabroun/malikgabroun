@@ -1,12 +1,12 @@
 import React, { Fragment } from 'react';
-import rb from '../../static/about/redbox.jpg';
-import le from '../../static/about/leicester.jpg';
-import ur from '../../static/about/unirazak1.png';
-import su from '../../static/about/surrey.png';
-import Layout from '../components/Layout';
-import { Timeline, Event } from '../components/Timeline';
+import rb from '@static/about/redbox.jpg';
+import le from '@static/about/leicester.jpg';
+import ur from '@static/about/unirazak1.png';
+import su from '@static/about/surrey.png';
+import Layout from '@components/Layout';
+import { Timeline, Event } from '@components/Timeline';
 import { ThemeProvider } from 'styled-components';
-import theme from '../components/styles/theme';
+import theme from '@components/styles/theme';
 
 class About extends React.Component {
   render() {

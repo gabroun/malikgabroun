@@ -1,3 +1,5 @@
+const path = require("path");
+
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createRedirect } = actions;
   const result = await graphql(`
@@ -52,3 +54,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   });
 };
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        "@components": path.resolve(__dirname, "src/components"),
+        "@static": path.resolve(__dirname, "static")
+      }
+    }
+  });
+}
