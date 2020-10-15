@@ -1,0 +1,182 @@
+---
+type: 'post'
+path: '/blog/how-to-add-metadata-in-vue-using-vue-meta'
+date: '2020/08/06'
+title: 'How to Add MetaData in Vue Using Vue-Meta'
+tags: ['js, vue']
+summary: 'In this post, we will be looking into how to add vue-meta to our project and use it to handle metadata inside the component'
+images: 'images/thumbnails/imacScreen.jpeg'
+imageAuthorID: '@kaleidico'
+imageAuthor: 'Kaleidico'
+keywords: ['vue, vue-meta, vue metadata']
+---
+
+## What is vue-meta?
+
+“vue-meta” is a module that offers a Vue plugin which allows us to add metadata from component dynamically.
+
+This means in projects where we have multiple routes and we want to update the meta tags for SEO dynamically based on the route currently rendered on the page, vue-meta will handle that for us while giving us control over the app metadata.
+
+---
+
+## Setup
+
+First of all, we need to add vue-meta to our project and let Vue know that we want to use it as a plugin available to all components.
+
+```text
+npm install vue-meta --save
+```
+
+Then, we add the vue-meta to our main js file.
+
+```js
+// main.js or index.js
+import Vue from "vue";
+import App from "./App.vue"; // main component
+import Meta from "vue-meta";
+Vue.use(Meta);
+new Vue({
+  render: h => h(App)
+}).$mount("#app");
+```
+
+---
+
+## Adding Metadata
+
+Now we look into an example of how to add metadata to our component.
+
+```vue
+<template>
+  <div id="app">
+    <img width="25%" src="./assets/logo.png" />
+    <HelloWorld msg="Hello Vue in CodeSandbox!" />
+  </div>
+</template>
+<script>
+import HelloWorld from './components/HelloWorld';
+export default {
+  name: 'App',
+  components: {
+    HelloWorld,
+  },
+  metaInfo() {
+    return {
+      title: 'test meta data with vue',
+      meta: [
+        {
+          vmid: 'description',
+          name: 'description',
+          content:
+            'hello world, this is an example of adding a description with vueMeta',
+        },
+      ],
+    };
+  },
+};
+</script>
+```
+
+As can be seen, we can do that by calling `metaInfo` function and return an object as a value that will contain our metadata.
+
+In addition, we can set the meta value dynamically based on some logic as we have access to it at a component level.
+
+```vue
+<template>
+  <div id="app">
+    <img width="25%" src="./assets/logo.png" />
+    <HelloWorld msg="Hello Vue in CodeSandbox!" />
+  </div>
+</template>
+<script>
+import HelloWorld from './components/HelloWorld';
+export default {
+  name: 'App',
+  components: {
+    HelloWorld,
+  },
+  metaInfo() {
+    const a = 'test';
+    return {
+      title: 'test meta data with vue',
+      meta: [
+        ...(a === 'test' && [
+          {
+            vmid: 'description',
+            name: 'description',
+            content:
+              'hello world, this is an example of adding a description with vue-meta',
+          },
+        ]),
+      ],
+    };
+  },
+};
+</script>
+```
+
+---
+
+## Type of Metadata
+
+We can add more or less any type of metadata needed using ‘vue-meta’ plugin whether it is meta, title, link or script.
+
+In the following below we will see an example of how to add some of these metadata.
+
+```vue
+<script>
+import HelloWorld from './components/HelloWorld';
+export default {
+  name: 'App',
+  components: {
+    HelloWorld,
+  },
+  metaInfo() {
+    const a = 'test';
+    return {
+      title: 'test meta data with vue',
+      meta: [
+        ...(a === 'test' && [
+          {
+            vmid: 'description',
+            name: 'description',
+            content:
+              'hello world, this is an example of adding a description with vue-meta',
+          },
+        ]),
+      ],
+      script: [
+        {
+          src: '<https://services.postcodeanywhere.co.uk/js/address-3.91.js>',
+          async: true,
+          defer: true,
+          body: true,
+        },
+      ],
+      link: [
+        {
+          rel: 'canonical',
+          href: '<https://malikgabroun.com/>',
+        },
+      ],
+    };
+  },
+};
+</script>
+```
+
+In the above example, we can see how we added an external script to the body using vue-meta. In the case we wanted the script to be included in the head instead, we can do that by removing body flag.
+
+---
+
+## Vmid
+
+So far, we looked into how to setup vue-meta and add metadata to our component dynamically, however, what if we wanted to set the value to the specific property in multiple components and how that would be resolved.
+
+In order to do that, we can use vmid which is a special property that vue-meta provide us in order to resolve the value within the component tree. So if two sets of meta have the same vmid it will override it, using the value from the last updated component (i.e. child component) instead of merging it.
+
+---
+
+## Conclusion
+
+In conclusion, vue-meta is a plugin that in most vue frameworks will come out of the box which allows us and give us the control to how the metadata should show in a website.

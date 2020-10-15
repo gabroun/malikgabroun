@@ -1,14 +1,14 @@
+import * as S from '../components/styles/index';
+
 import { Link, graphql } from 'gatsby';
-import { ThemeProvider } from 'styled-components';
-import React from 'react';
 
 import { Blog } from '../components/Blog';
-import { PortfolioList } from '../components/Portfolio';
-import * as S from '../components/styles/index';
 import Layout from '../components/Layout';
-import theme from '../components/styles/theme';
-
+import { PortfolioList } from '../components/Portfolio';
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
 import cv from '../../static/Malik-Elgabroun_CV.pdf';
+import theme from '../components/styles/theme';
 
 class Index extends React.Component {
   render() {
@@ -50,11 +50,11 @@ class Index extends React.Component {
 
                 <Blog nodes={post.nodes} />
               </S.LatestSection>
-              <S.LatestSection>
+              {/* <S.LatestSection>
                 <S.Header>Latest Projects</S.Header>
 
                 <PortfolioList nodes={portfolio.nodes} />
-              </S.LatestSection>
+              </S.LatestSection> */}
             </S.MainContent>
           </Layout>
         </div>
