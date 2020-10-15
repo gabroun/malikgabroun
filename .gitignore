@@ -6,3 +6,4 @@ src/_tests_/
 notes.txt
 .vscode/launch.json
 .env
+**/.DS_Store

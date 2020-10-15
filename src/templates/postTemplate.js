@@ -1,12 +1,11 @@
-import { graphql } from 'gatsby';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import Img from 'gatsby-image';
-import React from 'react';
-import styled from 'styled-components';
-
-import formatDate from '../utils/formatDate';
 import Layout from '../components/Layout';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import React from 'react';
 import Seo from '../components/Seo';
+import formatDate from '../utils/formatDate';
+import { graphql } from 'gatsby';
+import styled from 'styled-components';
 
 const Title = styled.h2`
   font-family: 'Rambla';
@@ -52,6 +51,13 @@ const PostWrapper = styled.div`
     }
   }
 
+  pre[class$='language-vue'] {
+    &::before {
+      content: 'vue';
+      background-color: #42b883;
+    }
+  }
+
   pre[class$='language-graphql'] {
     &::before {
       content: 'GraphQL';
@@ -79,9 +85,10 @@ const PostWrapper = styled.div`
   ul {
     a:not(.img-credit):not(.gatsby-resp-image-link) {
       box-shadow: inset 0 -0.5rem 0 0 #f47c48;
-      transition: box-shadow 0.2s;
+      transition: box-shadow 0.2s, color 0.2s;
       &:hover {
         box-shadow: inset 0 -2.5rem 0 0 #f47c48;
+        color: white;
       }
     }
     > code {
@@ -91,6 +98,10 @@ const PostWrapper = styled.div`
       padding: 0.15em 0.2em 0.05em;
       white-space: normal;
     }
+  }
+
+  hr {
+    margin-top: calc(1.5rem - 1px);
   }
 `;
 
