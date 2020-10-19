@@ -1,12 +1,17 @@
+import * as S from '../components/styles/about';
+
+import { Event, Timeline } from '../components/Timeline';
 import React, { Fragment } from 'react';
-import rb from '../../static/about/redbox.jpg';
-import le from '../../static/about/leicester.jpg';
-import ur from '../../static/about/unirazak1.png';
-import su from '../../static/about/surrey.png';
+
+import ContactForm from '../components/ContactForm'
 import Layout from '../components/Layout';
-import { Timeline, Event } from '../components/Timeline';
+import Socials from '../components/Socials'
 import { ThemeProvider } from 'styled-components';
+import le from '../../static/about/leicester.jpg';
+import rb from '../../static/about/redbox.jpg';
+import su from '../../static/about/surrey.png';
 import theme from '../components/styles/theme';
+import ur from '../../static/about/unirazak1.png';
 
 class About extends React.Component {
   render() {
@@ -45,6 +50,18 @@ class About extends React.Component {
                   logo={ur}
                 />
               </Timeline>
+              <S.ContactUs>
+                <div className="social">
+                  <h1>Get In Touch</h1>
+                  <p>Want to ask a question, have a chat or ask about work or anything else? Send me a message! and I will try to responsed as quickly as I can.
+                  </p>
+                  <Socials/>
+                </div>
+                <div className="contact-form">
+                <ContactForm/>
+                </div>
+              </S.ContactUs>
+              
             </Fragment>
           </div>
         </Layout>
