@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const ContactUsForm = styled.form`
+export const ContactUsForm = styled.div`
     .flex-col {
         display: flex;
         flex-direction: column;
@@ -33,6 +33,10 @@ export const ContactUsForm = styled.form`
     input, textarea {
         border-radius: 8px;
         border: solid 1px black;
+    }
+
+    .error-msg {
+        color: #DB2D1C;
     }
 
 `;

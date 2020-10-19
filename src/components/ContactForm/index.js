@@ -1,42 +1,100 @@
 import * as S from './styles'
 
+import { ErrorMessage, Field, Form, Formik } from 'formik'
+
 import React from 'react'
 
 class ContactForm extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {firstname: "", lastname: "", email: "", message: ""}
-
-        this.handleChange = this.handleChange.bind(this)
+        this.encode = this.encode.bind(this)
     }
 
-    handleChange(e) {
-        this.setState({ [e.target.name]: e.target.value });
-    } 
+    encode(data) {
+        return Object.keys(data)
+          .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+          .join("&");
+      }
     render() {
         return (
-            <S.ContactUsForm name="contact" method="POST" netlify-honeypot="bot-field" data-netlify="true">
-                <input type="hidden" name="bot-field" />
-                <input type="hidden" name="form-name" value="contact" />
-                <div className="contact-name">
-                    <p className="flex-col">
-                        <label htmlFor="firstname">First Name</label>
-                        <input type="text" name="firstname" value={this.state.firstname} onChange={this.handleChange} />
-                    </p>
-                    <p className="flex-col">
-                        <label htmlFor="lastname">Last Name</label>
-                        <input type="text" name="lastname" value={this.state.lastname} onChange={this.handleChange} />
-                    </p>
-                </div>
-                <div className="flex-col">
-                    <label htmlFor="email">Email</label>
-                    <input type="email" name="email" value={this.state.email} onChange={this.handleChange}/>
-                </div>
-                <div className="flex-col">
-                    <label htmlFor="message">Message</label>
-                    <textarea name="message" value={this.state.message} onChange={this.handleChange} />
-                </div>
-                <button type="submit" className="contact-submit">Submit</button>
+            <S.ContactUsForm>
+            <Formik initialValues={{
+                firstname: '',
+                lastname: '',
+                email: '',
+                message: '',
+              }}
+              validate={values => {
+                const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+                const errors = {};
+                if(!values.firstname) {
+                  errors.firstname = 'First name Required'
+                }
+                if(!values.lastname) {
+                    errors.lastname = 'Last name Required'
+                  }
+                if(!values.email || !emailRegex.test(values.email)) {
+                  errors.email = 'Valid Email Required'
+                }
+                if(!values.message) {
+                  errors.message = 'Message Required'
+                }
+                return errors;
+              }}
+              onSubmit={(values, actions) => {
+                fetch("/", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                  body: this.encode({ "form-name": "contact", ...values })
+                })
+                .then(() => {
+                  console.log('Success');        
+                  actions.resetForm()
+                })
+                .catch(() => {
+                  console.log('Error');
+                })
+                .finally(() => actions.setSubmitting(false))
+              }}>
+                {() => (
+                    <Form name="contact" netlify-honeypot="bot-field" data-netlify={true}>
+                        <input type="hidden" name="bot-field" />
+                        <input type="hidden" name="form-name" value="contact" />
+                        <div className="contact-name">
+                            <p className="flex-col">
+                                <label htmlFor="first name">First Name </label>
+                                <Field name="firstname" />
+                                <span className="error-msg">
+                                    <ErrorMessage name="firstname"  />
+                                </span>
+                            </p>
+                            <p className="flex-col">
+                                <label htmlFor="last name">Last Name </label>
+                                <Field name="lastname" />
+                                <span className="error-msg">
+                                <ErrorMessage name="lastname" />
+                                </span>
+                            </p>
+                        </div>
+                        <div className="flex-col">
+                                <label htmlFor="email">Email </label>
+                                <Field name="email" />
+                                <span className="error-msg">
+                                <ErrorMessage name="email" />
+                                </span>
+                        </div>
+                        <div className="flex-col">
+                            <label htmlFor="message">Message </label>
+                            <Field name="message" component="textarea"/>
+                            <span className="error-msg">
+                            <ErrorMessage name="message" />
+                            </span>
+                        </div>
+                        <button type="submit" className="contact-submit">Submit</button>
+                    </Form>
+                )}
+            </Formik>
+       
             </S.ContactUsForm>
         );
     }
