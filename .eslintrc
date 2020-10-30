@@ -26,5 +26,19 @@
     "browser": true,
     "node": true,
     "jest": true
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": [
+        [
+          "@components",
+          "./src/components"
+        ],
+        [
+          "@static",
+          "./static"
+        ]
+      ]
+    }
   }
 }
