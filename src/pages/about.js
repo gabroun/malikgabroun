@@ -1,12 +1,14 @@
+import * as S from '../components/styles/about';
+
 import React, { Fragment } from 'react';
-import rb from '@static/about/redbox.jpg';
-import le from '@static/about/leicester.jpg';
-import ur from '@static/about/unirazak1.png';
-import su from '@static/about/surrey.png';
-import Layout from '@components/Layout';
-import { Timeline, Event } from '@components/Timeline';
+
+import Carousel from '../components/Carousel';
+import ContactForm from '../components/ContactForm';
+import Layout from '../components/Layout';
+import Socials from '../components/Socials';
 import { ThemeProvider } from 'styled-components';
-import theme from '@components/styles/theme';
+import headImg from '../resources/headShot.png';
+import theme from '../components/styles/theme';
 
 class About extends React.Component {
   render() {
@@ -15,36 +17,45 @@ class About extends React.Component {
         <Layout title="About">
           <div className="main-content">
             <Fragment>
-              <Timeline>
-                <Event
-                  dates={'2016 – preset'}
-                  title={'Front End Developer'}
-                  subtitle={'Redbox Digital'}
-                  logo={rb}
-                  position="right"
-                />
-                <Event
-                  dates={'2015 – 2016'}
-                  title={'MSc Software Engineering'}
-                  subtitle={'University of Leicester'}
-                  position="left"
-                  logo={le}
-                />
-                <Event
-                  dates={'2014 – 2015'}
-                  title={'MSc International Business Management'}
-                  subtitle={'University of Surrey'}
-                  position="right"
-                  logo={su}
-                />
-                <Event
-                  dates={'2010 – 2013'}
-                  title={'BSc Information Technology'}
-                  subtitle={'University Tun Abdul Razak'}
-                  position="left"
-                  logo={ur}
-                />
-              </Timeline>
+              <S.AboutMe className="about-me">
+                <div className="intro">
+                  <h3>About Me</h3>
+                  <p>Hello, my name is Malik Elgabroun.</p>
+
+                  <p>
+                    I’m a Front end Developer based in London 🇬🇧. Currently
+                    Working as a Front end Developer at Redbox Digital.
+                  </p>
+
+                  <p>
+                    I enjoy writing software and building application, and
+                    currently I get to develop using React, Vue, TypeScript and
+                    many more.
+                  </p>
+
+                  <p>
+                    My hobbies are doing sports from playing football, running
+                    and cycling. Also I like travelling to new places when the
+                    opportunity arises.
+                  </p>
+                </div>
+                <img src={headImg} />
+              </S.AboutMe>
+              <Carousel />
+              <S.ContactUs>
+                <div className="social">
+                  <h1>Get In Touch</h1>
+                  <p>
+                    Want to ask a question, have a chat or ask about work or
+                    anything else? Send me a message! and I will try to
+                    responsed as quickly as I can.
+                  </p>
+                  <Socials />
+                </div>
+                <div className="contact-form">
+                  <ContactForm />
+                </div>
+              </S.ContactUs>
             </Fragment>
           </div>
         </Layout>

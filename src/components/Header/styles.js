@@ -29,6 +29,12 @@ export const Header = styled.header`
     @media (max-width: 767px) {
       display: none;
     }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
   }
 
   .mobile-header {

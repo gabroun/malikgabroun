@@ -1,10 +1,9 @@
-import React from 'react';
 import { Link } from 'gatsby';
+import React from 'react';
 import styled from 'styled-components';
 
 const MenuItems = styled.ul`
   list-style: none;
-  padding: 25px 25px 0 10px;
   margin: 0;
   li {
     margin: 0 5px;
