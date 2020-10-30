@@ -1,11 +1,11 @@
-import { graphql } from 'gatsby';
-import { ThemeProvider } from 'styled-components';
-import React from 'react';
+import * as S from '@components/styles/blog';
 
-import { BlogPost } from '../components/Blog';
-import * as S from '../components/styles/blog';
-import Layout from '../components/Layout';
-import theme from '../components/styles/theme';
+import { BlogPost } from '@components/Blog';
+import Layout from '@components/Layout';
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { graphql } from 'gatsby';
+import theme from '@components/styles/theme';
 
 export const query = graphql`
   query allmdx {
@@ -33,7 +33,7 @@ const Blog = ({ data: { allMdx: posts } }) => {
     <ThemeProvider theme={theme}>
       <Layout title="Blog">
         <S.BlogList>
-          {posts.nodes.map(post => {
+          {posts.nodes.map((post) => {
             const {
               path,
               title,

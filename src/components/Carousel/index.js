@@ -3,10 +3,10 @@ import * as S from './styles';
 import LeftArrow from './LeftArrow';
 import React from 'react';
 import RightArrow from './RightArrow';
-import le from '../../../static/about/leicester.jpg';
-import rb from '../../../static/about/redbox.jpg';
-import su from '../../../static/about/surrey.png';
-import ur from '../../../static/about/unirazak1.png';
+import le from '@static/about/leicester.jpg';
+import rb from '@static/about/redbox.jpg';
+import su from '@static/about/surrey.png';
+import ur from '@static/about/unirazak1.png';
 
 class Carousel extends React.Component {
   constructor(props) {

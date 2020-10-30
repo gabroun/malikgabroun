@@ -1,10 +1,11 @@
-import React from 'react';
-import Header from '../Header';
-import Footer from '../Footer';
-import Seo from '../Seo';
-import MobileHeader from '../Header/MobileHeader';
 import * as S from './styles';
-import { GlobalStyle } from '../styles';
+
+import Footer from '@components/Footer';
+import { GlobalStyle } from '@components/styles';
+import Header from '@components/Header';
+import MobileHeader from '@components/Header/MobileHeader';
+import React from 'react';
+import Seo from '@components/Seo';
 
 class Layout extends React.Component {
   render() {
