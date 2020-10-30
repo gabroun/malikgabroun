@@ -1,6 +1,7 @@
 import * as S from './styles'
 
-import React, { Fragment } from 'react';
+import React from 'react';
+
 const Socials = () => {
     return (
         <S.SocialIcons>
