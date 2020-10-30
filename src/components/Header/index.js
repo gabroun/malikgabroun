@@ -1,10 +1,9 @@
-import React from 'react';
-import { Link } from 'gatsby';
-
-import Links from '../Navigation/Links';
-import Logo from '../Logo';
-
 import * as S from './styles';
+
+import { Link } from 'gatsby';
+import Links from '@components/Navigation/Links';
+import Logo from '@components/Logo';
+import React from 'react';
 
 const Header = () => {
   return (

@@ -2,13 +2,13 @@ import * as S from '../components/styles/index';
 
 import { Link, graphql } from 'gatsby';
 
-import { Blog } from '../components/Blog';
-import Layout from '../components/Layout';
+import { Blog } from '@components/Blog';
+import Layout from '@components/Layout';
 import { PortfolioList } from '../components/Portfolio';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import cv from '../../static/Malik-Elgabroun_CV.pdf';
-import theme from '../components/styles/theme';
+import cv from '@static/Malik-Elgabroun_CV.pdf';
+import theme from '@components/styles/theme';
 
 class Index extends React.Component {
   render() {
