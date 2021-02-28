@@ -3,41 +3,13 @@ import * as S from './styles';
 import LeftArrow from './LeftArrow';
 import React from 'react';
 import RightArrow from './RightArrow';
-import le from '@static/about/leicester.jpg';
-import rb from '@static/about/redbox.jpg';
-import su from '@static/about/surrey.png';
-import ur from '@static/about/unirazak1.png';
+import content from '@components/content';
 
 class Carousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      content: [
-        {
-          dates: '2016 - present',
-          title: 'Front End Developer',
-          subtitle: 'Redbox Digital',
-          imgUrl: rb,
-        },
-        {
-          dates: '2015 - 2016',
-          title: 'MSc Software Engineering',
-          subtitle: 'University of Leciester',
-          imgUrl: le,
-        },
-        {
-          dates: '2014 - 2015',
-          title: 'MSc International Business Management',
-          subtitle: 'University of Surrey',
-          imgUrl: su,
-        },
-        {
-          dates: '2010 - 2013',
-          title: 'BSc Information Technology',
-          subtitle: 'University Tun Abdul Razak',
-          imgUrl: ur,
-        },
-      ],
+      content,
       currentSlide: 0,
     };
 
@@ -50,9 +22,22 @@ class Carousel extends React.Component {
     const shouldResetIndex = currentIndex === 0;
     const index = shouldResetIndex ? currentIndex : currentIndex - 1;
 
-    this.setState({
-      currentSlide: index,
-    });
+    if (document.querySelectorAll('.item.show').length && currentIndex !== 0) {
+      document.querySelector('.item.show').classList.remove('show');
+    }
+
+    this.setState(
+      {
+        currentSlide: index,
+      },
+      () => {
+        if (currentIndex !== 0) {
+          document
+            .querySelector(`.item[data-index="${currentIndex}"]`)
+            .classList.add('show');
+        }
+      }
+    );
   }
   nextSlide() {
     const lastIndex = this.state.content.length - 1;
@@ -60,9 +45,23 @@ class Carousel extends React.Component {
     const shouldResetIndex = currentIndex === lastIndex;
     const index = shouldResetIndex ? lastIndex : currentIndex + 1;
 
+    if (document.querySelectorAll('.item.show').length) {
+      document.querySelector('.item.show').classList.remove('show');
+    }
+    if (currentIndex + 1 !== lastIndex && currentIndex !== lastIndex) {
+      document
+        .querySelector(`.item[data-index="${currentIndex + 1}"]`)
+        .nextElementSibling.classList.add('show');
+    }
+
     this.setState({
       currentSlide: index,
     });
+  }
+  componentDidMount() {
+    document
+      .querySelector('.item.active')
+      .nextElementSibling.classList.add('show');
   }
   render() {
     return (
