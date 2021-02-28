@@ -1,18 +1,17 @@
 import styled from 'styled-components';
 
 export const CarouselWrapper = styled.div`
-  margin-top: 80px;
-  margin-bottom: 80px;
+  margin: 80px auto;
   max-width: 500px;
   position: relative;
   .progress-bar {
     list-style: none;
     margin: 0;
     list-style: none;
-    width: 350px;
+    width: 335px;
     display: flex;
     margin: auto;
-    justify-content: space-around;
+    justify-content: space-evenly;
     @media (max-width: 767px) {
       width: 150px;
     }
@@ -24,9 +23,11 @@ export const CarouselWrapper = styled.div`
     height: 14px;
     position: relative;
     background-color: #fff;
+    display: none;
     &.active {
       border: solid 1px #f47c48;
       background-color: #f47c48;
+      display: block;
       &:before {
         background-color: #f47c48;
       }
@@ -43,10 +44,14 @@ export const CarouselWrapper = styled.div`
       }
     }
 
+    &.show {
+      display: block;
+    }
+
     &:before {
       content: '';
       height: 2px;
-      width: 50px;
+      width: 130px;
       display: block;
       top: 50%;
       box-sizing: border-box;
@@ -54,25 +59,28 @@ export const CarouselWrapper = styled.div`
       right: 0;
       z-index: -1;
       background-color: #f47c48;
+      @media (max-width: 767px) {
+        width: 65px;
+      }
     }
 
     &:not(:nth-of-type(1)):before {
-      width: 100px;
+      width: 130px;
       @media (max-width: 767px) {
-        width: 50px;
+        width: 65px;
       }
     }
 
     &:after {
       content: '';
       height: 2px;
-      width: 70px;
+      width: 130px;
       background-color: #dfdfdf;
       top: 50%;
       position: absolute;
       z-index: -1;
       @media (max-width: 767px) {
-        width: 50px;
+        width: 65px;
       }
     }
 
@@ -107,20 +115,20 @@ export const Carousel = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 400px;
     text-align: center;
     margin-top: 60px;
   }
 
   .title {
-    font-size: 1.75em;
-    font-weight: 500;
+    font-size: 1.25em;
+    font-weight: 700;
   }
 
   .brand {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 36px;
     img {
       width: 80px;
       height: 80px;
@@ -144,14 +152,14 @@ export const Carousel = styled.div`
   }
 
   .left-arrow {
-    left: -4px;
+    left: -5px;
     @media (max-width: 767px) {
       left: -10px;
     }
   }
 
   .right-arrow {
-    right: -22px;
+    right: -5px;
     @media (max-width: 767px) {
       right: -10px;
     }
