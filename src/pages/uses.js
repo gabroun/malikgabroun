@@ -13,14 +13,20 @@ const Container = styled.div`
       justify-items: center;
       justify-content: center;
       grid-gap: 40px;
+      margin-bottom: 40px;
       @media (min-width: 530px) {
-        grid-template-columns: repeat(auto-fill, minmax(350px, 450px));
+        grid-template-columns: repeat(auto-fill, minmax(350px, 500px));
       }
     }
   }
 
   img {
     border-radius: 6px;
+    margin-bottom: 0;
+  }
+
+  span {
+    font-weight: 700;
   }
 
   p {
@@ -41,8 +47,14 @@ const Uses = () => {
       <Layout title="Uses">
         <Container>
           <div className="container-image">
-            <img src={lightSetup} alt="setup without LED background" />
-            <img src={darkSetup} alt="setup with LED background" />
+            <div>
+              <img src={lightSetup} alt="setup without LED background" />
+              <span>Desk setup with LED</span>
+            </div>
+            <div>
+              <img src={darkSetup} alt="setup with LED background" />
+              <span>Desk setup without LED</span>
+            </div>
           </div>
           <div className="container-content">
             <h2>Desk Setup</h2>
