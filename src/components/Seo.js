@@ -1,17 +1,15 @@
 import Helmet from 'react-helmet';
 import React from 'react';
-
-import useSiteMetadata from '../hooks/useSiteMetadata';
-
 import icon16 from '../../static/icons/favicon-16x16.png';
 import icon192 from '../../static/icons/favicon-192x192.png';
 import icon32 from '../../static/icons/favicon-32x32.png';
 import icon512 from '../../static/icons/favicon-512x512.png';
+import useSiteMetadata from '../hooks/useSiteMetadata';
 
 const Seo = ({ meta, image, title, description, pathSlug, keywords }) => {
   const metaDescription = description || useSiteMetadata().description;
   const url = pathSlug
-    ? `${useSiteMetadata().siteUrl}${pathSlug}/`
+    ? `${useSiteMetadata().siteUrl}${pathSlug}`
     : `${useSiteMetadata().siteUrl}`;
   const metaImage = image ? `${useSiteMetadata().siteUrl}/${image.src}` : null;
 

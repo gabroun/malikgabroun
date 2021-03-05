@@ -69,7 +69,7 @@ const Links = () => {
           </Link>
         </li>
         <li>
-          <Link to="/about" activeClassName="active">
+          <Link to="/about/" activeClassName="active">
             About
           </Link>
         </li>
