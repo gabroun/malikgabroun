@@ -55,7 +55,11 @@ const MenuItems = styled.ul`
   }
 `;
 
-function Links() {
+const isPartiallyActive = ({ isPartiallyCurrent }) => {
+  return isPartiallyCurrent ? { className: 'active' } : {};
+};
+
+const Links = () => {
   return (
     <nav className="nav-menu">
       <MenuItems>
@@ -70,13 +74,22 @@ function Links() {
           </Link>
         </li>
         <li>
-          <Link to="/blog/" activeClassName="active">
+          <Link
+            to="/blog/"
+            activeClassName="active"
+            getProps={isPartiallyActive}
+          >
             Blog
+          </Link>
+        </li>
+        <li>
+          <Link to="/uses/" activeClassName="active">
+            Uses
           </Link>
         </li>
       </MenuItems>
     </nav>
   );
-}
+};
 
 export default Links;
