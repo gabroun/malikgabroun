@@ -69,7 +69,7 @@ const MobileHeader = () => (
             </span>
             <div>Home</div>
           </Link>
-          <Link to="/about" activeClassName="active">
+          <Link to="/about/" activeClassName="active">
             <span>
               <svg
                 stroke="currentColor"
@@ -107,7 +107,7 @@ const MobileHeader = () => (
             </span>
             <div>Blog</div>
           </Link>
-          <Link to="/uses" activeClassName="active">
+          <Link to="/uses/" activeClassName="active">
             <span>
               <svg
                 stroke="currentColor"

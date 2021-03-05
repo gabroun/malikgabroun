@@ -36,7 +36,7 @@ class Index extends React.Component {
                   </p>
                   <S.ButtonContainer>
                     <S.Button>
-                      <Link to="/about">About me</Link>
+                      <Link to="/about/">About me</Link>
                     </S.Button>
                     <S.Button>
                       <a href={cv}>Resume</a>
