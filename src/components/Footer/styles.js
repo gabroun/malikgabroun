@@ -8,8 +8,6 @@ export const Footer = styled.footer`
   display: flex;
   flex-direction: row;
   position: relative;
-  margin-left: -2rem;
-  margin-right: -2rem;
 
   @media (max-width: 767px) {
     margin-bottom: 72px;

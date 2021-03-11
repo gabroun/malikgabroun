@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Header = styled.header`
+  box-shadow: 0 0 3px 0px rgba(54, 54, 54, 0.15);
   @media (max-width: 1023px) {
     .menu-icon {
       justify-self: end;
@@ -21,11 +22,11 @@ export const Header = styled.header`
   .desktop-header {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    padding: 0 25px;
     width: 100%;
     z-index: 2;
     background-color: #fefefe;
-    box-shadow: 0 0 3px 0px rgba(54, 54, 54, 0.15);
+    max-width: 1300px;
+    margin: 0 auto;
     @media (max-width: 767px) {
       display: none;
     }

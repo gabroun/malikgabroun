@@ -12,7 +12,7 @@ const Container = styled.div`
       display: grid;
       justify-items: center;
       justify-content: center;
-      grid-gap: 40px;
+      grid-gap: 80px;
       margin-bottom: 40px;
       @media (min-width: 530px) {
         grid-template-columns: repeat(auto-fill, minmax(350px, 500px));
