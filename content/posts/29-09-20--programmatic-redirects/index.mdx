@@ -3,7 +3,7 @@ type: 'post'
 path: '/blog/programmatic-redirects-in-gatsby/'
 date: '2020/09/29'
 title: 'Programmatic Redirects in Gatsby'
-tags: ['js, gatsby']
+tags: ['javascript', 'gatsby']
 summary: 'In this post, we will be looking into how we can add redirects programmatically to our site'
 images: 'images/thumbnails/roadSplit.jpeg'
 imageAuthorID: '@pinewatt'
@@ -18,8 +18,8 @@ In order to solve this issue, we will need to look into how we can redirect user
 
 ---
 
-So in this post, we will be looking into how we can add redirects programmatically to our site especially if you are using Netlify.
-There are 2 types of redirects
+**So in this post, we will be looking into how we can add redirects programmatically to our site especially if you are using Netlify.
+There are 2 types of redirects**
 
 ## 1. Using Gatsby createRedirect
 
@@ -51,13 +51,13 @@ plugins: [`gatsby-plugin-netlify`];
 
 To create the redirects we need to update createPages function in `gatsby-node.js` which is going to be run once during the process of page creation.
 
-Inside the function, we call createRedirect method which takes an options object that includes a couple of properties
+Inside the function, we call `createRedirect` method which takes an options object that includes a couple of properties
 
 ### Example
 
 in the example below, we can see how we can destruct createRedirect from actions object and call it to create the redirects
 
-```javascript
+```javascript {2,26-30}
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createRedirect } = actions;
   const result = await graphql(

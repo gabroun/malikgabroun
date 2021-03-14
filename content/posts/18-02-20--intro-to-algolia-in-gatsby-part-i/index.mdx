@@ -3,7 +3,7 @@ type: 'post'
 path: '/blog/intro-to-algolia-in-gatsby-part-i/'
 date: '2020/02/18'
 title: 'An Introduction to adding Algolia search to your gatsby site (Part 1)'
-tags: ['js, gatsby, react']
+tags: ['javascript', 'gatsby', 'react']
 summary: 'In this post we will be looking into configuring and adding algolia instant search component to your gatsby site'
 images: 'images/thumbnails/searching.jpeg'
 imageAuthorID: '@amartino20'
@@ -71,7 +71,7 @@ const blogQuery = `
 
 and then add the transformer method which is just mapping the data
 
-```js
+```javascript {5-11}
 const settings = { attributesToSnippet: [`excerpt:20`] };
 const queries = [
   {
@@ -132,7 +132,7 @@ In this section, we will be looking into how to install algolia search to your g
 
 To do that, first, we create a new component call it `Search.js` which would utilise algolia's instant-search component (you can check the [docs](https://www.algolia.com/doc/guides/building-search-ui/installation/react/) for more info)
 
-```jsx
+```jsx {10-16}
 import algoliasearch from 'algoliasearch/lite';
 import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
 import React from 'react';
@@ -167,7 +167,7 @@ import PostPreview from './PostPreview';
 <Hits hitComponent={PostPreview} />;
 ```
 
-And our `PostPreview` can look something like the following where we add A link to the post and show the excerpt about the post.
+And our `PostPreview` can look something like the following where we add a link to the post and show the excerpt about the post.
 
 ```jsx
 import React from 'react';

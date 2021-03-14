@@ -16,8 +16,8 @@ class Layout extends React.Component {
         <Header />
         <S.PageWrapper>
           <S.Container>{children}</S.Container>
-          <Footer />
         </S.PageWrapper>
+        <Footer />
         <MobileHeader />
         <GlobalStyle />
       </React.Fragment>

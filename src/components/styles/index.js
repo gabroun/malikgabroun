@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components';
+
 import theme from './theme';
 
 export const GlobalStyle = createGlobalStyle`
@@ -20,7 +21,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     pre[class*="language-"] {
-    padding: 1em;
+    padding: 1em 0;
     margin: .5em 0;
     overflow: auto;
     border-radius: 0.3em;
