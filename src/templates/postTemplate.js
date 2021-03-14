@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
 import Seo from '../components/Seo';
+import Signup from '@components/Signup';
 import formatDate from '../utils/formatDate';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
@@ -241,6 +242,7 @@ const Post = ({ data: { mdx: post, file: imgFile } }) => {
           )}
           <MDXRenderer>{post.body}</MDXRenderer>
         </PostWrapper>
+        <Signup />
       </Layout>
     </div>
   );
