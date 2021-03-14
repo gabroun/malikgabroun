@@ -4,15 +4,15 @@ export const PostItem = styled.div`
   flex-basis: 33%;
   margin: 15px;
   top: 0px;
-  background-color: ${props => props.theme.white};
+  background-color: ${(props) => props.theme.white};
   border-radius: 6px;
   transition: all 0.4s ease 0.1s;
-  border: 1px solid ${props => props.theme.lightGrey};
+  border: 1px solid ${(props) => props.theme.lightGrey};
   box-shadow: 0 8px 16px 0 rgba(34, 50, 84, 0.06),
     inset 0 0 0 1px rgba(112, 123, 140, 0.15);
 
   &:hover {
-    background: ${props => props.theme.whiteSmoke};
+    background: ${(props) => props.theme.whiteSmoke};
     transform: translateY(-5%);
     transition: all 0.4s ease 0.1s;
   }
@@ -46,7 +46,7 @@ export const PostPreview = styled.div`
     margin: 14px 0;
 
     a {
-      color: ${props => props.theme.black};
+      color: ${(props) => props.theme.black};
       text-decoration: none;
     }
   }
@@ -58,12 +58,39 @@ export const Tags = styled.div`
 `;
 
 export const Tag = styled.p`
-  font-size: 14px;
-  padding: 0 6px;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 6px;
+  line-height: 1;
+  margin-left: 6px;
   margin-bottom: 0;
-
-  &:nth-of-type(1) {
-    padding-right: 0;
+  font-size: 14px;
+  &.gatsby {
+    background-color: #663399;
+    color: #fff;
+  }
+  &.javascript {
+    background-color: #f0db4f;
+  }
+  &.react {
+    background-color: #000;
+    color: #00d8ff;
+  }
+  &.graphql {
+    background-color: #000;
+    color: #e535ab;
+  }
+  &.vue {
+    color: #35495e;
+    background-color: #41b883;
+  }
+  &.redux {
+    background-color: #764abc;
+    color: #fff;
+  }
+  &.general {
+    background-color: #000;
+    color: #fff;
   }
 `;
 
@@ -72,12 +99,29 @@ export const TimeToRead = styled.p`
   margin: 10px 5px 0px;
   font-weight: bold;
   float: right;
+  display: flex;
+  align-items: flex-end;
+  line-height: 12px;
+  svg {
+    margin-right: 6px;
+  }
 `;
 
 export const PostDate = styled.p`
   display: inline-block;
   font-size: 12px;
   margin: 10px 0px 0px;
+  display: flex;
+  align-items: flex-end;
+  line-height: 12px;
+  svg {
+    margin-right: 6px;
+  }
+`;
+
+export const PostFooter = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const BlogList = styled.div`
