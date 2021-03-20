@@ -63,7 +63,7 @@ const Uses = () => {
                 <li>
                   <p>
                     My main monitor is a{' '}
-                    <a href="https://amzn.to/2MMmTcG">27&quot; Samsmung</a>{' '}
+                    <a href="https://amzn.to/2MMmTcG">27&quot; Samsung</a>{' '}
                     curved LED monitor.
                   </p>
                 </li>

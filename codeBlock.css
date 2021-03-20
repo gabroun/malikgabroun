@@ -50,7 +50,7 @@ gatsby-highlight > code[class*='language-'],
 .line-number-style {
   display: inline-block;
   padding-left: 1em;
-  padding-right: 1em;
+  padding-right: 1.5em;
   width: 1.2em;
   user-select: none;
   opacity: 0.3;

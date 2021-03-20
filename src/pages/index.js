@@ -6,6 +6,7 @@ import { Blog } from '@components/Blog';
 import Layout from '@components/Layout';
 import { PortfolioList } from '@components/Portfolio';
 import React from 'react';
+import Signup from '@components/Signup';
 import { ThemeProvider } from 'styled-components';
 import cv from '@static/Malik-Elgabroun_CV.pdf';
 import theme from '@components/styles/theme';
@@ -50,11 +51,8 @@ class Index extends React.Component {
 
                 <Blog nodes={post.nodes} />
               </S.LatestSection>
-              {/* <S.LatestSection>
-                <S.Header>Latest Projects</S.Header>
-
-                <PortfolioList nodes={portfolio.nodes} />
-              </S.LatestSection> */}
+          
+              <Signup tags={['general', 'software']}  />
             </S.MainContent>
           </Layout>
         </div>
