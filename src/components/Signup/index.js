@@ -1,36 +1,72 @@
-import React from 'react';
+import * as S from './styles'
+
+import React, { useState } from 'react';
+
+const convertkit_tags = require('../../utils/convertkit_tags.json')
 
 
-const formId = '2118215';
-class Signup extends React.Component {
-  render() {
-    return (
-      <form
-        action={`https://app.convertkit.com/forms/${formId}/subscriptions`}
-        className="seva-form formkit-form"
-        method="post"
-        min-width="400 500 600 700 800"
-      >
-        <div data-style="full">
-          <div
-            data-element="column"
-            className="formkit-column"
-          >
-            <h1
-              className="formkit-header"
-              data-element="header"
-            >
-              Subscribe to the Newsletter
-            </h1>
-            <div
-              data-element="subheader"
-              className="formkit-subheader"
+const Signup = ({tags}) => {
+
+  const [status, setStatus] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const YOUR_FORM_ID = '2118215';
+  const YOUR_SUBFORM_ID = '2358';
+  const YOUR_FORM_URL = `https://app.convertkit.com/forms/${YOUR_FORM_ID}/subscriptions`;
+
+  
+const tagMap = convertkit_tags.reduce((result, tag) => {
+  result[tag.name] = tag.id;
+  return result;
+}, {});
+
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const data = new FormData(e.target);
+    setLoading(true);
+
+    try {
+      const response = await fetch(
+        YOUR_FORM_URL,
+        {
+          method: 'post',
+          body: data,
+          headers: {
+            accept: 'application/json',
+          },
+        }
+      );
+
+      const json = await response.json();
+
+      if (json.status === 'success') {
+        setStatus('SUCCESS');
+        setLoading(false);
+        return;
+      }
+
+      setStatus('ERROR');
+      setLoading(false);
+    } catch (err) {
+      setStatus('ERROR');
+      setLoading(false);
+    }
+  };
+
+  return (
+    <S.Form
+      action={YOUR_FORM_URL}
+      method="post"
+      onSubmit={handleSubmit}
+    >
+      <div className="col left">
+        <h1>Subscribe to the newsletter</h1>
+        <div>
+          <p>subscribe to get my latest content, favourite articles from the web and additional details about my launches, products, and experiments</p>
           
-            >
-              <p>Subscribe to get my latest content by email.</p>
-            </div>
-            <div className="formkit-image">
-              <svg
+        </div>
+      <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="46"
                 height="46"
@@ -60,77 +96,51 @@ class Signup extends React.Component {
                   />
                 </g>
               </svg>
-            </div>
-          </div>
-          <div data-element="column" className="formkit-column">
-            <ul
-              className="formkit-alert formkit-alert-error"
-              data-element="errors"
-              data-group="alert"
-            />
-
-            <div data-element="fields" className="seva-fields formkit-fields">
-              <div className="formkit-field">
-                <input
-                  className="formkit-input"
-                  aria-label="Your first name"
-                  name="fields[first_name]"
-                  placeholder="Your first name"
-                  type="text"
-                  style={{
-                    borderColor: 'rgb(227, 227, 227)',
-                    borderRadius: '4px',
-                    color: 'rgb(0, 0, 0)',
-                    fontWeight: 400,
-                  }}
-                  required
-                />
-              </div>
-              <div className="formkit-field">
-                <input
-                  className="formkit-input"
-                  name="email_address"
-                  aria-label="Your email address"
-                  placeholder="Your email address"
-                  required
-                  type="email"
-                  style={{
-                    borderColor: 'rgb(227, 227, 227)',
-                    borderRadius: '4px',
-                    color: 'rgb(0, 0, 0)',
-                    fontWeight: 400,
-                  }}
-                />
-              </div>
-              <button
-                data-element="submit"
-                className="formkit-submit formkit-submit"
-                style={{
-                  backgroundColor: 'hsl(340, 63%, 55%)',
-                  borderRadius: '24px',
-                  color: 'white',
-                  fontWeight: 700,
-                }}
-              >
-                <div className="formkit-spinner" />
-                <span>Subscribe</span>
-              </button>
-            </div>
-            <div
-              data-element="guarantee"
-              className="formkit-guarantee"
-            >
-              <p>I won’t send you spam.</p>
-              <p>
-                Unsubscribe at <em>any</em> time.
-                
-              </p>
-            </div>
-          </div>
-        </div>
-      </form>
-    );
-  }
-}
+           
+      </div>
+      <div className="col right">
+      <input
+        type="text"
+        aria-label="First name"
+        name="fields[first_name]"
+        placeholder="First name"
+        required
+      />
+      <input
+        type="email"
+        aria-label="Email address"
+        name="email_address"
+        placeholder="Email address"
+        required
+      />
+      {tags.map(tag => {
+        if (tagMap[tag] !== undefined) {
+          return (   
+            <input
+            key={tagMap[tag]}
+            id={`tag-${YOUR_SUBFORM_ID}-${tagMap[tag]}`}
+            type="checkbox"
+            style={{ display: 'none' }}
+            checked
+            name="tags[]"
+            value={tagMap[tag]}
+          />
+          )
+        }
+       
+      })}
+      <button
+        type="submit"
+        className={`${loading ? 'loading' : ''}`}
+      >
+        Subscrib{loading ? 'ing' : 'e'}
+      </button>
+      {status === 'SUCCESS' && <p className="success">Please go confirm your subscription!</p>}
+      {status === 'ERROR' && <p className="error">Oops, try again.</p>}
+      </div>
+     
+    </S.Form>
+  );
+};
 
 export default Signup;
