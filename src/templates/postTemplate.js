@@ -1,5 +1,5 @@
-import CalendarIcon from '@components/styles/icons/calendar'
-import HourglassIcon from '@components/styles/icons/hourglass'
+import CalendarIcon from '@components/styles/icons/calendar';
+import HourglassIcon from '@components/styles/icons/hourglass';
 import Img from 'gatsby-image';
 import Layout from '@components/Layout';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -130,37 +130,36 @@ const ImgCredit = styled.p`
 `;
 
 const PostHeader = styled.div`
-    display: grid;
-    grid-template-columns: repeat(2, 120px) 1fr;
-    @media (max-width: 420px) {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .post-header {
-      &__last-updated {
-        justify-self: end;
-        display: grid;
-        grid-row: 1/3;
-        span {
-          &:nth-child(1) {
-            justify-self: end;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 13px;
-            color: #7a7a7a;
-            @media (max-width: 400px) {
-              justify-self: start;
-            }
+  display: grid;
+  grid-template-columns: repeat(2, 120px) 1fr;
+  @media (max-width: 420px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .post-header {
+    &__last-updated {
+      justify-self: end;
+      display: grid;
+      grid-row: 1/3;
+      span {
+        &:nth-child(1) {
+          justify-self: end;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-size: 13px;
+          color: #7a7a7a;
+          @media (max-width: 400px) {
+            justify-self: start;
           }
         }
       }
-
-
-      &__time-toread,
-      &__date {
-        grid-row: 2/3;
-      }
     }
+
+    &__time-toread,
+    &__date {
+      grid-row: 2/3;
+    }
+  }
 `;
 
 export const query = graphql`
@@ -201,9 +200,8 @@ const Post = ({ data: { mdx: post, file: imgFile } }) => {
     imageAuthorID,
     keywords,
     lastUpdated,
-    tags
+    tags,
   } = post.frontmatter;
- 
 
   const { timeToRead } = post;
   return (
@@ -221,57 +219,58 @@ const Post = ({ data: { mdx: post, file: imgFile } }) => {
           style={{ maxWidth: '960px', margin: '0 auto' }}
         >
           <header>
-          <Title>{title}</Title>
-          <PostHeader style={{  margin: '15px 0' }}>
-            <p className="post-header__date" style={{ display: 'flex', alignItems: 'baseline' }}>
-              <CalendarIcon/>{' '}
-              {formatDate(date)}
-            </p>
-            <p className="post-header__time-toread"
-              style={{
-                marginLeft: '10px',
-                display: 'flex',
-                alignItems: 'baseline',
-              }}
-            >
-              <HourglassIcon/>{' '}
-              {timeToRead} min read
-            </p>
-            {lastUpdated  && (
-               <p className="post-header__last-updated">
-                 <span>
-                 Last Updated
-                 </span>
-                 <span>
-                 <CalendarIcon/>{formatDate(lastUpdated)}
-                   </span> </p>
-            )}
-           
-          </PostHeader>
-
-          <Img
-            fluid={imgFile.childImageSharp.fluid}
-            style={{ maxHeight: '400px', marginBottom: '50px' }}
-          />
-          {imageAuthor && (
-            <ImgCredit>
-              Photo by
-              <a
-                href={`https://unsplash.com/${imageAuthorID}`}
-                target="blank"
-                className="img-credit"
+            <Title>{title}</Title>
+            <PostHeader style={{ margin: '15px 0' }}>
+              <p
+                className="post-header__date"
+                style={{ display: 'flex', alignItems: 'baseline' }}
               >
-                {' '}
-                {imageAuthor}
-              </a>
-            </ImgCredit>
-          )}
+                <CalendarIcon /> {formatDate(date)}
+              </p>
+              <p
+                className="post-header__time-toread"
+                style={{
+                  marginLeft: '10px',
+                  display: 'flex',
+                  alignItems: 'baseline',
+                }}
+              >
+                <HourglassIcon /> {timeToRead} min read
+              </p>
+              {lastUpdated && (
+                <p className="post-header__last-updated">
+                  <span>Last Updated</span>
+                  <span>
+                    <CalendarIcon />
+                    {formatDate(lastUpdated)}
+                  </span>{' '}
+                </p>
+              )}
+            </PostHeader>
+
+            <Img
+              fluid={imgFile.childImageSharp.fluid}
+              style={{ maxHeight: '400px', marginBottom: '50px' }}
+            />
+            {imageAuthor && (
+              <ImgCredit>
+                Photo by
+                <a
+                  href={`https://unsplash.com/${imageAuthorID}`}
+                  target="blank"
+                  className="img-credit"
+                >
+                  {' '}
+                  {imageAuthor}
+                </a>
+              </ImgCredit>
+            )}
           </header>
           <div>
-          <MDXRenderer>{post.body}</MDXRenderer>
+            <MDXRenderer>{post.body}</MDXRenderer>
           </div>
         </PostWrapper>
-        <Signup tags={tags}  />
+        <Signup tags={tags} />
       </Layout>
     </div>
   );
