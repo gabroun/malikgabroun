@@ -38,7 +38,11 @@ export const PostItem = styled.div`
 `;
 
 export const PostPreview = styled.div`
-  padding: 10px;
+  margin: 10px;
+  height: 256px;
+  display: grid;
+  grid-template-rows: 40px 70px 1fr 1fr;
+
   h2 {
     line-height: 1.2em;
     font-size: 20px;
@@ -54,7 +58,7 @@ export const PostPreview = styled.div`
 
 export const Tags = styled.div`
   display: flex;
-  align-items: center;
+  align-items: baseline;
 `;
 
 export const Tag = styled.p`

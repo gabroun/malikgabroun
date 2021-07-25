@@ -88,17 +88,4 @@ export const Form = styled.form`
 	75% { stroke: #1B9A59; }
   100% { stroke: #4285F4; }
 }
-
-@keyframes dash {
- 0% { stroke-dashoffset: 187; }
- 50% {
-   stroke-dashoffset: 187/4;
-   transform:rotate(135deg);
- }
- 100% {
-   stroke-dashoffset: 187;
-   transform:rotate(450deg);
- }
-}
-
 `;
