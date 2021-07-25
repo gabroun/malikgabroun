@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const LogoImg = styled.svg`
-  /* @keyframes spin {
+  @keyframes spin {
     100% {
       -webkit-transform: rotate(360deg);
       transform: rotate(360deg);
@@ -12,7 +12,7 @@ const LogoImg = styled.svg`
     animation: spin 0.5s ease-in 0.3s;
     transform-box: fill-box;
     transform-origin: 50% 50%;
-  } */
+  }
 
   .path {
     stroke-dasharray: 160;

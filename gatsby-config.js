@@ -1,6 +1,18 @@
 const config = require('./content/meta/config');
 require('dotenv').config();
 
+const gatsbyRemarkPlugins = [
+  'gatsby-remark-code-titles',
+  {
+    resolve: 'gatsby-remark-images',
+    options: {
+      classPrefix: 'language-',
+      inlineCodeMarker: null,
+    },
+  },
+  'gatsby-remark-autolink-headers',
+];
+
 module.exports = {
   siteMetadata: {
     author: config.authorName,
@@ -19,16 +31,7 @@ module.exports = {
         defaultLayouts: {
           default: require.resolve('./src/components/Layout/index.js'),
         },
-        gatsbyRemarkPlugins: [
-          {
-            resolve: 'gatsby-remark-images',
-            options: {
-              classPrefix: 'language-',
-              inlineCodeMarker: null,
-            },
-          },
-        ],
-        plugins: [{ resolve: 'gatsby-remark-images' }],
+        gatsbyRemarkPlugins,
       },
     },
     {

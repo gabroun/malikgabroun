@@ -45,6 +45,8 @@ gatsby-highlight > code[class*='language-'],
   line-height: 1.5;
   tab-size: 4;
   hyphens: none;
+  float: left;
+  min-width: 100%;
 }
 
 .line-number-style {

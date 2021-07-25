@@ -16,98 +16,38 @@ const Seo = ({ meta, image, title, description, pathSlug, keywords }) => {
   const metadata = meta || {};
 
   return (
-    <Helmet
-      htmlAttributes={{ lang: 'en' }}
-      {...(title
-        ? {
-            titleTemplate: `%s - ${useSiteMetadata().title}`,
-            title,
-          }
-        : {
-            title: useSiteMetadata().title,
-          })}
-      meta={[
-        {
-          name: 'google-site-verification',
-          content: 'rdHghgE19nXaz19_OXvkv_MuEOSHl8lQPesWUmp21oU',
-        },
-        {
-          name: 'description',
-          content: metaDescription,
-        },
-        {
-          name: 'keywords',
-          content: keywords ? keywords.join() : 'metaDescription',
-        },
-        {
-          property: 'og:url',
-          content: url,
-        },
-        {
-          property: 'og:title',
-          content: title || useSiteMetadata().title,
-        },
-        {
-          name: 'og:description',
-          content: metaDescription,
-        },
-        {
-          name: 'twitter:card',
-          content: 'summary',
-        },
-        {
-          name: 'twitter:creator',
-          content: useSiteMetadata().twitter,
-        },
-        {
-          name: 'twitter:title',
-          content: title || useSiteMetadata().title,
-        },
-        {
-          name: 'twitter:description',
-          content: metaDescription,
-        },
-      ]
-        .concat(
-          metaImage
-            ? [
-                { property: 'og:image', content: metaImage },
-                { name: 'twitter:image', content: metaImage },
-              ]
-            : []
-        )
-        .concat(metadata)}
-      link={[
-        {
-          rel: 'canonical',
-          href: url,
-        },
-        {
-          rel: 'icon',
-          type: 'image/png',
-          href: icon16,
-          sizes: '16x16',
-        },
-        {
-          rel: 'icon',
-          type: 'image/png',
-          href: icon32,
-          sizes: '32x32',
-        },
-        {
-          rel: 'apple-touch-icon',
-          type: 'image/png',
-          href: icon192,
-          sizes: '192x192',
-        },
-        {
-          rel: 'apple-touch-startup-image',
-          type: 'image/png',
-          href: icon512,
-          sizes: '512x512',
-        },
-      ]}
-    />
+    <Helmet titleTemplate={`%s - ${useSiteMetadata().title}`}>
+      <html lang="en" />
+      <title>{title}</title>
+
+      <link rel="icon" sizes="16x16" type='image/png' href={icon16} />
+      <link rel="icon" sizes="32x32" type='image/png' href={icon32} />
+      <link rel="apple-touch-icon" sizes="192x192" type='image/png' href={icon192} />
+      <link rel="apple-touch-startup-image" sizes="512x512" type='image/png' href={icon512} />
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta charSet="utf-8" />
+      <meta name="description" content={metaDescription} />
+      <meta name="keywords" content={keywords ? keywords.join() : 'metaDescription'} />
+
+      <meta name="google-site-verification" content='rdHghgE19nXaz19_OXvkv_MuEOSHl8lQPesWUmp21oU' />
+
+      <meta property="og:url" content={url} />
+      <meta property="og:title" content={title || useSiteMetadata().title} />
+      <meta name="og:description" content={metaDescription} />
+      {metaImage && (
+        <meta property="og:image" content={metaImage} />
+      )}
+
+      <meta name="twitter:description" content={metaDescription} />
+      <meta name="twitter:title" content={title || useSiteMetadata().title} />
+      <meta name="twitter:creator" content={useSiteMetadata().twitter} />
+      <meta name="twitter:card" content='summary' />
+      {metaImage && (
+        <meta name="twitter:image" content={metaImage} />
+      )}
+
+    </Helmet>
   );
 };
 
