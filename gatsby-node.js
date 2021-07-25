@@ -55,7 +55,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   });
 };
 
-exports.onCreateWebpackConfig = ({ actions }) => {
+exports.onCreateWebpackConfig = ({stage, actions }) => {
+
   actions.setWebpackConfig({
     resolve: {
       alias: {
@@ -64,4 +65,10 @@ exports.onCreateWebpackConfig = ({ actions }) => {
       }
     }
   });
+
+  if (stage === 'develop') {
+		actions.setWebpackConfig({
+			devtool: 'cheap-module-source-map'
+		});
+	}
 }

@@ -1,11 +1,12 @@
-import CalendarIcon from '@components/styles/icons/calendar'
-import HourglassIcon from '@components/styles/icons/hourglass'
+import CalendarIcon from '@components/styles/icons/calendar';
+import HourglassIcon from '@components/styles/icons/hourglass';
 import Img from 'gatsby-image';
 import Layout from '@components/Layout';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import React from 'react';
 import Seo from '@components/Seo';
 import Signup from '@components/Signup';
+import TableOfContents from '@components/TableOfContents';
 import formatDate from '../utils/formatDate';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
@@ -22,8 +23,34 @@ const PostTemplate = styled.div`
 `;
 
 const PostWrapper = styled.article`
-  max-width: 960px;
-  margin: 0 auto;
+  @media (min-width: 1084px) {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  aside {
+    flex: 0 100000 250px;
+    position: sticky;
+    top: 148px;
+    max-height: calc(100vh - 148px);
+    overflow: auto;
+    padding-bottom: 16px;
+    margin-left: auto;
+    display: none;
+    @media (min-width: 1084px) {
+      display: block;
+    }
+  }
+
+  @media (min-width: 1084px) {
+    > div {
+      flex: 1 1 740px;
+      max-width: 740px;
+    }
+  }
+
   .gatsby-highlight {
     position: relative;
   }
@@ -117,6 +144,46 @@ const PostWrapper = styled.article`
     margin-left: 0;
     margin-right: 0;
   }
+
+  .gatsby-code-title {
+    color: black;
+    padding: 0.3em 0.5em;
+    width: max-content;
+    margin: 1em 0px -1.6em 1em;
+    border-radius: 0.3em;
+    position: relative;
+    z-index: 1;
+    font-size: 0.8em;
+    line-height: initial;
+    background-color: #f7df1e;
+  }
+
+  .active {
+    color: #f47c48;
+  }
+
+  .toc-container {
+    .toc-container {
+      text-indent: 40px;
+    }
+  }
+
+  .anchor {
+
+    svg {
+      opacity: 0;
+      margin-right: 10px;
+      transition: opacity 250ms ease 0s;
+    }
+
+      svg {
+        &:hover {
+          opacity: 1;
+          fill: #f47c48;
+    
+        }
+      }
+  }
 `;
 
 const ImgCredit = styled.p`
@@ -130,37 +197,36 @@ const ImgCredit = styled.p`
 `;
 
 const PostHeader = styled.div`
-    display: grid;
-    grid-template-columns: repeat(2, 120px) 1fr;
-    @media (max-width: 420px) {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    .post-header {
-      &__last-updated {
-        justify-self: end;
-        display: grid;
-        grid-row: 1/3;
-        span {
-          &:nth-child(1) {
-            justify-self: end;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 13px;
-            color: #7a7a7a;
-            @media (max-width: 400px) {
-              justify-self: start;
-            }
+  display: grid;
+  grid-template-columns: repeat(2, 120px) 1fr;
+  @media (max-width: 420px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .post-header {
+    &__last-updated {
+      justify-self: end;
+      display: grid;
+      grid-row: 1/3;
+      span {
+        &:nth-child(1) {
+          justify-self: end;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          font-size: 13px;
+          color: #7a7a7a;
+          @media (max-width: 400px) {
+            justify-self: start;
           }
         }
       }
-
-
-      &__time-toread,
-      &__date {
-        grid-row: 2/3;
-      }
     }
+
+    &__time-toread,
+    &__date {
+      grid-row: 2/3;
+    }
+  }
 `;
 
 export const query = graphql`
@@ -178,6 +244,7 @@ export const query = graphql`
         tags
         lastUpdated
       }
+      tableOfContents
       timeToRead
       body
     }
@@ -201,11 +268,12 @@ const Post = ({ data: { mdx: post, file: imgFile } }) => {
     imageAuthorID,
     keywords,
     lastUpdated,
-    tags
+    tags,
   } = post.frontmatter;
- 
 
-  const { timeToRead } = post;
+  console.log(post);
+
+  const { timeToRead, tableOfContents } = post;
   return (
     <div>
       <Layout title={title}>
@@ -216,62 +284,65 @@ const Post = ({ data: { mdx: post, file: imgFile } }) => {
           image={imgFile.childImageSharp.fluid}
           keywords={keywords}
         />
-        <PostWrapper
-          className="post-wrapper"
-          style={{ maxWidth: '960px', margin: '0 auto' }}
-        >
-          <header>
-          <Title>{title}</Title>
-          <PostHeader style={{  margin: '15px 0' }}>
-            <p className="post-header__date" style={{ display: 'flex', alignItems: 'baseline' }}>
-              <CalendarIcon/>{' '}
-              {formatDate(date)}
-            </p>
-            <p className="post-header__time-toread"
-              style={{
-                marginLeft: '10px',
-                display: 'flex',
-                alignItems: 'baseline',
-              }}
-            >
-              <HourglassIcon/>{' '}
-              {timeToRead} min read
-            </p>
-            {lastUpdated  && (
-               <p className="post-header__last-updated">
-                 <span>
-                 Last Updated
-                 </span>
-                 <span>
-                 <CalendarIcon/>{formatDate(lastUpdated)}
-                   </span> </p>
-            )}
-           
-          </PostHeader>
-
-          <Img
-            fluid={imgFile.childImageSharp.fluid}
-            style={{ maxHeight: '400px', marginBottom: '50px' }}
-          />
-          {imageAuthor && (
-            <ImgCredit>
-              Photo by
-              <a
-                href={`https://unsplash.com/${imageAuthorID}`}
-                target="blank"
-                className="img-credit"
-              >
-                {' '}
-                {imageAuthor}
-              </a>
-            </ImgCredit>
+        <PostWrapper className="post-wrapper">
+          {tableOfContents?.items && (
+            <TableOfContents items={tableOfContents.items} />
           )}
-          </header>
+
           <div>
-          <MDXRenderer>{post.body}</MDXRenderer>
+            <header>
+              <Title>{title}</Title>
+              <PostHeader style={{ margin: '15px 0' }}>
+                <p
+                  className="post-header__date"
+                  style={{ display: 'flex', alignItems: 'baseline' }}
+                >
+                  <CalendarIcon /> {formatDate(date)}
+                </p>
+                <p
+                  className="post-header__time-toread"
+                  style={{
+                    marginLeft: '10px',
+                    display: 'flex',
+                    alignItems: 'baseline',
+                  }}
+                >
+                  <HourglassIcon /> {timeToRead} min read
+                </p>
+                {lastUpdated && (
+                  <p className="post-header__last-updated">
+                    <span>Last Updated</span>
+                    <span>
+                      <CalendarIcon />
+                      {formatDate(lastUpdated)}
+                    </span>{' '}
+                  </p>
+                )}
+              </PostHeader>
+
+              <Img
+                fluid={imgFile.childImageSharp.fluid}
+                style={{ maxHeight: '400px', marginBottom: '50px' }}
+              />
+              {imageAuthor && (
+                <ImgCredit>
+                  Photo by
+                  <a
+                    href={`https://unsplash.com/${imageAuthorID}`}
+                    target="blank"
+                    className="img-credit"
+                  >
+                    {' '}
+                    {imageAuthor}
+                  </a>
+                </ImgCredit>
+              )}
+            </header>
+
+            <MDXRenderer>{post.body}</MDXRenderer>
           </div>
         </PostWrapper>
-        <Signup tags={tags}  />
+        <Signup tags={tags} />
       </Layout>
     </div>
   );
