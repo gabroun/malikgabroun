@@ -2,7 +2,7 @@ import * as S from './styles';
 
 import { Link } from 'gatsby';
 import React from 'react';
-import formatDate from '../../utils/formatDate';
+import formatDate from '@utils/formatDate';
 
 export const BlogPost = ({
   path,
@@ -13,7 +13,7 @@ export const BlogPost = ({
   tags,
   timeToRead,
 }) => {
-  const url = require(`../../resources/${image}`);
+  const url = require(`@resources/${image}`);
   return (
     <S.PostItem>
       <Link to={path}>

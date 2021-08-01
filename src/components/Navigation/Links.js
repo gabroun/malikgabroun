@@ -1,19 +1,18 @@
-import { Link } from 'gatsby';
-import React from 'react';
-import styled from 'styled-components';
+import { Link } from "gatsby";
+import React from "react";
+import styled from "styled-components";
 
 const MenuItems = styled.ul`
   list-style: none;
   margin: 0;
   li {
     margin: 0 5px;
-    padding-left: 20px;
   }
   a {
     text-decoration: none;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.8);
-    padding: 1rem 1.3rem;
+    padding: 1rem;
     display: flex;
     align-items: center;
     position: relative;
@@ -35,7 +34,7 @@ const MenuItems = styled.ul`
       &:after {
         height: 3px;
         background: #f47c48;
-        content: '';
+        content: "";
         width: 0;
         position: absolute;
         transform: translateX(-50%);
@@ -56,7 +55,7 @@ const MenuItems = styled.ul`
 `;
 
 const isPartiallyActive = ({ isPartiallyCurrent }) => {
-  return isPartiallyCurrent ? { className: 'active' } : {};
+  return isPartiallyCurrent ? { className: "active" } : {};
 };
 
 const Links = () => {
@@ -80,6 +79,11 @@ const Links = () => {
             getProps={isPartiallyActive}
           >
             Blog
+          </Link>
+        </li>
+        <li>
+          <Link to="/courses/" activeClassName="active">
+            Courses
           </Link>
         </li>
         <li>

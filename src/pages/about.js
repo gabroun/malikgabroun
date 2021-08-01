@@ -1,14 +1,14 @@
-import * as S from '@components/styles/about';
+import * as S from "@components/styles/about";
 
-import React, { Fragment } from 'react';
+import React, { Fragment } from "react";
 
-import Carousel from '@components/Carousel';
-import ContactForm from '@components/ContactForm';
-import Layout from '@components/Layout';
-import Socials from '@components/Socials';
-import { ThemeProvider } from 'styled-components';
-import headImg from '../resources/headShot.png';
-import theme from '@components/styles/theme';
+import Carousel from "@components/Carousel";
+import ContactForm from "@components/ContactForm";
+import Layout from "@components/Layout";
+import Socials from "@components/Socials";
+import { ThemeProvider } from "styled-components";
+import headImg from "../resources/headShot.png";
+import theme from "@components/styles/theme";
 
 class About extends React.Component {
   render() {
@@ -39,7 +39,7 @@ class About extends React.Component {
                     opportunity arises.
                   </p>
                 </div>
-                <img src={headImg} />
+                <img src={headImg} alt="drawn art" />
               </S.AboutMe>
               <Carousel />
               <S.ContactUs>
