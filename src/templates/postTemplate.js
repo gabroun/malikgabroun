@@ -1,18 +1,18 @@
-import CalendarIcon from '@components/styles/icons/calendar';
-import HourglassIcon from '@components/styles/icons/hourglass';
-import Img from 'gatsby-image';
-import Layout from '@components/Layout';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import React from 'react';
-import Seo from '@components/Seo';
-import Signup from '@components/Signup';
-import TableOfContents from '@components/TableOfContents';
-import formatDate from '../utils/formatDate';
-import { graphql } from 'gatsby';
-import styled from 'styled-components';
+import CalendarIcon from "@components/styles/icons/calendar";
+import HourglassIcon from "@components/styles/icons/hourglass";
+import Img from "gatsby-image";
+import Layout from "@components/Layout";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import React from "react";
+import Seo from "@components/Seo";
+import Signup from "@components/Signup";
+import TableOfContents from "@components/TableOfContents";
+import formatDate from "../utils/formatDate";
+import { graphql } from "gatsby";
+import styled from "styled-components";
 
 const Title = styled.h2`
-  font-family: 'Rambla';
+  font-family: "Rambla";
 `;
 
 const PostTemplate = styled.div`
@@ -54,7 +54,7 @@ const PostWrapper = styled.article`
   .gatsby-highlight {
     position: relative;
   }
-  pre[class*='language-'] {
+  pre[class*="language-"] {
     &::before {
       color: #232129;
       font-size: 0.75rem;
@@ -68,45 +68,45 @@ const PostWrapper = styled.article`
     }
   }
 
-  pre[class$='language-shell'] {
+  pre[class$="language-shell"] {
     &::before {
-      content: 'shell';
+      content: "shell";
       background-color: #d9d7e0;
     }
   }
-  pre[class$='language-jsx'] {
+  pre[class$="language-jsx"] {
     &::before {
-      content: 'jsx';
+      content: "jsx";
       background-color: #61dafb;
     }
   }
 
-  pre[class$='language-vue'] {
+  pre[class$="language-vue"] {
     &::before {
-      content: 'vue';
+      content: "vue";
       background-color: #42b883;
     }
   }
 
-  pre[class$='language-graphql'] {
+  pre[class$="language-graphql"] {
     &::before {
-      content: 'GraphQL';
+      content: "GraphQL";
       color: #ffffff;
       background: rgb(225, 0, 152);
     }
   }
 
-  pre[class$='language-js'],
-  pre[class$='language-javascript'] {
+  pre[class$="language-js"],
+  pre[class$="language-javascript"] {
     &::before {
-      content: 'js';
+      content: "js";
       background-color: #f7df1e;
     }
   }
 
-  pre[class$='language-mdx'] {
+  pre[class$="language-mdx"] {
     &::before {
-      content: 'mdx';
+      content: "mdx";
       background-color: #f9ac00;
     }
   }
@@ -169,20 +169,18 @@ const PostWrapper = styled.article`
   }
 
   .anchor {
-
     svg {
       opacity: 0;
       margin-right: 10px;
       transition: opacity 250ms ease 0s;
     }
 
-      svg {
-        &:hover {
-          opacity: 1;
-          fill: #f47c48;
-    
-        }
+    svg {
+      &:hover {
+        opacity: 1;
+        fill: #f47c48;
       }
+    }
   }
 `;
 
@@ -230,7 +228,7 @@ const PostHeader = styled.div`
 `;
 
 export const query = graphql`
-  query($pathSlug: String!, $image: String!) {
+  query ($pathSlug: String!, $image: String!) {
     mdx(frontmatter: { path: { eq: $pathSlug } }) {
       frontmatter {
         title
@@ -271,8 +269,6 @@ const Post = ({ data: { mdx: post, file: imgFile } }) => {
     tags,
   } = post.frontmatter;
 
-  console.log(post);
-
   const { timeToRead, tableOfContents } = post;
   return (
     <div>
@@ -292,19 +288,19 @@ const Post = ({ data: { mdx: post, file: imgFile } }) => {
           <div>
             <header>
               <Title>{title}</Title>
-              <PostHeader style={{ margin: '15px 0' }}>
+              <PostHeader style={{ margin: "15px 0" }}>
                 <p
                   className="post-header__date"
-                  style={{ display: 'flex', alignItems: 'baseline' }}
+                  style={{ display: "flex", alignItems: "baseline" }}
                 >
                   <CalendarIcon /> {formatDate(date)}
                 </p>
                 <p
                   className="post-header__time-toread"
                   style={{
-                    marginLeft: '10px',
-                    display: 'flex',
-                    alignItems: 'baseline',
+                    marginLeft: "10px",
+                    display: "flex",
+                    alignItems: "baseline",
                   }}
                 >
                   <HourglassIcon /> {timeToRead} min read
@@ -315,14 +311,14 @@ const Post = ({ data: { mdx: post, file: imgFile } }) => {
                     <span>
                       <CalendarIcon />
                       {formatDate(lastUpdated)}
-                    </span>{' '}
+                    </span>{" "}
                   </p>
                 )}
               </PostHeader>
 
               <Img
                 fluid={imgFile.childImageSharp.fluid}
-                style={{ maxHeight: '400px', marginBottom: '50px' }}
+                style={{ maxHeight: "400px", marginBottom: "50px" }}
               />
               {imageAuthor && (
                 <ImgCredit>
@@ -332,7 +328,7 @@ const Post = ({ data: { mdx: post, file: imgFile } }) => {
                     target="blank"
                     className="img-credit"
                   >
-                    {' '}
+                    {" "}
                     {imageAuthor}
                   </a>
                 </ImgCredit>
