@@ -279,6 +279,9 @@ const Post = ({ data: { mdx: post, file: imgFile } }) => {
           description={summary}
           image={imgFile.childImageSharp.fluid}
           keywords={keywords}
+          date={date}
+          isBlogPost={true}
+          dateModified={lastUpdated}
         />
         <PostWrapper className="post-wrapper">
           {tableOfContents?.items && (
