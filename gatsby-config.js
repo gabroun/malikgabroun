@@ -1,16 +1,16 @@
-const config = require('./content/meta/config');
-require('dotenv').config();
+const config = require("./content/meta/config");
+require("dotenv").config();
 
 const gatsbyRemarkPlugins = [
-  'gatsby-remark-code-titles',
+  "gatsby-remark-code-titles",
   {
-    resolve: 'gatsby-remark-images',
+    resolve: "gatsby-remark-images",
     options: {
-      classPrefix: 'language-',
+      classPrefix: "language-",
       inlineCodeMarker: null,
     },
   },
-  'gatsby-remark-autolink-headers',
+  "gatsby-remark-autolink-headers",
 ];
 
 module.exports = {
@@ -23,13 +23,13 @@ module.exports = {
     twitter: config.authorTwitterAccount,
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
+    "gatsby-plugin-react-helmet",
     {
-      resolve: 'gatsby-plugin-mdx',
+      resolve: "gatsby-plugin-mdx",
       options: {
-        extensions: ['.mdx', '.md'],
+        extensions: [".mdx", ".md"],
         defaultLayouts: {
-          default: require.resolve('./src/components/Layout/index.js'),
+          default: require.resolve("./src/components/Layout/index.js"),
         },
         gatsbyRemarkPlugins,
       },
@@ -85,24 +85,24 @@ module.exports = {
         display: config.manifestDisplay,
         icons: [
           {
-            src: '/icons/favicon-16x16.png',
-            sizes: '16x16',
-            type: 'image/png',
+            src: "/icons/favicon-16x16.png",
+            sizes: "16x16",
+            type: "image/png",
           },
           {
-            src: '/icons/favicon-32x32.png',
-            sizes: '32x32',
-            type: 'image/png',
+            src: "/icons/favicon-32x32.png",
+            sizes: "32x32",
+            type: "image/png",
           },
           {
-            src: '/icons/favicon-192x192.png',
-            sizes: '192x192',
-            type: 'image/png',
+            src: "/icons/favicon-192x192.png",
+            sizes: "192x192",
+            type: "image/png",
           },
           {
-            src: '/icons/favicon-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
+            src: "/icons/favicon-512x512.png",
+            sizes: "512x512",
+            type: "image/png",
           },
         ],
       },
@@ -162,16 +162,22 @@ module.exports = {
     //     });
     //   },
     // },
-    'gatsby-plugin-sitemap',
+    "gatsby-plugin-sitemap",
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: "gatsby-plugin-robots-txt",
       options: {
         host: config.siteUrl,
         sitemap: `${config.siteUrl}/sitemap.xml`,
-        policy: [{ userAgent: '*', allow: '/' }],
+        policy: [{ userAgent: "*", allow: "/" }],
       },
     },
-    'gatsby-plugin-netlify',
-    'gatsby-plugin-meta-redirect', // make sure to put last in the array
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      options: {
+        siteUrl: `https://malikgabroun.com/`,
+      },
+    },
+    "gatsby-plugin-netlify",
+    "gatsby-plugin-meta-redirect", // make sure to put last in the array
   ],
 };
