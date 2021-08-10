@@ -1,18 +1,21 @@
 ---
-type: 'post'
-path: '/blog/intro-to-algolia-in-gatsby-part-i/'
-date: '2020/02/18'
-title: 'An Introduction to adding Algolia search to your gatsby site (Part 1)'
-tags: ['javascript', 'gatsby', 'react']
-summary: 'In this post we will be looking into configuring and adding algolia instant search component to your gatsby site'
-images: 'images/thumbnails/searching.jpeg'
-imageAuthorID: '@amartino20'
-imageAuthor: 'Anthony Martino'
-keywords: ['Algolia, Gatsby, adding algolia to gatsby']
+type: "post"
+path: "/blog/intro-to-algolia-in-gatsby-part-i/"
+date: "2020/02/18"
+title: "Add Algolia Search to Your Gatsby Site (Part 1)"
+tags: ["javascript", "gatsby", "react"]
+summary: "In this post we will be looking into configuring and adding algolia instant search component to your gatsby site"
+images: "images/thumbnails/searching.jpeg"
+imageAuthorID: "@amartino20"
+imageAuthor: "Anthony Martino"
+keywords:
+  [
+    "Algolia, algolia search, adding algolia to gatsby, algolia gatsby, react instantsearch",
+  ]
 redirects:
   [
-    '/intro-to-algolia-in-gatsby-part-i/',
-    '/blog/intro-to-algolia-in-gatsby-part-i/',
+    "/intro-to-algolia-in-gatsby-part-i/",
+    "/blog/intro-to-algolia-in-gatsby-part-i/",
   ]
 ---
 
@@ -94,7 +97,7 @@ Basically what the above snippet does is the `queries` object grab the GraphQL j
 The next step will be configuring `gatsby-plugin-algolia` as follow
 
 ```js
-require('dotenv').config();
+require("dotenv").config();
 // we can pass an object with a property of path to config method which would look
 // like this for example {path: '.env.production'} in case if you want to configure for different modes
 
@@ -128,14 +131,14 @@ Now we can move to the frontend part after configuration and indexing part finis
 
 In this section, we will be looking into how to install algolia search to your gatsby site.
 
-### Installing Algolia search component
+### Algolia Search component
 
 To do that, first, we create a new component call it `Search.js` which would utilise algolia's instant-search component (you can check the [docs](https://www.algolia.com/doc/guides/building-search-ui/installation/react/) for more info)
 
 ```jsx {10-16}
-import algoliasearch from 'algoliasearch/lite';
-import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
-import React from 'react';
+import algoliasearch from "algoliasearch/lite";
+import { InstantSearch, SearchBox, Hits } from "react-instantsearch-dom";
+import React from "react";
 
 const appId = process.env.GATSBY_ALGOLIA_APP_ID;
 const searchKey = process.env.GATSBY_ALGOLIA_SEARCH_KEY;
@@ -163,17 +166,17 @@ We can replace the HTML you see in the screenshot from the list of posts with th
 To do so, we can add an attribute `hitComponent` which going to pass the data that it receives from `Hits` to the component you pass to it for example postPreview.
 
 ```jsx
-import PostPreview from './PostPreview';
+import PostPreview from "./PostPreview";
 <Hits hitComponent={PostPreview} />;
 ```
 
 And our `PostPreview` can look something like the following where we add a link to the post and show the excerpt about the post.
 
 ```jsx
-import React from 'react';
-import { Link } from 'gatsby';
-import { Highlight } from 'react-instantsearch-dom';
-import { css } from '@emotion/core';
+import React from "react";
+import { Link } from "gatsby";
+import { Highlight } from "react-instantsearch-dom";
+import { css } from "@emotion/core";
 const PostPreview = ({ hit }) => {
   return (
     <article>
