@@ -11,6 +11,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             images
             type
             redirects
+            publish
           }
         }
       }
@@ -18,13 +19,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   `);
 
   if (result.errors) {
-    reporter.panic('failed to create posts ', result.errors);
+    reporter.panic("failed to create posts ", result.errors);
   }
 
   const pages = result.data.allMdx.nodes;
 
   pages.forEach((page) => {
-    const { redirects } = page.frontmatter;
+    const { redirects, publish } = page.frontmatter;
+
     if (redirects) {
       createRedirect({
         fromPath: redirects[0],
@@ -33,44 +35,45 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         isPermanent: true,
       });
     }
-    if (page.frontmatter.type === 'portfolio') {
-      actions.createPage({
-        path: page.frontmatter.path,
-        component: require.resolve('./src/templates/projectTemplate.js'),
-        context: {
-          pathSlug: page.frontmatter.path,
-          image: `resources/${page.frontmatter.images}`,
-        },
-      });
-    } else {
-      actions.createPage({
-        path: page.frontmatter.path,
-        component: require.resolve('./src/templates/postTemplate.js'),
-        context: {
-          pathSlug: page.frontmatter.path,
-          image: `resources/${page.frontmatter.images}`,
-        },
-      });
+    if (publish) {
+      if (page.frontmatter.type === "portfolio") {
+        actions.createPage({
+          path: page.frontmatter.path,
+          component: require.resolve("./src/templates/projectTemplate.js"),
+          context: {
+            pathSlug: page.frontmatter.path,
+            image: `resources/${page.frontmatter.images}`,
+          },
+        });
+      } else {
+        actions.createPage({
+          path: page.frontmatter.path,
+          component: require.resolve("./src/templates/postTemplate.js"),
+          context: {
+            pathSlug: page.frontmatter.path,
+            image: `resources/${page.frontmatter.images}`,
+          },
+        });
+      }
     }
   });
 };
 
-exports.onCreateWebpackConfig = ({stage, actions }) => {
-
+exports.onCreateWebpackConfig = ({ stage, actions }) => {
   actions.setWebpackConfig({
     resolve: {
       alias: {
         "@components": path.resolve(__dirname, "src/components"),
         "@static": path.resolve(__dirname, "static"),
         "@utils": path.resolve(__dirname, "src/utils"),
-        "@resources": path.resolve(__dirname, "src/resources")
-      }
-    }
+        "@resources": path.resolve(__dirname, "src/resources"),
+      },
+    },
   });
 
-  if (stage === 'develop') {
-		actions.setWebpackConfig({
-			devtool: 'cheap-module-source-map'
-		});
-	}
-}
+  if (stage === "develop") {
+    actions.setWebpackConfig({
+      devtool: "cheap-module-source-map",
+    });
+  }
+};

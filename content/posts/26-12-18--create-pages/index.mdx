@@ -1,15 +1,16 @@
 ---
-type: 'post'
-path: '/blog/gatsby-create-pages/'
-date: '2018/12/26'
-title: 'How to create pages dynamically in Gatsby'
-tags: ['javascript', 'gatsby']
-summary: 'In this post, we will be looking into how to create pages using Gatsby API createPages'
-images: 'images/thumbnails/whiteOpenBook.jpeg'
-imageAuthorID: '@kadh'
-imageAuthor: 'Kira auf der Heide'
-keywords: ['gatsby', 'createpage', 'dynamic pages', 'create pages']
-redirects: ['/gatsby-create-pages/', '/blog/gatsby-create-pages/']
+type: "post"
+path: "/blog/gatsby-create-pages/"
+date: "2018/12/26"
+title: "How to create pages dynamically in Gatsby"
+tags: ["javascript", "gatsby"]
+summary: "In this post, we will be looking into how to create pages using Gatsby API createPages"
+images: "images/thumbnails/whiteOpenBook.jpeg"
+imageAuthorID: "@kadh"
+imageAuthor: "Kira auf der Heide"
+keywords: ["gatsby", "createpage", "dynamic pages", "create pages"]
+redirects: ["/gatsby-create-pages/", "/blog/gatsby-create-pages/"]
+publish: true
 ---
 
 ### Updated: 24th of April
@@ -55,8 +56,8 @@ we need to create a page template component that will be mapped with data (avail
 In the following below, you can see a simplified example of the post template I am using for the blog posts. **Note (you can create as many templates as you want)**
 
 ```jsx
-import React from 'react';
-import { graphql } from 'gatsby';
+import React from "react";
+import { graphql } from "gatsby";
 
 const Post = ({ data }) => {
   const { markdownRemark } = data;
@@ -126,7 +127,7 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
   return new Promise((resolve, reject) => {
     // to create the page we need access to the blog post template
-    const postTemplate = path.resolve('src/templates/postTemplate.js');
+    const postTemplate = path.resolve("src/templates/postTemplate.js");
     resolve(
       graphql(
         `

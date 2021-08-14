@@ -1,14 +1,15 @@
 ---
-type: 'post'
-path: '/blog/how-to-add-metadata-in-vue-using-vue-meta/'
-date: '2020/08/06'
-title: 'How to Add MetaData in Vue Using Vue-Meta'
-tags: ['javascript', 'vue']
-summary: 'In this post, we will be looking into how to add vue-meta to our project and use it to handle metadata inside the component'
-images: 'images/thumbnails/imacScreen.jpeg'
-imageAuthorID: '@kaleidico'
-imageAuthor: 'Kaleidico'
-keywords: ['vue, vue-meta, vue metadata']
+type: "post"
+path: "/blog/how-to-add-metadata-in-vue-using-vue-meta/"
+date: "2020/08/06"
+title: "How to Add MetaData in Vue Using Vue-Meta"
+tags: ["javascript", "vue"]
+summary: "In this post, we will be looking into how to add vue-meta to our project and use it to handle metadata inside the component"
+images: "images/thumbnails/imacScreen.jpeg"
+imageAuthorID: "@kaleidico"
+imageAuthor: "Kaleidico"
+keywords: ["vue, vue-meta, vue metadata"]
+publish: true
 ---
 
 ## What is vue-meta?
@@ -36,7 +37,7 @@ import App from "./App.vue"; // main component
 import Meta from "vue-meta";
 Vue.use(Meta);
 new Vue({
-  render: h => h(App)
+  render: (h) => h(App),
 }).$mount("#app");
 ```
 
@@ -54,21 +55,21 @@ Now we look into an example of how to add metadata to our component.
   </div>
 </template>
 <script>
-import HelloWorld from './components/HelloWorld';
+import HelloWorld from "./components/HelloWorld";
 export default {
-  name: 'App',
+  name: "App",
   components: {
     HelloWorld,
   },
   metaInfo() {
     return {
-      title: 'test meta data with vue',
+      title: "test meta data with vue",
       meta: [
         {
-          vmid: 'description',
-          name: 'description',
+          vmid: "description",
+          name: "description",
           content:
-            'hello world, this is an example of adding a description with vueMeta',
+            "hello world, this is an example of adding a description with vueMeta",
         },
       ],
     };
@@ -89,23 +90,23 @@ In addition, we can set the meta value dynamically based on some logic as we hav
   </div>
 </template>
 <script>
-import HelloWorld from './components/HelloWorld';
+import HelloWorld from "./components/HelloWorld";
 export default {
-  name: 'App',
+  name: "App",
   components: {
     HelloWorld,
   },
   metaInfo() {
-    const a = 'test';
+    const a = "test";
     return {
-      title: 'test meta data with vue',
+      title: "test meta data with vue",
       meta: [
-        ...(a === 'test' && [
+        ...(a === "test" && [
           {
-            vmid: 'description',
-            name: 'description',
+            vmid: "description",
+            name: "description",
             content:
-              'hello world, this is an example of adding a description with vue-meta',
+              "hello world, this is an example of adding a description with vue-meta",
           },
         ]),
       ],
@@ -125,29 +126,29 @@ In the following below we will see an example of how to add some of these metada
 
 ```vue
 <script>
-import HelloWorld from './components/HelloWorld';
+import HelloWorld from "./components/HelloWorld";
 export default {
-  name: 'App',
+  name: "App",
   components: {
     HelloWorld,
   },
   metaInfo() {
-    const a = 'test';
+    const a = "test";
     return {
-      title: 'test meta data with vue',
+      title: "test meta data with vue",
       meta: [
-        ...(a === 'test' && [
+        ...(a === "test" && [
           {
-            vmid: 'description',
-            name: 'description',
+            vmid: "description",
+            name: "description",
             content:
-              'hello world, this is an example of adding a description with vue-meta',
+              "hello world, this is an example of adding a description with vue-meta",
           },
         ]),
       ],
       script: [
         {
-          src: '<https://services.postcodeanywhere.co.uk/js/address-3.91.js>',
+          src: "<https://services.postcodeanywhere.co.uk/js/address-3.91.js>",
           async: true,
           defer: true,
           body: true,
@@ -155,8 +156,8 @@ export default {
       ],
       link: [
         {
-          rel: 'canonical',
-          href: '<https://malikgabroun.com/>',
+          rel: "canonical",
+          href: "<https://malikgabroun.com/>",
         },
       ],
     };

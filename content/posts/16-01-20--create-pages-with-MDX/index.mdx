@@ -15,6 +15,7 @@ redirects:
     '/gatsby-create-pages-with-mdx/',
     '/blog/gatsby-create-pages-with-mdx/',
   ]
+  publish: true
 ---
 
 In this post, we will be looking into how to create pages programmatically using MDX in Gatsby.
@@ -30,10 +31,10 @@ Then we need to configure gatsby-mdx inside `gatsby-config.js`
 ```js
 plugins: [
   {
-    resolve: 'gatsby-plugin-mdx',
+    resolve: "gatsby-plugin-mdx",
     options: {
       defaultLayouts: {
-        default: require.resolve('./src/components/Layout.js'),
+        default: require.resolve("./src/components/Layout.js"),
       },
     },
   },
@@ -63,17 +64,17 @@ Once it gets installed, we need to update gatsby config to resolve source filesy
 ```js
 plugins: [
   {
-    resolve: 'gatsby-plugin-mdx',
+    resolve: "gatsby-plugin-mdx",
     options: {
       defaultLayouts: {
-        default: require.resolve('./src/components/Layout.js'),
+        default: require.resolve("./src/components/Layout.js"),
       },
     },
   },
   {
-    resolve: 'gatsby-source-filesystem',
+    resolve: "gatsby-source-filesystem",
     options: {
-      name: 'posts',
+      name: "posts",
       path: `${__dirname}/content/posts`,
     },
   },
@@ -107,7 +108,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   `);
 
   if (result.errors) {
-    reporter.panic('failed to create posts ', result.errors);
+    reporter.panic("failed to create posts ", result.errors);
   }
 
   const pages = result.data.allMdx.nodes;
@@ -115,7 +116,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   pages.forEach((page) => {
     actions.createPage({
       path: page.frontmatter.path,
-      component: require.resolve('./src/templates/postTemplate.js'),
+      component: require.resolve("./src/templates/postTemplate.js"),
       context: {
         pathSlug: page.frontmatter.path,
       },
@@ -135,14 +136,14 @@ Then, we create the pages using `actions.createPage` as we loop through these pa
 `Component` takes in the path to the template you want to use for these pages. Below is a sample snippet used as page template.
 
 ```jsx
-import { graphql } from 'gatsby';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
-import React from 'react';
+import { graphql } from "gatsby";
+import { MDXRenderer } from "gatsby-plugin-mdx";
+import React from "react";
 
-import Layout from '../components/Layout';
+import Layout from "../components/Layout";
 
 export const query = graphql`
-  query($pathSlug: String!) {
+  query ($pathSlug: String!) {
     mdx(frontmatter: { path: { eq: $pathSlug } }) {
       frontmatter {
         title
@@ -175,13 +176,13 @@ Once we finish adding the above, now we can add interactivity to our MDX pages w
 
 ```mdx
 ---
-path: '/blog/hello-world'
-date: '2020/01/01'
-title: 'Hello World'
-summary: 'hello world post'
+path: "/blog/hello-world"
+date: "2020/01/01"
+title: "Hello World"
+summary: "hello world post"
 ---
 
-import Counter from '../../../src/components/Counter';
+import Counter from "../../../src/components/Counter";
 
 Hello World
 

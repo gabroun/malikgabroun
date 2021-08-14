@@ -14,6 +14,7 @@ redirects:
     '/verifying-gatsby-in-search-console/',
     '/blog/verifying-gatsby-in-search-console/',
   ]
+  publish: true
 ---
 
 In order to verify you gatsby site, first you would need to use one of the verification method that the search console suggests. Below you can see the options you can select for verifying the site.
@@ -36,7 +37,7 @@ Once you have these modules installed, then we need to add the gatsby plugin to 
 
 ```javascript
 //gatsby-config.js
-plugins: ['gatsby-plugin-react-helmet'];
+plugins: ["gatsby-plugin-react-helmet"];
 ```
 
 Now we insert the meta tag data in head with the help of React Helmet component that we installed earlier. As this is beneficial for SEO when we have the title and description metadata stored in head which is used by Google to determine the placement of the site in the search results.
@@ -45,7 +46,7 @@ Below you can see an example of how we can insert the HTML meta tag so that sear
 
 ```jsx
 //index.js
-import Helmet from 'react-helmet';
+import Helmet from "react-helmet";
 <Helmet>
   <html lang="en" />
   <title>{site.siteMetadata.title}</title>
