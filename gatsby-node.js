@@ -67,6 +67,7 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
         "@static": path.resolve(__dirname, "static"),
         "@utils": path.resolve(__dirname, "src/utils"),
         "@resources": path.resolve(__dirname, "src/resources"),
+        "@hooks": path.resolve(__dirname, "src/hook"),
       },
     },
   });
