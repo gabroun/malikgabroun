@@ -1,15 +1,16 @@
 ---
-type: 'post'
-path: '/blog/understanding-redux/'
-date: '2019/03/22'
-title: 'Understanding Redux by doing a basic implementation of the store'
-tags: ['redux', 'javascript']
-summary: 'reimplemention of redux library store to learn how it works'
-images: 'images/thumbnails/wearingGlasses.jpeg'
-imageAuthorID: '@nate_dumlao'
-imageAuthor: 'Nathan Dumlao'
-keywords: ['redux', 'js']
-redirects: ['/understanding-redux/', '/blog/understanding-redux/']
+type: "post"
+path: "/blog/understanding-redux/"
+date: "2019/03/22"
+title: "Understanding Redux by doing a basic implementation of the store"
+tags: ["redux", "javascript"]
+summary: "reimplemention of redux library store to learn how it works"
+images: "images/thumbnails/wearingGlasses.jpeg"
+imageAuthorID: "@nate_dumlao"
+imageAuthor: "Nathan Dumlao"
+keywords: ["redux", "js"]
+redirects: ["/understanding-redux/", "/blog/understanding-redux/"]
+publish: true
 ---
 
 In this post we will be re-writing a simplified version of Redux store to understand how it works.
@@ -195,7 +196,7 @@ and the following is an example usage of store methods
 ```javascript
 // reducer function - example
 function todos(state = [], action) {
-  if (action.type === 'ADD_TODO') {
+  if (action.type === "ADD_TODO") {
     return state.concat([action.payload]);
   }
   return state;
@@ -206,16 +207,16 @@ const store = createStore(todos);
 
 // to listen to the changes - something like a logger
 const unsubscribe = store.subscribe(() => {
-  console.log('state: ', store.getState());
+  console.log("state: ", store.getState());
 });
 
 // to update the state
 store.dispatch({
-  type: 'ADD_TODO',
+  type: "ADD_TODO",
   payload: {
     todo: {
       id: 0,
-      name: 'Write a post about Redux',
+      name: "Write a post about Redux",
     },
   },
 });

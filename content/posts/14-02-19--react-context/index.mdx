@@ -1,15 +1,16 @@
 ---
-type: 'post'
-path: '/blog/react-context/'
-date: '2019/02/14'
-title: 'React Context'
-tags: ['javascript', 'react']
-summary: 'In this post, we will be looking into React Context API'
-images: 'images/thumbnails/containers.jpeg'
-imageAuthorID: '@federize'
-imageAuthor: 'Federico Beccari'
-keywords: ['react', 'react context', 'js']
-redirects: ['/react-context/', '/blog/react-context/']
+type: "post"
+path: "/blog/react-context/"
+date: "2019/02/14"
+title: "React Context"
+tags: ["javascript", "react"]
+summary: "In this post, we will be looking into React Context API"
+images: "images/thumbnails/containers.jpeg"
+imageAuthorID: "@federize"
+imageAuthor: "Federico Beccari"
+keywords: ["react", "react context", "js"]
+redirects: ["/react-context/", "/blog/react-context/"]
+publish: true
 ---
 
 In this post we will be talking about `Context` API which was introduced in React 16, and how you can use them.
@@ -37,10 +38,10 @@ whatever we put in the context object is what we want to use in the consumer com
 
 ```javascript
 //NameContext.js
-import React from 'react';
+import React from "react";
 
 const NameContext = React.createContext({
-  name: '',
+  name: "",
   handleNameChange() {},
 });
 
@@ -60,17 +61,17 @@ In other words, we wrap the Provider component and pass the context as a value p
 
 ```jsx
 //App.js
-import React from 'react';
-import { render } from 'react-dom';
-import { Provider } from './NameContext';
-import Child from './Child';
+import React from "react";
+import { render } from "react-dom";
+import { Provider } from "./NameContext";
+import Child from "./Child";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.handleNamechange = this.handleNamechange.bind(this);
     this.state = {
-      name: 'Malik',
+      name: "Malik",
       handleNameChange: this.handleNamechange,
     };
   }
@@ -101,9 +102,9 @@ After we wrapped the Provider component around the section of the app where we w
 
 ```jsx
 //Child.js
-import React from 'react';
-import { Consumer } from './NameContext';
-import GrandChild from './GrandChild';
+import React from "react";
+import { Consumer } from "./NameContext";
+import GrandChild from "./GrandChild";
 
 class Child extends React.Component {
   render() {
@@ -134,8 +135,8 @@ So we have went through how you can use the context in the render function, what
 
 ```jsx
 //GrandChild.js
-import React from 'react';
-import { Consumer } from './NameContext';
+import React from "react";
+import { Consumer } from "./NameContext";
 
 class GrandChild extends React.Component {
   constructor(props) {

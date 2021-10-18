@@ -33,7 +33,8 @@
         ["@components", "./src/components"],
         ["@static", "./static"],
         ["@utils", "./src/utils"],
-        ["@resources", "./src/resources"]
+        ["@resources", "./src/resources"],
+        ["@hooks", "./src/hooks"]
       ]
     }
   }
