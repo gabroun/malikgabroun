@@ -27,14 +27,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
   pages.forEach((page) => {
     const { redirects, publish } = page.frontmatter;
 
-    if (redirects) {
-      createRedirect({
-        fromPath: redirects[0],
-        toPath: redirects[1],
-        redirectInBrowser: true,
-        isPermanent: true,
-      });
-    }
+    // if (redirects) {
+    //   createRedirect({
+    //     fromPath: redirects[0],
+    //     toPath: redirects[1],
+    //     redirectInBrowser: true,
+    //     isPermanent: true,
+    //   });
+    // }
     if (publish) {
       if (page.frontmatter.type === "portfolio") {
         actions.createPage({
@@ -67,7 +67,7 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
         "@static": path.resolve(__dirname, "static"),
         "@utils": path.resolve(__dirname, "src/utils"),
         "@resources": path.resolve(__dirname, "src/resources"),
-        "@hooks": path.resolve(__dirname, "src/hook"),
+        "@hooks": path.resolve(__dirname, "src/hooks"),
       },
     },
   });

@@ -5,7 +5,7 @@ import icon16 from "@static/icons/favicon-16x16.png";
 import icon192 from "@static/icons/favicon-192x192.png";
 import icon32 from "@static/icons/favicon-32x32.png";
 import icon512 from "@static/icons/favicon-512x512.png";
-import useSiteMetadata from "../hooks/useSiteMetadata";
+import useSiteMetadata from "@hooks/useSiteMetadata";
 
 const Seo = ({
   meta,

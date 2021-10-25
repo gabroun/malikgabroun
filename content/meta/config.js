@@ -4,8 +4,8 @@ module.exports = {
   siteTitle: "MalikGabroun",
   shortSiteTitle: "MalikGabroun",
   siteDescription: "Personal Website for Malik Elgabroun - Front End Developer",
-  siteUrl: "https://malikgabroun.com",
-  pathPrefix: "",
+  siteUrl: "https://malikgabroun.com/",
+  pathPrefix: "/",
   siteImage: "",
   siteLanguage: "en",
   // author

@@ -14,7 +14,7 @@ class About extends React.Component {
   render() {
     return (
       <ThemeProvider theme={theme}>
-        <Layout title="About">
+        <Layout title="About" pathSlug="/about/">
           <div className="main-content">
             <Fragment>
               <S.AboutMe className="about-me">
