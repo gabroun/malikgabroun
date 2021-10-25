@@ -1,6 +1,17 @@
 const config = require("./content/meta/config");
 require("dotenv").config();
 
+const {
+  NODE_ENV,
+  URL: NETLIFY_SITE_URL = "https://malikgabroun.com/",
+  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+  CONTEXT: NETLIFY_ENV = NODE_ENV,
+} = process.env;
+const isNetlifyProduction = NETLIFY_ENV === "production";
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+
+console.log(config.siteUrl, siteUrl, isNetlifyProduction);
+
 const gatsbyRemarkPlugins = [
   "gatsby-remark-code-titles",
   {
@@ -166,9 +177,22 @@ module.exports = {
     {
       resolve: "gatsby-plugin-robots-txt",
       options: {
-        host: config.siteUrl,
-        sitemap: `${config.siteUrl}/sitemap.xml`,
-        policy: [{ userAgent: "*", allow: "/" }],
+        resolveEnv: () => NETLIFY_ENV,
+        env: {
+          production: {
+            policy: [{ userAgent: "*" }],
+          },
+          "branch-deploy": {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
+            sitemap: null,
+            host: null,
+          },
+          "deploy-preview": {
+            policy: [{ userAgent: "*", disallow: ["/"] }],
+            sitemap: null,
+            host: null,
+          },
+        },
       },
     },
     {
@@ -177,7 +201,5 @@ module.exports = {
         siteUrl: `https://malikgabroun.com/`,
       },
     },
-    "gatsby-plugin-netlify",
-    "gatsby-plugin-meta-redirect", // make sure to put last in the array
   ],
 };

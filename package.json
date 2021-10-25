@@ -4,7 +4,7 @@
   "author": "Malik Elgabroun",
   "license": "MIT",
   "scripts": {
-    "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "start": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
     "build": "gatsby build",
     "serve:prod": "gatsby build && gatsby serve",
     "test": "jest --silent",

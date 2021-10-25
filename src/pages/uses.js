@@ -1,10 +1,10 @@
-import Layout from '@components/Layout';
-import React from 'react';
-import { ThemeProvider } from 'styled-components';
-import darkSetup from '../resources/setup-light.jpeg';
-import lightSetup from '../resources/setup-dark.jpeg';
-import styled from 'styled-components';
-import theme from '@components/styles/theme';
+import Layout from "@components/Layout";
+import React from "react";
+import { ThemeProvider } from "styled-components";
+import darkSetup from "../resources/setup-light.jpeg";
+import lightSetup from "../resources/setup-dark.jpeg";
+import styled from "styled-components";
+import theme from "@components/styles/theme";
 
 const Container = styled.div`
   .container {
@@ -44,7 +44,7 @@ const Container = styled.div`
 const Uses = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Layout title="Uses">
+      <Layout title="Uses" pathSlug="/uses/">
         <Container>
           <div className="container-image">
             <div>
@@ -62,21 +62,21 @@ const Uses = () => {
               <ul>
                 <li>
                   <p>
-                    My main monitor is a{' '}
-                    <a href="https://amzn.to/2MMmTcG">27&quot; Samsung</a>{' '}
+                    My main monitor is a{" "}
+                    <a href="https://amzn.to/2MMmTcG">27&quot; Samsung</a>{" "}
                     curved LED monitor.
                   </p>
                 </li>
                 <li>
                   <p>
-                    To my left I use a vertical{' '}
+                    To my left I use a vertical{" "}
                     <a href="https://amzn.to/30dA0qr">22&quot; Dell</a> monitor.
                   </p>
                 </li>
                 <li>
                   <p>
                     To my right I run a MacBook Pro 2015 as a work laptop nested
-                    on a{' '}
+                    on a{" "}
                     <a href="https://amzn.to/3qdBV8V">
                       MOSISO Vertical Laptop Stand
                     </a>
@@ -85,7 +85,7 @@ const Uses = () => {
                 </li>
                 <li>
                   <p>
-                    The keyboard I use is a bluetooth{' '}
+                    The keyboard I use is a bluetooth{" "}
                     <a href="https://amzn.to/30dyHb3">OMOTON</a> keyboard.
                   </p>
                 </li>
@@ -97,17 +97,17 @@ const Uses = () => {
                 </li>
                 <li>
                   <p>
-                    The keyboard and mouse rest pad I use is{' '}
-                    <a href="https://amzn.to/3beE9kj">Silica Gel Wrist Rest</a>{' '}
+                    The keyboard and mouse rest pad I use is{" "}
+                    <a href="https://amzn.to/3beE9kj">Silica Gel Wrist Rest</a>{" "}
                     support cushion with memory foam.
                   </p>
                 </li>
                 <li>
                   <p>
-                    For my main monitor I use{' '}
+                    For my main monitor I use{" "}
                     <a href="https://amzn.to/3rhmC0k">
                       BONTEC Wood Monitor Stand Riser
-                    </a>{' '}
+                    </a>{" "}
                     which gives me a 2 tier shelfs with cable management on the
                     side.
                   </p>
@@ -119,7 +119,7 @@ const Uses = () => {
               <ul>
                 <li>
                   <p>
-                    For backup I use{' '}
+                    For backup I use{" "}
                     <a href="https://amzn.to/3bimgRO">LaCie Rugged Mini</a> 1 TB
                     to backup my projects and files.
                   </p>
@@ -129,7 +129,7 @@ const Uses = () => {
                     I listen to
                     <a href="https://amzn.to/30aBeTk">
                       TaoTronics Bluetooth
-                    </a>{' '}
+                    </a>{" "}
                     headphones all day which come with active noise cancelling
                     feature.
                   </p>
@@ -142,19 +142,19 @@ const Uses = () => {
                 </li>
                 <li>
                   <p>
-                    For time management with pomodoro technique I use{' '}
+                    For time management with pomodoro technique I use{" "}
                     <a href="https://amzn.to/2OoZU89">
                       Bellaware Hourglass Sand Timer
-                    </a>{' '}
+                    </a>{" "}
                     which gives me a 45 minutes interval.
                   </p>
                 </li>
                 <li>
                   <p>
-                    As for cable management I use a combination of{' '}
+                    As for cable management I use a combination of{" "}
                     <a href="https://amzn.to/30dBIIp">Cable Clips </a> to manage
-                    cable on desk and{' '}
-                    <a href="https://amzn.to/3rhCakU">D-Line Cable Tidy Box</a>{' '}
+                    cable on desk and{" "}
+                    <a href="https://amzn.to/3rhCakU">D-Line Cable Tidy Box</a>{" "}
                     to conceal cables under the desk.
                   </p>
                 </li>

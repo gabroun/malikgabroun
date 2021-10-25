@@ -11,7 +11,7 @@ import formatDate from "../utils/formatDate";
 import { graphql } from "gatsby";
 import styled from "styled-components";
 
-const Title = styled.h2`
+const Title = styled.h1`
   font-family: "Rambla";
 `;
 
