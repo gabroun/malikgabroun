@@ -11,7 +11,7 @@ const Blog = () => {
   const posts = useSiteBlogdata();
   return (
     <ThemeProvider theme={theme}>
-      <Layout title="Blog" pathSlug="/blog/">
+      <Layout title="Blog | Malik Elgabroun's Website" pathSlug="/blog/">
         <S.BlogList>
           {posts.map((post) => {
             const { path, title, summary, images, date, tags } =

@@ -44,7 +44,7 @@ const Container = styled.div`
 const Uses = () => {
   return (
     <ThemeProvider theme={theme}>
-      <Layout title="Uses" pathSlug="/uses/">
+      <Layout title="Uses | Malik Elgabroun's Website" pathSlug="/uses/">
         <Container>
           <div className="container-image">
             <div>

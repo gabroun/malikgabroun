@@ -60,7 +60,7 @@ const Courses = () => {
   const imgPath = require(`@resources/algolia-course.png`);
   return (
     <ThemeProvider theme={theme}>
-      <Layout title="Courses" pathSlug="/courses/">
+      <Layout title="Courses | Malik Elgabroun's Website" pathSlug="/courses/">
         <CourseList className="courses-list">
           <div className="course-item">
             <a href="https://www.educative.io/courses/start-algolia-api">
