@@ -15,6 +15,7 @@ const useSiteBlogdata = () => {
             summary
             images
             tags
+            lastUpdated
           }
           timeToRead
         }

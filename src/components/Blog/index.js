@@ -1,8 +1,8 @@
-import * as S from './styles';
+import * as S from "./styles";
 
-import { Link } from 'gatsby';
-import React from 'react';
-import formatDate from '@utils/formatDate';
+import { Link } from "gatsby";
+import React from "react";
+import formatDate from "@utils/formatDate";
 
 export const BlogPost = ({
   path,
@@ -12,6 +12,7 @@ export const BlogPost = ({
   date,
   tags,
   timeToRead,
+  lastUpdated,
 }) => {
   const url = require(`@resources/${image}`);
   return (
@@ -58,7 +59,8 @@ export const BlogPost = ({
                   fill="black"
                 />
               </svg>
-              {formatDate(date)}
+
+              {lastUpdated ? formatDate(lastUpdated) : formatDate(date)}
             </S.PostDate>
             <S.TimeToRead>
               <svg
@@ -86,7 +88,8 @@ export const Blog = ({ nodes }) => {
   return (
     <S.BlogList>
       {nodes.map(function (node) {
-        const { path, title, summary, images, date, tags } = node.frontmatter;
+        const { path, title, summary, images, date, tags, lastUpdated } =
+          node.frontmatter;
         const { timeToRead } = node;
 
         return (
@@ -99,6 +102,7 @@ export const Blog = ({ nodes }) => {
             date={formatDate(date)}
             tags={tags}
             key={path}
+            lastUpdated={lastUpdated}
           />
         );
       })}

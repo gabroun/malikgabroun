@@ -30,7 +30,7 @@ const Seo = ({
 
   return (
     <>
-      <Helmet titleTemplate={`%s - ${useSiteMetadata().title}`}>
+      <Helmet titleTemplate={`${title}`}>
         <html lang="en" />
         <title>{title}</title>
 
