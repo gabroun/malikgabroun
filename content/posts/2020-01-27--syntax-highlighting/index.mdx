@@ -2,6 +2,7 @@
 type: "post"
 path: "/blog/syntax-highlighting-in-gatsby-mdx/"
 date: "2020/01/27"
+lastUpdated: "2021/10/29"
 title: "Syntax Highlighting in Gatsby MDX"
 tags: ["javascript", "gatsby"]
 summary: "this post shows how to use prism-react-renderer to enable syntax highlighting for Gatsby MDX files"
@@ -17,7 +18,7 @@ redirects:
 publish: true
 ---
 
-In this post, we will be looking into how to enable syntax highlighting for Gatsby MDX files using [prism-react-renderer](https://github.com/FormidableLabs/prism-react-renderer)
+In this post, we will be looking into how to enable syntax highlighting for [Gatsby MDX files](/blog/gatsby-create-pages-with-mdx/) using [prism-react-renderer](https://github.com/FormidableLabs/prism-react-renderer)
 
 first, we need to install a couple of modules
 
@@ -27,7 +28,7 @@ npm i prism-react-renderer @mdx-js/react
 
 Then, we create the component which we will use in the `<MDXProvider/>` that is going to provide a wrapper replacement for our application.
 
-```javascript
+```javascript:title=gatsby-browser.js
 const component = {
   pre: (props) => {
     const className = props.children.props.className || "";
@@ -82,7 +83,7 @@ const matches = className.match(/language-(?<lang>.*)/);
 
 To enable syntax highlighting in MDX files by adding the following snippet below in `gatsby-browser.js`
 
-```javascript
+```javascript:title=gatsby-browser.js
 import React from "react";
 import { MDXProvider } from "@mdx-js/react";
 import Highlight, { defaultProps } from "prism-react-renderer";

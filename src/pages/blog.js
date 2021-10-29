@@ -14,7 +14,7 @@ const Blog = () => {
       <Layout title="Blog | Malik Elgabroun's Website" pathSlug="/blog/">
         <S.BlogList>
           {posts.map((post) => {
-            const { path, title, summary, images, date, tags } =
+            const { path, title, summary, images, date, tags, lastUpdated } =
               post.frontmatter;
             const { timeToRead } = post;
 
@@ -28,6 +28,7 @@ const Blog = () => {
                 tags={tags}
                 timeToRead={timeToRead}
                 key={path}
+                lastUpdated={lastUpdated}
               />
             );
           })}
