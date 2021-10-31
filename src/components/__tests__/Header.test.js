@@ -1,16 +1,10 @@
-import React from 'react';
-import { create } from 'react-test-renderer';
-import Header from '../Header';
+import React from "react";
+import { render, screen } from "@testing-library/react";
+import Header from "@components/Header";
 
-test('menu is active', () => {
-  //mock matMedia API to fix the error of <Media targetWindow> does not support `matchMedia`.
-  window.matchMedia = () => ({
-    addListener: () => {},
-    removeListener: () => {},
+describe("Header", () => {
+  test("renders correctly", () => {
+    render(<Header />);
+    expect(screen.getByText(/Home/i)).toBeInTheDocument();
   });
-  const component = create(<Header />);
-  const instance = component.getInstance();
-  expect(instance.state.active).toBe(false);
-  instance.handleClick();
-  expect(instance.state.active).toBe(true);
 });

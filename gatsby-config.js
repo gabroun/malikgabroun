@@ -10,8 +10,6 @@ const {
 const isNetlifyProduction = NETLIFY_ENV === "production";
 const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
 
-console.log(config.siteUrl, siteUrl, isNetlifyProduction);
-
 const gatsbyRemarkPlugins = [
   "gatsby-remark-code-titles",
   {
@@ -130,21 +128,13 @@ module.exports = {
             },
           },
           `gatsby-remark-prismjs`,
+          `gatsby-remark-autolink-headers`,
         ],
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-plugin-nprogress`,
-      options: {
-        // Setting a color is optional.
-        color: `red`,
-        // Disable the loading spinner.
-        showSpinner: false,
-      },
-    },
     // {
     //   resolve: 'gatsby-plugin-sitemap',
     //   query: `
