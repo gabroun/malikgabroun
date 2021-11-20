@@ -75,12 +75,12 @@ const Index = () => {
                   and I&apos;m a London-based Front end Developer
                 </p>
                 <S.ButtonContainer>
-                  <S.Button>
-                    <Link to="/about/">About me</Link>
-                  </S.Button>
-                  <S.Button>
-                    <a href={cv}>Resume</a>
-                  </S.Button>
+                  <Link to="/about/">
+                    <S.Button>About me</S.Button>
+                  </Link>
+                  <a href={cv}>
+                    <S.Button role="button">Resume</S.Button>
+                  </a>
                 </S.ButtonContainer>
               </div>
             </div>

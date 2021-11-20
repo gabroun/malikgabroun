@@ -63,14 +63,22 @@ const Courses = () => {
       <Layout title="Courses | Malik Elgabroun's Website" pathSlug="/courses/">
         <CourseList className="courses-list">
           <div className="course-item">
-            <a href="https://www.educative.io/courses/start-algolia-api">
+            <a
+              href="https://www.educative.io/courses/start-algolia-api"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
               <img
                 src={imgPath}
                 alt="Getting started with Algolia API course"
               />
             </a>
             <div className="course-content">
-              <a href="https://www.educative.io/courses/start-algolia-api">
+              <a
+                href="https://www.educative.io/courses/start-algolia-api"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
                 <h3>Getting Started with Algolia API</h3>
               </a>
               <p>
@@ -83,7 +91,11 @@ const Courses = () => {
                   experience by building a fully functional search experience
                   using Algolia.
                 </span>
-                <a href="https://www.educative.io/courses/start-algolia-api">
+                <a
+                  href="https://www.educative.io/courses/start-algolia-api"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Get started with Algolia{" "}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
