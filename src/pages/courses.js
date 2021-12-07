@@ -12,11 +12,10 @@ const CourseList = styled.div`
   grid-gap: 110px;
   .course-item {
     margin: 15px;
-    border-radius: 6px;
+    border-radius: 8px;
     transition: all 0.4s ease 0.1s;
     border: 1px solid ${(props) => props.theme.lightGrey};
-    box-shadow: 0 8px 16px 0 rgba(34, 50, 84, 0.06),
-      inset 0 0 0 1px rgba(112, 123, 140, 0.15);
+    box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
     &:hover {
       opacity: 0.7;
       transform: translateY(-5%);
@@ -26,6 +25,7 @@ const CourseList = styled.div`
 
   img {
     margin: 0;
+    border-radius: 8px;
   }
 
   .course-content {

@@ -1,6 +1,6 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from "styled-components";
 
-import theme from './theme';
+import theme from "./theme";
 
 export const GlobalStyle = createGlobalStyle`
     html {
@@ -52,7 +52,7 @@ export const MainContent = styled.section`
   }
 
   .main-content__background {
-    content: '';
+    content: "";
     position: absolute;
     background-color: #f47c48;
     box-sizing: border-box;
@@ -121,8 +121,54 @@ export const Button = styled.button`
 
 export const Header = styled.h2`
   text-align: center;
+  display: inline-block;
+  &:after {
+    content: "";
+    display: block;
+    width: 84%;
+    border-radius: 4px;
+    height: 6px;
+    margin: 10px auto 0;
+    background-color: #f47c48;
+  }
 `;
 
 export const LatestSection = styled.section`
   margin-top: 200px;
+`;
+
+export const Items = styled.div`
+  display: flex;
+  justify-content: center;
+  a {
+    display: flex;
+    align-items: center;
+    max-width: 490px;
+    border: solid 1px#efefef;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+    border-radius: 8px;
+
+    padding: 10px;
+
+    &:hover {
+      transition: all 0.4s ease 0.1s;
+      transform: translateY(-5%);
+      background: #efefef;
+    }
+  }
+
+  img {
+    max-width: 55%;
+    margin-right: 8px;
+  }
+
+  h2 {
+    line-height: 1.2em;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 16px;
+  }
 `;
