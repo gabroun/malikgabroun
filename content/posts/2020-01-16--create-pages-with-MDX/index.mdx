@@ -2,6 +2,7 @@
 type: 'post'
 path: '/blog/gatsby-create-pages-with-mdx/'
 date: '2020/01/16'
+lastUpdated: "2021/12/07"
 title: 'How to create pages dynamically in Gatsby using MDX'
 tags: ['javascript', 'gatsby']
 summary: 'In this post, we will be looking into how to create pages
@@ -125,14 +126,14 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
 };
 ```
 
-In the createPage function we will use graphql helper to fetch the nodes from the data layer by passing a graphql query as you can see in the snippet above.
+In the createPage function, we will use graphql helper to fetch the nodes from the data layer by passing a graphql query as you can see in the snippet above.
 
 Then, we create the pages using `actions.createPage` as we loop through these pages that came back as an array to generate them programmatically as you can see in the screenshot below
 
 ![allmdx-query](./allmdx-query.png)
 
 `actions.createPage` takes an options object as a parameter that has 3 properties: path, component and context.
-`Path` is what we have defined in the mdx frontmatter.
+`Path` is what we have defined in the MDX frontmatter.
 `Component` takes in the path to the template you want to use for these pages. Below is a sample snippet used as page template.
 
 ```jsx
@@ -191,4 +192,6 @@ Hello World
 
 ![mdxpage-example](./mdxpage-example.png)
 
-**Following the post and you can find a starter repo [here](https://github.com/gabroun/gatsby-mdx-starter) that shows usage of mdx pages**
+**Following the post and you can find a starter repo [here](https://github.com/gabroun/gatsby-mdx-starter) that shows usage of MDX pages**
+
+If you found this post helpful, then you will love this one as it shows you [how to add syntax highlighting to MDX files](/blog/syntax-highlighting-in-gatsby-mdx/).

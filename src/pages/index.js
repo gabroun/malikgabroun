@@ -91,6 +91,23 @@ const Index = () => {
               <Blog nodes={data.post.nodes} />
             </S.LatestSection>
 
+            <S.LatestSection>
+              <S.Header>Explore</S.Header>
+
+              <S.Items>
+                <Link to="/courses/">
+                  <img
+                    src={require("../resources/courses.svg")}
+                    alt="online course"
+                  />
+                  <div>
+                    <h2>My Online Courses</h2>
+                    <p>Browse some of my current and upcoming courses</p>
+                  </div>
+                </Link>
+              </S.Items>
+            </S.LatestSection>
+
             <Signup tags={["general", "software"]} />
           </S.MainContent>
         </Layout>

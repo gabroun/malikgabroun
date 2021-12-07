@@ -1,15 +1,14 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const PostItem = styled.div`
   flex-basis: 33%;
   margin: 15px;
   top: 0px;
   background-color: ${(props) => props.theme.white};
-  border-radius: 6px;
+  border-radius: 8px;
   transition: all 0.4s ease 0.1s;
   border: 1px solid ${(props) => props.theme.lightGrey};
-  box-shadow: 0 8px 16px 0 rgba(34, 50, 84, 0.06),
-    inset 0 0 0 1px rgba(112, 123, 140, 0.15);
+  box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
 
   &:hover {
     background: ${(props) => props.theme.whiteSmoke};
@@ -26,6 +25,8 @@ export const PostItem = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     height: 175px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
     img {
       margin-bottom: 0;
       padding: 0 1px;
@@ -39,7 +40,7 @@ export const PostItem = styled.div`
 
 export const PostPreview = styled.div`
   margin: 10px;
-  height: 256px;
+  height: 275px;
   display: grid;
   grid-template-rows: 40px 70px 1fr 1fr;
 
