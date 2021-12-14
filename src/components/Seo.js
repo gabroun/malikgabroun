@@ -73,7 +73,7 @@ const Seo = ({
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:title" content={title || useSiteMetadata().title} />
         <meta name="twitter:creator" content={useSiteMetadata().twitter} />
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         {metaImage && <meta name="twitter:image" content={metaImage} />}
       </Helmet>
       <SchemaOrg
