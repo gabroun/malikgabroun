@@ -1,12 +1,13 @@
-require('typeface-rambla');
-require('./codeBlock.css');
+require("./codeBlock.css");
+import "@fontsource/fira-mono";
+import "@codesandbox/sandpack-react/dist/index.css";
 
-import Highlight, { defaultProps } from 'prism-react-renderer';
+import Highlight, { defaultProps } from "prism-react-renderer";
 
-import { MDXProvider } from '@mdx-js/react';
-import React from 'react';
-import { preToCodeBlock } from 'mdx-utils';
-import theme from 'prism-react-renderer/themes/nightOwl';
+import { MDXProvider } from "@mdx-js/react";
+import React from "react";
+import { preToCodeBlock } from "mdx-utils";
+import theme from "prism-react-renderer/themes/nightOwl";
 
 /* eslint-disable */
 const RE = /{([\d,-]+)}/;
