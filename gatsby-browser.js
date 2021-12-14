@@ -1,6 +1,6 @@
 require("./codeBlock.css");
-import "@fontsource/fira-mono";
-import "@codesandbox/sandpack-react/dist/index.css";
+require("@fontsource/fira-mono");
+require("@codesandbox/sandpack-react/dist/index.css");
 
 import Highlight, { defaultProps } from "prism-react-renderer";
 
