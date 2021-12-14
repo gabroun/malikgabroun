@@ -40,7 +40,7 @@ export const PostItem = styled.div`
 
 export const PostPreview = styled.div`
   margin: 10px;
-  height: 275px;
+  height: 290px;
   display: grid;
   grid-template-rows: 40px 70px 1fr 1fr;
 

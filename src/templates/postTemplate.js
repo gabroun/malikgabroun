@@ -12,7 +12,7 @@ import { graphql } from "gatsby";
 import styled from "styled-components";
 
 const Title = styled.h1`
-  font-family: "Rambla";
+  font-family: "Fira Mono";
 `;
 
 const PostTemplate = styled.div`
@@ -46,8 +46,9 @@ const PostWrapper = styled.article`
 
   @media (min-width: 1084px) {
     > div {
-      flex: 1 1 740px;
-      max-width: 740px;
+      flex: 1 1 800px;
+      max-width: 800px;
+      margin-right: 25px;
     }
   }
 
@@ -62,7 +63,7 @@ const PostWrapper = styled.article`
       position: absolute;
       right: 1.5rem;
       text-transform: uppercase;
-      top: 0px;
+      top: 10px;
       border-radius: 0px 0px 4px 4px;
       padding: 0.25rem 0.5rem;
     }
@@ -196,7 +197,7 @@ const ImgCredit = styled.p`
 
 const PostHeader = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 120px) 1fr;
+  grid-template-columns: repeat(2, 160px) 1fr;
   @media (max-width: 420px) {
     display: flex;
     flex-wrap: wrap;
