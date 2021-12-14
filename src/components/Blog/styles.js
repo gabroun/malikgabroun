@@ -46,7 +46,7 @@ export const PostPreview = styled.div`
 
   h2 {
     line-height: 1.2em;
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     margin: 14px 0;
 
