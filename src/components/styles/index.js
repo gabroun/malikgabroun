@@ -5,7 +5,7 @@ import theme from "./theme";
 export const GlobalStyle = createGlobalStyle`
     html {
         box-sizing: border-box;
-        font-family: 'Rambla';
+        font-family: 'Fira Mono';
     }
     *, *:before, *:after {
         box-sizing: inherit;
@@ -13,7 +13,7 @@ export const GlobalStyle = createGlobalStyle`
     body {
         padding: 0;
         margin: 0;
-        font-family: 'Rambla';
+        font-family: 'Fira Mono';
     }
      a {
         text-decoration: none;
@@ -22,10 +22,24 @@ export const GlobalStyle = createGlobalStyle`
 
     pre[class*="language-"] {
     padding: 1em 0;
-    margin: .5em 0;
+    margin: 1.5em 0;
     overflow: auto;
     border-radius: 0.3em;
     background-color: #282c34;
+  }
+
+  .sp-wrapper {
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .sp-layout {
+    background: inherit;
+    border: 1px solid #e4e7eb;
+  }
+
+  p {
+    margin-top: 1.5em;
   }
 `;
 

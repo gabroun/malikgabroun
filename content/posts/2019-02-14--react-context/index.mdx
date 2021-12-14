@@ -2,6 +2,7 @@
 type: "post"
 path: "/blog/react-context/"
 date: "2019/02/14"
+lastUpdated: "2021/12/14"
 title: "React Context"
 tags: ["javascript", "react"]
 summary: "In this post, we will be looking into React Context API"
@@ -12,6 +13,8 @@ keywords: ["react", "react context", "js"]
 redirects: ["/react-context/", "/blog/react-context/"]
 publish: true
 ---
+
+import ReactContext from "./react-context";
 
 In this post we will be talking about `Context` API which was introduced in React 16, and how you can use them.
 
@@ -62,7 +65,6 @@ In other words, we wrap the Provider component and pass the context as a value p
 ```jsx
 //App.js
 import React from "react";
-import { render } from "react-dom";
 import { Provider } from "./NameContext";
 import Child from "./Child";
 
@@ -166,6 +168,10 @@ export default function GrandChildWithContext() {
   );
 }
 ```
+
+In the demo below, we will put all component together and see how React Context works.
+
+<ReactContext />
 
 You can have multiple kinds of context, by wrapping provider around another provider in order to access the context.
 
