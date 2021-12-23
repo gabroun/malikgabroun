@@ -295,7 +295,7 @@ const Post = ({ data: { mdx: post, file: imgFile } }) => {
               <PostHeader style={{ margin: "15px 0" }}>
                 <p
                   className="post-header__date"
-                  style={{ display: "flex", alignItems: "baseline" }}
+                  style={{ display: "flex", alignItems: "center" }}
                 >
                   <CalendarIcon /> {formatDate(date)}
                 </p>
@@ -304,7 +304,7 @@ const Post = ({ data: { mdx: post, file: imgFile } }) => {
                   style={{
                     marginLeft: "10px",
                     display: "flex",
-                    alignItems: "baseline",
+                    alignItems: "center",
                   }}
                 >
                   <HourglassIcon /> {timeToRead} min read
