@@ -60,7 +60,7 @@ export const BlogPost = ({
                 />
               </svg>
 
-              {lastUpdated ? formatDate(lastUpdated) : formatDate(date)}
+              {formatDate(date)}
             </S.PostDate>
             <S.TimeToRead>
               <svg
