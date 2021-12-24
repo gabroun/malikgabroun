@@ -15,23 +15,28 @@ const Container = styled.div`
   h1 {
     letter-spacing: 1px;
   }
-`;
-class NotFoundPage extends React.Component {
-  render() {
-    return (
-      <ThemeProvider theme={theme}>
-        <Layout title="Page not found">
-          <Container>
-            <h1>Page not found</h1>
-            <p>
-              You can return to homeage by clicking
-              <Link to="/"> here</Link>
-            </p>
-          </Container>
-        </Layout>
-      </ThemeProvider>
-    );
+
+  img {
+    max-width: 600px;
+    width: 100%;
   }
-}
+`;
+const NotFoundPage = () => {
+  const imgPath = require(`@resources/404.svg`);
+  return (
+    <ThemeProvider theme={theme}>
+      <Layout title="Page not found">
+        <Container>
+          <h1>Page not found</h1>
+          <img src={imgPath} alt="page not found - 404" />
+          <p>
+            You can return to homepage by clicking
+            <Link to="/"> here</Link>
+          </p>
+        </Container>
+      </Layout>
+    </ThemeProvider>
+  );
+};
 
 export default NotFoundPage;

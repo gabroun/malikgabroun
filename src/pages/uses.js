@@ -27,6 +27,9 @@ const Container = styled.div`
 
   span {
     font-weight: 700;
+    img {
+      vertical-align: bottom;
+    }
   }
 
   p {
@@ -42,6 +45,7 @@ const Container = styled.div`
 `;
 
 const Uses = () => {
+  const amazonLogo = require("@resources/amazonLogo.svg");
   return (
     <ThemeProvider theme={theme}>
       <Layout title="Uses | Malik Elgabroun's Website" pathSlug="/uses/">
@@ -63,51 +67,85 @@ const Uses = () => {
                 <li>
                   <p>
                     My main monitor is a{" "}
-                    <a href="https://amzn.to/2MMmTcG">27&quot; Samsung</a>{" "}
+                    <span>
+                      <a href="https://amzn.to/32y1NXb" target="blank">
+                        27&quot; Samsung
+                      </a>
+                      <img src={amazonLogo} alt="amazon logo" />{" "}
+                    </span>
                     curved LED monitor.
                   </p>
                 </li>
                 <li>
                   <p>
                     To my left I use a vertical{" "}
-                    <a href="https://amzn.to/30dA0qr">22&quot; Dell</a> monitor.
+                    <span>
+                      <a href="https://amzn.to/3yTGXNM" target="blank">
+                        22&quot; Dell
+                      </a>
+                      <img src={amazonLogo} alt="amazon logo" />{" "}
+                    </span>
+                    monitor.
                   </p>
                 </li>
                 <li>
                   <p>
                     To my right I run a MacBook Pro 2015 as a work laptop nested
                     on a{" "}
-                    <a href="https://amzn.to/3qdBV8V">
-                      MOSISO Vertical Laptop Stand
-                    </a>
+                    <span>
+                      <a href="https://amzn.to/3yWntbj" target="blank">
+                        MOSISO Vertical Laptop Stand
+                      </a>
+                      <img src={amazonLogo} alt="amazon logo" />
+                    </span>
                     .
                   </p>
                 </li>
                 <li>
                   <p>
-                    The keyboard I use is a bluetooth{" "}
-                    <a href="https://amzn.to/30dyHb3">OMOTON</a> keyboard.
+                    The keyboard ⌨️ I use is a bluetooth{" "}
+                    <span>
+                      <a href="https://amzn.to/3HodcYP" target="blank">
+                        OMOTON
+                      </a>
+                      <img src={amazonLogo} alt="amazon logo" />{" "}
+                    </span>
+                    keyboard.
                   </p>
                 </li>
                 <li>
                   <p>
-                    The mouse I use ia an
-                    <a href="https://amzn.to/3kJTo85">Apple trackpad</a>.
+                    The mouse I use ia an{" "}
+                    <span>
+                      <a href="https://amzn.to/3sphSJA" target="blank">
+                        Apple trackpad
+                      </a>
+                      <img src={amazonLogo} alt="amazon logo" />
+                    </span>
+                    .
                   </p>
                 </li>
                 <li>
                   <p>
                     The keyboard and mouse rest pad I use is{" "}
-                    <a href="https://amzn.to/3beE9kj">Silica Gel Wrist Rest</a>{" "}
+                    <span>
+                      <a href="https://amzn.to/3svqqi3" target="blank">
+                        Silica Gel Wrist Rest
+                      </a>
+                      <img src={amazonLogo} alt="amazon logo" />{" "}
+                    </span>
                     support cushion with memory foam.
                   </p>
                 </li>
                 <li>
                   <p>
                     For my main monitor I use{" "}
-                    <a href="https://amzn.to/3rhmC0k">
-                      BONTEC Wood Monitor Stand Riser
-                    </a>{" "}
+                    <span>
+                      <a href="https://amzn.to/3GZ8kci" target="blank">
+                        BONTEC Wood Monitor Stand Riser
+                      </a>
+                      <img src={amazonLogo} alt="amazon logo" />{" "}
+                    </span>
                     which gives me a 2 tier shelfs with cable management on the
                     side.
                   </p>
@@ -120,41 +158,55 @@ const Uses = () => {
                 <li>
                   <p>
                     For backup I use{" "}
-                    <a href="https://amzn.to/3bimgRO">LaCie Rugged Mini</a> 1 TB
-                    to backup my projects and files.
-                  </p>
-                </li>
-                <li>
-                  <p>
-                    I listen to
-                    <a href="https://amzn.to/30aBeTk">
-                      TaoTronics Bluetooth
-                    </a>{" "}
-                    headphones all day which come with active noise cancelling
-                    feature.
+                    <span>
+                      <a href="https://amzn.to/33TQOYJ" target="blank">
+                        LaCie Rugged Mini
+                      </a>
+                      <img src={amazonLogo} alt="amazon logo" />{" "}
+                    </span>
+                    1 TB to backup my projects and files.
                   </p>
                 </li>
                 <li>
                   <p>
                     For the background light I use for my desk is
-                    <a href="https://amzn.to/2Ppf11F">Govee LED Strip Lights</a>
+                    <span>
+                      <a href="https://amzn.to/3stn6E5" target="blank">
+                        Govee LED Strip Lights
+                      </a>
+                      <img src={amazonLogo} alt="amazon logo" />
+                    </span>
+                    .
                   </p>
                 </li>
                 <li>
                   <p>
-                    For time management with pomodoro technique I use{" "}
-                    <a href="https://amzn.to/2OoZU89">
-                      Bellaware Hourglass Sand Timer
-                    </a>{" "}
-                    which gives me a 45 minutes interval.
+                    For time management ⏳ with pomodoro technique I use{" "}
+                    <span>
+                      <a href="https://amzn.to/3Jd66YE" target="blank">
+                        Bellaware Hourglass Sand Timer
+                      </a>
+                      <img src={amazonLogo} alt="amazon logo" />{" "}
+                    </span>
+                    which gives me a 60 minutes interval.
                   </p>
                 </li>
                 <li>
                   <p>
                     As for cable management I use a combination of{" "}
-                    <a href="https://amzn.to/30dBIIp">Cable Clips </a> to manage
-                    cable on desk and{" "}
-                    <a href="https://amzn.to/3rhCakU">D-Line Cable Tidy Box</a>{" "}
+                    <span>
+                      <a href="https://amzn.to/3H7Gaff" target="blank">
+                        Cable Clips
+                      </a>
+                      <img src={amazonLogo} alt="amazon logo" />{" "}
+                    </span>
+                    to manage cable on desk and{" "}
+                    <span>
+                      <a href="https://amzn.to/3svIZmk" target="blank">
+                        D-Line Cable Tidy Box
+                      </a>
+                      <img src={amazonLogo} alt="amazon logo" />{" "}
+                    </span>
                     to conceal cables under the desk.
                   </p>
                 </li>
