@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Layout from "@components/Layout";
 import Seo from "@components/Seo";
 import { graphql } from "gatsby";
@@ -10,6 +10,7 @@ import Signup from "@components/Signup";
 import formatDate from "../utils/formatDate";
 import styled from "styled-components";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import amazonLogo from "@resources/amazonLogo.svg";
 
 const PostWrapper = styled.article`
   @media (min-width: 1084px) {
@@ -63,7 +64,7 @@ const PostWrapper = styled.article`
   p,
   ul {
     a:not(.img-credit):not(.gatsby-resp-image-link) {
-      box-shadow: inset 0 -0.5rem 0 0 #f47c48;
+      box-shadow: inset 0 -0.15rem 0 0 #f47c48;
       transition: box-shadow 0.2s, color 0.2s;
       &:hover {
         box-shadow: inset 0 -2.5rem 0 0 #f47c48;
@@ -118,6 +119,18 @@ const PostWrapper = styled.article`
       &:hover {
         opacity: 1;
         fill: #f47c48;
+      }
+    }
+  }
+
+  a {
+    &.amazon {
+      &:after {
+        content: "";
+        background-image: url(${amazonLogo});
+        width: 15px;
+        height: 15px;
+        display: inline-block;
       }
     }
   }
@@ -201,6 +214,17 @@ const BookNotes = ({ data: { mdx: bookNote, file: imgFile } }) => {
   const { title, date, keywords, summary, path, lastUpdated, tags } =
     bookNote.frontmatter;
   const { timeToRead, tableOfContents } = bookNote;
+
+  const checkIfAmazonLink = () => {
+    let links = document.querySelectorAll(`[title="amazon"]`);
+    links.forEach((link) => {
+      link.classList.add("amazon");
+    });
+  };
+
+  useEffect(() => {
+    checkIfAmazonLink();
+  }, []);
 
   return (
     <Layout title={title}>
