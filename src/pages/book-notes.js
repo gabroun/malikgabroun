@@ -77,7 +77,7 @@ const BookNotes = () => {
                   <img src={imgUrl} alt={bookTitle} />
                   <div>
                     <p>
-                      {bookTitle} ({author})<spam>Book Summary and Notes</spam>
+                      {bookTitle} ({author})<span>Book Summary and Notes</span>
                     </p>
                   </div>
                 </Link>
