@@ -105,6 +105,16 @@ const Index = () => {
                     <p>Browse some of my current and upcoming courses</p>
                   </div>
                 </Link>
+                <Link to="/book-notes/">
+                  <img
+                    src={require("../resources/book-notes.svg")}
+                    alt="book notes and summary"
+                  />
+                  <div>
+                    <h2>Book Notes & Summaries</h2>
+                    <p>Notes, summaries and reviews of my favourite books</p>
+                  </div>
+                </Link>
               </S.Items>
             </S.LatestSection>
 

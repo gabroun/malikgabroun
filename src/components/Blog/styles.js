@@ -40,7 +40,7 @@ export const PostItem = styled.div`
 
 export const PostPreview = styled.div`
   margin: 10px;
-  height: 290px;
+  height: 310px;
   display: grid;
   grid-template-rows: 40px 70px 1fr 1fr;
 
@@ -53,6 +53,18 @@ export const PostPreview = styled.div`
     a {
       color: ${(props) => props.theme.black};
       text-decoration: none;
+    }
+  }
+
+  @media (max-width: 767px) {
+    p {
+      font-size: 14px;
+      margin-bottom: 1.5em;
+    }
+
+    h2 {
+      line-height: 1.5em;
+      font-size: 16px;
     }
   }
 `;

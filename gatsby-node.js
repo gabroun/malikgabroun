@@ -45,6 +45,15 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
             image: `resources/${page.frontmatter.images}`,
           },
         });
+      } else if (page.frontmatter.type === "book-notes") {
+        actions.createPage({
+          path: page.frontmatter.path,
+          component: require.resolve("./src/templates/bookTemplate.js"),
+          context: {
+            pathSlug: page.frontmatter.path,
+            image: `resources/${page.frontmatter.images}`,
+          },
+        });
       } else {
         actions.createPage({
           path: page.frontmatter.path,

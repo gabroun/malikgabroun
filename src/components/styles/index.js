@@ -154,6 +154,7 @@ export const LatestSection = styled.section`
 export const Items = styled.div`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   a {
     display: flex;
     align-items: center;
@@ -161,7 +162,7 @@ export const Items = styled.div`
     border: solid 1px#efefef;
     box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
     border-radius: 8px;
-
+    margin: 10px;
     padding: 10px;
 
     &:hover {
