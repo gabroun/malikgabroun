@@ -52,6 +52,11 @@ const PostWrapper = styled.article`
     }
   }
 
+  img {
+    box-shadow: 0 4px 10px rgb(0 0 0 / 20%) !important;
+    border-radius: 4px;
+  }
+
   .gatsby-highlight {
     position: relative;
   }
@@ -144,6 +149,9 @@ const PostWrapper = styled.article`
     border-left: 8px solid #f47c48;
     margin-left: 0;
     margin-right: 0;
+    p {
+      margin-top: 0;
+    }
   }
 
   .gatsby-code-title {
@@ -157,6 +165,7 @@ const PostWrapper = styled.article`
     font-size: 0.8em;
     line-height: initial;
     background-color: #f7df1e;
+    top: 15px;
   }
 
   .active {

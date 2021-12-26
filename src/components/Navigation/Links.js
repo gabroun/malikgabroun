@@ -87,6 +87,15 @@ const Links = () => {
           </Link>
         </li>
         <li>
+          <Link
+            to="/book-notes/"
+            activeClassName="active"
+            getProps={isPartiallyActive}
+          >
+            Book Notes
+          </Link>
+        </li>
+        <li>
           <Link to="/uses/" activeClassName="active">
             Uses
           </Link>
