@@ -11,9 +11,11 @@ export const PostItem = styled.div`
   box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
 
   &:hover {
-    background: ${(props) => props.theme.whiteSmoke};
+    /* background: ${(props) => props.theme.whiteSmoke}; */
     transform: translateY(-5%);
     transition: all 0.4s ease 0.1s;
+    box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+      rgb(0 0 0 / 25%) 0px 25px 50px -12px;
   }
 
   a {
