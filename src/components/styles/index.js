@@ -166,9 +166,11 @@ export const Items = styled.div`
     padding: 10px;
 
     &:hover {
-      transition: all 0.4s ease 0.1s;
+      /* background: ${(props) => props.theme.whiteSmoke}; */
       transform: translateY(-5%);
-      background: #efefef;
+      transition: all 0.4s ease 0.1s;
+      box-shadow: rgb(0 0 0 / 0%) 0px 0px 0px 0px,
+        rgb(0 0 0 / 0%) 0px 0px 0px 0px, rgb(0 0 0 / 25%) 0px 25px 50px -12px;
     }
   }
 
