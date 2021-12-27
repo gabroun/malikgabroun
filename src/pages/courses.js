@@ -64,7 +64,7 @@ const Courses = () => {
         <CourseList className="courses-list">
           <div className="course-item">
             <a
-              href="https://www.educative.io/courses/start-algolia-api"
+              href="https://www.educative.io/courses/start-algolia-api?aff=VOzg"
               rel="noopener noreferrer"
               target="_blank"
             >
@@ -75,7 +75,7 @@ const Courses = () => {
             </a>
             <div className="course-content">
               <a
-                href="https://www.educative.io/courses/start-algolia-api"
+                href="https://www.educative.io/courses/start-algolia-api?aff=VOzg"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -92,7 +92,7 @@ const Courses = () => {
                   using Algolia.
                 </span>
                 <a
-                  href="https://www.educative.io/courses/start-algolia-api"
+                  href="https://www.educative.io/courses/start-algolia-api?aff=VOzg"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
