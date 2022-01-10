@@ -1,0 +1,155 @@
+---
+type: "post"
+path: "/blog/use-statc-query-hook/"
+date: "2022/01/10"
+title: "Gatsby useStaticQuery Hook: The Quick Guide"
+tags: ["graphql", "javascript", "gatsby"]
+summary: "In this post, we will be looking into Gatsby useStaticQuery hook, graphql aliases and custom hook."
+images: "images/thumbnails/reactProgramming.jpg"
+imageAuthorID: "@lautaroandreani"
+imageAuthor: "Lautaro Andreani"
+keywords:
+  [
+    "gatsby",
+    "multiple queries",
+    "graphql multiple queries",
+    "useStaticQuery hook",
+  ]
+publish: true
+---
+
+Previously, to fetch data in Gatsby, we were only able to do so at the page level, which meant that even if a child component nested deep in a page component needed that data, then we would need to pass the data through the component trees.
+
+However, Gatsby V2 introduced a staticQuery API that allows data to be fetched at a component level.
+
+## Introduction
+
+In this post, we will be looking into Gatsby new API which introduced [useStaticQuery](https://www.gatsbyjs.com/docs/how-to/querying-data/static-query/) hook in V2 and how we can run multiple queries using [GraphQl aliases](/blog/gatsby-tip-on-running-multiple-graphql-queries/) inside components. Additionally, we will look at how to create a custom hook that can be reused in different components.
+
+## How to use useStaticQuery hook in Components
+
+To fetch data inside a component, we need to import `graphql` and `useStaticQuery`. We then need to setup the hook inside our component by passing the GraphQL query to `useStaticQuery`, as you can see highlighted in the example below.
+
+```javascript {1,4}
+import { graphql, useStaticQuery } from "gatsby";
+
+const SampleComponent = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allMdx {
+        nodes {
+          frontmatter {
+            title
+            path
+            date
+            summary
+            images
+            tags
+          }
+          timeToRead
+        }
+      }
+    }
+  `);
+
+  return <div>{/* your component logic */}</div>;
+};
+```
+
+## GraphQL Aliases
+
+To run multiple queries we can use [GraphQl aliases](/blog/gatsby-tip-on-running-multiple-graphql-queries/), which allow us to rename the returned dataset to anything we want.
+In the following example, we can see how we renamed the 2 queries to `post` and `siteMetaData` as highlighted in the code snippet.
+
+```javascript {1,4,6,19}
+import { graphql, useStaticQuery } from "gatsby";
+
+const SampleComponent = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      post: allMdx {
+        nodes {
+          frontmatter {
+            title
+            path
+            date
+            summary
+            images
+            tags
+          }
+          timeToRead
+        }
+      }
+      siteMetaData: site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+  `);
+
+  return <div>{/* your component logic */}</div>;
+};
+```
+
+## Custom Hook
+
+Say we have a query that we want to reuse in more than one component, we can do that by creating a custom hook that can then be imported into any component to fetch the data. This will allow reuse without the need to pass the data around as props or copying the same query in different components.
+
+To do that, we need to import `graphql` and `useStaticQuery`. We then need to setup the custom hook by creating a function called `useSiteBlogData` which will return the data by using the useStaticQuery hook we imported and pass the query to it. Then we can specify how the data is returned, in this case by returning all nodes from the query as an array.
+
+```javascript:title=useSiteBlogdata.js {1,4,24}
+import { graphql, useStaticQuery } from "gatsby";
+
+const useSiteBlogdata = () => {
+  const data = useStaticQuery(graphql`
+    query {
+      allMdx(
+        sort: { order: DESC, fields: frontmatter___date }
+      ) {
+        nodes {
+          frontmatter {
+            title
+            path
+            date
+            summary
+            images
+            tags
+          }
+          timeToRead
+        }
+      }
+    }
+  `);
+
+  return data.allMdx.nodes;
+};
+
+export default useSiteBlogdata;
+
+```
+
+To use the newly created custom hook to fetch the data as follows which will return the posts array.
+
+```javascript:title=blog.js {1,4}
+import useSiteBlogdata from "@hooks/useSiteBlogdata";
+
+const Blog = () => {
+  const posts = useSiteBlogdata();
+    return <div>{/* your component logic */}</div>;
+};
+
+export default Blog;
+
+```
+
+While `useStaticQuery` can do most of the things that page query can, it has a few limitations:
+
+- It does not accept variables (via pageContext) like page query, hence why it is called static.
+- `useStaticQuery` can only be used once per component, but you can run as many queries through it as you want using [GraphQl aliases](/blog/gatsby-tip-on-running-multiple-graphql-queries/).
+
+## Conclusion
+
+In this post, we looked at how to use `useStaticQuery`, how to run multiple queries inside a hook and how to create a custom hook to reuse in any component.
+
+As you can see, the built-in useStaticQuery Hook in Gatsby is an extremely useful and easy-to-use feature to incorporate into your site.
