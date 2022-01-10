@@ -1,11 +1,16 @@
 import { Sandpack } from "@codesandbox/sandpack-react";
 import React from "react";
 
-const Playground = ({ options, editorHeight = 600, ...props }) => {
+const Playground = ({
+  options,
+  template = "react",
+  editorHeight = 600,
+  ...props
+}) => {
   return (
     <>
       <Sandpack
-        template="react"
+        template={template}
         theme="night-owl"
         options={{
           showNavigator: false,
