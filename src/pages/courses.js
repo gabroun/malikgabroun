@@ -1,9 +1,9 @@
 import styled, { ThemeProvider } from "styled-components";
 
 import Layout from "@components/Layout";
-import { Link } from "gatsby";
 import React from "react";
 import theme from "@components/styles/theme";
+import { StaticImage } from "gatsby-plugin-image";
 
 const CourseList = styled.div`
   display: grid;
@@ -68,8 +68,8 @@ const Courses = () => {
               rel="noopener noreferrer"
               target="_blank"
             >
-              <img
-                src={imgPath}
+              <StaticImage
+                src="../resources/algolia-course.png"
                 alt="Getting started with Algolia API course"
               />
             </a>

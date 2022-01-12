@@ -17,6 +17,7 @@ const gatsbyRemarkPlugins = [
     options: {
       classPrefix: "language-",
       inlineCodeMarker: null,
+      maxWidth: 590,
     },
   },
   "gatsby-remark-autolink-headers",
@@ -121,6 +122,9 @@ module.exports = {
             type: "image/png",
           },
         ],
+        icon_options: {
+          purpose: `any maskable`,
+        },
       },
     },
     `gatsby-plugin-offline`,
@@ -139,6 +143,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-styled-components`,

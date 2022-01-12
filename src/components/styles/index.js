@@ -62,6 +62,7 @@ export const MainContent = styled.section`
     img {
       max-width: 600px;
       width: 100%;
+      margin: 0 auto;
     }
   }
 
@@ -175,7 +176,7 @@ export const Items = styled.div`
   }
 
   img {
-    max-width: 55%;
+    /* max-width: 55%; */
     margin-right: 8px;
   }
 
