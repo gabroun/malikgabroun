@@ -3,7 +3,7 @@ import Layout from "@components/Layout";
 import Seo from "@components/Seo";
 import { graphql } from "gatsby";
 import TableOfContents from "@components/TableOfContents";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import CalendarIcon from "@components/styles/icons/calendar";
 import HourglassIcon from "@components/styles/icons/hourglass";
 import Signup from "@components/Signup";
@@ -179,35 +179,32 @@ const PostHeader = styled.div`
   }
 `;
 
-export const query = graphql`
-  query ($pathSlug: String!, $image: String!) {
-    mdx(frontmatter: { path: { eq: $pathSlug } }) {
-      frontmatter {
-        title
-        path
-        date
-        summary
-        images
-        imageAuthor
-        imageAuthorID
-        keywords
-        tags
-        lastUpdated
-        bookTitle
-        author
-      }
-      tableOfContents
-      timeToRead
-      body
+export const query = graphql`query ($pathSlug: String!, $image: String!) {
+  mdx(frontmatter: {path: {eq: $pathSlug}}) {
+    frontmatter {
+      title
+      path
+      date
+      summary
+      images
+      imageAuthor
+      imageAuthorID
+      keywords
+      tags
+      lastUpdated
+      bookTitle
+      author
     }
-    file(relativePath: { eq: $image }) {
-      childImageSharp {
-        fluid(maxWidth: 600) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
-      }
+    tableOfContents
+    timeToRead
+    body
+  }
+  file(relativePath: {eq: $image}) {
+    childImageSharp {
+      gatsbyImageData(width: 600, placeholder: TRACED_SVG, layout: CONSTRAINED)
     }
   }
+}
 `;
 
 const BookNotes = ({ data: { mdx: bookNote, file: imgFile } }) => {
@@ -232,7 +229,7 @@ const BookNotes = ({ data: { mdx: bookNote, file: imgFile } }) => {
         title={title}
         pathSlug={path}
         description={summary}
-        image={imgFile.childImageSharp.fluid}
+        image={imgFile.childImageSharp.gatsbyImageData}
         keywords={keywords}
         date={date}
         isBlogPost={true}
@@ -274,8 +271,8 @@ const BookNotes = ({ data: { mdx: bookNote, file: imgFile } }) => {
               )}
             </PostHeader>
 
-            <Img
-              fluid={imgFile.childImageSharp.fluid}
+            <GatsbyImage
+              image={imgFile.childImageSharp.gatsbyImageData}
               className="post-header__img"
               style={{
                 maxHeight: "250px",
@@ -283,8 +280,7 @@ const BookNotes = ({ data: { mdx: bookNote, file: imgFile } }) => {
                 maxWidth: "250px",
                 margin: "0 auto 50px",
                 borderRadius: "4px",
-              }}
-            />
+              }} />
           </header>
           <MDXRenderer>{bookNote.body}</MDXRenderer>
         </div>

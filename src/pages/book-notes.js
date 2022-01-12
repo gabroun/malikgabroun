@@ -70,11 +70,13 @@ const BookNotes = () => {
             const {
               frontmatter: { path, bookTitle, date, images, author },
             } = item;
-            const imgUrl = require(`@resources/${images}`);
+            const imgUrl = require(`@resources/${images}`).default;
+
             return (
               <BookItem key={path}>
                 <Link to={path}>
                   <img src={imgUrl} alt={bookTitle} />
+
                   <div>
                     <p>
                       {bookTitle} ({author})<span>Book Summary and Notes</span>
