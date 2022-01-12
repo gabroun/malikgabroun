@@ -10,6 +10,7 @@ import Signup from "@components/Signup";
 import { ThemeProvider } from "styled-components";
 import cv from "@static/Malik-Elgabroun_CV.pdf";
 import theme from "@components/styles/theme";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Index = () => {
   const data = useStaticQuery(graphql`
@@ -65,10 +66,13 @@ const Index = () => {
         >
           <S.MainContent className="main-content">
             <div className="main-content__banner">
-              <img
-                src={require("../resources/programming.svg")}
+              <StaticImage
+                src="../resources/programming.svg"
                 alt="Man coding"
+                placeholder="blurred"
+                objectFit="contain"
               />
+
               <div>
                 <h1 className="intro-title">Hello My name is Malik</h1>
                 <p className="intro-subtitle">
@@ -96,9 +100,12 @@ const Index = () => {
 
               <S.Items>
                 <Link to="/courses/">
-                  <img
-                    src={require("../resources/courses.svg")}
+                  <StaticImage
+                    src="../resources/courses.svg"
                     alt="online course"
+                    loading="lazy"
+                    placeholder="blurred"
+                    objectFit="contain"
                   />
                   <div>
                     <h2>My Online Courses</h2>
@@ -106,9 +113,12 @@ const Index = () => {
                   </div>
                 </Link>
                 <Link to="/book-notes/">
-                  <img
-                    src={require("../resources/book-notes.svg")}
+                  <StaticImage
+                    src="../resources/book-notes.svg"
                     alt="book notes and summary"
+                    loading="lazy"
+                    placeholder="blurred"
+                    objectFit="contain"
                   />
                   <div>
                     <h2>Book Notes & Summaries</h2>
