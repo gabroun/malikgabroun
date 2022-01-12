@@ -1,6 +1,6 @@
 import CalendarIcon from "@components/styles/icons/calendar";
 import HourglassIcon from "@components/styles/icons/hourglass";
-import Img from "gatsby-image";
+import { GatsbyImage } from "gatsby-plugin-image";
 import Layout from "@components/Layout";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import React from "react";
@@ -168,6 +168,10 @@ const PostWrapper = styled.article`
     top: 15px;
   }
 
+  .gatsby-image-wrapper-constrained {
+    display: block;
+  }
+
   .active {
     color: #f47c48;
   }
@@ -258,9 +262,11 @@ export const query = graphql`
     }
     file(relativePath: { eq: $image }) {
       childImageSharp {
-        fluid(maxWidth: 600) {
-          ...GatsbyImageSharpFluid_tracedSVG
-        }
+        gatsbyImageData(
+          width: 800
+          placeholder: TRACED_SVG
+          layout: CONSTRAINED
+        )
       }
     }
   }
@@ -287,7 +293,7 @@ const Post = ({ data: { mdx: post, file: imgFile } }) => {
           title={title}
           pathSlug={path}
           description={summary}
-          image={imgFile.childImageSharp.fluid}
+          image={imgFile.childImageSharp.gatsbyImageData}
           keywords={keywords}
           date={date}
           isBlogPost={true}
@@ -329,8 +335,8 @@ const Post = ({ data: { mdx: post, file: imgFile } }) => {
                 )}
               </PostHeader>
 
-              <Img
-                fluid={imgFile.childImageSharp.fluid}
+              <GatsbyImage
+                image={imgFile.childImageSharp.gatsbyImageData}
                 style={{ maxHeight: "400px", marginBottom: "50px" }}
               />
               {imageAuthor && (

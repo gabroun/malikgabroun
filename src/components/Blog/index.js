@@ -14,7 +14,8 @@ export const BlogPost = ({
   timeToRead,
   lastUpdated,
 }) => {
-  const url = require(`@resources/${image}`);
+  const url = require(`@resources/${image}`).default;
+
   return (
     <S.PostItem>
       <Link to={path}>

@@ -1,10 +1,10 @@
 import Layout from "@components/Layout";
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import darkSetup from "../resources/setup-light.jpeg";
-import lightSetup from "../resources/setup-dark.jpeg";
+
 import styled from "styled-components";
 import theme from "@components/styles/theme";
+import { StaticImage } from "gatsby-plugin-image";
 
 const Container = styled.div`
   .container {
@@ -45,18 +45,28 @@ const Container = styled.div`
 `;
 
 const Uses = () => {
-  const amazonLogo = require("@resources/amazonLogo.svg");
   return (
     <ThemeProvider theme={theme}>
       <Layout title="Uses | Malik Elgabroun's Website" pathSlug="/uses/">
         <Container>
           <div className="container-image">
             <div>
-              <img src={lightSetup} alt="setup without LED background" />
+              <StaticImage
+                src="../resources/setup-dark.jpeg"
+                alt="setup with LED background"
+                placeholder="blurred"
+                objectFit="contain"
+              />
+
               <span>Desk setup with LED</span>
             </div>
             <div>
-              <img src={darkSetup} alt="setup with LED background" />
+              <StaticImage
+                src="../resources/setup-light.jpeg"
+                alt="setup without LED background"
+                placeholder="blurred"
+                objectFit="contain"
+              />
               <span>Desk setup without LED</span>
             </div>
           </div>
@@ -65,90 +75,125 @@ const Uses = () => {
             <div>
               <ul>
                 <li>
-                  <p>
+                  <div>
                     My main monitor is a{" "}
                     <span>
                       <a href="https://amzn.to/32y1NXb" target="blank">
                         27&quot; Samsung
                       </a>
-                      <img src={amazonLogo} alt="amazon logo" />{" "}
+                      <StaticImage
+                        src="../resources/amazonLogo.svg"
+                        alt="amazon logo"
+                        placeholder="blurred"
+                        objectFit="contain"
+                      />{" "}
                     </span>
                     curved LED monitor.
-                  </p>
+                  </div>
                 </li>
                 <li>
-                  <p>
+                  <div>
                     To my left I use a vertical{" "}
                     <span>
                       <a href="https://amzn.to/3yTGXNM" target="blank">
                         22&quot; Dell
                       </a>
-                      <img src={amazonLogo} alt="amazon logo" />{" "}
+                      <StaticImage
+                        src="../resources/amazonLogo.svg"
+                        alt="amazon logo"
+                        placeholder="blurred"
+                        objectFit="contain"
+                      />{" "}
                     </span>
                     monitor.
-                  </p>
+                  </div>
                 </li>
                 <li>
-                  <p>
+                  <div>
                     To my right I run a MacBook Pro 2015 as a work laptop nested
                     on a{" "}
                     <span>
                       <a href="https://amzn.to/3yWntbj" target="blank">
                         MOSISO Vertical Laptop Stand
                       </a>
-                      <img src={amazonLogo} alt="amazon logo" />
+                      <StaticImage
+                        src="../resources/amazonLogo.svg"
+                        alt="amazon logo"
+                        placeholder="blurred"
+                        objectFit="contain"
+                      />
                     </span>
                     .
-                  </p>
+                  </div>
                 </li>
                 <li>
-                  <p>
+                  <div>
                     The keyboard ⌨️ I use is a bluetooth{" "}
                     <span>
                       <a href="https://amzn.to/3HodcYP" target="blank">
                         OMOTON
                       </a>
-                      <img src={amazonLogo} alt="amazon logo" />{" "}
+                      <StaticImage
+                        src="../resources/amazonLogo.svg"
+                        alt="amazon logo"
+                        placeholder="blurred"
+                        objectFit="contain"
+                      />{" "}
                     </span>
                     keyboard.
-                  </p>
+                  </div>
                 </li>
                 <li>
-                  <p>
+                  <div>
                     The mouse I use ia an{" "}
                     <span>
                       <a href="https://amzn.to/3sphSJA" target="blank">
                         Apple trackpad
                       </a>
-                      <img src={amazonLogo} alt="amazon logo" />
+                      <StaticImage
+                        src="../resources/amazonLogo.svg"
+                        alt="amazon logo"
+                        placeholder="blurred"
+                        objectFit="contain"
+                      />
                     </span>
                     .
-                  </p>
+                  </div>
                 </li>
                 <li>
-                  <p>
+                  <div>
                     The keyboard and mouse rest pad I use is{" "}
                     <span>
                       <a href="https://amzn.to/3svqqi3" target="blank">
                         Silica Gel Wrist Rest
                       </a>
-                      <img src={amazonLogo} alt="amazon logo" />{" "}
+                      <StaticImage
+                        src="../resources/amazonLogo.svg"
+                        alt="amazon logo"
+                        placeholder="blurred"
+                        objectFit="contain"
+                      />{" "}
                     </span>
                     support cushion with memory foam.
-                  </p>
+                  </div>
                 </li>
                 <li>
-                  <p>
+                  <div>
                     For my main monitor I use{" "}
                     <span>
                       <a href="https://amzn.to/3GZ8kci" target="blank">
                         BONTEC Wood Monitor Stand Riser
                       </a>
-                      <img src={amazonLogo} alt="amazon logo" />{" "}
+                      <StaticImage
+                        src="../resources/amazonLogo.svg"
+                        alt="amazon logo"
+                        placeholder="blurred"
+                        objectFit="contain"
+                      />{" "}
                     </span>
                     which gives me a 2 tier shelfs with cable management on the
                     side.
-                  </p>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -156,59 +201,84 @@ const Uses = () => {
             <div>
               <ul>
                 <li>
-                  <p>
+                  <div>
                     For backup I use{" "}
                     <span>
                       <a href="https://amzn.to/33TQOYJ" target="blank">
                         LaCie Rugged Mini
                       </a>
-                      <img src={amazonLogo} alt="amazon logo" />{" "}
+                      <StaticImage
+                        src="../resources/amazonLogo.svg"
+                        alt="amazon logo"
+                        placeholder="blurred"
+                        objectFit="contain"
+                      />{" "}
                     </span>
                     1 TB to backup my projects and files.
-                  </p>
+                  </div>
                 </li>
                 <li>
-                  <p>
+                  <div>
                     For the background light I use for my desk is
                     <span>
                       <a href="https://amzn.to/3stn6E5" target="blank">
                         Govee LED Strip Lights
                       </a>
-                      <img src={amazonLogo} alt="amazon logo" />
+                      <StaticImage
+                        src="../resources/amazonLogo.svg"
+                        alt="amazon logo"
+                        placeholder="blurred"
+                        objectFit="contain"
+                      />
                     </span>
                     .
-                  </p>
+                  </div>
                 </li>
                 <li>
-                  <p>
+                  <div>
                     For time management ⏳ with pomodoro technique I use{" "}
                     <span>
                       <a href="https://amzn.to/3Jd66YE" target="blank">
                         Bellaware Hourglass Sand Timer
                       </a>
-                      <img src={amazonLogo} alt="amazon logo" />{" "}
+                      <StaticImage
+                        src="../resources/amazonLogo.svg"
+                        alt="amazon logo"
+                        placeholder="blurred"
+                        objectFit="contain"
+                      />{" "}
                     </span>
                     which gives me a 60 minutes interval.
-                  </p>
+                  </div>
                 </li>
                 <li>
-                  <p>
+                  <div>
                     As for cable management I use a combination of{" "}
                     <span>
                       <a href="https://amzn.to/3H7Gaff" target="blank">
                         Cable Clips
                       </a>
-                      <img src={amazonLogo} alt="amazon logo" />{" "}
+                      <StaticImage
+                        src="../resources/amazonLogo.svg"
+                        alt="amazon logo"
+                        placeholder="blurred"
+                        objectFit="contain"
+                      />{" "}
                     </span>
                     to manage cable on desk and{" "}
                     <span>
                       <a href="https://amzn.to/3svIZmk" target="blank">
                         D-Line Cable Tidy Box
                       </a>
-                      <img src={amazonLogo} alt="amazon logo" />{" "}
+                      <StaticImage
+                        src="../resources/amazonLogo.svg"
+                        alt="amazon logo"
+                        placeholder="blurred"
+                        objectFit="contain"
+                      />{" "}
                     </span>
                     to conceal cables under the desk.
-                  </p>
+                  </div>
                 </li>
               </ul>
             </div>
