@@ -32,7 +32,7 @@ const Container = styled.div`
     }
   }
 
-  p {
+  div {
     a {
       box-shadow: inset 0 -0.5rem 0 0 #f47c48;
       transition: box-shadow 0.2s, color 0.2s;
@@ -56,6 +56,7 @@ const Uses = () => {
                 alt="setup with LED background"
                 placeholder="blurred"
                 objectFit="contain"
+                formats={["auto", "webp", "avif"]}
               />
 
               <span>Desk setup with LED</span>
@@ -66,6 +67,7 @@ const Uses = () => {
                 alt="setup without LED background"
                 placeholder="blurred"
                 objectFit="contain"
+                formats={["auto", "webp", "avif"]}
               />
               <span>Desk setup without LED</span>
             </div>

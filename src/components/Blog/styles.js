@@ -73,7 +73,7 @@ export const PostPreview = styled.div`
 
 export const Tags = styled.div`
   display: flex;
-  align-items: baseline;
+  align-items: center;
 `;
 
 export const Tag = styled.p`
@@ -84,6 +84,7 @@ export const Tag = styled.p`
   margin-left: 6px;
   margin-bottom: 0;
   font-size: 14px;
+  margin-top: 0;
   &.gatsby {
     background-color: #663399;
     color: #fff;
@@ -113,7 +114,7 @@ export const Tag = styled.p`
   }
 `;
 
-export const TimeToRead = styled.p`
+export const TimeToRead = styled.div`
   font-size: 12px;
   margin: 10px 5px 0px;
   font-weight: bold;
@@ -121,20 +122,22 @@ export const TimeToRead = styled.p`
   display: flex;
   align-items: flex-end;
   line-height: 12px;
-  svg {
-    margin-right: 6px;
+  span {
+    margin-left: 6px;
+    line-height: 20px;
   }
 `;
 
-export const PostDate = styled.p`
+export const PostDate = styled.div`
   display: inline-block;
   font-size: 12px;
   margin: 10px 0px 0px;
   display: flex;
   align-items: flex-end;
   line-height: 12px;
-  svg {
-    margin-right: 6px;
+  span {
+    margin-left: 6px;
+    line-height: 20px;
   }
 `;
 
