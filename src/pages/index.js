@@ -71,6 +71,7 @@ const Index = () => {
                 alt="Man coding"
                 placeholder="blurred"
                 objectFit="contain"
+                formats={["auto", "webp", "avif"]}
               />
 
               <div>
@@ -106,6 +107,7 @@ const Index = () => {
                     loading="lazy"
                     placeholder="blurred"
                     objectFit="contain"
+                    formats={["auto", "webp", "avif"]}
                   />
                   <div>
                     <h2>My Online Courses</h2>
@@ -119,6 +121,7 @@ const Index = () => {
                     loading="lazy"
                     placeholder="blurred"
                     objectFit="contain"
+                    formats={["auto", "webp", "avif"]}
                   />
                   <div>
                     <h2>Book Notes & Summaries</h2>

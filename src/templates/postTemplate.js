@@ -1,6 +1,4 @@
-import CalendarIcon from "@components/styles/icons/calendar";
-import HourglassIcon from "@components/styles/icons/hourglass";
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import Layout from "@components/Layout";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import React from "react";
@@ -232,11 +230,27 @@ const PostHeader = styled.div`
           }
         }
       }
+
+      .gatsby-image-wrapper-constrained {
+        display: inline-block;
+      }
     }
 
     &__time-toread,
     &__date {
       grid-row: 2/3;
+    }
+
+    &__time-toread,
+    &__last-updated,
+    &__date {
+      img {
+        box-shadow: none !important;
+      }
+
+      span {
+        margin-left: 4px;
+      }
     }
   }
 `;
@@ -266,6 +280,7 @@ export const query = graphql`
           width: 800
           placeholder: TRACED_SVG
           layout: CONSTRAINED
+          formats: [AUTO, WEBP, AVIF]
         )
       }
     }
@@ -308,13 +323,19 @@ const Post = ({ data: { mdx: post, file: imgFile } }) => {
             <header>
               <Title>{title}</Title>
               <PostHeader style={{ margin: "15px 0" }}>
-                <p
+                <div
                   className="post-header__date"
                   style={{ display: "flex", alignItems: "center" }}
                 >
-                  <CalendarIcon /> {formatDate(date)}
-                </p>
-                <p
+                  <StaticImage
+                    src="../resources/images/icons/calendar.svg"
+                    alt="calendar icon"
+                    placeholder="blurred"
+                    objectFit="contain"
+                  />
+                  <span>{formatDate(date)}</span>
+                </div>
+                <div
                   className="post-header__time-toread"
                   style={{
                     marginLeft: "10px",
@@ -322,16 +343,27 @@ const Post = ({ data: { mdx: post, file: imgFile } }) => {
                     alignItems: "center",
                   }}
                 >
-                  <HourglassIcon /> {timeToRead} min read
-                </p>
+                  <StaticImage
+                    src="../resources/images/icons/clock.svg"
+                    alt="clock icon"
+                    placeholder="blurred"
+                    objectFit="contain"
+                  />{" "}
+                  <span>{timeToRead} min read</span>
+                </div>
                 {lastUpdated && (
-                  <p className="post-header__last-updated">
+                  <div className="post-header__last-updated">
                     <span>Last Updated</span>
                     <span>
-                      <CalendarIcon />
-                      {formatDate(lastUpdated)}
+                      <StaticImage
+                        src="../resources/images/icons/calendar.svg"
+                        alt="calendar icon"
+                        placeholder="blurred"
+                        objectFit="contain"
+                      />
+                      <span> {formatDate(lastUpdated)}</span>
                     </span>{" "}
-                  </p>
+                  </div>
                 )}
               </PostHeader>
 
