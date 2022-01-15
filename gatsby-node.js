@@ -8,7 +8,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
         nodes {
           frontmatter {
             path
-            images
+            featured_image
             type
             redirects
             publish
@@ -42,7 +42,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           component: require.resolve("./src/templates/projectTemplate.js"),
           context: {
             pathSlug: page.frontmatter.path,
-            image: `resources/${page.frontmatter.images}`,
+            image: `resources/${page.frontmatter.featured_image}`,
           },
         });
       } else if (page.frontmatter.type === "book-notes") {
@@ -51,7 +51,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           component: require.resolve("./src/templates/bookTemplate.js"),
           context: {
             pathSlug: page.frontmatter.path,
-            image: `resources/${page.frontmatter.images}`,
+            image: `resources/${page.frontmatter.featured_image}`,
           },
         });
       } else {
@@ -60,7 +60,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           component: require.resolve("./src/templates/postTemplate.js"),
           context: {
             pathSlug: page.frontmatter.path,
-            image: `resources/${page.frontmatter.images}`,
+            image: `resources/${page.frontmatter.featured_image}`,
           },
         });
       }

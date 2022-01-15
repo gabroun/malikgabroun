@@ -13,7 +13,7 @@ const useSiteBlogdata = () => {
             path
             date
             summary
-            images
+            featured_image
             tags
             lastUpdated
           }
