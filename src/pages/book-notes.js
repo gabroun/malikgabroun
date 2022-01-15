@@ -47,7 +47,7 @@ const BookNotes = () => {
             bookTitle
             path
             date
-            images
+            featured_image
             author
           }
           timeToRead
@@ -68,9 +68,9 @@ const BookNotes = () => {
         <BookList>
           {nodes.map((item) => {
             const {
-              frontmatter: { path, bookTitle, date, images, author },
+              frontmatter: { path, bookTitle, date, featured_image, author },
             } = item;
-            const imgUrl = require(`@resources/${images}`).default;
+            const imgUrl = require(`@resources/${featured_image}`).default;
 
             return (
               <BookItem key={path}>

@@ -26,7 +26,7 @@ const Index = () => {
             path
             date
             summary
-            images
+            featured_image
             tags
           }
           timeToRead
@@ -47,7 +47,7 @@ const Index = () => {
             path
             date
             summary
-            images
+
             tags
           }
           timeToRead

@@ -263,7 +263,7 @@ export const query = graphql`
         path
         date
         summary
-        images
+        featured_image
         imageAuthor
         imageAuthorID
         keywords
@@ -369,6 +369,7 @@ const Post = ({ data: { mdx: post, file: imgFile } }) => {
 
               <GatsbyImage
                 image={imgFile.childImageSharp.gatsbyImageData}
+                alt={title}
                 style={{ maxHeight: "400px", marginBottom: "50px" }}
               />
               {imageAuthor && (

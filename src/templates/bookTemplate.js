@@ -179,32 +179,38 @@ const PostHeader = styled.div`
   }
 `;
 
-export const query = graphql`query ($pathSlug: String!, $image: String!) {
-  mdx(frontmatter: {path: {eq: $pathSlug}}) {
-    frontmatter {
-      title
-      path
-      date
-      summary
-      images
-      imageAuthor
-      imageAuthorID
-      keywords
-      tags
-      lastUpdated
-      bookTitle
-      author
+export const query = graphql`
+  query ($pathSlug: String!, $image: String!) {
+    mdx(frontmatter: { path: { eq: $pathSlug } }) {
+      frontmatter {
+        title
+        path
+        date
+        summary
+        featured_image
+        imageAuthor
+        imageAuthorID
+        keywords
+        tags
+        lastUpdated
+        bookTitle
+        author
+      }
+      tableOfContents
+      timeToRead
+      body
     }
-    tableOfContents
-    timeToRead
-    body
-  }
-  file(relativePath: {eq: $image}) {
-    childImageSharp {
-      gatsbyImageData(width: 600, placeholder: TRACED_SVG, layout: CONSTRAINED)
+    file(relativePath: { eq: $image }) {
+      childImageSharp {
+        gatsbyImageData(
+          width: 600
+          placeholder: TRACED_SVG
+          layout: CONSTRAINED
+          formats: [AUTO, WEBP, AVIF]
+        )
+      }
     }
   }
-}
 `;
 
 const BookNotes = ({ data: { mdx: bookNote, file: imgFile } }) => {
@@ -274,13 +280,15 @@ const BookNotes = ({ data: { mdx: bookNote, file: imgFile } }) => {
             <GatsbyImage
               image={imgFile.childImageSharp.gatsbyImageData}
               className="post-header__img"
+              alt={title}
               style={{
                 maxHeight: "250px",
                 marginBottom: "50px",
                 maxWidth: "250px",
                 margin: "0 auto 50px",
                 borderRadius: "4px",
-              }} />
+              }}
+            />
           </header>
           <MDXRenderer>{bookNote.body}</MDXRenderer>
         </div>

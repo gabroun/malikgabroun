@@ -70,8 +70,15 @@ export const Blog = ({ nodes }) => {
   return (
     <S.BlogList>
       {nodes.map(function (node) {
-        const { path, title, summary, images, date, tags, lastUpdated } =
-          node.frontmatter;
+        const {
+          path,
+          title,
+          summary,
+          featured_image,
+          date,
+          tags,
+          lastUpdated,
+        } = node.frontmatter;
         const { timeToRead } = node;
 
         return (
@@ -79,7 +86,7 @@ export const Blog = ({ nodes }) => {
             path={path}
             title={title}
             summary={summary}
-            image={images}
+            image={featured_image}
             timeToRead={timeToRead}
             date={formatDate(date)}
             tags={tags}
