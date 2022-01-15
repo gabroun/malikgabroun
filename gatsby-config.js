@@ -145,7 +145,16 @@ module.exports = {
     },
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`],
+          placeholder: `tracedSVG`,
+        },
+      },
+    },
     `gatsby-plugin-styled-components`,
     // {
     //   resolve: 'gatsby-plugin-sitemap',
@@ -201,6 +210,12 @@ module.exports = {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
       options: {
         siteUrl: `https://malikgabroun.com/`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        devMode: true,
       },
     },
   ],
