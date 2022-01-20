@@ -1,7 +1,7 @@
 import * as S from "./styles";
 
 import Footer from "@components/Footer";
-import { GlobalStyle } from "@components/styles";
+import { GlobalStyle } from "@styles";
 import Header from "@components/Header";
 import MobileHeader from "@components/Header/MobileHeader";
 import React from "react";

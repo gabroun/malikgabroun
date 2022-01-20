@@ -219,5 +219,7 @@ module.exports = {
         disable: true,
       },
     },
+    `gatsby-plugin-mdx-embed`,
+    `gatsby-plugin-twitter`,
   ],
 };

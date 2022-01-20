@@ -6866,6 +6866,11 @@ gatsby-plugin-manifest@^4.5.0:
     semver "^7.3.5"
     sharp "^0.29.3"
 
+gatsby-plugin-mdx-embed@^0.0.22:
+  version "0.0.22"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx-embed/-/gatsby-plugin-mdx-embed-0.0.22.tgz#4a59de525bd5e98629dc15f49e782d76d15c0030"
+  integrity sha512-mP9xA7Zk+nqO9ZRjscdR8k536VrfZpZg/kvTesD7vRdmKd19HoTOIouE3kPREsMhKm/vMPnNK+VN+NBRqrtoFA==
+
 gatsby-plugin-mdx-prismjs@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-mdx-prismjs/-/gatsby-plugin-mdx-prismjs-1.0.4.tgz#e86f122f9f825ab331a85cc22fd46929b731e316"
@@ -7023,6 +7028,13 @@ gatsby-plugin-styled-components@^5.5.0:
   version "5.5.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-styled-components/-/gatsby-plugin-styled-components-5.5.0.tgz#c251c29d28fa941cfaf990dd4b6d6d20d180a782"
   integrity sha512-XYDKMXF3GYCFZrW5HfLGb9elDxCfZWoSYyDUZ6j6rBhuaRlNDwBtRyyEmnTBEOS0e3+v65XwJWBx78+2QMljXw==
+  dependencies:
+    "@babel/runtime" "^7.15.4"
+
+gatsby-plugin-twitter@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-twitter/-/gatsby-plugin-twitter-4.5.0.tgz#b6852b628edfe82a61a1c7476e751f49f4057d8a"
+  integrity sha512-Dc5KYhkBrZkLtQ8DYUt9jlh6beylIL5u/qOyS+mO2gj5Eu/EXNgYg08zHASOdxK/H9NBJ6JC4lohU+O2MM1dtA==
   dependencies:
     "@babel/runtime" "^7.15.4"
 
@@ -10204,6 +10216,11 @@ mdurl@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/mdurl/-/mdurl-1.0.1.tgz#fe85b2ec75a59037f2adfec100fd6c601761152e"
   integrity sha1-/oWy7HWlkDfyrf7BAP1sYBdhFS4=
+
+mdx-embed@^0.0.22:
+  version "0.0.22"
+  resolved "https://registry.yarnpkg.com/mdx-embed/-/mdx-embed-0.0.22.tgz#63498cd0fc584ad1770a0fd0fde55e7ad75fde22"
+  integrity sha512-Wf9zsrPAYk+QVssBvKKOCqiGcWXOa0z76PObdEY5Oaq8rDvqlbSM/wv7YZ4LWiVOkNsK0mUF44A8o9QXxT+LLQ==
 
 mdx-utils@^0.2.0:
   version "0.2.0"

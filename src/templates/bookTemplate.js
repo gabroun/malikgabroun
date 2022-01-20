@@ -4,8 +4,8 @@ import Seo from "@components/Seo";
 import { graphql } from "gatsby";
 import TableOfContents from "@components/TableOfContents";
 import { GatsbyImage } from "gatsby-plugin-image";
-import CalendarIcon from "@components/styles/icons/calendar";
-import HourglassIcon from "@components/styles/icons/hourglass";
+import CalendarIcon from "@styles/icons/calendar";
+import HourglassIcon from "@styles/icons/hourglass";
 import Signup from "@components/Signup";
 import formatDate from "../utils/formatDate";
 import styled from "styled-components";
@@ -206,7 +206,7 @@ export const query = graphql`
           width: 600
           placeholder: TRACED_SVG
           layout: CONSTRAINED
-          formats: [AUTO, WEBP, AVIF]
+          formats: [AUTO, WEBP]
         )
       }
     }

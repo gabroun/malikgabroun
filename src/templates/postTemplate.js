@@ -58,6 +58,7 @@ const PostWrapper = styled.article`
   .gatsby-highlight {
     position: relative;
   }
+
   pre[class*="language-"] {
     &::before {
       color: #232129;
@@ -280,7 +281,7 @@ export const query = graphql`
           width: 800
           placeholder: TRACED_SVG
           layout: CONSTRAINED
-          formats: [AUTO, WEBP, AVIF]
+          formats: [AUTO, WEBP]
         )
       }
     }

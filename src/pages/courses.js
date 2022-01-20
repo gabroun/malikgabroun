@@ -2,7 +2,7 @@ import styled, { ThemeProvider } from "styled-components";
 
 import Layout from "@components/Layout";
 import React from "react";
-import theme from "@components/styles/theme";
+import theme from "@styles/theme";
 import { StaticImage } from "gatsby-plugin-image";
 
 const CourseList = styled.div`

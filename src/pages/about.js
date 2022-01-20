@@ -1,4 +1,4 @@
-import * as S from "@components/styles/about";
+import * as S from "@styles/about";
 
 import React, { Fragment } from "react";
 
@@ -8,7 +8,7 @@ import Layout from "@components/Layout";
 import Socials from "@components/Socials";
 import { ThemeProvider } from "styled-components";
 import headImg from "../resources/headShot.png";
-import theme from "@components/styles/theme";
+import theme from "@styles/theme";
 
 class About extends React.Component {
   render() {

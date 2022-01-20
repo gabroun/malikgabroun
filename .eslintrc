@@ -34,7 +34,8 @@
         ["@static", "./static"],
         ["@utils", "./src/utils"],
         ["@resources", "./src/resources"],
-        ["@hooks", "./src/hooks"]
+        ["@hooks", "./src/hooks"],
+        ["@styles", "./src/styles"]
       ]
     }
   }
