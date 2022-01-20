@@ -7,6 +7,7 @@
   "scripts": {
     "start": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
     "build": "gatsby build",
+    "clean": "gatsby clean",
     "serve:prod": "gatsby build && gatsby serve",
     "test": "jest",
     "test:update": "jest --silent -u",
@@ -29,6 +30,7 @@
     "gatsby-plugin-image": "^2.5.0",
     "gatsby-plugin-manifest": "^4.5.0",
     "gatsby-plugin-mdx": "^3.5.0",
+    "gatsby-plugin-mdx-embed": "^0.0.22",
     "gatsby-plugin-mdx-prismjs": "^1.0.4",
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-netlify": "^3.14.0",
@@ -42,7 +44,6 @@
     "gatsby-plugin-twitter": "^4.5.0",
     "gatsby-plugin-typography": "^4.5.0",
     "gatsby-remark-autolink-headers": "^5.5.0",
-    "gatsby-remark-embedder": "^5.0.0",
     "gatsby-remark-images": "^6.5.0",
     "gatsby-remark-prismjs": "^6.5.0",
     "gatsby-source-filesystem": "^4.5.0",

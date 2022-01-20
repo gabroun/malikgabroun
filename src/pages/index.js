@@ -1,4 +1,4 @@
-import * as S from "@components/styles/index";
+import * as S from "@styles/index";
 
 import { Link, graphql, useStaticQuery } from "gatsby";
 
@@ -9,7 +9,7 @@ import React from "react";
 import Signup from "@components/Signup";
 import { ThemeProvider } from "styled-components";
 import cv from "@static/Malik-Elgabroun_CV.pdf";
-import theme from "@components/styles/theme";
+import theme from "@styles/theme";
 import { StaticImage } from "gatsby-plugin-image";
 
 const Index = () => {
@@ -71,7 +71,7 @@ const Index = () => {
                 alt="Man coding"
                 placeholder="blurred"
                 objectFit="contain"
-                formats={["auto", "webp", "avif"]}
+                formats={["auto", "webp"]}
               />
 
               <div>
@@ -107,7 +107,7 @@ const Index = () => {
                     loading="lazy"
                     placeholder="blurred"
                     objectFit="contain"
-                    formats={["auto", "webp", "avif"]}
+                    formats={["auto", "webp"]}
                   />
                   <div>
                     <h2>My Online Courses</h2>
@@ -121,7 +121,7 @@ const Index = () => {
                     loading="lazy"
                     placeholder="blurred"
                     objectFit="contain"
-                    formats={["auto", "webp", "avif"]}
+                    formats={["auto", "webp"]}
                   />
                   <div>
                     <h2>Book Notes & Summaries</h2>

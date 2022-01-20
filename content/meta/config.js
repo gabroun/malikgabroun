@@ -1,4 +1,4 @@
-const colors = require("../../src/components/styles/colors");
+const colors = require("../../src/styles/colors");
 
 module.exports = {
   siteTitle: "MalikGabroun",

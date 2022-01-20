@@ -3,6 +3,16 @@ import styled, { createGlobalStyle } from "styled-components";
 import theme from "./theme";
 
 export const GlobalStyle = createGlobalStyle`
+    @font-face {
+        font-family: 'Fira Mono';
+        src: local('Fira Mono'), url("../static/fonts/fira-mono-regular.woff2");
+        font-weight: 400;      
+    }
+    @font-face {
+        font-family: 'Fira Mono';
+        src: local('Fira Mono'), url("../static/fonts/fira-mono-bold.woff2");
+        font-weight: 700;
+    }
     html {
         box-sizing: border-box;
         font-family: 'Fira Mono';

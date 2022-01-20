@@ -37,8 +37,8 @@ li > code {
   overflow: auto;
 }
 
-gatsby-highlight > code[class*='language-'],
-.gatsby-highlight > pre[class*='language-'] {
+gatsby-highlight > code[class*="language-"],
+.gatsby-highlight > pre[class*="language-"] {
   word-spacing: normal;
   word-break: normal;
   overflow-wrap: normal;
@@ -69,4 +69,8 @@ gatsby-highlight > code[class*='language-'],
   opacity: 0.5;
   width: calc(1.2em - 4px);
   left: -2px;
+}
+
+.twitter-tweet-mdx-embed {
+  min-height: 500px;
 }

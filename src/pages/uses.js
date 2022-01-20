@@ -3,7 +3,7 @@ import React from "react";
 import { ThemeProvider } from "styled-components";
 
 import styled from "styled-components";
-import theme from "@components/styles/theme";
+import theme from "@styles/theme";
 import { StaticImage } from "gatsby-plugin-image";
 
 const Container = styled.div`
@@ -56,7 +56,7 @@ const Uses = () => {
                 alt="setup with LED background"
                 placeholder="blurred"
                 objectFit="contain"
-                formats={["auto", "webp", "avif"]}
+                formats={["auto", "webp"]}
               />
 
               <span>Desk setup with LED</span>
@@ -67,7 +67,7 @@ const Uses = () => {
                 alt="setup without LED background"
                 placeholder="blurred"
                 objectFit="contain"
-                formats={["auto", "webp", "avif"]}
+                formats={["auto", "webp"]}
               />
               <span>Desk setup without LED</span>
             </div>

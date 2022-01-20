@@ -1,10 +1,10 @@
-import * as S from "@components/styles/blog";
+import * as S from "@styles/blog";
 
 import { BlogPost } from "@components/Blog";
 import Layout from "@components/Layout";
 import React from "react";
 import { ThemeProvider } from "styled-components";
-import theme from "@components/styles/theme";
+import theme from "@styles/theme";
 import useSiteBlogdata from "@hooks/useSiteBlogdata";
 
 const Blog = () => {
