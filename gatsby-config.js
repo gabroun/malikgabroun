@@ -221,5 +221,15 @@ module.exports = {
     },
     `gatsby-plugin-mdx-embed`,
     `gatsby-plugin-twitter`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `Fira Mono\:300,400,400i,700`,
+          `source sans pro\:300,400,400i,700`, // you can also specify font weights and styles
+        ],
+        display: "swap",
+      },
+    },
   ],
 };
