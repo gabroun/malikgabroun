@@ -22,8 +22,8 @@ export const BlogPost = ({
       <Link to={path}>
         <div className="imgs" style={{ backgroundImage: `url(${url})` }} />
 
-        <S.PostPreview>
-          <S.Tags>
+        <S.PostPreview className="postPreview">
+          <S.Tags className="tags">
             <StaticImage
               src="../../resources/images/icons/tag.svg"
               alt="tag icon"

@@ -18,6 +18,8 @@ keywords:
 publish: true
 ---
 
+import ReadMore from "@components/ReadMore";
+
 Previously, to fetch data in Gatsby, we were only able to do so at the page level, which meant that even if a child component nested deep in a page component needed that data, then we would need to pass the data through the component trees.
 
 However, Gatsby V2 introduced a staticQuery API that allows data to be fetched at a component level.
@@ -153,3 +155,5 @@ While `useStaticQuery` can do most of the things that page query can, it has a f
 In this post, we looked at how to use `useStaticQuery`, how to run multiple queries inside a hook and how to create a custom hook to reuse in any component.
 
 As you can see, the built-in useStaticQuery Hook in Gatsby is an extremely useful and easy-to-use feature to incorporate into your site.
+
+<ReadMore link1="/blog/gatsby-tip-on-running-multiple-graphql-queries/" />

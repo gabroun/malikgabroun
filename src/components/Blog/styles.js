@@ -7,7 +7,7 @@ export const PostItem = styled.div`
   background-color: ${(props) => props.theme.white};
   border-radius: 8px;
   transition: all 0.4s ease 0.1s;
-  border: 1px solid ${(props) => props.theme.lightGrey};
+  /* border: 1px solid ${(props) => props.theme.lightGrey}; */
   box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
 
   &:hover {
