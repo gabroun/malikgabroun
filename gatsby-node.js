@@ -79,6 +79,7 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
         "@hooks": path.resolve(__dirname, "src/hooks"),
         "@styles": path.resolve(__dirname, "src/styles"),
       },
+      modules: [path.resolve(__dirname, "src"), "node_modules"],
     },
   });
 
