@@ -13,7 +13,7 @@ const ReadMore = ({ link1, link2 }) => {
   });
 
   return (
-    <div>
+    <div className="test" style={{ marginTop: "50px" }}>
       <h2>If you found this article helpful</h2>
       <p>You will enjoy these other articles.</p>
       <S.List>
