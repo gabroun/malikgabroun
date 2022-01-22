@@ -8,7 +8,7 @@
     "start": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
     "build": "gatsby build",
     "clean": "gatsby clean",
-    "serve:prod": "gatsby build && gatsby serve",
+    "build:prod": "gatsby build && gatsby serve",
     "test": "jest",
     "test:update": "jest --silent -u",
     "cy:open": "cypress open",
