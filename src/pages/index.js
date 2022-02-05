@@ -37,20 +37,24 @@ const Index = () => {
           title
         }
       }
-      portfolio: allMdx(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        filter: { frontmatter: { type: { eq: "portfolio" } } }
+      images: allFile(
+        filter: {
+          extension: { regex: "/(jpg)|(png)|(tif)|(tiff)|(webp)|(jpeg)/" }
+          absolutePath: { regex: "/images/thumbnails/" }
+        }
       ) {
-        nodes {
-          frontmatter {
-            title
-            path
-            date
-            summary
-
-            tags
+        edges {
+          node {
+            name
+            childImageSharp {
+              gatsbyImageData(
+                width: 600
+                placeholder: TRACED_SVG
+                layout: CONSTRAINED
+                formats: [AUTO, WEBP]
+              )
+            }
           }
-          timeToRead
         }
       }
     }
@@ -93,7 +97,7 @@ const Index = () => {
             <S.LatestSection>
               <S.Header>Latest Posts</S.Header>
 
-              <Blog nodes={data.post.nodes} />
+              <Blog nodes={data.post.nodes} images={data.images.edges} />
             </S.LatestSection>
 
             <S.LatestSection>

@@ -5,7 +5,7 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "start": "GATSBY_GRAPHQL_IDE=playground gatsby develop",
+    "start": " gatsby develop",
     "build": "gatsby build",
     "clean": "gatsby clean",
     "build:prod": "gatsby build && gatsby serve",

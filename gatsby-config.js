@@ -81,6 +81,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `thumbnails`,
+        path: `${__dirname}/src/resources/images/thumbnails`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: `portfolio`,
         path: `${__dirname}/content/portfolio`,
       },
@@ -225,8 +232,8 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Fira Mono\:300,400,400i,700`,
-          `source sans pro\:300,400,400i,700`, // you can also specify font weights and styles
+          `Fira Mono\:400,700`,
+          `source sans pro\:400,700`, // you can also specify font weights and styles
         ],
         display: "swap",
       },
