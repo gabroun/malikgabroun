@@ -23,9 +23,6 @@ export const PostItem = styled.div`
     color: black;
   }
   .imgs {
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: center;
     height: 175px;
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;

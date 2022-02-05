@@ -8,7 +8,8 @@ import theme from "@styles/theme";
 import useSiteBlogdata from "@hooks/useSiteBlogdata";
 
 const Blog = () => {
-  const posts = useSiteBlogdata();
+  let { posts, images } = useSiteBlogdata();
+
   return (
     <ThemeProvider theme={theme}>
       <Layout title="Blog | Malik Elgabroun's Website" pathSlug="/blog/">
@@ -25,11 +26,17 @@ const Blog = () => {
             } = post.frontmatter;
             const { timeToRead } = post;
 
+            let img = images.filter((item) =>
+              featured_image.includes(item.node.name)
+            )[0].node;
+
+            const newImg = { featured_image, img };
+
             return (
               <BlogPost
                 path={path}
                 title={title}
-                image={featured_image}
+                image={newImg}
                 summary={summary}
                 date={date}
                 tags={tags}

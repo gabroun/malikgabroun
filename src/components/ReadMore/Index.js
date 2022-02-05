@@ -7,7 +7,8 @@ import { StaticImage } from "gatsby-plugin-image";
 import { BlogPost } from "@components/Blog";
 
 const ReadMore = ({ link1, link2 }) => {
-  const posts = useSiteBlogdata();
+  const { posts, images } = useSiteBlogdata();
+
   const filteredPosts = posts.filter((post) => {
     return post.frontmatter.path === link1 || post.frontmatter.path === link2;
   });
@@ -28,12 +29,18 @@ const ReadMore = ({ link1, link2 }) => {
             lastUpdated,
           } = frontmatter;
 
+          let img = images.filter((item) =>
+            featured_image.includes(item.node.name)
+          )[0].node;
+
+          const newImg = { featured_image, img };
+
           return (
             <BlogPost
               path={path}
               title={title}
               summary={summary}
-              image={featured_image}
+              image={newImg}
               timeToRead={timeToRead}
               date={formatDate(date)}
               tags={tags}

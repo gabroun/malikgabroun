@@ -3,7 +3,7 @@ import * as S from "./styles";
 import { Link } from "gatsby";
 import React from "react";
 import formatDate from "@utils/formatDate";
-import { StaticImage } from "gatsby-plugin-image";
+import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
 
 export const BlogPost = ({
   path,
@@ -15,12 +15,14 @@ export const BlogPost = ({
   timeToRead,
   lastUpdated,
 }) => {
-  const url = require(`@resources/${image}`).default;
-
   return (
     <S.PostItem>
       <Link to={path}>
-        <div className="imgs" style={{ backgroundImage: `url(${url})` }} />
+        <GatsbyImage
+          className="imgs"
+          image={image.img.childImageSharp.gatsbyImageData}
+          alt={title}
+        />
 
         <S.PostPreview className="postPreview">
           <S.Tags className="tags">
@@ -66,7 +68,7 @@ export const BlogPost = ({
   );
 };
 
-export const Blog = ({ nodes }) => {
+export const Blog = ({ nodes, images }) => {
   return (
     <S.BlogList>
       {nodes.map(function (node) {
@@ -80,13 +82,18 @@ export const Blog = ({ nodes }) => {
           lastUpdated,
         } = node.frontmatter;
         const { timeToRead } = node;
+        let img = images.filter((item) =>
+          featured_image.includes(item.node.name)
+        )[0].node;
+
+        const newImg = { featured_image, img };
 
         return (
           <BlogPost
             path={path}
             title={title}
             summary={summary}
-            image={featured_image}
+            image={newImg}
             timeToRead={timeToRead}
             date={formatDate(date)}
             tags={tags}
