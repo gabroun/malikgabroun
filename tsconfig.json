@@ -10,18 +10,13 @@
     "allowJs": true,
     "baseUrl": "src",
     "paths": {
-      "@components": ["src/components"],
-      "@components/*": ["src/*"],
-      "@utils": ["src/utils"]
+      "@components/*": ["components/*"],
+      "@utils/*": ["utils/*"],
+      "@static/*": ["static/*"],
+      "@resources/*": ["resources/*"],
+      "@hooks/*": ["hooks/*"],
+      "@styles/*": ["styles/*"]
     }
-    // "paths": {
-    //   "@components": ["src/components"],
-    //   "@static": ["static"],
-    //   "@utils": ["src/utils"],
-    //   "@resources": ["src/resources"],
-    //   "@hooks": ["src/hooks"],
-    //   "@styles": ["src/styles"]
-    // }
   },
   "exclude": ["node_modules", "public", ".cache"],
   "include": ["./src/**/*"]

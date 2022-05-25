@@ -1,5 +1,6 @@
-const config = require("./content/meta/config");
+const config = require("./src/utils/config/meta/config");
 require("dotenv").config();
+const path = require("path");
 
 const {
   NODE_ENV,
