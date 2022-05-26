@@ -1,24 +1,31 @@
 import * as S from "./styles";
 
-import React, { useState } from "react";
+import React, { useState, MouseEvent } from "react";
 
 const convertkit_tags = require("../../utils/convertkit_tags.json");
 
-const Signup = ({ tags }) => {
-  const [status, setStatus] = useState(null);
-  const [loading, setLoading] = useState(false);
+interface SignupProps {
+  tags: string[];
+}
+
+const Signup = ({ tags }: SignupProps) => {
+  const [status, setStatus] = useState("" as string);
+  const [loading, setLoading] = useState(false as boolean);
   const YOUR_FORM_ID = "2118215";
   const YOUR_SUBFORM_ID = "2358";
   const YOUR_FORM_URL = `https://app.convertkit.com/forms/${YOUR_FORM_ID}/subscriptions`;
 
-  const tagMap = convertkit_tags.reduce((result, tag) => {
-    result[tag.name] = tag.id;
-    return result;
-  }, {});
+  const tagMap = convertkit_tags.reduce(
+    (result: { [key: string]: number }, tag: { name: string; id: number }) => {
+      result[tag.name] = tag.id;
+      return result;
+    },
+    {}
+  );
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: MouseEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = new FormData(e.target);
+    const data = new FormData(e.target as HTMLFormElement);
     setLoading(true);
 
     try {

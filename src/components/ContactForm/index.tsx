@@ -22,10 +22,6 @@ type FormValue = {
   message: string;
 };
 
-type FormAction = {
-  [key: string]: Function;
-};
-
 const ContactForm = () => {
   const [msgSuccess, setMsgSuccess] = useState(false as boolean);
 

@@ -5,6 +5,43 @@ import React from "react";
 import formatDate from "@utils/formatDate";
 import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
 
+type Image = {
+  node: {
+    [key: string]: any;
+    name: string;
+  };
+};
+
+interface BlogPostProps {
+  path: string;
+  title: string;
+  summary: string;
+  image: {
+    [key: string]: any;
+    featured_image: string;
+  };
+  date: Date;
+  tags: string[];
+  timeToRead: number;
+  lastUpdated?: Date;
+}
+
+interface BlogProps {
+  images: Image[];
+  nodes: {
+    frontmatter: {
+      path: string;
+      title: string;
+      tags: string[];
+      summary: string;
+      date: Date;
+      lastUpdated?: Date;
+      featured_image: string;
+    };
+    timeToRead: number;
+  }[];
+}
+
 export const BlogPost = ({
   path,
   title,
@@ -14,7 +51,7 @@ export const BlogPost = ({
   tags,
   timeToRead,
   lastUpdated,
-}) => {
+}: BlogPostProps) => {
   return (
     <S.PostItem>
       <Link to={path}>
@@ -68,7 +105,7 @@ export const BlogPost = ({
   );
 };
 
-export const Blog = ({ nodes, images }) => {
+export const Blog = ({ nodes, images }: BlogProps) => {
   return (
     <S.BlogList>
       {nodes.map(function (node) {
