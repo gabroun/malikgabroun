@@ -4,13 +4,7 @@ import { Link } from "gatsby";
 import React from "react";
 import formatDate from "@utils/formatDate";
 import { StaticImage, GatsbyImage } from "gatsby-plugin-image";
-
-type Image = {
-  node: {
-    [key: string]: any;
-    name: string;
-  };
-};
+import { Image, Post } from "@utils/BlogPostTypes";
 
 interface BlogPostProps {
   path: string;
@@ -28,18 +22,7 @@ interface BlogPostProps {
 
 interface BlogProps {
   images: Image[];
-  nodes: {
-    frontmatter: {
-      path: string;
-      title: string;
-      tags: string[];
-      summary: string;
-      date: Date;
-      lastUpdated?: Date;
-      featured_image: string;
-    };
-    timeToRead: number;
-  }[];
+  nodes: Post[];
 }
 
 export const BlogPost = ({

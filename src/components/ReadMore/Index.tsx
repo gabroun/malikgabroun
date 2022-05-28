@@ -5,11 +5,17 @@ import { Link } from "gatsby";
 import formatDate from "@utils/formatDate";
 import { StaticImage } from "gatsby-plugin-image";
 import { BlogPost } from "@components/Blog";
+import { Image, Post } from "@utils/BlogPostTypes";
 
-const ReadMore = ({ link1, link2 }) => {
+interface ReadMoreProps {
+  link1: string;
+  link2: string;
+}
+
+const ReadMore = ({ link1, link2 }: ReadMoreProps) => {
   const { posts, images } = useSiteBlogdata();
 
-  const filteredPosts = posts.filter((post) => {
+  const filteredPosts = posts.filter((post: Post) => {
     return post.frontmatter.path === link1 || post.frontmatter.path === link2;
   });
 
@@ -18,7 +24,7 @@ const ReadMore = ({ link1, link2 }) => {
       <h2>If you found this article helpful</h2>
       <p>You will enjoy these other articles.</p>
       <S.List>
-        {filteredPosts.map(({ frontmatter, timeToRead }) => {
+        {filteredPosts.map(({ frontmatter, timeToRead }: Post) => {
           const {
             path,
             title,
@@ -29,7 +35,7 @@ const ReadMore = ({ link1, link2 }) => {
             lastUpdated,
           } = frontmatter;
 
-          let img = images.filter((item) =>
+          let img = images.filter((item: Image) =>
             featured_image.includes(item.node.name)
           )[0].node;
 
