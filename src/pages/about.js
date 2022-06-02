@@ -42,6 +42,7 @@ class About extends React.Component {
                 <img src={headImg} alt="drawn art" />
               </S.AboutMe>
               <Carousel />
+
               <S.ContactUs>
                 <div className="social">
                   <h1>Get In Touch</h1>
