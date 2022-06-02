@@ -42,7 +42,11 @@ const MobileMenu = styled.div`
   }
 `;
 
-const isPartiallyActive = ({ isPartiallyCurrent }) => {
+const isPartiallyActive = ({
+  isPartiallyCurrent,
+}: {
+  isPartiallyCurrent: boolean;
+}) => {
   return isPartiallyCurrent ? { className: "active" } : {};
 };
 

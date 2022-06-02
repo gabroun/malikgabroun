@@ -1,7 +1,22 @@
 import { Helmet } from "react-helmet";
-import React from "react";
+import React, { memo } from "react";
 
-export default React.memo(
+interface SchemaOrgProps {
+  author: string;
+  canonicalUrl: string;
+  datePublished: Date | boolean;
+  defaultTitle: string;
+  description: string;
+  image: string | null;
+  isBlogPost: boolean;
+  baseUrl: string;
+  organization?: string;
+  title: string;
+  url: string;
+  dateModified: Date;
+}
+
+export default memo(
   ({
     author,
     canonicalUrl,
@@ -15,7 +30,7 @@ export default React.memo(
     title,
     url,
     dateModified,
-  }) => {
+  }: SchemaOrgProps) => {
     const baseSchema = [
       {
         "@context": "http://schema.org",

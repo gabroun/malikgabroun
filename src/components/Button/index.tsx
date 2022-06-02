@@ -34,7 +34,12 @@ const StyledButton = styled.div`
   }
 `;
 
-const Button = ({ label, link }) => {
+interface ButtonProps {
+  label: string;
+  link: string;
+}
+
+const Button = ({ label, link }: ButtonProps) => {
   return (
     <StyledButton>
       <Link to={link}>

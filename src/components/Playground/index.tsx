@@ -1,12 +1,24 @@
-import { Sandpack } from "@codesandbox/sandpack-react";
+import {
+  Sandpack,
+  SandpackThemeProp,
+  SandpackPredefinedTemplate,
+  SandpackCodeOptions,
+} from "@codesandbox/sandpack-react";
 import React from "react";
+
+interface PlaygroundProps {
+  template?: SandpackPredefinedTemplate;
+  theme?: SandpackThemeProp;
+  options?: SandpackCodeOptions;
+  editorHeight: number;
+}
 
 const Playground = ({
   options,
   template = "react",
   editorHeight = 600,
   ...props
-}) => {
+}: PlaygroundProps) => {
   return (
     <>
       <Sandpack

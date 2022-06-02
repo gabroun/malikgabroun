@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const CarouselWrapper = styled.div`
   margin: 80px auto;
@@ -49,7 +49,7 @@ export const CarouselWrapper = styled.div`
     }
 
     &:before {
-      content: '';
+      content: "";
       height: 2px;
       width: 130px;
       display: block;
@@ -72,7 +72,7 @@ export const CarouselWrapper = styled.div`
     }
 
     &:after {
-      content: '';
+      content: "";
       height: 2px;
       width: 130px;
       background-color: #dfdfdf;
@@ -102,6 +102,8 @@ export const Carousel = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  margin-top: 20px;
   @media (max-width: 767px) {
     justify-content: center;
   }

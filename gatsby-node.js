@@ -1,4 +1,5 @@
 const path = require("path");
+const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createRedirect } = actions;
@@ -79,6 +80,7 @@ exports.onCreateWebpackConfig = ({ stage, actions }) => {
         "@hooks": path.resolve(__dirname, "src/hooks"),
         "@styles": path.resolve(__dirname, "src/styles"),
       },
+      plugins: [new TsconfigPathsPlugin()],
       // modules: [path.resolve(__dirname, "src"), "node_modules"],
     },
   });
