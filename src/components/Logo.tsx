@@ -40,7 +40,6 @@ interface LogoProps {
 }
 
 const Logo = (props: LogoProps) => {
-  console.log(props);
   return (
     <LogoImg
       xmlns="http://www.w3.org/2000/svg"

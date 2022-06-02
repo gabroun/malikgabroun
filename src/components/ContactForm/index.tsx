@@ -26,7 +26,6 @@ const ContactForm = () => {
   const [msgSuccess, setMsgSuccess] = useState(false as boolean);
 
   const encode = (data: Data) => {
-    console.log(data);
     return Object.keys(data)
       .map(
         (key: string) =>

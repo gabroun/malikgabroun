@@ -19,7 +19,6 @@ const Playground = ({
   editorHeight = 600,
   ...props
 }: PlaygroundProps) => {
-  console.log({ options, template, editorHeight });
   return (
     <>
       <Sandpack
