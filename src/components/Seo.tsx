@@ -7,6 +7,20 @@ import icon32 from "@static/icons/favicon-32x32.png";
 import icon512 from "@static/icons/favicon-512x512.png";
 import useSiteMetadata from "@hooks/useSiteMetadata";
 
+interface SeoProps {
+  image: {
+    [key: string]: any;
+  };
+  date: Date;
+  isBlogPost: boolean;
+  dateModified: Date;
+  keywords: string[];
+  title: string;
+  pathSlug: string;
+  description: string;
+  meta?: {};
+}
+
 const Seo = ({
   meta,
   image,
@@ -17,7 +31,7 @@ const Seo = ({
   date,
   isBlogPost,
   dateModified,
-}) => {
+}: SeoProps) => {
   const metaDescription = description || useSiteMetadata().description;
   const url = pathSlug
     ? `${useSiteMetadata().siteUrl}${pathSlug}`
