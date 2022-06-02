@@ -2,7 +2,7 @@ import * as S from "./styles";
 
 import React, { useEffect, useState } from "react";
 
-import Content from "@components/Content";
+import Content from "@components/content";
 import ArrowIcon from "./ArrowIcon";
 
 const Carousel = () => {
