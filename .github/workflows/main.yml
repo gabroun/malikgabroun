@@ -20,6 +20,6 @@ jobs:
         with:
           browser: chrome
           headless: true
-          start: npm start
+          start: npm run cy:run
           wait-on-timeout: 120
           wait-on: http://localhost:3000
