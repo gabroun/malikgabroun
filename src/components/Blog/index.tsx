@@ -102,7 +102,7 @@ export const Blog = ({ nodes, images }: BlogProps) => {
           lastUpdated,
         } = node.frontmatter;
         const { timeToRead } = node;
-        let img = images.filter((item) =>
+        const img = images.filter((item) =>
           featured_image.includes(item.node.name)
         )[0].node;
 

@@ -4,7 +4,7 @@ import { Link, graphql, useStaticQuery } from "gatsby";
 
 import { Blog } from "@components/Blog";
 import Layout from "@components/Layout";
-import { PortfolioList } from "@components/Portfolio";
+// import { PortfolioList } from "@components/Portfolio";
 import React from "react";
 import Signup from "@components/Signup";
 import { ThemeProvider } from "styled-components";

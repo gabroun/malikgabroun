@@ -78,6 +78,9 @@ const Carousel = () => {
           <div
             className="left-arrow"
             onClick={previousSlide}
+            onKeyDown={previousSlide}
+            role="button"
+            tabIndex={0}
             style={{
               borderColor: currentSlide > 0 ? "#F47C48" : "#DFDFDF",
             }}
@@ -100,13 +103,19 @@ const Carousel = () => {
           <div className="Content">
             <div className="title">{content[currentSlide].title}</div>
             <div className="brand">
-              <img src={content[currentSlide].imgUrl} />
+              <img
+                src={content[currentSlide].imgUrl}
+                alt={content[currentSlide].title}
+              />
               <p>{content[currentSlide].subtitle}</p>
             </div>
           </div>
           <div
             className="right-arrow"
             onClick={nextSlide}
+            onKeyDown={nextSlide}
+            role="button"
+            tabIndex={0}
             style={{
               borderColor:
                 currentSlide < content.length - 1 ? "#F47C48" : "#DFDFDF",
