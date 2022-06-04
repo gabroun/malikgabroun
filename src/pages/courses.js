@@ -57,7 +57,6 @@ const CourseList = styled.div`
 `;
 
 const Courses = () => {
-  const imgPath = require(`@resources/algolia-course.png`);
   return (
     <ThemeProvider theme={theme}>
       <Layout title="Courses | Malik Elgabroun's Website" pathSlug="/courses/">

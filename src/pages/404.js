@@ -24,7 +24,6 @@ const Container = styled.div`
   }
 `;
 const NotFoundPage = () => {
-  const imgPath = require(`@resources/404.svg`).default;
   return (
     <ThemeProvider theme={theme}>
       <Layout title="Page not found">

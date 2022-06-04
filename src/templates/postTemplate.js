@@ -13,13 +13,6 @@ const Title = styled.h1`
   font-family: "Fira Mono";
 `;
 
-const PostTemplate = styled.div`
-  a {
-    color: #f47c48;
-    text-decoration: underline;
-  }
-`;
-
 const PostWrapper = styled.article`
   @media (min-width: 1084px) {
     display: flex;

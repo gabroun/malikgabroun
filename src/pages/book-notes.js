@@ -68,7 +68,7 @@ const BookNotes = () => {
         <BookList>
           {nodes.map((item) => {
             const {
-              frontmatter: { path, bookTitle, date, featured_image, author },
+              frontmatter: { path, bookTitle, featured_image, author },
             } = item;
             const imgUrl = require(`@resources/${featured_image}`).default;
 

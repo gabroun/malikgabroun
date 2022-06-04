@@ -4,16 +4,17 @@
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:jsx-a11y/recommended",
-    "prettier",
-    "prettier/react"
+    "plugin:import/typescript",
+    "prettier"
   ],
   "rules": {
     "react/prop-types": 0,
     "jsx-a11y/label-has-for": 0,
-    "no-console": "warn"
+    "no-console": "warn",
+    "@typescript-eslint/no-var-requires": 0
   },
   "plugins": ["react", "import", "jsx-a11y"],
-  "parser": "babel-eslint",
+
   "parserOptions": {
     "ecmaVersion": 2022,
     "sourceType": "module",
@@ -32,8 +33,9 @@
     "import/resolver": {
       "node": {
         "extensions": [".js", ".jsx", ".ts", ".tsx"],
-        "paths": ["./src"]
+        "paths": ["./src", "./static", "./src/utils", "./src/styles"]
       },
+      "typescript": {},
       "alias": [
         ["@components", "./src/components"],
         ["@static", "./static"],
@@ -42,6 +44,9 @@
         ["@hooks", "./src/hooks"],
         ["@styles", "./src/styles"]
       ]
+    },
+    "react": {
+      "version": "detect"
     }
   }
 }
