@@ -21,4 +21,5 @@ jobs:
           browser: chrome
           headless: true
           start: npm start
+          wait-on-timeout: 120
           wait-on: http://localhost:3000
