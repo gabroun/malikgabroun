@@ -94,7 +94,7 @@ const Index = () => {
               </div>
             </div>
 
-            <S.LatestSection>
+            <S.LatestSection className="latest-posts">
               <S.Header>Latest Posts</S.Header>
 
               <Blog nodes={data.post.nodes} images={data.images.edges} />
