@@ -8,16 +8,16 @@ import icon512 from "@static/icons/favicon-512x512.png";
 import useSiteMetadata from "@hooks/useSiteMetadata";
 
 interface SeoProps {
-  image: {
+  image?: {
     [key: string]: any;
   };
-  date: Date;
-  isBlogPost: boolean;
-  dateModified: Date;
-  keywords: string[];
+  date?: Date;
+  isBlogPost?: boolean;
+  dateModified?: Date;
+  keywords?: string[];
   title: string;
   pathSlug: string;
-  description: string;
+  description?: string;
   meta?: {};
 }
 

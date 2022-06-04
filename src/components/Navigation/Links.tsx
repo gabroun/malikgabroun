@@ -24,6 +24,8 @@ const MenuItems = styled.ul`
     cursor: pointer;
     &.active {
       color: #f47c48;
+      background-color: #282c35;
+      border-radius: 8px;
     }
   }
   @media (min-width: 768px) {
