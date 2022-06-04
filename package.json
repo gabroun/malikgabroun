@@ -13,7 +13,7 @@
     "test": "jest",
     "test:update": "jest --silent -u",
     "cy:open": "cypress open",
-    "cy:run": "start-server-and-test start http://localhost:3000 cy:open"
+    "cy:run": "start-server-and-test start http://localhost:8000 cy:open"
   },
   "repository": {
     "type": "git",

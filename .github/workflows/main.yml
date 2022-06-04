@@ -22,4 +22,4 @@ jobs:
           headless: true
           start: npm run cy:run
           wait-on-timeout: 120
-          wait-on: http://localhost:3000
+          wait-on: http://localhost:8000
