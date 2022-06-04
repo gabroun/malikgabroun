@@ -33,7 +33,7 @@
     "import/resolver": {
       "node": {
         "extensions": [".js", ".jsx", ".ts", ".tsx"],
-        "paths": ["./src", "./static", "./src/utils", "./src/styles"]
+        "paths": ["./src"]
       },
       "typescript": {},
       "alias": [
