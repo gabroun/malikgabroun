@@ -24,13 +24,13 @@ class About extends React.Component {
 
                   <p>
                     I’m a Front end Developer based in London 🇬🇧. Currently
-                    Working as a Front end Developer at Redbox Digital.
+                    Working as a Software Engineer at Policy Expert.
                   </p>
 
                   <p>
                     I enjoy writing software and building application, and
-                    currently I get to develop using React, Vue, TypeScript and
-                    many more.
+                    currently I get to develop using React, TypeScript, Node,
+                    GraphQL and many more.
                   </p>
 
                   <p>
@@ -41,7 +41,7 @@ class About extends React.Component {
                 </div>
                 <img src={headImg} alt="drawn art" />
               </S.AboutMe>
-              <Carousel />
+              {/* <Carousel /> */}
 
               <S.ContactUs>
                 <div className="social">
